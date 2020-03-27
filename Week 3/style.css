@@ -1,0 +1,28 @@
+div {
+    color: firebrick;
+}
+
+p {
+    color: green;
+    background-color: khaki;
+    font-size: xx-large;
+    text-align: center;
+    width: 100%;
+    border: thick red dotted;
+    padding: 2px 10px;
+}
+
+/*How to comment in HTML */
+h1,
+h2,
+h3 {
+    font-family: sans-serif;
+}
+
+#s1234567 {
+    color: purple;
+}
+
+.strike {
+    text-decoration: line-through;
+}
