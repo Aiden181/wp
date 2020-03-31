@@ -1,3 +1,8 @@
+* 
+{
+    color: red;
+}
+
 div {
     color: firebrick;
 }
@@ -8,6 +13,19 @@ p {
     font-size: xx-large;
     text-align: center;
     width: 100%;
+    border: thick red dotted;
+    padding: 2px 10px;
+}
+
+div {
+    color: red;
+}
+
+p {
+    color: green; 
+    background-color: burlywood;
+    font-size: xx-large;
+    text-align: center;
     border: thick red dotted;
     padding: 2px 10px;
 }
@@ -25,4 +43,16 @@ h3 {
 
 .strike {
     text-decoration: line-through;
+    color: orange
+}
+div p {
+    color: blue;
+}
+
+h1 > p {
+    color: pink;
+}
+
+div h1 ~ h2 {
+    color: brown;
 }
