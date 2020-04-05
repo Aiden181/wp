@@ -14,11 +14,44 @@
 </head>
 
 <body>
-
+    <!--Jumbotron-->
     <div class="container">
         <div class="jumbotron">
             <h1>My First Bootstrap Page</h1>
             <p>Aiden's Bootstrap Page</p>
+        </div>
+
+        <!--Carousel-->
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="la.jpg" alt="Los Angeles">
+                </div>
+                <div class="carousel-item">
+                    <img src="chicago.jpg" alt="Chicago">
+                </div>
+                <div class="carousel-item">
+                    <img src="ny.jpg" alt="New York">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+
         </div>
 
         <div class="row">
@@ -31,26 +64,74 @@
                 </ul>
             </div>
 
-             <!-- Second column-->
+            <!-- Second column-->
             <div class="col-md-6">
                 <table class="table table-bordered table-striped table-hover">
-                   <tr>
-                       <th>Name</th>
-                       <th>Email</th>
-                   </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
 
-                   <tr>
-                       <td>Ly Khoi Viet</td>
-                       <td>s3753278@student.rmit.edu.au</td>
-                   </tr>
+                    <tr>
+                        <td>Ly Khoi Viet</td>
+                        <td>s3753278@student.rmit.edu.au</td>
+                    </tr>
 
-                   <tr>
-                       <td>Nguyen Minh Long</td>
-                       <td>long.nguyenminh@rmit.edu.vn</td>
-                   </tr>
+                    <tr>
+                        <td>Nguyen Minh Long</td>
+                        <td>long.nguyenminh@rmit.edu.vn</td>
+                    </tr>
                 </table>
+
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="card" style="width:250px">
+                        <img class="card-img-top"
+                            src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-12-11-select-202003_GEO_GB_FMT_WHH?wid=2000&amp;hei=2000&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1583433242638"
+                            alt="Card image">
+                        <div class="card-body">
+                            <h4 class="card-title">IPad Pro</h4>
+                            <p class="card-text">19.490.000 ₫</p>
+                            <a href="https://cdn.fptshop.com.vn/Uploads/Originals/2019/1/10/636827398746710478_ipad-pro-11-wi-fi-bac-1.png"
+                                class="stretched-link" style="text-decoration: line-through;">22.990.000
+                                đ</a>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                    <div class="card" style="width:250px">
+                        <img class="card-img-top"
+                            src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-12-11-select-202003_GEO_GB_FMT_WHH?wid=2000&amp;hei=2000&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1583433242638"
+                            alt="Card image">
+                        <div class="card-body">
+                            <h4 class="card-title">IPad Pro</h4>
+                            <p class="card-text">19.490.000 ₫</p>
+                            <a href="https://cdn.fptshop.com.vn/Uploads/Originals/2019/1/10/636827398746710478_ipad-pro-11-wi-fi-bac-1.png"
+                                class="stretched-link" style="text-decoration: line-through;">22.990.000
+                                đ</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
             </div>
-            <div class="col-md-3" style="background-color: lightsalmon;">Column 3</div>
+
+            <!-- Third column-->
+            <div class="col-md-3">
+                <div class="card" style="width:250px">
+                    <img class="card-img-top"
+                        src="https://cdn.fptshop.com.vn/Uploads/Originals/2019/1/10/636827398746710478_ipad-pro-11-wi-fi-bac-1.png"
+                        alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">IPad Pro</h4>
+                        <p class="card-text">19.490.000 ₫</p>
+                        <a href="https://tiki.vn/ipad-pro-11-inch-2018-64gb-wifi-hang-nhap-khau-chinh-hang-p6878263.html"
+                            class="stretched-link" style="text-decoration: line-through;">22.990.000
+                            đ</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row">
