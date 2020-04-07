@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Assignment 2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <link id='stylecss' type="text/css" rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!--Jumbotron-->
+    <div class="container">
+        <div class="jumbotron">
+            <img src="https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg" alt="">
+        </div>
+    
+    <nav>
+        <div class="row">
+            <div class="col-sm-3" style="background-color:grey;"><a href="#aboutus">About Us</a></a></div>
+            <div class="col-sm-3" style="background-color:grey;"><a href="#prices">Prices</a></a></div>
+            <div class="col-sm-3" style="background-color:grey;"><a href="#nowshowing">Now Showing</a></a></div>
+            <div class="col-sm-3" style="background-color:grey;"><a href="#synopsisarea">Synopsis Area</a></a></div>
+        </div>
+    </nav>
+
+    <main>
+        <article id='Website Under Construction'>
+      <!-- Creative Commons image sourced from https://pixabay.com/en/maintenance-under-construction-2422173/ and used for educational purposes only -->
+          <img src='../../media/website-under-construction.png' alt='Website Under Construction' />
+        </article>
+      <!--About Us Section-->
+        <section id="aboutus">
+          <h2>About Us</h2>
+        </section>  
+       
+        <!--Prices Section-->
+        <section id="prices">
+          <h2>Prices</h2>
+          <table class="table table-bordered table-striped table-hover">
+            <tr>
+                <th>Seat Type</th>
+                <th>Seat Code</th>
+                <th>All day Monday and Wednesday AND 12pm on Weekdays</th>
+                <th>All other times</th>
+            </tr>
+            <tr>
+                <td>Standard Adult</td>
+                <td>STA</td>
+                <td>14:00</td>
+                <td>19:80</td>
+            </tr>
+            <tr>
+                <td>Standard Concession</td>
+                <td>STP</td>
+                <td>12.50</td>
+                <td>17.50</td>
+            </tr>
+            <tr>
+                <td>Standard Child</td>
+                <td>STC</td>
+                <td>11:00</td>
+                <td>15:30</td>
+            </tr>
+            <tr>
+                <td>First Class Adult</td>
+                <td>FCA</td>
+                <td>24:00</td>
+                <td>30:00</td>
+            </tr>
+            <tr>
+                <td>First Class Concession</td>
+                <td>FCP</td>
+                <td>22:50</td>
+                <td>27:00</td>
+            </tr>
+            <tr>
+                <td>First Class Child</td>
+                <td>SCC</td>
+                <td>21:00</td>
+                <td>24:00</td>
+            </tr>
+        </table>
+        </section>
+  
+        <!--NowShowing Section-->
+        <section id="nowshowing">
+          <h2>Now Showing</h2>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card" style="width:400px">
+                <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">John Doe</h4>
+                  <p class="card-text">Some example text.</p>
+                  <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="card" style="width:400px">
+                <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/6f7D6wP9HimAtT6_42UlmqEo8Be7-WaXmnZ045dYYoy7iSBdM0o2ario0ybunqpUJU_HEoHo-GiapJfJDlz-e0NXGeiyftlfoFCvtQ" alt="Card image" width="250px" height="400px">
+                <div class="card-body">
+                  <h4 class="card-title">John Doe</h4>
+                  <p class="card-text">Some example text.</p>
+                  <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+              </div>
+            </div>
+          </div>
+              
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card" style="width:400px">
+                <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">John Doe</h4>
+                  <p class="card-text">Some example text.</p>
+                  <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="card" style="width:400px">
+                <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">John Doe</h4>
+                  <p class="card-text">Some example text.</p>
+                  <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+              </div>
+          </div>
+        </section> 
+  
+        <!--Synopsis Section-->
+        <section id="synopsisarea">
+          <h2>Synopsis Area</h2>
+        </section>
+  
+      </main>
+
+<footer>
+    <div>&copy;<script>
+          document.write(new Date().getFullYear());
+    </script> Ly Khoi Viet, s3753278. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
+    <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
+</footer>
+
+</body>
+</html>
