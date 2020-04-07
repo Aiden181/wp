@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Assignment 2</title>
     
+    <!--Bootstrap 4-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="">
+
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
-    <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled> 
+    <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" aria-disabled="true"> 
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css">
 
     <script src='../wireframe.js'></script>
@@ -15,24 +24,17 @@
   <body>
 
     <header>
-      <div class="header">
-        <img src="logo.png" alt="">
-        CINEMAX
+      <div>
+        
       </div>
     </header>
 
     <nav>
-      <div>
-        <p>
-          <a href="aboutus.html">About Us</a>
-        </p>
-        <p>
-          <a href="prices.html">Prices</a>
-        </p>
-        <p>
-          <a href="nowshowing.html">Now Showing</a>
-        </p>
-        
+      <div class="row">
+        <div class="col">About Us</a></div>
+        <div class="col">Prices</a></div>
+        <div class="col">Now Showing</a></div>
+        <div class="col">Synopsis Area</a></div>
       </div>
     </nav>
 
@@ -41,6 +43,74 @@
     <!-- Creative Commons image sourced from https://pixabay.com/en/maintenance-under-construction-2422173/ and used for educational purposes only -->
         <img src='../../media/website-under-construction.png' alt='Website Under Construction' />
       </article>
+    <!--About Us Section-->
+      <section id="aboutus">
+        <h2>About Us</h2>
+      </section>  
+     
+      <!--Prices Section-->
+      <section id="prices">
+        <h2>Prices</h2>
+        <table class="table table-bordered table-striped table-hover">
+          <tr>
+              <th>Seat Type</th>
+              <th>Seat Code</th>
+              <th>All day Monday and Wednesday AND 12pm on Weekdays</th>
+              <th>All other times</th>
+          </tr>
+          <tr>
+              <td>Standard Adult</td>
+              <td>STA</td>
+              <td>14:00</td>
+              <td>19:80</td>
+          </tr>
+          <tr>
+              <td>Standard Concession</td>
+              <td>STP</td>
+              <td>12.50</td>
+              <td>17.50</td>
+          </tr>
+          <tr>
+              <td>Standard Child</td>
+              <td>STC</td>
+              <td>11:00</td>
+              <td>15:30</td>
+          </tr>
+          <tr>
+              <td>First Class Adult</td>
+              <td>FCA</td>
+              <td>24:00</td>
+              <td>30:00</td>
+          </tr>
+          <tr>
+              <td>First Class Concession</td>
+              <td>FCP</td>
+              <td>22:50</td>
+              <td>27:00</td>
+          </tr>
+          <tr>
+              <td>First Class Child</td>
+              <td>SCC</td>
+              <td>21:00</td>
+              <td>24:00</td>
+          </tr>
+      </table>
+      </section>
+
+      <!--NowShowing Section-->
+      <section id="nowshowing">
+        <h2>Now Showing</h2>
+        <div class="row-10">
+          <div class="col-sm-5">.col-sm-3</div>
+          <div class="col-sm-5">.col-sm-3</div>
+        </div>
+      </section> 
+
+      <!--Synopsis Section-->
+      <section id="synopsis">
+        <h2>Synopsis Area</h2>
+      </section>
+
     </main>
 
     <footer>
@@ -48,7 +118,7 @@
         document.write(new Date().getFullYear());
       </script> Ly Khoi Viet, s3753278. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
       <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
-      <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
+      <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'disabled>Toggle Wireframe CSS</button></div>
     </footer>
 
   </body>
