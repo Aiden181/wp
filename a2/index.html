@@ -20,14 +20,69 @@
   <link rel="stylesheet" href="https://fonts.google.com/specimen/Comic+Neue">
 
   <script src='../wireframe.js'></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body style="font-family:Georgia, 'Times New Roman', Times, serif;">
 
   <!--Jumbotron-->
   <div class="container">
-    <div class="jumbotron">
-      <img src="https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg" alt="">
+    <img id="cinemax_logo" src="https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg"
+      alt="Cinemax logo" width="300">
+
+    <div id="movieSlide" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#movieSlide" data-slide-to="0" class="active"></li>
+        <li data-target="#movieSlide" data-slide-to="1"></li>
+        <li data-target="#movieSlide" data-slide-to="2"></li>
+        <li data-target="#movieSlide" data-slide-to="3"></li>
+      </ul>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="endgame-banner.jpg" alt="Avengers:Endgame Banner">
+          <div class="carousel-caption">
+            <h3>Avengers:Endgame</h3>
+            <p>The long awaited sequel is now here!</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="dumbo-banner.jpg" alt="Dumbo Banner">
+          <div class="carousel-caption">
+            <h3>Dumbo</h3>
+            <p>Get amazed by the one of a kind flying elephant!</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="topendwedding-banner.jpg" alt="Top End Wedding Banner">
+          <div class="carousel-caption">
+            <h3>Top End Wedding</h3>
+            <p>Join in on this hilarious marriage story of Ned and Lauren!</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="thehappyprince-banner.jpg" alt="The Happy Prince Banner">
+          <div class="carousel-caption">
+            <h3>The Happy Prince</h3>
+            <p>Get immersed in this movie's spectacular story!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#movieSlide" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#movieSlide" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
     </div>
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
@@ -58,12 +113,14 @@
       <!--About Us Section-->
       <section id="aboutus">
         <h2>About Us</h2>
-        <div>Cinemax is an American premium cable and satellite television network owned by Home Box Office, Inc. 
-          Cinemax primarily broadcasts theatrically released feature films, along with original series, documentaries, 
+        <div>Cinemax is an American premium cable and satellite television network owned by Home Box Office, Inc.
+          Cinemax primarily broadcasts theatrically released feature films, along with original series, documentaries,
           and exclusive behind-the-scenes features.</div>
       </section>
-      <br>  <!--Add space between each section for cleaner look-->
+      <br>
+      <!--Add space between each section for cleaner look-->
       </section>
+      <br>
 
       <!--Prices Section-->
       <section id="prices">
@@ -115,6 +172,7 @@
           </thead>
         </table>
       </section>
+      <br>
 
       <!--NowShowing Section-->
       <section id="nowshowing">
@@ -190,14 +248,41 @@
             </div>
           </div>
       </section>
+      <br>
 
       <!--Synopsis Section-->
       <section id="synopsisarea">
         <h2>Synopsis</h2>
         <div class="row" id="row1">
+
           <div class="col-sm-6">
             <div class="card">
-              <div class="card-header"><h4><b>Avengers: EndGame</b></h4></div>
+              <div class="card-header">
+                <h4><b>Dumbo</b></h4>
+              </div>
+              <div class="card-body">
+                <iframe width="500" height="255" src="https://www.youtube.com/embed/7NiYVoqBt-8" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+                <h5>Plot Summary</h5>
+                <p>
+                  Struggling circus owner Max Medici enlists former star Holt Farrier and his children Milly and Joe to
+                  care for Dumbo, a baby elephant whose oversized ears make him the circus' laughing stock. But when
+                  they discover that Dumbo can fly, the circus makes an incredible comeback, attracting persuasive
+                  entrepreneur V.A. Vandevere, who recruits Dumbo for his newest, larger-than-life entertainment
+                  venture, Dreamland. Dumbo soars to new heights alongside a charming and spectacular aerial artist,
+                  Colette Marchant, until Holt learns that Dreamland hides dark secrets beneath its shiny veneer.
+                </p>
+              </div>
+              <div class="card-footer">Footer</div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-header">
+                <h4><b>Avengers: EndGame</b></h4>
+              </div>
               <div class="card-body">
                 <iframe width="500" height="255" src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -216,38 +301,19 @@
               <div class="card-footer">Footer</div>
             </div>
           </div>
-
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-header"><h4><b>Dumbo</b></h4></div>
-              <div class="card-body">
-                <iframe width="500" height="255" src="https://www.youtube.com/embed/7NiYVoqBt-8" frameborder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-                  <h5>Plot Summary</h5>
-                <p>
-                  Struggling circus owner Max Medici enlists former star Holt Farrier and his children Milly and Joe to
-                  care for Dumbo, a baby elephant whose oversized ears make him the circus' laughing stock. But when
-                  they discover that Dumbo can fly, the circus makes an incredible comeback, attracting persuasive
-                  entrepreneur V.A. Vandevere, who recruits Dumbo for his newest, larger-than-life entertainment
-                  venture, Dreamland. Dumbo soars to new heights alongside a charming and spectacular aerial artist,
-                  Colette Marchant, until Holt learns that Dreamland hides dark secrets beneath its shiny veneer.
-                </p>
-              </div>
-              <div class="card-footer">Footer</div>
-            </div>
-          </div>
         </div>
 
         <div class="row" id="row2">
           <div class="col-sm-6">
             <div class="card">
-              <div class="card-header"><h4><b>Top End Wedding</b></h4></div>
+              <div class="card-header">
+                <h4><b>Top End Wedding</b></h4>
+              </div>
               <div class="card-body">
                 <iframe width="500" height="255" src="https://www.youtube.com/embed/uoDBvGF9pPU" frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen></iframe>
-                  <h5>Plot Summary</h5>
+                <h5>Plot Summary</h5>
                 <p>
                   Lauren and Ned are engaged, they are in love, and they have just ten days to find Lauren's mother who
                   has gone AWOL somewhere in the remote far north of Australia, reunite her parents and pull off their
@@ -260,12 +326,14 @@
 
           <div class="col-sm-6">
             <div class="card">
-              <div class="card-header"><h4><b>The Happy Prince</b></h4></div>
+              <div class="card-header">
+                <h4><b>The Happy Prince</b></h4>
+              </div>
               <div class="card-body">
                 <iframe width="500" height="255" src="https://www.youtube.com/embed/tXANCJQkUIE" frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen></iframe>
-                  <h5>Plot Summary</h5>
+                <h5>Plot Summary</h5>
                 <p>
                   In a cheap Parisian hotel room Oscar Wilde lies on his death bed. The past floods back, taking him to
                   other times and places. Was he once the most famous man in London? The artist crucified by a society
@@ -282,6 +350,7 @@
           </div>
         </div>
       </section>
+      <br>
 
       <!--Booking Section-->
       <section id="bookingarea">
