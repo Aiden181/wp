@@ -39,3 +39,8 @@ body, html {
   left: 0;
   min-height: 400px;
 }
+
+#navigation_bar li
+{
+  margin-right: 80px;
+}
