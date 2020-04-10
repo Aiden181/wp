@@ -1,10 +1,10 @@
-main {
+body, html {
   height: 100%;
 }
 
 .parallax {
   /* The image used */
-  background-image: url("img_parallax.jpg");
+  background-image: url("");
 
   /* Full height */
   height: 100%;
@@ -14,4 +14,10 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#cinemax_logo
+{
+  max-width: 100%;
+  height: auto;
 }
