@@ -42,10 +42,6 @@ body, html {
 
 #navigation_bar li
 {
-  margin-right: 80px;
+  margin-right: 100px;
 }
 
-#navigation_bar 
-{
-  color: white;
-}

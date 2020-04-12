@@ -1,0 +1,39 @@
+span.a {
+    display: inline;
+    width: 300px;
+    height: 300px;
+    padding: 5px;
+    border: 1px solid blue;
+    background-color: hotpink;
+}
+
+span.b {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    padding: 5px;
+    border: 1px solid blue;
+    background-color: hotpink;
+}
+
+span.c {
+    display: block;
+    width: 300px;
+    height: 300px;
+    padding: 5px;
+    border: 1px solid blue;
+    background-color: hotpink;
+}
+
+nav ul{
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    background-color: yellow;
+    border: 1px solid blue;
+}
+nav li {
+    display: inline-block;
+    width: 20%;
+    padding: 3px;
+}
