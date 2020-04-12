@@ -45,3 +45,53 @@ body, html {
   margin-right: 100px;
 }
 
+/* Container holding the image and the text */
+.cinemax_seats_container
+{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Centered text */
+.cinemax_seats_container_centered_text
+{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Centered text */
+.cinemax_seats_container_centered_text2
+{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Container holding the image and the text */
+.dolby_container
+{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.buttons
+{
+  width: 700px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background-color: aquamarine; 
+}
+.buttons button
+{
+  width: 100%;
+}
+
+#makeBooking_footer .btn-primary
+{
+  width: 114px;
+}
