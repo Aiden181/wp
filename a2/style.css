@@ -94,4 +94,5 @@ body, html {
 #makeBooking_footer .btn-primary
 {
   width: 114px;
+  margin: 1px;
 }
