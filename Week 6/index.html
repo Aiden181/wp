@@ -10,16 +10,20 @@
     <!--All JavaScript should be put in a <script tag>-->
     <script> 
         function clickHandler() {
-            console.log('Mouse click detected')
+            console.log(document.getElementById('date'))
         }
     </script>
+
 </head>
 
 <body>
     <h1 onclick="clickHandler1();">What's the Date?</h1>
-    <input type="text" value="Click the button">
+
+    <input id="date" onkeypress="clickHandler1()" type="text" value="Click the button">
+
     <input onclick="clickHandler();" type="button" value="Display Date">
     <!--Use for debugging-->
+   
     <p>
         &copy;; Copyright Date Awareness Inc 1990 - 2020
     </p>
