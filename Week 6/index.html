@@ -8,25 +8,34 @@
     <script src="tools.js"></script>
 
     <!--All JavaScript should be put in a <script tag>-->
-    <script> 
+    <script>
         function clickHandler() {
-            console.log(document.getElementById('date'))
+            document.getElementById('date').value = Date();
         }
     </script>
 
 </head>
 
 <body>
-    <h1 onclick="clickHandler1();">What's the Date?</h1>
+    <h1>What's the Date?</h1>
 
     <input id="date" onkeypress="clickHandler1()" type="text" value="Click the button">
 
     <input onclick="clickHandler();" type="button" value="Display Date">
     <!--Use for debugging-->
-   
-    <p>
-        &copy;; Copyright Date Awareness Inc 1990 - 2020
+
+    <p id="copyright">
+        &copy;; Copyright Date Awareness Inc 1990 -
+
     </p>
+
+    <script>
+        var currentDate = new Date();
+        document.getElementById('copyright').innerHTML +=
+            currentDate.getFullYear();
+    </script>
+
+
     <h5>Ask us about the benefit of dynamic dating</h5>
 
 </body>
