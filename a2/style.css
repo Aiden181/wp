@@ -2,6 +2,20 @@ body, html {
   height: 100%;
 }
 
+.parallax {
+  /* The image used */
+  background-image: url("");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #cinemax_logo
 {
   max-width: 100%;
@@ -24,6 +38,11 @@ body, html {
   top: 0;
   left: 0;
   min-height: 400px;
+}
+
+#navigation_bar li
+{
+  margin-right: 100px;
 }
 
 /* Container holding the image and the text */
@@ -72,60 +91,8 @@ body, html {
   width: 100%;
 }
 
-.makeBooking_footer .btn-primary
+#makeBooking_footer .btn-primary
 {
   width: 114px;
   margin: 1px;
-}
-
-.resp-container
-{
-  position: relative;
-  overflow: scroll;
-}
-
-.parallax
-{
-  min-height: 500px;
-  background: transparent;
-}
-
-.parallax-slider
-{
-  position: relative;
-}
-
-#navigation_bar
-{
-  right: 0;
-  left: 0;
-}
-
-#navigation_bar li
-{
-  margin-right: 100px;
-}
-
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky
-{
-  position: fixed;
-  top: 0;
-  z-index: 999;
-}
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content
-{
-  padding-top: 60px;
-}
-
-/* smooth scrolling effect */
-html
-{
-  scroll-behavior: smooth;
-}
-
-iframe
-{
-  border: 0px;
 }
