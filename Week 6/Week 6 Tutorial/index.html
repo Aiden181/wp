@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6 Lab</title>
+</head>
+
+<body>
+    <h1>The onclick Event</h1>
+
+    <p>The onclick event is used to trigger a function when an element is clicked on</p>
+
+    <p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo"</p>
+
+    <button onclick="myFunction()">Click me</button>
+    <button onclick="hello()"> Don't Click me</button>
+
+    <p id="demo" onclick="hello()"> Aiden</p>
+
+    <h2>OnBlur</h2>
+    Enter your name: <input type="text" id="fname" onblur="myFunction()">
+
+    <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+    <h2>OnChange</h2>
+    <p>Select a new car from the list.</p>
+
+    <select id="mySelect" onchange="myFunction()">
+        <option value="Audi">Audi</option>
+        <option value="BMW">BMW</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Volvo">Volvo</option>
+    </select>
+
+    <p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+
+    <p id="demo"></p>
+
+    <h2>OnChange</h2>
+    <p>A function is triggered when the user releases a key in the input field. The function transforms the character to
+        upper case.</p>
+    Enter your name: <input type="text" id="fname" oninput="myFunction()">
+
+    <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Hello World"
+        }
+
+        function hello() {
+            console.log("Here")
+            document.getElementById("demo").innerHTML += " and you";
+        }
+
+        function myFunction() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+
+        function myFunction() {
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("demo").innerHTML = "You selected: " + x;
+        }
+
+        function myFunction() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+
+</body>
+
+</html>
