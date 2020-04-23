@@ -5,15 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 7</title>
+
+    <style>
+        input:invalid {
+            border: 2px solid red;
+        }
+    </style>
 </head>
 
 <body>
     <form>
         <label for="username">Username <i>{letters and numbers only, no punctuation or special character}</i></label>
-        <input name="username" id="username" pattern="[A-Za-z0-9]+" required>
+        <input name="username" id="username" pattern="[A-Za-z0-9]+" required oninvalid="alert('error!')">
         <input type="submit" value="Submit">
     </form>
+    <br>
+    <button type="button" class="btn btn-default btn-sn" onclick="minus('p1')">
+        <span class="glyphicon glyphicon-plus-sign"></span> -
+    </button>
 
+    <input type="text" id="p1-qty" value="0" name="P1">
+
+    <button type="button" class="btn btn-default btn-sn" onclick="plus('p1')">
+        <span class="glyphicon glyphicon-minus-sign"></span> +
+    </button>
+    <span id="p1-subtotal" name="P1"> Total: </span>
 </body>
 
 </html>
