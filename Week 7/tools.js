@@ -21,3 +21,13 @@ myButton.addEventListener("click", calculatePrice);
 
 var myP3 = document.getElementById("p3");
 myP3.addEventListener("click", clickP3);
+
+function checkInput() {
+    var patt = /^Steve [a-zA-Z ]+$/;
+    name = document.getElementById("text1").value;
+    if (patt.test(name))
+        alert("Good");
+    else
+        alert("Bad");
+}
+
