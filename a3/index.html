@@ -446,8 +446,22 @@
         <div id="bookingcard" class="row">
           <div class="col-sm-12">
             <div class="card" style="width: 700px;">
-              <label for="name"><b>Name</b></label></label>
-              <input name="name" id="name" pattern="[A-Za-z0-9]+" required">
+
+              <!--Ask for name input-->
+              <label for="name"><b>Name</b></label>
+              <input name="name" id="name" onblur="checkInputName()" required">
+
+              <!--Ask for email input-->
+              <label for="email"><b>Name</b></label>
+              <input type="email" id="email" name="email" onblur="checkInputEmail()" required>
+
+              <!--Ask for mobile phone input-->
+              <label for="mobile"><b>Mobile</b></label>
+              <input name="mobile" id="mobile" onblur="checkInputMobile()" required">
+
+              <!--Ask for Credit Card input (Only Support Visa and Master Card-->
+              <label for="credit"><b>Credit Card</b></label>
+              <input name="credit" id="credit" onblur="checkInputCreditCard()" required">
             </div>
           </div>
         </div>
@@ -480,7 +494,7 @@
     <div>&copy;
       <script>
         document.write(new Date().getFullYear());
-      </script> Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-04-16 (YYYY-MM-DD)
+      </script> Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-04-25 (YYYY-MM-DD)
     </div>
     <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
       Programming course at RMIT University in Melbourne, Australia.</div>
