@@ -447,6 +447,7 @@
           <div id="bookingcard" class="row">
             <div class="col-sm-12">
               <div class="card" style="width: 700px;">
+                <h3>Avengers</h3>
                 <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php">
                   <!--Ask for name input-->
                   <label for="name"><b>Name</b></label>
@@ -463,6 +464,51 @@
                   <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                   <label for="credit"><b>Credit Card</b></label>
                   <input type="number" id="credit" onblur="checkInputCreditCard()" required">
+
+                  <label for="adults"><b>Adults</b></label>
+                  <select id="mySelect" onchange="myFunction()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+
+                </select>
+
+                <label for="concession"><b>Concession</b></label>
+                <select id="concession" onchange="myFunction()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+
+              </select>
+
+              <label for="children"><b>Children</b></label>
+              <select id="children" onchange="myFunction()">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+
+            </select>
 
                   <input type="submit" value="Submit">
                 </form>
