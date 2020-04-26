@@ -129,3 +129,43 @@ body {
   font: 400 15px Lato, sans-serif;
   line-height: 1.5;
 }
+
+#bookingcard1 {
+  position: relative;
+  left: 22%;
+  border: solid black;
+  border-width: 1px;
+  height: 360px;
+  width: 600px;
+}
+
+.custInfo {
+  position: relative;
+  left: 55%;
+}
+
+label {
+  display: inline-block;
+  text-align: right;
+  width: 65px;
+}
+
+.custInfo label {
+  text-align: right;
+  width: 80px;
+}
+
+.standard {
+  position: relative;
+  bottom: 45%;
+  left: 2%;
+  border: solid black;
+  border-width: 1px;
+  width: 180px;
+  height: 120px;
+}
+
+.standard label {
+  text-align: right;
+  width: 80px;
+}
