@@ -29,7 +29,7 @@ function checkInputMobile() {
 }
 
 function checkInputCreditCard() {
-    var card = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+    var card = /[0-9]{14,19}/;
     credit = document.getElementById("cust-credit").value;
     if (credit.match(visa))
         return true;
