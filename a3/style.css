@@ -141,11 +141,11 @@ body {
 
 .custInfo {
   position: relative;
-  left: 55%;
+  left: 50%;
   top: 5%;
 }
 
-label {
+.custInfo label {
   display: inline-block;
   text-align: right;
   width: 65px;
@@ -153,37 +153,33 @@ label {
 
 .custInfo label {
   text-align: right;
-  width: 80px;
+  width: 120px;
 }
 
-.standard {
+.custInfo input {
+  width: 150px;
+}
+
+.bookingLabels {
   position: relative;
   bottom: 33%;
   left: 2%;
   border: solid black;
   border-width: 1px;
-  width: 260px;
-  height: 120px;
+  width: 280px;
+  height: 140px;
 }
 
-.standard label {
+.bookingLabels div {
   text-align: right;
-  width: 190px;
+  padding-right: 10px;
 }
 
-.firstClass {
-  position: relative;
-  bottom: 20%;
-  left: 2%;
-  border: solid black;
-  border-width: 1px;
-  width: 260px;
-  height: 120px;
+.bookingLabels label {
+  text-align: end;
+  width: 270px;
 }
 
-.firstClass label {
-  text-align: right;
-  width: 190px;
+.bookingLabels input {
+  width: 130px;
 }
-
-

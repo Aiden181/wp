@@ -446,59 +446,66 @@
           <h2>Booking</h2>
           <div class="row">
             <div class="col-sm-12">
-              <div id="bookingcard1" class="card" style="width: 600px; height: 380px;">
+              <div id="bookingcard1" class="card" style="width: 600px; height: 400px;">
                 <h3>Avengers</h3>
+                <br>
                 <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php">
-                  <!--Ask for name input-->
+                  <!--Ask for name-->
                   <div class="custInfo">
                     <label for="name"><b>Name</b></label>
-                    <input type="text" id="name" onblur="checkInputName()" required">
+                    <input type="text" id="name" onblur="checkInputName()" required>
                     <br>
 
-                    <!--Ask for email input-->
+                    <!--Ask for email-->
                     <label for="email"><b>Email</b></label>
                     <input type="email" id="email" name="email" onblur="checkInputEmail()" required>
-
                     <br>
-                    <!--Ask for mobile phone input-->
+
+                    <!--Ask for mobile phone number-->
                     <label for="mobile"><b>Mobile</b></label>
-                    <input name="number" id="mobile" onblur="checkInputMobile()" required">
-
+                    <input name="number" id="mobile" onblur="checkInputMobile()" required>
                     <br>
-                    <!--Ask for Credit Card input (Only Support Visa and Master Card-->
+
+                    <!--Ask for Credit Card number (Only Support Visa and Master Card)-->
                     <label for="credit"><b>Credit Card</b></label>
-                    <input type="number" id="credit" onblur="checkInputCreditCard()" required">
-
+                    <input type="number" id="credit" onblur="checkInputCreditCard()" required>
                   </div>
 
-                  <div class="standard">
-                    <h5">Standard</h5>
-                    <label for="adults"><b>Adults</b></label>
-                    <input type="number" id="adults" name="Adults" min="0" max="10">
-                    <br>
+                  <div class="bookingLabels">
+                    <h6>Standard</h6>
+                    <div>
+                      <label for="adults"><b>Adults</b>
+                        <input type="number" id="adults" name="Adults" min="0" max="10">
+                      </label>
 
-                    <label for="concession"><b>Concession</b></label>
-                    <input type="number" id="concession" name="Concession" min="0" max="10">
-                    <br>
+                      <label for="concession"><b>Concession</b>
+                        <input type="number" id="concession" name="Concession" min="0" max="10">
+                      </label>
 
-                    <label for="children"><b>Children</b></label>
-                    <input type="number" id="children" name="Children" min="0" max="10">
+                      <label for="children"><b>Children</b>
+                        <input type="number" id="children" name="Children" min="0" max="10">
+                      </label>
+                    </div>
                   </div>
 
-                  <div class="firstClass">
-                    <h5>First Class</h5>
-                    <label for="adults1"><b>Adults</b></label>
-                    <input type="number" id="adults1" name="Adults" min="0" max="10">
-                    <br>
+                  <br>
 
-                    <label for="concession1"><b>Concession</b></label>
-                    <input type="number" id="concession1" name="Concession" min="0" max="10">
-                    <br>
+                  <div class="bookingLabels">
+                    <h6>First Class</h6>
+                    <div>
+                      <label for="adults1"><b>Adults</b>
+                        <input type="number" id="adults1" name="Adults" min="0" max="10">
+                      </label>
 
-                    <label for="children1"><b>Children</b></label>
-                    <input type="number" id="children1" name="Children" min="0" max="10">
+                      <label for="concession1"><b>Concession</b>
+                        <input type="number" id="concession1" name="Concession" min="0" max="10">
+                      </label>
+
+                      <label for="children1"><b>Children</b>
+                        <input type="number" id="children1" name="Children" min="0" max="10">
+                      </label>
+                    </div>
                   </div>
-
 
                   <input id="order" type="submit" value="Order">
                 </form>
@@ -531,11 +538,14 @@
       </main>
     </div>
 
+    <br>
+
     <footer>
       <div>&copy;
         <script>
           document.write(new Date().getFullYear());
-        </script> Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-04-25 (YYYY-MM-DD)
+        </script>
+        Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-04-27 (YYYY-MM-DD)
       </div>
       <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
         Programming course at RMIT University in Melbourne, Australia.</div>
