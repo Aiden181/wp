@@ -167,7 +167,7 @@ body {
   border: solid black;
   border-width: 1px;
   width: 280px;
-  height: 140px;
+  height: 130px;
 }
 
 .bookingLabels div {
@@ -180,6 +180,6 @@ body {
   width: 270px;
 }
 
-.bookingLabels input {
+.bookingLabels select {
   width: 130px;
 }
