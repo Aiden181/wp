@@ -1,6 +1,6 @@
 function checkInputName() {
     var patt = /^[A-Za-z]+$/;
-    name = document.getElementById("name").value;
+    name = document.getElementById("cust-name").value;
     if (name.match(patt))
         return true;
     else
@@ -10,7 +10,7 @@ function checkInputName() {
 
 function checkInputEmail() {
     var patt = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    email = document.getElementById("email").value;
+    email = document.getElementById("cust-email").value;
     if (email.match(patt))
         return true;
     else
@@ -19,8 +19,8 @@ function checkInputEmail() {
 }
 
 function checkInputMobile() {
-    var patt = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    mobile = document.getElementById("mobile").value;
+    var patt = /^([+61|0](2|4|3|7|8|)){0,2}([ 0-9]|[(]){2,3}([)]|[0-9]){6}([ ])[0-9]{7,20}$/;
+    mobile = document.getElementById("cust-mobile").value;
     if (mobile.match(patt))
         return true;
     else
@@ -29,10 +29,9 @@ function checkInputMobile() {
 }
 
 function checkInputCreditCard() {
-    var visa = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-    var master = /^(?:5[1-5][0-9]{14})$/;
-    credit = document.getElementById("credit").value;
-    if (credit.match(visa) || credit.match(master))
+    var card = /[0-9]{14,19}/;
+    credit = document.getElementById("cust-credit").value;
+    if (credit.match(visa))
         return true;
     else
         alert("Please Enter A Valid Credit Card");
