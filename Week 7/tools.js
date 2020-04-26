@@ -30,4 +30,3 @@ function checkInput() {
     else
         alert("Bad");
 }
-
