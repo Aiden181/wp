@@ -158,11 +158,11 @@ label {
 
 .standard {
   position: relative;
-  bottom: 30%;
+  bottom: 33%;
   left: 2%;
   border: solid black;
   border-width: 1px;
-  width: 250px;
+  width: 260px;
   height: 120px;
 }
 
@@ -177,7 +177,7 @@ label {
   left: 2%;
   border: solid black;
   border-width: 1px;
-  width: 250px;
+  width: 260px;
   height: 120px;
 }
 
@@ -186,8 +186,4 @@ label {
   width: 190px;
 }
 
-#order {
-  border: solid black;
-  background-color: white;
-  width: 50px;
-}
+
