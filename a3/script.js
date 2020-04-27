@@ -57,3 +57,25 @@ form.addEventListener('submit', ev => {
         console.log('pass')
     }
 })
+
+function countTotal() {
+    var STA = 20;
+    var STP = 15;
+    var STC = 12;
+    var FTA = 30;
+    var FTP = 26;
+    var FTC = 22;
+    var total = document.getElementById("seats-STA").value
+    var countSTA = total.value * STA
+    var total = document.getElementById("seats-STP").value
+    var countSTP = total.value * STP
+    var total = document.getElementById("seats-STC").value
+    var countSTC = total.value * STC
+    var total = document.getElementById("seats-FTA").value
+    var countFTA = total.value * FTA
+    var total = document.getElementById("seats-FTP").value
+    var countFTP = total.value * FTC
+    var total = document.getElementById("seats-FTC").value
+    var countFTC = total.value * FTC
+    var countTotal = countSTA.value + countSTC.value + countSTC.value + countFTA.value + countFTP.value + countFTC.value
+}
