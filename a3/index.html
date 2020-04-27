@@ -447,7 +447,11 @@
           <div class="row">
             <div class="col-sm-12">
               <div id="bookingcard1" class="card" style="width: 600px; height: 400px;">
-                <h3>Avengers</h3>
+                <div class="bookingHeader">
+                  <input name="movie[id]" type="hidden" pattern="ACT,AHF,ANM, RMC">
+                  <input name="movie[day]" type="hidden" pattern="MON, TUE, WED, THU, FRI, SAT, SUN">
+                  <input name="movie[hour]" type="hidden" pattern="T12, T15, T18, T21">
+                </div>
                 <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php">
                   <!--Ask for name-->
                   <div class="custInfo">

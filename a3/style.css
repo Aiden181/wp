@@ -162,7 +162,7 @@ body {
 
 .bookingLabels {
   position: relative;
-  bottom: 33%;
+  bottom: 30%;
   left: 2%;
   border: solid black;
   border-width: 1px;
@@ -206,6 +206,6 @@ body {
 
 .total {
   position: relative;
-  bottom: 25%;
+  bottom: 20%;
   left: 2%;
 }
