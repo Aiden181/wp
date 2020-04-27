@@ -38,6 +38,7 @@ function checkInputCreditCard() {
     return false;
 }
 
+// Expiry Date Validation
 const form = document.getElementById('form');
 const expiryMonth = document.getElementById('expiryMonth');
 const expiryYear = document.getElementById('expiryYear');
