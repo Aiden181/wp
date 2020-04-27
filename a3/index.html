@@ -453,84 +453,78 @@
                   <!--Ask for name-->
                   <div class="custInfo">
                     <label for="name"><b>Name</b></label>
-                    <input type="text" id="cust-name" name="cust[name]" onblur="checkInputName()" required">
+                    <input type="text" id="cust-name" name="cust[name]" oninvalid="checkInputName()" required">
                     <br>
 
                     <!--Ask for email-->
                     <label for="email"><b>Email</b></label>
-                    <input type="email" id="cust-email" name="cust[email]" onblur="checkInputEmail()" required>
+                    <input type="email" id="cust-email" name="cust[email]" oninvalid="checkInputEmail()" required>
 
                     <br>
                     <!--Ask for mobile phone input-->
                     <label for="mobile"><b>Mobile</b></label>
-                    <input type="tel" name="cust[mobile]" id="cust-mobile" onblur="checkInputMobile()" required">
+                    <input type="tel" name="cust[mobile]" id="cust-mobile" oninvalid="checkInputMobile()" required">
 
-                    <!--Ask for mobile phone number-->
-                    <label for="mobile"><b>Mobile</b></label>
-                    <input name="number" id="mobile" onblur="checkInputMobile()" required>
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="credit"><b>Credit Card</b></label>
-                    <input type="text" name="cust[card]" id="cust-credit" onblur="checkInputCreditCard()" required">
+                    <input type="text" name="cust[card]" id="cust-credit" oninvalid="checkInputCreditCard()" required">
 
-                    <!--Ask for Credit Card number (Only Support Visa and Master Card)-->
-                    <label for="credit"><b>Credit Card</b></label>
-                    <input type="number" id="credit" onblur="checkInputCreditCard()" required>
                   </div>
 
-                  <div class="bookingLabels">
+                  <div class="seats-Selection">
                     <h6>Standard</h6>
-                      <div>
-                        <label for="adult"><b>Adults</b>
-                          <select name="seats[STA]" id="seats-STA">
-                            <option value=''>Please Select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                          </select>
-                        </label>
-                        <br>
+                    <div>
+                      <label for="adult"><b>Adults</b>
+                        <select name="seats[STA]" id="seats-STA">
+                          <option value=''>Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
+                      <br>
 
-                        <label for="concession"><b>Concession</b>
-                          <select name="seats[STP]" id="seats-STP">
-                            <option value=''>Please Select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                          </select>
-                        </label>
-                        <br>
+                      <label for="concession"><b>Concession</b>
+                        <select name="seats[STP]" id="seats-STP">
+                          <option value=''>Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
+                      <br>
 
-                        <label for="children"><b>Children</b>
-                          <select name="seats[STC]" id="seats-STC">
-                            <option value=''>Please Select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                          </select>
-                        </label>
-                      </div>
+                      <label for="children"><b>Children</b>
+                        <select name="seats[STC]" id="seats-STC">
+                          <option value=''>Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
+                    </div>
                   </div>
 
                   <br>
@@ -572,27 +566,59 @@
                       </label>
                       <br>
 
-                      <label for="children1"><b>Children</b>
-                        <select name="seats[FTC]" id="seats-FTC">
-                          <option value=''>Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                        </select>
-                      </label>
+                      <div class="expiryTime">
+                        <label for="children1"><b>Children</b>
+                          <select name="seats[FTC]" id="seats-FTC">
+                            <option value=''>Please Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                          </select>
+                        </label>
+                      </div>
                     </div>
+                    <label> Expiry MM/YY: </label>
+                    <select id="expiryMonth">
+                      <option selected> Month </option>
+                      <option>01</option>
+                      <option>02</option>
+                      <option>03</option>
+                      <option>04</option>
+                      <option>05</option>
+                      <option>06</option>
+                      <option>07</option>
+                      <option>08</option>
+                      <option>09</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                    </select>
+                    <select id="expiryYear">
+                      <option selected>Year</option>
+                      <option>2018</option>
+                      <option>2019</option>
+                      <option>2020</option>
+                      <option>2021</option>
+                      <option>2022</option>
+                      <option>2023</option>
+                      <option>2024</option>
+                      <option>2025</option>
+                      <option>2026</option>
+                      <option>2027</option>
+                      <option>2028</option>
+                      <option>2029</option>
+                      <option>2030</option>
+                    </select>
+                    <span id="expiryMonthError"> </span>
+                    <span id="expiryYearError"> </span>
                   </div>
-
-                  <label for="children1"><b>Children</b>
-                    <input type="number" id="children1" name="Children" min="0" max="10">
-                  </label>
               </div>
             </div>
 

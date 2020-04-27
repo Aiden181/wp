@@ -183,3 +183,23 @@ body {
 .bookingLabels select {
   width: 130px;
 }
+
+#order {
+  border: black solid;
+  border-width: 4px;
+  background-color: white;
+  position: relative;
+  width:100px;
+  left: 62.5%;
+  bottom: 50px;
+}
+
+.expiryTime {
+  position: relative;
+  left: 85%;
+}
+
+.expiryTime label {
+  text-align: right;
+  width: 120px;
+}

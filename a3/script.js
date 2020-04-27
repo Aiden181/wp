@@ -38,3 +38,21 @@ function checkInputCreditCard() {
     return false;
 }
 
+const form = document.getElementById('form');
+const expiryMonth = document.getElementById('expiryMonth');
+const expiryYear = document.getElementById('expiryYear');
+
+form.addEventListener('submit', ev => {
+    ev.preventDefault();
+
+    const month = expiryMonth.value;
+    const year = expiryYear.value;
+
+    const expiryDate = new Date(year + '-' + month + '-01');
+
+    if (expiryDate < new Date()) {
+        console.log('fail')
+    } else {
+        console.log('pass')
+    }
+})
