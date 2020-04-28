@@ -448,8 +448,13 @@
             <div class="col-sm-12">
               <div id="bookingcard1" class="card" style="width: 600px; height: 400px;">
                 <div class="bookingHeader">
+                  <label for="movie_ID" style="font-size:20px"><b>Movie ID </b></label>
                   <input name="movie[id]" type="hidden" pattern="ACT,AHF,ANM, RMC">
+
+                  <label for="movie_day" style="font-size:20px"><b>- Day </b></label>
                   <input name="movie[day]" type="hidden" pattern="MON, TUE, WED, THU, FRI, SAT, SUN">
+
+                  <label for="movie_hour" style="font-size:20px"><b>- Time</b></label>
                   <input name="movie[hour]" type="hidden" pattern="T12, T15, T18, T21">
                 </div>
                 <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php">
@@ -509,7 +514,7 @@
                   </div>
 
                   <div class="bookingLabels">
-                    <h6>Standard</h6>
+                    <h6 id="standard" style="font-size: 18px;">Standard</h6>
                     <div>
                       <label for="adult"><b>Adults</b>
                         <select name="seats[STA]" id="seats-STA">
@@ -566,7 +571,7 @@
                   <br>
 
                   <div class="bookingLabels">
-                    <h6>First Class</h6>
+                    <h6 id="firstClass" style="font-size: 18px;">First Class</h6>
                     <div>
                       <label for="adult1"><b>Adults</b>
                         <select name="seats[FTA]" id="seats-FTA">
