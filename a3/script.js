@@ -61,35 +61,49 @@ form.addEventListener('submit', ev => {
 function selectionSTA() {
     var selector = document.getElementById('seats[STA]');
     var value = selector[selector.selectedIndex].value;
-
+    var STA = 20;
+    var STAmoney = value * STA;
 }
 
 function selectionSTP() {
     var selector = document.getElementById('seats[STP]');
     var value = selector[selector.selectedIndex].value;
-
+    var STP = 15;
+    var STPmoney = value * STP;
 }
 
 function selectionSTC() {
     var selector = document.getElementById('seats[STC]');
     var value = selector[selector.selectedIndex].value;
-
+    var STC = 12;
+    var STCmoney = value * STC;
 }
 
 function selectionFTA() {
     var selector = document.getElementById('seats[FTA]');
     var value = selector[selector.selectedIndex].value;
-
+    var FTA = 30;
+    var FTAmoney = value * FTA;
 }
 
 function selectionFTP() {
     var selector = document.getElementById('seats[FTP]');
     var value = selector[selector.selectedIndex].value;
-
+    var FTP = 26;
+    var FTPmoney = value * FTP;
 }
 
 function selectionFTC() {
     var selector = document.getElementById('seats[FTC]');
     var value = selector[selector.selectedIndex].value;
-
+    var FTC = 22;
+    var FTCmoney = value * FTC;
 }
+
+selectionSTA();
+selectionSTP();
+selectionSTC();
+selectionFTA();
+selectionFTP();
+selectionFTC();
+document.write(STAmoney + STCmoney + STPmoney + FTAmoney + FTPmoney + FTCmoney);
