@@ -58,24 +58,38 @@ form.addEventListener('submit', ev => {
     }
 })
 
-function countTotal() {
-    var STA = 20;
-    var STP = 15;
-    var STC = 12;
-    var FTA = 30;
-    var FTP = 26;
-    var FTC = 22;
-    var total = document.getElementById("seats-STA").value
-    var countSTA = total.value * STA
-    var total = document.getElementById("seats-STP").value
-    var countSTP = total.value * STP
-    var total = document.getElementById("seats-STC").value
-    var countSTC = total.value * STC
-    var total = document.getElementById("seats-FTA").value
-    var countFTA = total.value * FTA
-    var total = document.getElementById("seats-FTP").value
-    var countFTP = total.value * FTC
-    var total = document.getElementById("seats-FTC").value
-    var countFTC = total.value * FTC
-    var countTotal = countSTA.value + countSTC.value + countSTC.value + countFTA.value + countFTP.value + countFTC.value
+function selectionSTA() {
+    var selector = document.getElementById('seats[STA]');
+    var value = selector[selector.selectedIndex].value;
+
+}
+
+function selectionSTP() {
+    var selector = document.getElementById('seats[STP]');
+    var value = selector[selector.selectedIndex].value;
+
+}
+
+function selectionSTC() {
+    var selector = document.getElementById('seats[STC]');
+    var value = selector[selector.selectedIndex].value;
+
+}
+
+function selectionFTA() {
+    var selector = document.getElementById('seats[FTA]');
+    var value = selector[selector.selectedIndex].value;
+
+}
+
+function selectionFTP() {
+    var selector = document.getElementById('seats[FTP]');
+    var value = selector[selector.selectedIndex].value;
+
+}
+
+function selectionFTC() {
+    var selector = document.getElementById('seats[FTC]');
+    var value = selector[selector.selectedIndex].value;
+
 }
