@@ -100,10 +100,4 @@ function selectionFTC() {
     var FTCmoney = value * FTC;
 }
 
-selectionSTA();
-selectionSTP();
-selectionSTC();
-selectionFTA();
-selectionFTP();
-selectionFTC();
-document.write(STAmoney + STCmoney + STPmoney + FTAmoney + FTPmoney + FTCmoney);
+
