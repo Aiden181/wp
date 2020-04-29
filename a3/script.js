@@ -127,10 +127,10 @@ function selectionFTC() {
 // Discount in Weekdays at 12:00
 function discountPrice() {
     var day = new Date();
-    var today = today.getDay();
+    var today = day.getDay();
     var time = new Date();
     var currentTime = time.getHours();
-    if (time = 12 & (today != 6 || today != 0)) {
+    if (currentTime = 12 & (today != 6 || today != 0)) {
 
     }
 }
