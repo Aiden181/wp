@@ -124,6 +124,17 @@ function selectionFTC() {
     var FTCmoney = value * FTC;
 }
 
+// Discount in Weekdays at 12:00
+function discountPrice() {
+    var day = new Date();
+    var today = today.getDay();
+    var time = new Date();
+    var currentTime = time.getHours();
+    if (time.getHours() == 12 & today.getDay() != 6 || today.getDay != 0) {
+
+    }
+}
+
 // cache the navigation links 
 var $navigationLinks = $('#navigation_bar > ul > li > a');
 // cache (in reversed order) the sections
