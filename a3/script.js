@@ -130,7 +130,7 @@ function discountPrice() {
     var today = today.getDay();
     var time = new Date();
     var currentTime = time.getHours();
-    if (time.getHours() == 12 & today.getDay() != 6 || today.getDay != 0) {
+    if (time = 12 & (today != 6 || today != 0)) {
 
     }
 }
