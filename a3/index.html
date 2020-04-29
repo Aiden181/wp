@@ -13,7 +13,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
 
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
@@ -92,24 +91,13 @@
     </div>
 
     <div class="nav-wrapper" style="height:80px;">
-      <nav id="navigation_bar" class="navbar container navbar-expand-sm bg-dark navbar-dark justify-content-center"
-        style="height:55px">
-        <ul class="navbar-nav">
-          <li class="active">
-            <a class="nav-link" href="#aboutus">About Us</a>
-          </li>
-          <li>
-            <a class="nav-link" href="#prices">Prices</a>
-          </li>
-          <li>
-            <a class="nav-link" href="#nowshowing">Now Showing</a>
-          </li>
-          <li>
-            <a class="nav-link" href="#synopsisarea">Synopsis Area</a>
-          </li>
-          <li>
-            <a class="nav-link" href="#bookingarea">Booking</a>
-          </li>
+      <nav id="navigation_bar" class="navbar container navbar-expand-sm bg-dark navbar-dark justify-content-center">
+        <ul class="navbar-nav" id="mainNav">
+          <li><a class="nav-link" href="#aboutus">About Us</a></li>
+          <li><a class="nav-link" href="#prices">Prices</a></li>
+          <li><a class="nav-link" href="#nowshowing">Now Showing</a></li>
+          <li><a class="nav-link" href="#synopsisarea">Synopsis Area</a></li>
+          <li><a class="nav-link" href="#bookingarea">Booking</a></li>
         </ul>
       </nav>
     </div>
@@ -119,7 +107,7 @@
     <div class="content">
       <main>
         <!--About Us Section-->
-        <section id="aboutus">
+        <section id="aboutus" class="section">
           <h2>About Us</h2>
           <div>Cinemax is a one of a kind modern cinema viewing experience which aims to provide full immersion for our
             customers. Therefore, we called for a revamp and after a long awaited period of extensive improvements and
@@ -140,7 +128,7 @@
         <br>
 
         <!--Prices Section-->
-        <section id="prices">
+        <section id="prices" class="section">
           <h2>Prices</h2>
           <table class="table table-bordered table-striped table-hover parallax-price">
             <thead class="thead-dark">
@@ -192,7 +180,7 @@
         <br>
 
         <!--NowShowing Section-->
-        <section id="nowshowing">
+        <section id="nowshowing" class="section">
           <h2>Now Showing</h2>
           <div class="row">
             <div class="col-sm-6">
@@ -270,7 +258,7 @@
         <br>
 
         <!--Synopsis Section-->
-        <section id="synopsisarea">
+        <section id="synopsisarea" class="section">
           <h2>Synopsis</h2>
           <div class="row" id="row1">
 
@@ -442,7 +430,7 @@
         <br>
 
         <!--Booking Section-->
-        <section id="bookingarea">
+        <section id="bookingarea" class="section">
           <h2>Booking</h2>
           <div class="row">
             <div class="col-sm-12">
@@ -635,47 +623,25 @@
 
             <input id="order" type="submit" value="Order">
           </div>
+        </section>
+      </main>
     </div>
   </div>
-  </section>
-  <script>
-    // When the user scrolls the page, execute myFunction
-    window.onscroll = function () { stickyNavBar() };
-
-    // Get the navbar and cinemax logo on top
-    var cinemaxLogo = document.getElementById("cinemax_logo");
-    var navBar = document.getElementById("navigation_bar");
-
-    // Get the offset position of the navbar and cinemax logo on top
-    var cinemaxLogoHeight = cinemaxLogo.offsetHeight;
-    var sticky = navBar.offsetTop;
-
-    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function stickyNavBar() {
-      if (window.pageYOffset >= sticky + cinemaxLogo.offsetHeight) {
-        navBar.classList.add("sticky")
-      } else {
-        navBar.classList.remove("sticky");
-      }
-    }
-  </script>
-  </main>
-  </div>
-
-  <br>
-
-  <footer>
-    <div>&copy;
-      <script>
-        document.write(new Date().getFullYear());
-      </script>
-      Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-04-27 (YYYY-MM-DD)
-    </div>
-    <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
-      Programming course at RMIT University in Melbourne, Australia.</div>
-    <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
-  </footer>
-  </div>
+  <script src="script.js"></script>
 </body>
+
+<br>
+
+<footer>
+  <div>&copy;
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-04-27 (YYYY-MM-DD)
+  </div>
+  <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
+    Programming course at RMIT University in Melbourne, Australia.</div>
+  <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
+</footer>
 
 </html>
