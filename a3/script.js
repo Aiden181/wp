@@ -23,25 +23,29 @@ function stickyNavBar() {
 }
 
 // Expiry Date Validation
-var form = document.getElementById('form');
-var expiryMonth = document.getElementById('expiryMonth');
-var expiryYear = document.getElementById('expiryYear');
 
 function checkSubmission() {
-    var month = expiryMonth.value;
-    var year = expiryYear.value;
+    var form = document.getElementById('form');
+    var expiryMonth = document.getElementById('expiryMonth').value;
+    var expiryYear = document.getElementById('expiryYear').value;
 
-    // Create a date object from month and year, on the first
-    // of that month.
-    var expiryDate = new Date(year + '-' + month + '-01');
+    var date = new Date();
+    var currentMonth = date.getMonth() + 1; // index starts from 0 so add 1 or else it'll be the month before
+    var currentYear = date.getFullYear();
 
-    // You can compare date objects, this says if the expiryDate is
-    // less than todays date, i.e. in the past.
-    if (expiryDate < new Date()) {
-        // Fails validation, show some error message to user
-        console.log('fail')
-    } else {
-        console.log('pass')
+    console.log("expiryMonth: " + expiryMonth);
+    console.log("expiryYear: " + expiryYear);
+    console.log("currentMonth: " + currentMonth);
+    console.log("currentYear: " + currentYear);
+
+    // if expiry date is before current date
+    if (expiryMonth <= currentMonth && expiryYear <= currentYear) {
+        // Fail validation, show some error message to user
+        console.log('fail') // still testing
+    }
+    else    // otherwise, pass expiry date validation
+    {
+        console.log('pass') // still testing
     }
 }
 
