@@ -449,22 +449,24 @@
                   <!--Ask for name-->
                   <div class="custInfo">
                     <label for="name"><b>Name</b></label>
-                    <input type="text" id="cust-name" name="cust[name]" oninvalid="checkInputName()" required">
+                    <input type="text" id="cust-name" name="cust[name]" pattern="^[A-Za-z]+$" required">
                     <br>
 
                     <!--Ask for email-->
                     <label for="email"><b>Email</b></label>
-                    <input type="email" id="cust-email" name="cust[email]" oninvalid="checkInputEmail()" required>
+                    <input type="email" id="cust-email" name="cust[email]"
+                      pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
 
                     <br>
                     <!--Ask for mobile phone input-->
                     <label for="mobile"><b>Mobile</b></label>
-                    <input type="tel" name="cust[mobile]" id="cust-mobile" oninvalid="checkInputMobile()" required">
+                    <input type="tel" name="cust[mobile]" id="cust-mobile"
+                      pattern="^([+61|0](2|4|3|7|8|)){0,2}([ 0-9]|[(]){2,3}([)]|[0-9]){6}([ ])[0-9]{7,20}$" required">
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
-                    <label for="credit"><b>Credit Card</b></label>
-                    <input type="text" name="cust[card]" id="cust-credit" oninvalid="checkInputCreditCard()" required">
+                    <label for="credit"><b>Credit Card</b></label> 
+                    <input type="text" name="cust[card]" id="cust-credit" pattern="[0-9]{14,19}" required">
 
                     <br>
                     <label> <b>Expiry</b> </label>
@@ -637,7 +639,7 @@
     <script>
       document.write(new Date().getFullYear());
     </script>
-    Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-04-27 (YYYY-MM-DD)
+    Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-04-30 (YYYY-MM-DD)
   </div>
   <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
     Programming course at RMIT University in Melbourne, Australia.</div>
