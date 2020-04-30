@@ -449,7 +449,7 @@
                   <!--Ask for name-->
                   <div class="custInfo">
                     <label for="name"><b>Name</b></label>
-                    <input type="text" id="cust-name" name="cust[name]" pattern="^[A-Za-z]+$" required">
+                    <input type="text" id="cust-name" name="cust[name]" pattern="^[A-Za-z]+$" required>
                     <br>
 
                     <!--Ask for email-->
@@ -461,12 +461,12 @@
                     <!--Ask for mobile phone input-->
                     <label for="mobile"><b>Mobile</b></label>
                     <input type="tel" name="cust[mobile]" id="cust-mobile"
-                      pattern="^([+61|0](2|4|3|7|8|)){0,2}([ 0-9]|[(]){2,3}([)]|[0-9]){6}([ ])[0-9]{7,20}$" required">
+                      pattern="^([+61|0](2|4|3|7|8|)){0,2}([ 0-9]|[(]){2,3}([)]|[0-9]){6}([ ])[0-9]{7,20}$" required>
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="credit"><b>Credit Card</b></label> 
-                    <input type="text" name="cust[card]" id="cust-credit" pattern="[0-9]{14,19}" required">
+                    <input type="text" name="cust[card]" id="cust-credit" pattern="[0-9]{14,19}" required>
 
                     <br>
                     <label> <b>Expiry</b> </label>
@@ -623,7 +623,7 @@
               </div>
             </div>
 
-            <input id="order" type="submit" value="Order">
+            <input id="order" type="submit" value="Order" onclick="checkSubmission()">
           </div>
         </section>
       </main>

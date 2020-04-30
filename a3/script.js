@@ -23,29 +23,27 @@ function stickyNavBar() {
 }
 
 // Expiry Date Validation
-const form = document.getElementById('form');
-const expiryMonth = document.getElementById('expiryMonth');
-const expiryYear = document.getElementById('expiryYear');
+var form = document.getElementById('form');
+var expiryMonth = document.getElementById('expiryMonth');
+var expiryYear = document.getElementById('expiryYear');
 
-// form.addEventListener('submit', ev => {
-//     ev.preventDefault();
+function checkSubmission() {
+    var month = expiryMonth.value;
+    var year = expiryYear.value;
 
-//     const month = expiryMonth.value;
-//     const year = expiryYear.value;
+    // Create a date object from month and year, on the first
+    // of that month.
+    var expiryDate = new Date(year + '-' + month + '-01');
 
-//     // Create a date object from month and year, on the first
-//     // of that month.
-//     const expiryDate = new Date(year + '-' + month + '-01');
-
-//     // You can compare date objects, this says if the expiryDate is
-//     // less than todays date, i.e. in the past.
-//     if (expiryDate < new Date()) {
-//         // Fails validation, show some error message to user
-//         console.log('fail')
-//     } else {
-//         console.log('pass')
-//     }
-// })
+    // You can compare date objects, this says if the expiryDate is
+    // less than todays date, i.e. in the past.
+    if (expiryDate < new Date()) {
+        // Fails validation, show some error message to user
+        console.log('fail')
+    } else {
+        console.log('pass')
+    }
+}
 
 function selectionSTA() {
     var selector = document.getElementById('seats[STA]');
