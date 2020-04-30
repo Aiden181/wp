@@ -27,25 +27,25 @@ const form = document.getElementById('form');
 const expiryMonth = document.getElementById('expiryMonth');
 const expiryYear = document.getElementById('expiryYear');
 
-form.addEventListener('submit', ev => {
-    ev.preventDefault();
+// form.addEventListener('submit', ev => {
+//     ev.preventDefault();
 
-    const month = expiryMonth.value;
-    const year = expiryYear.value;
+//     const month = expiryMonth.value;
+//     const year = expiryYear.value;
 
-    // Create a date object from month and year, on the first
-    // of that month.
-    const expiryDate = new Date(year + '-' + month + '-01');
+//     // Create a date object from month and year, on the first
+//     // of that month.
+//     const expiryDate = new Date(year + '-' + month + '-01');
 
-    // You can compare date objects, this says if the expiryDate is
-    // less than todays date, i.e. in the past.
-    if (expiryDate < new Date()) {
-        // Fails validation, show some error message to user
-        console.log('fail')
-    } else {
-        console.log('pass')
-    }
-})
+//     // You can compare date objects, this says if the expiryDate is
+//     // less than todays date, i.e. in the past.
+//     if (expiryDate < new Date()) {
+//         // Fails validation, show some error message to user
+//         console.log('fail')
+//     } else {
+//         console.log('pass')
+//     }
+// })
 
 function selectionSTA() {
     var selector = document.getElementById('seats[STA]');
@@ -152,4 +152,18 @@ function highlightNavigation() {
             }
         }
     });
+}
+
+function highlightNavOnClick(id)
+{
+    var $navigationLinks = $('#navigation_bar > ul > li > a');
+    var $navigationLink = sectionIdTonavigationLink[id];
+
+    // if the link is not active
+    if (!$navigationLink.hasClass('active')) {
+        // remove .active class from all the links
+        $navigationLinks.removeClass('active');
+        // add .active class to the current link
+        $navigationLink.addClass('active');
+    }
 }
