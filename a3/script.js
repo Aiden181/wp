@@ -1,9 +1,20 @@
 
-// When the user scrolls the page, execute myFunction
-window.onscroll = function () {
-    stickyNavBar(),
-        highlightNavigation();
-};
+window.addEventListener('scroll', stickyNavBar);
+window.addEventListener('scroll', highlightNavigation);
+window.addEventListener('scroll', isScrolling);
+
+var pageScrolling;
+function isScrolling() {
+    // Clear our timeout throughout the scroll
+    window.clearTimeout(pageScrolling);
+
+    // Set a timeout to run after scrolling ends
+    pageScrolling = setTimeout(function () {
+        // console.log('Scrolling has stopped.');  // debug
+        window.addEventListener('scroll', highlightNavigation); // add navigation bar highlighting again when scrolling has stopped
+    }, 66);
+    // console.log('Scrolling');  // debug
+}
 
 // Get the navbar and cinemax logo on top
 var cinemaxLogo = document.getElementById("cinemax_logo");
@@ -167,5 +178,7 @@ function highlightNavOnClick(id)
         $navigationLinks.removeClass('active');
         // add .active class to the current link
         $navigationLink.addClass('active');
+
+        window.removeEventListener('scroll', highlightNavigation);
     }
 }
