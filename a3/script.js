@@ -230,15 +230,10 @@ function checkSubmission(e) {
     var currentMonth = date.getMonth() + 1; // index starts from 0 so add 1 or else it'll be the month before
     var currentYear = date.getFullYear();
 
-    console.log('expiryMonth: ' + expiryMonth);
-    console.log('expiryYear: ' + expiryYear);
-
-    console.log('currentMonth: ' + currentMonth);
-    console.log('currentYear: ' + currentYear);
-
     // if expiry date is before current date
-    if (expiryMonth <= currentMonth && expiryYear <= currentYear) {
+    if ((expiryMonth <= currentMonth && expiryYear <= currentYear) || expiryYear < currentYear) {
         e.preventDefault();
+        document.getElementById('expiryDateMessage').innerHTML = "This card has expired, please use another card.";
         return false;
     }
     return true;

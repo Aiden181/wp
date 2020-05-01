@@ -448,7 +448,7 @@
           <h2>Booking</h2>
           <div class="row">
             <div class="col-sm-12">
-              <div id="bookingcard1" class="card" style="width: 600px; height: 400px;">
+              <div id="bookingcard1" class="card">
                 <div class="bookingHeader">
                   <label id="movieTitleHeader" for="movie_ID" style="font-size:20px"><b>Movie Title</b></label>
 
@@ -460,7 +460,6 @@
                   onsubmit="checkSubmission(event)">
                   <!--Ask for name-->
                   <div class="custInfo">
-
                     <input id="movieID" name="movie[id]" type="hidden" pattern="ACT, AHF, ANM, RMC" value="">
                     <input id="movieDate" name="movie[day]" type="hidden" pattern="MON, TUE, WED, THU, FRI, SAT, SUN"
                       value="">
@@ -468,8 +467,8 @@
 
                     <label for="name"><b>Name</b></label>
                     <input type="text" id="cust-name" name="cust[name]" pattern="^[A-Za-z]+$" required>
+                    
                     <br>
-
                     <!--Ask for email-->
                     <label for="email"><b>Email</b></label>
                     <input type="email" name="cust[email]" id="cust-email"
@@ -610,8 +609,10 @@
 
                   <input name="order" id="orderButton" type="submit" value="Order">
                 </form>
+                <p id="expiryDateMessage"></p>
               </div>
             </div>
+            
 
           </div>
         </section>
