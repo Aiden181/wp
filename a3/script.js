@@ -182,3 +182,29 @@ function highlightNavOnClick(id)
         window.removeEventListener('scroll', highlightNavigation);
     }
 }
+
+// update total price after each selection in Booking section
+function countTotal() {
+    // prices of each option
+    var STA = 20;
+    var STP = 15;
+    var STC = 12;
+    var FTA = 30;
+    var FTP = 26;
+    var FTC = 22;
+
+    // get the amount of each option and multiply by price
+    var countSTA = document.getElementById("seats-STA").value * STA;
+    var countSTP = document.getElementById("seats-STP").value * STP;
+    var countSTC = document.getElementById("seats-STC").value * STC;
+    var countFTA = document.getElementById("seats-FTA").value * FTA;
+    var countFTP = document.getElementById("seats-FTP").value * FTC;
+    var countFTC = document.getElementById("seats-FTC").value * FTC;
+
+    // add up the total price
+    var totalPrice = countSTA + countSTP + countSTC + countFTA + countFTP + countFTC;
+
+    // get the string element and update
+    var total = document.getElementById('totalMoney');
+    total.innerHTML = totalPrice.toFixed(2);
+}
