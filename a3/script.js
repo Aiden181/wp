@@ -108,20 +108,20 @@ function countTotal() {
     var STA = 20;
     var STP = 15;
     var STC = 12;
-    var FTA = 30;
-    var FTP = 26;
-    var FTC = 22;
+    var FCA = 30;
+    var FCP = 26;
+    var FCC = 22;
 
     // get the amount of each option and multiply by price
     var countSTA = document.getElementById("seats-STA").value * STA;
     var countSTP = document.getElementById("seats-STP").value * STP;
     var countSTC = document.getElementById("seats-STC").value * STC;
-    var countFTA = document.getElementById("seats-FTA").value * FTA;
-    var countFTP = document.getElementById("seats-FTP").value * FTC;
-    var countFTC = document.getElementById("seats-FTC").value * FTC;
+    var countFCA = document.getElementById("seats-FCA").value * FCA;
+    var countFCP = document.getElementById("seats-FCP").value * FCP;
+    var countFCC = document.getElementById("seats-FCC").value * FCC;
 
     // add up the total price
-    var totalPrice = countSTA + countSTP + countSTC + countFTA + countFTP + countFTC;
+    var totalPrice = countSTA + countSTP + countSTC + countFCA + countFCP + countFCC;
 
     // Discount on Weekdays at 12:00
     var date = new Date();
@@ -218,8 +218,49 @@ function updateBookingHeader(e) {
     }
 }
 
-// Expiry Date Validation
 function checkSubmission(e) {
+    // passes all validations
+    if (isValidExpiryDate() && isMovieSelected() && isSeatSelected()) {
+        return true;
+    }
+    e.preventDefault();
+    return false;
+}
+
+function isSeatSelected() {
+    var countSTA = document.getElementById("seats-STA").value;
+    var countSTP = document.getElementById("seats-STP").value;
+    var countSTC = document.getElementById("seats-STC").value;
+    var countFCA = document.getElementById("seats-FCA").value;
+    var countFCP = document.getElementById("seats-FCP").value;
+    var countFCC = document.getElementById("seats-FCC").value;
+    if (countSTA == "" && countSTP == "" && countSTC == "" && countFCA == "" && countFCP == "" && countFCC == "") {
+        document.getElementById('submitErrorMessage').innerHTML = "Please select at least 1 seat.";
+        return false;
+    }
+    else {
+        document.getElementById('submitErrorMessage').innerHTML = "";
+        return true;
+    }
+}
+
+function isMovieSelected() {
+    var formID = document.getElementById('movieID').value;
+    var formDate = document.getElementById('movieDate').value
+    var formHour = document.getElementById('movieHour').value;
+
+    // if any of the forms are empty, return false
+    if (formID == "" || formDate == "" || formHour == "") {
+        document.getElementById('submitErrorMessage').innerHTML = "Please select a movie (from Synopsis's 'Make a booking' area).";
+        return false;
+    } else {
+        document.getElementById('submitErrorMessage').innerHTML = "";
+        return true;
+    }
+}
+
+function isValidExpiryDate() {
+    // Expiry Date Validation
     var expiryDate = document.getElementById('cust-expiry').value;
 
     var dateTimeArray = expiryDate.split("-");
@@ -232,9 +273,10 @@ function checkSubmission(e) {
 
     // if expiry date is before current date
     if ((expiryMonth <= currentMonth && expiryYear <= currentYear) || expiryYear < currentYear) {
-        e.preventDefault();
-        document.getElementById('expiryDateMessage').innerHTML = "This card has expired, please use another card.";
+        document.getElementById('submitErrorMessage').innerHTML = "Please enter an appropriate expiry date or enter a new card.";
         return false;
+    } else {
+        document.getElementById('submitErrorMessage').innerHTML = "";
+        return true;
     }
-    return true;
 }
