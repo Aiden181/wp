@@ -56,7 +56,7 @@ function checkSubmission() {
     }
     else    // otherwise, pass expiry date validation
     {
-        console.log('pass') // still testing
+        console.log('pass')
     }
 }
 
@@ -65,6 +65,7 @@ function selectionSTA() {
     var value = selector[selector.selectedIndex].value;
     var STA = 20;
     var STAmoney = value * STA;
+    return STAmoney;
 }
 
 function selectionSTP() {
@@ -72,6 +73,7 @@ function selectionSTP() {
     var value = selector[selector.selectedIndex].value;
     var STP = 15;
     var STPmoney = value * STP;
+    return STPmoney;
 }
 
 function selectionSTC() {
@@ -79,6 +81,7 @@ function selectionSTC() {
     var value = selector[selector.selectedIndex].value;
     var STC = 12;
     var STCmoney = value * STC;
+    return STCmoney;
 }
 
 function selectionFTA() {
@@ -86,6 +89,7 @@ function selectionFTA() {
     var value = selector[selector.selectedIndex].value;
     var FTA = 30;
     var FTAmoney = value * FTA;
+    return FTAmoney;
 }
 
 function selectionFTP() {
@@ -93,6 +97,7 @@ function selectionFTP() {
     var value = selector[selector.selectedIndex].value;
     var FTP = 26;
     var FTPmoney = value * FTP;
+    return FTPmoney;
 }
 
 function selectionFTC() {
@@ -100,6 +105,7 @@ function selectionFTC() {
     var value = selector[selector.selectedIndex].value;
     var FTC = 22;
     var FTCmoney = value * FTC;
+    return FTCmoney;
 }
 
 // Discount in Weekdays at 12:00
@@ -167,8 +173,7 @@ function highlightNavigation() {
     });
 }
 
-function highlightNavOnClick(id)
-{
+function highlightNavOnClick(id) {
     var $navigationLinks = $('#navigation_bar > ul > li > a');
     var $navigationLink = sectionIdTonavigationLink[id];
 
