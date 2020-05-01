@@ -290,13 +290,13 @@
                       Make A Booking:
                     </div>
                     <div class="makeBooking_footer">
-                      <a href="#row1" class="btn btn-primary">Mon - 12pm</a>
-                      <a href="#row1" class="btn btn-primary">Tue - 12pm</a>
-                      <a href="#row1" class="btn btn-primary">Wed - 6pm</a>
-                      <a href="#row1" class="btn btn-primary">Thur - 6pm</a>
-                      <a href="#row1" class="btn btn-primary">Fri - 6pm</a>
-                      <a href="#row1" class="btn btn-primary">Sat - 12pm</a>
-                      <a href="#row1" class="btn btn-primary">Sun - 12pm</a>
+                      <a href="#row1" class="btn btn-primary" value="ANM">Mon - 12pm</a>
+                      <a href="#row1" class="btn btn-primary" value="ANM">Tue - 12pm</a>
+                      <a href="#row1" class="btn btn-primary" value="ANM">Wed - 6pm</a>
+                      <a href="#row1" class="btn btn-primary" value="ANM">Thur - 6pm</a>
+                      <a href="#row1" class="btn btn-primary" value="ANM">Fri - 6pm</a>
+                      <a href="#row1" class="btn btn-primary" value="ANM">Sat - 12pm</a>
+                      <a href="#row1" class="btn btn-primary" value="ANM">Sun - 12pm</a>
                     </div>
                   </div>
                 </div>
@@ -334,11 +334,11 @@
                       Make A Booking:
                     </div>
                     <div class="makeBooking_footer">
-                      <a href="#row1" class="btn btn-primary">Wed - 9pm</a>
-                      <a href="#row1" class="btn btn-primary">Thur - 9pm</a>
-                      <a href="#row1" class="btn btn-primary">Fri - 9pm</a>
-                      <a href="#row1" class="btn btn-primary">Sat - 6pm</a>
-                      <a href="#row1" class="btn btn-primary">Sun - 6pm</a>
+                      <a href="#row1" class="btn btn-primary" value="ACT">Wed - 9pm</a>
+                      <a href="#row1" class="btn btn-primary" value="ACT">Thur - 9pm</a>
+                      <a href="#row1" class="btn btn-primary" value="ACT">Fri - 9pm</a>
+                      <a href="#row1" class="btn btn-primary" value="ACT">Sat - 6pm</a>
+                      <a href="#row1" class="btn btn-primary" value="ACT">Sun - 6pm</a>
                     </div>
                   </div>
                 </div>
@@ -372,10 +372,10 @@
                       Make A Booking:
                     </div>
                     <div class="makeBooking_footer">
-                      <a href="#row2" class="btn btn-primary">Mon - 6pm</a>
-                      <a href="#row2" class="btn btn-primary">Tue - 6pm</a>
-                      <a href="#row2" class="btn btn-primary">Sat - 3pm</a>
-                      <a href="#row2" class="btn btn-primary">Sun - 3pm</a>
+                      <a href="#row2" class="btn btn-primary" value="RMC">Mon - 6pm</a>
+                      <a href="#row2" class="btn btn-primary" value="RMC">Tue - 6pm</a>
+                      <a href="#row2" class="btn btn-primary" value="RMC">Sat - 3pm</a>
+                      <a href="#row2" class="btn btn-primary" value="RMC">Sun - 3pm</a>
                     </div>
                   </div>
                 </div>
@@ -414,11 +414,11 @@
                       Make A Booking:
                     </div>
                     <div class="makeBooking_footer">
-                      <a href="#row2" class="btn btn-primary">Wed - 12pm</a>
-                      <a href="#row2" class="btn btn-primary">Thur - 12pm</a>
-                      <a href="#row2" class="btn btn-primary">Fri - 12pm</a>
-                      <a href="#row2" class="btn btn-primary">Sat - 9pm</a>
-                      <a href="#row2" class="btn btn-primary">Sun - 9pm</a>
+                      <a href="#row2" class="btn btn-primary" value="AHF">Wed - 12pm</a>
+                      <a href="#row2" class="btn btn-primary" value="AHF">Thur - 12pm</a>
+                      <a href="#row2" class="btn btn-primary" value="AHF">Fri - 12pm</a>
+                      <a href="#row2" class="btn btn-primary" value="AHF">Sat - 9pm</a>
+                      <a href="#row2" class="btn btn-primary" value="AHF">Sun - 9pm</a>
                     </div>
                   </div>
                 </div>
@@ -437,7 +437,7 @@
               <div id="bookingcard1" class="card" style="width: 600px; height: 400px;">
                 <div class="bookingHeader">
                   <label for="movie_ID" style="font-size:20px"><b>Movie ID </b></label>
-                  <input name="movie[id]" type="hidden" pattern="ACT,AHF,ANM, RMC">
+                  <input name="movie[id]" type="hidden" pattern="ACT, AHF, ANM, RMC">
 
                   <label for="movie_day" style="font-size:20px"><b>- Day </b></label>
                   <input name="movie[day]" type="hidden" pattern="MON, TUE, WED, THU, FRI, SAT, SUN">
@@ -445,7 +445,7 @@
                   <label for="movie_hour" style="font-size:20px"><b>- Time</b></label>
                   <input name="movie[hour]" type="hidden" pattern="T12, T15, T18, T21">
                 </div>
-                <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php">
+                <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" method="POST" >
                   <!--Ask for name-->
                   <div class="custInfo">
                     <label for="name"><b>Name</b></label>
@@ -461,7 +461,7 @@
                     <!--Ask for mobile phone input-->
                     <label for="mobile"><b>Mobile</b></label>
                     <input type="tel" name="cust[mobile]" id="cust-mobile"
-                      pattern="^([+61|0](2|4|3|7|8|)){0,2}([ 0-9]|[(]){2,3}([)]|[0-9]){6}([ ])[0-9]{7,20}$" required>
+                      pattern="0000000000" required>
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
@@ -509,16 +509,16 @@
                       <label for="adult"><b>Adults</b>
                         <select name="seats[STA]" id="seats-STA" onchange="countTotal()">
                           <option value="">Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
                         </select>
                       </label>
                       <br>
@@ -526,16 +526,16 @@
                       <label for="concession"><b>Concession</b>
                         <select name="seats[STP]" id="seats-STP" onchange="countTotal()">
                           <option value="">Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
                         </select>
                       </label>
                       <br>
@@ -543,16 +543,16 @@
                       <label for="children"><b>Children</b>
                         <select name="seats[STC]" id="seats-STC" onchange="countTotal()">
                           <option value="">Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
                         </select>
                       </label>
                     </div>
@@ -566,16 +566,16 @@
                       <label for="adult1"><b>Adults</b>
                         <select name="seats[FTA]" id="seats-FTA" onchange="countTotal()">
                           <option value="">Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
                         </select>
                       </label>
                       <br>
@@ -583,16 +583,16 @@
                       <label for="concession1"><b>Concession</b>
                         <select name="seats[FTP]" id="seats-FTP" onchange="countTotal()">
                           <option value="">Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
                         </select>
                       </label>
                       <br>
@@ -600,16 +600,16 @@
                       <label for="children1"><b>Children</b>
                         <select name="seats[FTC]" id="seats-FTC" onchange="countTotal()">
                           <option value="">Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
                         </select>
                       </label>
                     </div>
@@ -639,8 +639,16 @@
     <script>
       document.write(new Date().getFullYear());
     </script>
-    Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-04-30 (YYYY-MM-DD)
+    Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified
+    <script>
+      document.write(new Date().getFullYear());
+      document.write("-");
+      document.write(new Date().getMonth()+1);
+      document.write("-");
+      document.write(new Date().getDate());
+    </script> (YYYY-MM-DD)
   </div>
+
   <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
     Programming course at RMIT University in Melbourne, Australia.</div>
   <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>

@@ -44,32 +44,14 @@ function checkSubmission() {
     var currentMonth = date.getMonth() + 1; // index starts from 0 so add 1 or else it'll be the month before
     var currentYear = date.getFullYear();
 
-    console.log("expiryMonth: " + expiryMonth);
-    console.log("expiryYear: " + expiryYear);
-    console.log("currentMonth: " + currentMonth);
-    console.log("currentYear: " + currentYear);
-
     // if expiry date is before current date
     if (expiryMonth <= currentMonth && expiryYear <= currentYear) {
         // Fail validation, show some error message to user
-        console.log('fail') // still testing
+        console.log('fail') // debug
     }
     else    // otherwise, pass expiry date validation
     {
-        console.log('pass')
-    }
-}
-
-
-
-// Discount in Weekdays at 12:00
-function discountPrice() {
-    var day = new Date();
-    var today = day.getDay();
-    var time = new Date();
-    var currentTime = time.getHours();
-    if (currentTime = 12 & (today != 6 || today != 0)) {
-
+        console.log('pass') // debug
     }
 }
 
