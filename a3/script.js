@@ -33,28 +33,6 @@ function stickyNavBar() {
     }
 }
 
-// Expiry Date Validation
-
-function checkSubmission() {
-    var form = document.getElementById('form');
-    var expiryMonth = document.getElementById('expiryMonth').value;
-    var expiryYear = document.getElementById('expiryYear').value;
-
-    var date = new Date();
-    var currentMonth = date.getMonth() + 1; // index starts from 0 so add 1 or else it'll be the month before
-    var currentYear = date.getFullYear();
-
-    // if expiry date is before current date
-    if (expiryMonth <= currentMonth && expiryYear <= currentYear) {
-        // Fail validation, show some error message to user
-        console.log('fail') // debug
-    }
-    else    // otherwise, pass expiry date validation
-    {
-        console.log('pass') // debug
-    }
-}
-
 // cache the navigation links 
 var $navigationLinks = $('#navigation_bar > ul > li > a');
 // cache (in reversed order) the sections
@@ -151,11 +129,117 @@ function countTotal() {
     var currentHour = date.getHours();
 
     // hour is 12 and not on saturday and sunday
-    if (currentHour = 12 && currentDay != 6 && currentDay != 0) {
+    if (currentHour == 12 && currentDay != 6 && currentDay != 0) {
         totalPrice -= totalPrice * 0.2;
     }
 
     // get the string element and update
     var total = document.getElementById('totalMoney');
     total.innerHTML = totalPrice.toFixed(2);
+}
+
+function updateBookingHeader(e) {
+    var movieID;
+    var movieTitle;
+    var movieDate;
+    var movieTime;
+
+    var titleHeader = document.getElementById('movieTitleHeader');
+    var dateHeader = document.getElementById('movieDateHeader');
+    var timeHeader = document.getElementById('movieTimeHeader');
+
+    // get text of href anchor (in this case it's date and time)
+    var dateTimeText = e.innerHTML;
+
+    // split date and time words into array elements
+    var dateTimeArray = dateTimeText.split(" - ");
+
+    // assign date to movieDate for header
+    movieDate = dateTimeArray[0];
+
+    // assign hour to movieTime
+    movieTime = dateTimeArray[1];
+
+    // update movie date form
+    document.getElementById('movieDate').value = dateTimeArray[0].toUpperCase();
+
+    // update movie date form
+    if (movieTime == "12pm") {
+        document.getElementById('movieHour').value = "T12";
+    } else if (movieTime == "3pm") {
+        document.getElementById('movieHour').value = "T15";
+    } else if (movieTime == "6pm") {
+        document.getElementById('movieHour').value = "T18";
+    } else if (movieTime == "9pm") {
+        document.getElementById('movieHour').value = "T21";
+    }
+
+    // get movie ID from value
+    movieID = e.getAttribute('value');
+
+    // get movie title from ID
+    switch (movieID) {
+        case "ANM":
+            document.getElementById('movieID').value = movieID;
+            movieTitle = document.getElementById('ANM').innerText;
+
+            // format header
+            titleHeader.innerHTML = movieTitle;
+            dateHeader.innerHTML = " - " + movieDate;
+            timeHeader.innerHTML = " - " + movieTime;
+            break;
+        case "ACT":
+            document.getElementById('movieID').value = movieID;
+            movieTitle = document.getElementById('ACT').innerText;
+
+            // format header
+            titleHeader.innerHTML = movieTitle;
+            dateHeader.innerHTML = " - " + movieDate;
+            timeHeader.innerHTML = " - " + movieTime;
+            break;
+        case "RMC":
+            document.getElementById('movieID').value = movieID;
+            movieTitle = document.getElementById('RMC').innerText;
+
+            // format header
+            titleHeader.innerHTML = movieTitle;
+            dateHeader.innerHTML = " - " + movieDate;
+            timeHeader.innerHTML = " - " + movieTime;
+            break;
+        case "AHF":
+            document.getElementById('movieID').value = movieID;
+            movieTitle = document.getElementById('AHF').innerText;
+
+            // format header
+            titleHeader.innerHTML = movieTitle;
+            dateHeader.innerHTML = " - " + movieDate;
+            timeHeader.innerHTML = " - " + movieTime;
+            break;
+    }
+}
+
+// Expiry Date Validation
+function checkSubmission(e) {
+    var expiryDate = document.getElementById('cust-expiry').value;
+
+    var dateTimeArray = expiryDate.split("-");
+    var expiryYear = dateTimeArray[0];
+    var expiryMonth = dateTimeArray[1];
+
+    var date = new Date();
+    var currentMonth = date.getMonth() + 1; // index starts from 0 so add 1 or else it'll be the month before
+    var currentYear = date.getFullYear();
+
+    console.log('expiryMonth: ' + expiryMonth);
+    console.log('expiryYear: ' + expiryYear);
+
+    console.log('currentMonth: ' + currentMonth);
+    console.log('currentYear: ' + currentYear);
+
+    // if expiry date is before current date
+    if (expiryMonth <= currentMonth && expiryYear <= currentYear) {
+        e.preventDefault();
+        return false;
+    }
+    return true;
 }

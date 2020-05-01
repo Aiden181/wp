@@ -96,7 +96,8 @@
           <li><a class="nav-link" href="#aboutus" onclick="highlightNavOnClick('aboutus')">About Us</a></li>
           <li><a class="nav-link" href="#prices" onclick="highlightNavOnClick('prices')">Prices</a></li>
           <li><a class="nav-link" href="#nowshowing" onclick="highlightNavOnClick('nowshowing')">Now Showing</a></li>
-          <li><a class="nav-link" href="#synopsisarea" onclick="highlightNavOnClick('synopsisarea')">Synopsis Area</a></li>
+          <li><a class="nav-link" href="#synopsisarea" onclick="highlightNavOnClick('synopsisarea')">Synopsis Area</a>
+          </li>
           <li><a class="nav-link" href="#bookingarea" onclick="highlightNavOnClick('bookingarea')">Booking</a></li>
         </ul>
       </nav>
@@ -265,7 +266,7 @@
             <div class="col-sm-6">
               <div class="card">
                 <div class="card-header">
-                  <h4><b>Dumbo</b></h4>
+                  <h4 id="ANM"><b>Dumbo</b></h4>
                 </div>
                 <div class="card-body">
                   <div class="resp-container">
@@ -286,17 +287,22 @@
                 </div>
                 <div class="card-footer">
                   <div class="container">
-                    <div>
-                      Make A Booking:
-                    </div>
+                    <div>Make A Booking:</div>
                     <div class="makeBooking_footer">
-                      <a href="#row1" class="btn btn-primary" value="ANM">Mon - 12pm</a>
-                      <a href="#row1" class="btn btn-primary" value="ANM">Tue - 12pm</a>
-                      <a href="#row1" class="btn btn-primary" value="ANM">Wed - 6pm</a>
-                      <a href="#row1" class="btn btn-primary" value="ANM">Thur - 6pm</a>
-                      <a href="#row1" class="btn btn-primary" value="ANM">Fri - 6pm</a>
-                      <a href="#row1" class="btn btn-primary" value="ANM">Sat - 12pm</a>
-                      <a href="#row1" class="btn btn-primary" value="ANM">Sun - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Mon - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Tue - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Wed - 6pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Thur - 6pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Fri - 6pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Sat - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Sun - 12pm</a>
                     </div>
                   </div>
                 </div>
@@ -306,7 +312,7 @@
             <div class="col-sm-6">
               <div class="card">
                 <div class="card-header">
-                  <h4><b>Avengers: EndGame</b></h4>
+                  <h4 id="ACT"><b>Avengers: EndGame</b></h4>
                 </div>
                 <div class="card-body">
                   <div class="resp-container">
@@ -330,15 +336,18 @@
                 </div>
                 <div class="card-footer">
                   <div class="container">
-                    <div>
-                      Make A Booking:
-                    </div>
+                    <div>Make A Booking:</div>
                     <div class="makeBooking_footer">
-                      <a href="#row1" class="btn btn-primary" value="ACT">Wed - 9pm</a>
-                      <a href="#row1" class="btn btn-primary" value="ACT">Thur - 9pm</a>
-                      <a href="#row1" class="btn btn-primary" value="ACT">Fri - 9pm</a>
-                      <a href="#row1" class="btn btn-primary" value="ACT">Sat - 6pm</a>
-                      <a href="#row1" class="btn btn-primary" value="ACT">Sun - 6pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ACT"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Wed - 9pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ACT"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Thur - 9pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ACT"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Fri - 9pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ACT"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Sat - 6pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ACT"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Sun - 6pm</a>
                     </div>
                   </div>
                 </div>
@@ -350,7 +359,7 @@
             <div class="col-sm-6">
               <div class="card">
                 <div class="card-header">
-                  <h4><b>Top End Wedding</b></h4>
+                  <h4 id="RMC"><b>Top End Wedding</b></h4>
                 </div>
                 <div class="card-body">
                   <div class="resp-container">
@@ -368,14 +377,16 @@
                 </div>
                 <div class="card-footer">
                   <div class="container">
-                    <div>
-                      Make A Booking:
-                    </div>
+                    <div>Make A Booking:</div>
                     <div class="makeBooking_footer">
-                      <a href="#row2" class="btn btn-primary" value="RMC">Mon - 6pm</a>
-                      <a href="#row2" class="btn btn-primary" value="RMC">Tue - 6pm</a>
-                      <a href="#row2" class="btn btn-primary" value="RMC">Sat - 3pm</a>
-                      <a href="#row2" class="btn btn-primary" value="RMC">Sun - 3pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="RMC"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Mon - 6pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="RMC"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Tue - 6pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="RMC"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Sat - 3pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="RMC"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Sun - 3pm</a>
                     </div>
                   </div>
                 </div>
@@ -385,7 +396,7 @@
             <div class="col-sm-6">
               <div class="card">
                 <div class="card-header">
-                  <h4><b>The Happy Prince</b></h4>
+                  <h4 id="AHF"><b>The Happy Prince</b></h4>
                 </div>
                 <div class="card-body">
                   <div class="resp-container">
@@ -410,15 +421,18 @@
                 </div>
                 <div class="card-footer">
                   <div class="container">
-                    <div>
-                      Make A Booking:
-                    </div>
+                    <div>Make A Booking:</div>
                     <div class="makeBooking_footer">
-                      <a href="#row2" class="btn btn-primary" value="AHF">Wed - 12pm</a>
-                      <a href="#row2" class="btn btn-primary" value="AHF">Thur - 12pm</a>
-                      <a href="#row2" class="btn btn-primary" value="AHF">Fri - 12pm</a>
-                      <a href="#row2" class="btn btn-primary" value="AHF">Sat - 9pm</a>
-                      <a href="#row2" class="btn btn-primary" value="AHF">Sun - 9pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Wed - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Thur - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Fri - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Sat - 9pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea')">Sun - 9pm</a>
                     </div>
                   </div>
                 </div>
@@ -436,71 +450,45 @@
             <div class="col-sm-12">
               <div id="bookingcard1" class="card" style="width: 600px; height: 400px;">
                 <div class="bookingHeader">
-                  <label for="movie_ID" style="font-size:20px"><b>Movie ID </b></label>
-                  <input name="movie[id]" type="hidden" pattern="ACT, AHF, ANM, RMC">
+                  <label id="movieTitleHeader" for="movie_ID" style="font-size:20px"><b>Movie Title</b></label>
 
-                  <label for="movie_day" style="font-size:20px"><b>- Day </b></label>
-                  <input name="movie[day]" type="hidden" pattern="MON, TUE, WED, THU, FRI, SAT, SUN">
+                  <label id="movieDateHeader" for="movie_day" style="font-size:20px"><b> - Day</b></label>
 
-                  <label for="movie_hour" style="font-size:20px"><b>- Time</b></label>
-                  <input name="movie[hour]" type="hidden" pattern="T12, T15, T18, T21">
+                  <label id="movieTimeHeader" for="movie_hour" style="font-size:20px"><b> - Time</b></label>
                 </div>
-                <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" method="POST" >
+                <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" method="POST"
+                  onsubmit="checkSubmission(event)">
                   <!--Ask for name-->
                   <div class="custInfo">
+
+                    <input id="movieID" name="movie[id]" type="hidden" pattern="ACT, AHF, ANM, RMC" value="">
+                    <input id="movieDate" name="movie[day]" type="hidden" pattern="MON, TUE, WED, THU, FRI, SAT, SUN"
+                      value="">
+                    <input id="movieHour" name="movie[hour]" type="hidden" pattern="T12, T15, T18, T21" value="">
+
                     <label for="name"><b>Name</b></label>
                     <input type="text" id="cust-name" name="cust[name]" pattern="^[A-Za-z]+$" required>
                     <br>
 
                     <!--Ask for email-->
                     <label for="email"><b>Email</b></label>
-                    <input type="email" id="cust-email" name="cust[email]"
+                    <input type="email" name="cust[email]" id="cust-email"
                       pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
 
                     <br>
                     <!--Ask for mobile phone input-->
                     <label for="mobile"><b>Mobile</b></label>
-                    <input type="tel" name="cust[mobile]" id="cust-mobile"
-                      pattern="0000000000" required>
+                    <input type="tel" name="cust[mobile]" id="cust-mobile" pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$" required>
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
-                    <label for="credit"><b>Credit Card</b></label> 
+                    <label for="credit"><b>Credit Card</b></label>
                     <input type="text" name="cust[card]" id="cust-credit" pattern="[0-9]{14,19}" required>
 
                     <br>
-                    <label> <b>Expiry</b> </label>
-                    <select id="expiryMonth">
-                      <option selected> Month </option>
-                      <option>01</option>
-                      <option>02</option>
-                      <option>03</option>
-                      <option>04</option>
-                      <option>05</option>
-                      <option>06</option>
-                      <option>07</option>
-                      <option>08</option>
-                      <option>09</option>
-                      <option>10</option>
-                      <option>11</option>
-                      <option>12</option>
-                    </select>
-                    <select id="expiryYear">
-                      <option selected>Year</option>
-                      <option>2020</option>
-                      <option>2021</option>
-                      <option>2022</option>
-                      <option>2023</option>
-                      <option>2024</option>
-                      <option>2025</option>
-                      <option>2026</option>
-                      <option>2027</option>
-                      <option>2028</option>
-                      <option>2029</option>
-                      <option>2030</option>
-                    </select>
-                    <span id="expiryMonthError"> </span>
-                    <span id="expiryYearError"> </span>
+                    <!--Ask for Credit Card input (Only Support Visa and Master Card-->
+                    <label for="credit"><b>Credit Card</b></label>
+                    <input type="month" name="cust[expiry]" id="cust-expiry">
                   </div>
 
                   <div class="bookingLabels">
@@ -619,11 +607,12 @@
                     <label for="total">Total $</label>
                     <p id="totalMoney"></p>
                   </div>
+
+                  <input name="order" id="orderButton" type="submit" value="Order">
                 </form>
               </div>
             </div>
 
-            <input id="order" type="submit" value="Order" onclick="checkSubmission()">
           </div>
         </section>
       </main>
@@ -643,7 +632,7 @@
     <script>
       document.write(new Date().getFullYear());
       document.write("-");
-      document.write(new Date().getMonth()+1);
+      document.write(new Date().getMonth() + 1);
       document.write("-");
       document.write(new Date().getDate());
     </script> (YYYY-MM-DD)

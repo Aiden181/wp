@@ -185,14 +185,14 @@ body {
   width: 130px;
 }
 
-#order {
+#orderButton {
   border: black solid;
   border-width: 2px;
   background-color: white;
   position: relative;
   width:100px;
-  left: 62.5%;
-  bottom: 50px;
+  left: 80%;
+  bottom: 160px;
 }
 
 .expiryTime {
