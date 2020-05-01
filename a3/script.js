@@ -163,15 +163,17 @@ function countTotal() {
     // add up the total price
     var totalPrice = countSTA + countSTP + countSTC + countFTA + countFTP + countFTC;
 
+    // Discount on Weekdays at 12:00
+    var date = new Date();
+    var currentDay = date.getDay();
+    var currentHour = date.getHours();
+
+    // hour is 12 and not on saturday and sunday
+    if (currentHour = 12 && currentDay != 6 && currentDay != 0) {
+        totalPrice -= totalPrice * 0.2;
+    }
+
     // get the string element and update
     var total = document.getElementById('totalMoney');
     total.innerHTML = totalPrice.toFixed(2);
-
-    var day = new Date();
-    var today = day.getDay();
-    var time = new Date();
-    var currentTime = time.getHours();
-    if (currentTime = 12 & (today != 6 || today != 0)) {
-        totalPrice = totalPrice - (20 / 100);
-    }
 }
