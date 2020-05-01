@@ -220,43 +220,17 @@ function updateBookingHeader(e) {
 
 function checkSubmission(e) {
     // passes all validations
-    if (isValidExpiryDate() && isMovieSelected() && isSeatSelected()) {
+    if (!isMovieSelected() && !isSeatSelected()) {
+        document.getElementById('submitErrorMessage').innerHTML = "Please select a movie and its date and time from Synopsis's \"Make a Booking\" section first!";
+    }
+    else if (isMovieSelected() && !isSeatSelected()) {
+        document.getElementById('submitErrorMessage').innerHTML = "Please select at least 1 seat.";
+    }
+    else if (isValidExpiryDate()) {
         return true;
     }
     e.preventDefault();
     return false;
-}
-
-function isSeatSelected() {
-    var countSTA = document.getElementById("seats-STA").value;
-    var countSTP = document.getElementById("seats-STP").value;
-    var countSTC = document.getElementById("seats-STC").value;
-    var countFCA = document.getElementById("seats-FCA").value;
-    var countFCP = document.getElementById("seats-FCP").value;
-    var countFCC = document.getElementById("seats-FCC").value;
-    if (countSTA == "" && countSTP == "" && countSTC == "" && countFCA == "" && countFCP == "" && countFCC == "") {
-        document.getElementById('submitErrorMessage').innerHTML = "Please select at least 1 seat.";
-        return false;
-    }
-    else {
-        document.getElementById('submitErrorMessage').innerHTML = "";
-        return true;
-    }
-}
-
-function isMovieSelected() {
-    var formID = document.getElementById('movieID').value;
-    var formDate = document.getElementById('movieDate').value
-    var formHour = document.getElementById('movieHour').value;
-
-    // if any of the forms are empty, return false
-    if (formID == "" || formDate == "" || formHour == "") {
-        document.getElementById('submitErrorMessage').innerHTML = "Please select a movie (from Synopsis's 'Make a booking' area).";
-        return false;
-    } else {
-        document.getElementById('submitErrorMessage').innerHTML = "";
-        return true;
-    }
 }
 
 function isValidExpiryDate() {
@@ -276,6 +250,52 @@ function isValidExpiryDate() {
         document.getElementById('submitErrorMessage').innerHTML = "Please enter an appropriate expiry date or enter a new card.";
         return false;
     } else {
+        document.getElementById('submitErrorMessage').innerHTML = "";
+        return true;
+    }
+}
+
+function isMovieSelected() {
+    var formID = document.getElementById('movieID').value;
+    var formDate = document.getElementById('movieDate').value
+    var formHour = document.getElementById('movieHour').value;
+
+    if (formID == "" || formDate == "" || formHour == "") {
+        document.getElementById('submitErrorMessage').innerHTML = "Please select a movie and its date and time from Synopsis's \"Make a Booking\" section first!";
+        return false;
+    } else {
+        // enable seat selecting
+        document.getElementById('seats-STA').disabled = false;
+        document.getElementById('seats-STP').disabled = false;
+        document.getElementById('seats-STC').disabled = false;
+        document.getElementById('seats-FCA').disabled = false;
+        document.getElementById('seats-FCP').disabled = false;
+        document.getElementById('seats-FCC').disabled = false;
+
+        document.getElementById('submitErrorMessage').innerHTML = "";
+        return true;
+    }
+}
+
+function isSeatSelected() {
+    var countSTA = document.getElementById("seats-STA").value;
+    var countSTP = document.getElementById("seats-STP").value;
+    var countSTC = document.getElementById("seats-STC").value;
+    var countFCA = document.getElementById("seats-FCA").value;
+    var countFCP = document.getElementById("seats-FCP").value;
+    var countFCC = document.getElementById("seats-FCC").value;
+
+    if (countSTA == "" && countSTP == "" && countSTC == "" && countFCA == "" && countFCP == "" && countFCC == "") {
+        document.getElementById('submitErrorMessage').innerHTML = "Please select at least 1 seat.";
+        return false;
+    }
+    else {
+        document.getElementById('cust-name').disabled = false;
+        document.getElementById('cust-email').disabled = false;
+        document.getElementById('cust-mobile').disabled = false;
+        document.getElementById('cust-credit').disabled = false;
+        document.getElementById('cust-expiry').disabled = false;
+        
         document.getElementById('submitErrorMessage').innerHTML = "";
         return true;
     }

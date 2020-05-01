@@ -467,35 +467,35 @@
 
                     <!--Ask for name-->
                     <label for="name"><b>Name</b></label>
-                    <input type="text" id="cust-name" name="cust[name]" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" required>
+                    <input disabled type="text" id="cust-name" name="cust[name]" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" required>
                     
                     <br>
                     <!--Ask for email-->
                     <label for="email"><b>Email</b></label>
-                    <input type="email" name="cust[email]" id="cust-email"
+                    <input disabled type="email" name="cust[email]" id="cust-email"
                       pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
 
                     <br>
                     <!--Ask for mobile phone input-->
                     <label for="mobile"><b>Mobile</b></label>
-                    <input type="tel" name="cust[mobile]" id="cust-mobile" pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$" required>
+                    <input disabled type="tel" name="cust[mobile]" id="cust-mobile" pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$" required>
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="credit"><b>Credit Card</b></label>
-                    <input type="text" name="cust[card]" id="cust-credit" pattern="[0-9]{14,19}" required>
+                    <input disabled type="text" name="cust[card]" id="cust-credit" pattern="[0-9]{14,19}" required>
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="credit"><b>Credit Card</b></label>
-                    <input type="month" name="cust[expiry]" id="cust-expiry" onchange="isValidExpiryDate()">
+                    <input disabled type="month" name="cust[expiry]" id="cust-expiry" onchange="isValidExpiryDate()">
                   </div>
 
                   <div class="bookingLabels">
                     <h6 id="standard" style="font-size: 18px;">Standard</h6>
                     <div>
                       <label for="adult"><b>Adults</b>
-                        <select name="seats[STA]" id="seats-STA" onchange="countTotal()">
+                        <select disabled name="seats[STA]" id="seats-STA" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option>1</option>
                           <option>2</option>
@@ -512,7 +512,7 @@
                       <br>
 
                       <label for="concession"><b>Concession</b>
-                        <select name="seats[STP]" id="seats-STP" onchange="countTotal()">
+                        <select disabled name="seats[STP]" id="seats-STP" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option>1</option>
                           <option>2</option>
@@ -529,7 +529,7 @@
                       <br>
 
                       <label for="children"><b>Children</b>
-                        <select name="seats[STC]" id="seats-STC" onchange="countTotal()">
+                        <select disabled name="seats[STC]" id="seats-STC" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option>1</option>
                           <option>2</option>
@@ -552,7 +552,7 @@
                     <h6 id="firstClass" style="font-size: 18px;">First Class</h6>
                     <div>
                       <label for="adult1"><b>Adults</b>
-                        <select name="seats[FCA]" id="seats-FCA" onchange="countTotal()">
+                        <select disabled name="seats[FCA]" id="seats-FCA" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option>1</option>
                           <option>2</option>
@@ -569,7 +569,7 @@
                       <br>
 
                       <label for="concession1"><b>Concession</b>
-                        <select name="seats[FCP]" id="seats-FCP" onchange="countTotal()">
+                        <select disabled name="seats[FCP]" id="seats-FCP" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option>1</option>
                           <option>2</option>
@@ -586,7 +586,7 @@
                       <br>
 
                       <label for="children1"><b>Children</b>
-                        <select name="seats[FCC]" id="seats-FCC" onchange="countTotal()">
+                        <select disabled name="seats[FCC]" id="seats-FCC" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option>1</option>
                           <option>2</option>
@@ -610,7 +610,7 @@
 
                   <input name="order" id="orderButton" type="submit" value="Order">
                 </form>
-                <span id="submitErrorMessage"></span>
+                <span id="submitErrorMessage">Please select a movie and its date and time from Synopsis's "Make a Booking" section first.</span>
               </div>
             </div>
             
