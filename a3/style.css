@@ -254,7 +254,7 @@ input:invalid {
   font-size: 18px;
 }
 
-#expiryDateMessage {
+#submitErrorMessage {
   position: relative;
   width: 220px;
   left: 60%;
