@@ -196,7 +196,7 @@
                   <p class="card-text">Fri - 9pm</p>
                   <p class="card-text">Sat - 6pm</p>
                   <p class="card-text">Sun - 6pm</p>
-                  <a href="#synopsisACT" class="btn btn-primary">More Details</a>
+                  <a href="#synopsisACT" class="btn btn-primary" onclick="updateMovieSynopsis('ACT')">More Details</a>
                 </div>
               </div>
             </div>
@@ -213,7 +213,7 @@
                   <p class="card-text">Fri - 6pm</p>
                   <p class="card-text">Sat - 12pm</p>
                   <p class="card-text">Sun - 12pm</p>
-                  <a href="#synopsisANM" class="btn btn-primary">More Details</a>
+                  <a href="#synopsisANM" class="btn btn-primary" onclick="updateMovieSynopsis('ANM')">More Details</a>
                 </div>
               </div>
             </div>
@@ -232,7 +232,7 @@
                   <p class="card-text">Fri - ...</p>
                   <p class="card-text">Sat - 3pm</p>
                   <p class="card-text">Sun - 3pm</p>
-                  <a href="#synopsisRMC" class="btn btn-primary">More Details</a>
+                  <a href="#synopsisRMC" class="btn btn-primary" onclick="updateMovieSynopsis('RMC')">More Details</a>
                 </div>
               </div>
             </div>
@@ -249,7 +249,7 @@
                   <p class="card-text">Fri - 12pm</p>
                   <p class="card-text">Sat - 9pm</p>
                   <p class="card-text">Sun - 9pm</p>
-                  <a href="#synopsisAHF" class="btn btn-primary">More Details</a>
+                  <a href="#synopsisAHF" class="btn btn-primary" onclick="updateMovieSynopsis('AHF')">More Details</a>
                 </div>
               </div>
             </div>
@@ -261,10 +261,9 @@
         <!--Synopsis Section-->
         <section id="synopsisarea" class="section">
           <h2>Synopsis</h2>
-
           <div class="row" id="synopsisACT">
             <div class="col-sm-12">
-              <div class="card">
+              <div class="card" id="synopsisACT">
                 <div class="card-header">
                   <h4 id="ACT"><b>Avengers: EndGame</b></h4>
                 </div>
@@ -276,15 +275,12 @@
                   </div>
                   <h5 id="plotSummary"><b>Plot Summary</b></h5>
                   <p id="plotSummaryBody">
-                    Avengers: Endgame picks up after the events of Avengers: Infinity War, which saw the Avengers
-                    divided
+                    Avengers: Endgame picks up after the events of Avengers: Infinity War, which saw the Avengers divided
                     and defeated. Thanos won the day and used the Infinity Stones to snap away half of all life in the
-                    universe. Only the original Avengers - Iron Man, Captain America, Thor, Hulk, Black Widow, and
-                    Hawkeye
+                    universe. Only the original Avengers - Iron Man, Captain America, Thor, Hulk, Black Widow, and Hawkeye
                     remain, along with some key allies like War Machine, Ant-Man, Rocket Raccoon, Nebula, and Captain
                     Marvel. Each of the survivors deals with the fallout from Thanos' decimation in different ways, but
-                    when an opportunity presents itself to potentially save those who vanished, they all come together
-                    and
+                    when an opportunity presents itself to potentially save those who vanished, they all come together and
                     set out to defeat Thanos, once and for all.
                   </p>
                 </div>
@@ -293,353 +289,327 @@
                     <div>Make A Booking:</div>
                     <div class="makeBooking_footer">
                       <a href="#bookingarea" class="btn btn-primary bookingButton" value="ACT"
-                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Wed -
-                        9pm</a>
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Wed - 9pm</a>
                       <a href="#bookingarea" class="btn btn-primary bookingButton" value="ACT"
-                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Thur -
-                        9pm</a>
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Thur - 9pm</a>
                       <a href="#bookingarea" class="btn btn-primary bookingButton" value="ACT"
-                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Fri -
-                        9pm</a>
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Fri - 9pm</a>
                       <a href="#bookingarea" class="btn btn-primary bookingButton" value="ACT"
-                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sat -
-                        6pm</a>
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sat - 6pm</a>
                       <a href="#bookingarea" class="btn btn-primary bookingButton" value="ACT"
-                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sun -
-                        6pm</a>
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sun - 6pm</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-    </div>
 
-    <div class="row" id="synopsisANM">
-      <div class="col-sm-12">
-        <div class="card">
-          <div class="card-header">
-            <h4 id="ANM"><b>Dumbo</b></h4>
-          </div>
-          <div class="card-body">
-            <div class="resp-container">
-              <iframe id="dumbo" width="1045px" height="800px" src="https://www.youtube.com/embed/7NiYVoqBt-8"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-            <h5 id="plotSummary"><b>Plot Summary</b></h5>
-            <p id="plotSummaryBody">
-              Struggling circus owner Max Medici enlists former star Holt Farrier and his children Milly and Joe
-              to
-              care for Dumbo, a baby elephant whose oversized ears make him the circus' laughing stock. But when
-              they discover that Dumbo can fly, the circus makes an incredible comeback, attracting persuasive
-              entrepreneur V.A. Vandevere, who recruits Dumbo for his newest, larger-than-life entertainment
-              venture, Dreamland. Dumbo soars to new heights alongside a charming and spectacular aerial artist,
-              Colette Marchant, until Holt learns that Dreamland hides dark secrets beneath its shiny veneer.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="container">
-              <div>Make A Booking:</div>
-              <div class="makeBooking_footer">
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Mon -
-                  12pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Tue -
-                  12pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Wed - 6pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Thur -
-                  6pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Fri - 6pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sat -
-                  12pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sun -
-                  12pm</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row" id="synopsisRMC">
-      <div class="col-sm-12">
-        <div class="card">
-          <div class="card-header">
-            <h4 id="RMC"><b>Top End Wedding</b></h4>
-          </div>
-          <div class="card-body">
-            <div class="resp-container">
-              <iframe width="1045px" height="800px" src="https://www.youtube.com/embed/uoDBvGF9pPU"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-            <h5 id="plotSummary"><b>Plot Summary</b></h5>
-            <p id="plotSummaryBody">
-              Lauren and Ned are engaged, they are in love, and they have just ten days to find Lauren's mother
-              who
-              has gone AWOL somewhere in the remote far north of Australia, reunite her parents and pull off their
-              dream wedding.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="container">
-              <div>Make A Booking:</div>
-              <div class="makeBooking_footer">
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="RMC"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Mon - 6pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="RMC"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Tue - 6pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="RMC"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sat - 3pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="RMC"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sun - 3pm</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row" id="synopsisAHF">
-      <div class="col-sm-12">
-        <div class="card">
-          <div class="card-header">
-            <h4 id="AHF"><b>The Happy Prince</b></h4>
-          </div>
-          <div class="card-body">
-            <div class="resp-container">
-              <iframe width="1045px" height="800px" src="https://www.youtube.com/embed/tXANCJQkUIE"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-            <h5 id="plotSummary"><b>Plot Summary</b></h5>
-            <p id="plotSummaryBody">
-              In a cheap Parisian hotel room Oscar Wilde lies on his death bed. The past floods back, taking him
-              to
-              other times and places. Was he once the most famous man in London? The artist crucified by a society
-              that once worshipped him? Under the microscope of death he reviews the failed attempt to reconcile
-              with his long suffering wife Constance, the ensuing reprisal of his fatal love affair with Lord
-              Alfred
-              Douglas and the warmth and devotion of Robbie Ross, who tried and failed to save him from himself.
-              Travelling through Wilde's final act and journeys through England, France and Italy, the transience
-              of
-              lust is laid bare and the true riches of love are revealed. It is a portrait of the dark side of a
-              genius who lived and died for love.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="container">
-              <div>Make A Booking:</div>
-              <div class="makeBooking_footer">
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Wed -
-                  12pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Thur -
-                  12pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Fri -
-                  12pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sat - 9pm</a>
-                <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
-                  onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sun - 9pm</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    </section>
-
-    <br>
-
-    <!--Booking Section-->
-    <section id="bookingarea" class="section">
-      <h2>Booking</h2>
-      <div class="row">
-        <div class="col-sm-12">
-          <div id="bookingcard" class="card">
-            <div class="bookingHeader">
-              <label id="movieTitleHeader" for="movie_ID" style="font-size:20px"><b>Movie Title</b></label>
-
-              <label id="movieDateHeader" for="movie_day" style="font-size:20px"><b> - Day</b></label>
-
-              <label id="movieTimeHeader" for="movie_hour" style="font-size:20px"><b> - Time</b></label>
-            </div>
-            <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" method="POST"
-              onsubmit="checkSubmission(event)">
-              <!--Ask for name-->
-              <div class="custInfo">
-                <input id="movieID" name="movie[id]" type="hidden" pattern="ACT, AHF, ANM, RMC" value="">
-                <input id="movieDate" name="movie[day]" type="hidden" pattern="MON, TUE, WED, THU, FRI, SAT, SUN"
-                  value="">
-                <input id="movieHour" name="movie[hour]" type="hidden" pattern="T12, T15, T18, T21" value="">
-
-                <label for="name"><b>Name</b></label>
-                <input disabled type="text" id="cust-name" name="cust[name]" pattern="^[A-Za-z]+$" required>
-
-                <br>
-                <!--Ask for email-->
-                <label for="email"><b>Email</b></label>
-                <input disabled type="email" name="cust[email]" id="cust-email"
-                  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
-
-                <br>
-                <!--Ask for mobile phone input-->
-                <label for="mobile"><b>Mobile</b></label>
-                <input disabled type="tel" name="cust[mobile]" id="cust-mobile"
-                  pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$"
-                  required>
-
-                <br>
-                <!--Ask for Credit Card input (Only Support Visa and Master Card-->
-                <label for="credit"><b>Credit Card</b></label>
-                <input disabled type="text" name="cust[card]" id="cust-credit" pattern="[0-9]{14,19}" required>
-
-                <br>
-                <!--Ask for Credit Card input (Only Support Visa and Master Card-->
-                <label for="credit"><b>Credit Card</b></label>
-                <input disabled type="month" name="cust[expiry]" id="cust-expiry">
-              </div>
-
-              <div class="bookingLabels">
-                <h6 id="standard" style="font-size: 18px;">Standard</h6>
-                <div>
-                  <label for="adult"><b>Adults</b>
-                    <select disabled name="seats[STA]" id="seats-STA" onchange="countTotal();isSeatSelected()">
-                      <option value="">Please Select</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                    </select>
-                  </label>
-                  <br>
-
-                  <label for="concession"><b>Concession</b>
-                    <select disabled name="seats[STP]" id="seats-STP" onchange="countTotal();isSeatSelected()">
-                      <option value="">Please Select</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                    </select>
-                  </label>
-                  <br>
-
-                  <label for="children"><b>Children</b>
-                    <select disabled name="seats[STC]" id="seats-STC" onchange="countTotal();isSeatSelected()">
-                      <option value="">Please Select</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                    </select>
-                  </label>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card" id="synopsisANM">
+                <div class="card-header">
+                  <h4 id="ANM"><b>Dumbo</b></h4>
+                </div>
+                <div class="card-body">
+                  <div class="resp-container">
+                    <iframe id="dumbo" width="1045px" height="800px" src="https://www.youtube.com/embed/7NiYVoqBt-8"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+                  </div>
+                  <h5 id="plotSummary"><b>Plot Summary</b></h5>
+                  <p id="plotSummaryBody">
+                    Struggling circus owner Max Medici enlists former star Holt Farrier and his children Milly and Joe to
+                    care for Dumbo, a baby elephant whose oversized ears make him the circus' laughing stock. But when
+                    they discover that Dumbo can fly, the circus makes an incredible comeback, attracting persuasive
+                    entrepreneur V.A. Vandevere, who recruits Dumbo for his newest, larger-than-life entertainment
+                    venture, Dreamland. Dumbo soars to new heights alongside a charming and spectacular aerial artist,
+                    Colette Marchant, until Holt learns that Dreamland hides dark secrets beneath its shiny veneer.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <div class="container">
+                    <div>Make A Booking:</div>
+                    <div class="makeBooking_footer">
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Mon - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Tue - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Wed - 6pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Thur - 6pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Fri - 6pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sat - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="ANM"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sun - 12pm</a>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <br>
-
-              <div class="bookingLabels">
-                <h6 id="firstClass" style="font-size: 18px;">First Class</h6>
-                <div>
-                  <label for="adult1"><b>Adults</b>
-                    <select disabled name="seats[FCA]" id="seats-FCA" onchange="countTotal();isSeatSelected()">
-                      <option value="">Please Select</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                    </select>
-                  </label>
-                  <br>
-
-                  <label for="concession1"><b>Concession</b>
-                    <select disabled name="seats[FCP]" id="seats-FCP" onchange="countTotal();isSeatSelected()">
-                      <option value="">Please Select</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                    </select>
-                  </label>
-                  <br>
-
-                  <label for="children1"><b>Children</b>
-                    <select disabled name="seats[FCC]" id="seats-FCC" onchange="countTotal();isSeatSelected()">
-                      <option value="">Please Select</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                    </select>
-                  </label>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card" id="synopsisRMC">
+                <div class="card-header">
+                  <h4 id="RMC"><b>Top End Wedding</b></h4>
+                </div>
+                <div class="card-body">
+                  <div class="resp-container">
+                    <iframe width="1045px" height="800px" src="https://www.youtube.com/embed/uoDBvGF9pPU"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+                  </div>
+                  <h5 id="plotSummary"><b>Plot Summary</b></h5>
+                  <p id="plotSummaryBody">
+                    Lauren and Ned are engaged, they are in love, and they have just ten days to find Lauren's mother who
+                    has gone AWOL somewhere in the remote far north of Australia, reunite her parents and pull off their
+                    dream wedding.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <div class="container">
+                    <div>Make A Booking:</div>
+                    <div class="makeBooking_footer">
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="RMC"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Mon - 6pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="RMC"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Tue - 6pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="RMC"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sat - 3pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="RMC"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sun - 3pm</a>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div class="total">
-                <label for="total">Total $</label>
-                <p id="totalMoney"></p>
-              </div>
-
-              <input name="order" id="orderButton" type="submit" value="Order">
-            </form>
-            <span id="submitErrorMessage">Please select a movie and its date and time from Synopsis's "Make a Booking"
-              section first.</span>
+            </div>
           </div>
-        </div>
 
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card" id="synopsisAHF">
+                <div class="card-header">
+                  <h4 id="AHF"><b>The Happy Prince</b></h4>
+                </div>
+                <div class="card-body">
+                  <div class="resp-container">
+                    <iframe width="1045px" height="800px" src="https://www.youtube.com/embed/tXANCJQkUIE"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+                  </div>
+                  <h5 id="plotSummary"><b>Plot Summary</b></h5>
+                  <p id="plotSummaryBody">
+                    In a cheap Parisian hotel room Oscar Wilde lies on his death bed. The past floods back, taking him to
+                    other times and places. Was he once the most famous man in London? The artist crucified by a society
+                    that once worshipped him? Under the microscope of death he reviews the failed attempt to reconcile
+                    with his long suffering wife Constance, the ensuing reprisal of his fatal love affair with Lord Alfred
+                    Douglas and the warmth and devotion of Robbie Ross, who tried and failed to save him from himself.
+                    Travelling through Wilde's final act and journeys through England, France and Italy, the transience of
+                    lust is laid bare and the true riches of love are revealed. It is a portrait of the dark side of a
+                    genius who lived and died for love.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <div class="container">
+                    <div>Make A Booking:</div>
+                    <div class="makeBooking_footer">
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Wed - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Thur - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Fri - 12pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sat - 9pm</a>
+                      <a href="#bookingarea" class="btn btn-primary bookingButton" value="AHF"
+                        onclick="updateBookingHeader(this);highlightNavOnClick('bookingarea');isMovieSelected()">Sun - 9pm</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      </div>
-    </section>
-    </main>
-  </div>
+        <br>
+
+        <!--Booking Section-->
+        <section id="bookingarea" class="section">
+          <h2>Booking</h2>
+          <div class="row">
+            <div class="col-sm-12">
+              <div id="bookingcard" class="card">
+                <div class="bookingHeader">
+                  <label id="movieTitleHeader" for="movie_ID" style="font-size:20px"><b>Movie Title</b></label>
+                  <label id="movieDateHeader" for="movie_day" style="font-size:20px"><b> - Day</b></label>
+                  <label id="movieTimeHeader" for="movie_hour" style="font-size:20px"><b> - Time</b></label>
+                </div>
+                <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" method="POST"
+                  onsubmit="checkSubmission(event)">
+                  <!--Ask for name-->
+                  <div class="custInfo">
+                    <input id="movieID" name="movie[id]" type="hidden" pattern="ACT, AHF, ANM, RMC" value="">
+                    <input id="movieDate" name="movie[day]" type="hidden" pattern="MON, TUE, WED, THU, FRI, SAT, SUN"value="">
+                    <input id="movieHour" name="movie[hour]" type="hidden" pattern="T12, T15, T18, T21" value="">
+
+                    <label for="name"><b>Name</b></label>
+                    <input disabled type="text" id="cust-name" name="cust[name]" pattern="^[A-Za-z]+$" required>
+
+                    <br>
+                    <!--Ask for email-->
+                    <label for="email"><b>Email</b></label>
+                    <input disabled type="email" name="cust[email]" id="cust-email"
+                      pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+
+                    <br>
+                    <!--Ask for mobile phone input-->
+                    <label for="mobile"><b>Mobile</b></label>
+                    <input disabled type="tel" name="cust[mobile]" id="cust-mobile"
+                      pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$"
+                      required>
+
+                    <br>
+                    <!--Ask for Credit Card input (Only Support Visa and Master Card-->
+                    <label for="credit"><b>Credit Card</b></label>
+                    <input disabled type="text" name="cust[card]" id="cust-credit" pattern="[0-9]{14,19}" required>
+
+                    <br>
+                    <!--Ask for Credit Card input (Only Support Visa and Master Card-->
+                    <label for="credit"><b>Credit Card</b></label>
+                    <input disabled type="month" name="cust[expiry]" id="cust-expiry">
+                  </div>
+
+                  <div class="bookingLabels">
+                    <h6 id="standard" style="font-size: 18px;">Standard</h6>
+                    <div>
+                      <label for="adult"><b>Adults</b>
+                        <select disabled name="seats[STA]" id="seats-STA" onchange="countTotal();isSeatSelected()">
+                          <option value="">Please Select</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                        </select>
+                      </label>
+                      <br>
+
+                      <label for="concession"><b>Concession</b>
+                        <select disabled name="seats[STP]" id="seats-STP" onchange="countTotal();isSeatSelected()">
+                          <option value="">Please Select</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                        </select>
+                      </label>
+                      <br>
+
+                      <label for="children"><b>Children</b>
+                        <select disabled name="seats[STC]" id="seats-STC" onchange="countTotal();isSeatSelected()">
+                          <option value="">Please Select</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+
+                  <br>
+
+                  <div class="bookingLabels">
+                    <h6 id="firstClass" style="font-size: 18px;">First Class</h6>
+                    <div>
+                      <label for="adult1"><b>Adults</b>
+                        <select disabled name="seats[FCA]" id="seats-FCA" onchange="countTotal();isSeatSelected()">
+                          <option value="">Please Select</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                        </select>
+                      </label>
+                      <br>
+
+                      <label for="concession1"><b>Concession</b>
+                        <select disabled name="seats[FCP]" id="seats-FCP" onchange="countTotal();isSeatSelected()">
+                          <option value="">Please Select</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                        </select>
+                      </label>
+                      <br>
+
+                      <label for="children1"><b>Children</b>
+                        <select disabled name="seats[FCC]" id="seats-FCC" onchange="countTotal();isSeatSelected()">
+                          <option value="">Please Select</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="total">
+                    <label for="total">Total $</label>
+                    <p id="totalMoney"></p>
+                  </div>
+
+                  <input name="order" id="orderButton" type="submit" value="Order">
+                </form>
+                <span id="submitErrorMessage">Please select a movie and its date and time from Synopsis's "Make aBooking" section first.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
@@ -651,14 +621,7 @@
     <script>
       document.write(new Date().getFullYear());
     </script>
-    Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified
-    <script>
-      document.write(new Date().getFullYear());
-      document.write("-");
-      document.write(new Date().getMonth() + 1);
-      document.write("-");
-      document.write(new Date().getDate());
-    </script> (YYYY-MM-DD)
+    Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-05-02 (YYYY-MM-DD)
   </div>
 
   <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web

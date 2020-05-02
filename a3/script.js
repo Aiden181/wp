@@ -2,6 +2,7 @@
 window.addEventListener('scroll', stickyNavBar);
 window.addEventListener('scroll', highlightNavigation);
 window.addEventListener('scroll', isScrolling);
+updateMovieSynopsis();
 
 var pageScrolling;
 function isScrolling() {
@@ -298,5 +299,42 @@ function isSeatSelected() {
         
         document.getElementById('submitErrorMessage').innerHTML = "";
         return true;
+    }
+}
+
+function updateMovieSynopsis(id) {
+    var ACT = document.getElementById('synopsisACT');
+    var ANM = document.getElementById('synopsisANM');
+    var RMC = document.getElementById('synopsisRMC');
+    var AHF = document.getElementById('synopsisAHF');
+    
+    ACT.style.display = "block";
+    ANM.style.display = "none";
+    RMC.style.display = "none";
+    AHF.style.display = "none";
+
+    if (id === "ACT") {
+        ACT.style.display = "block";
+        ANM.style.display = "none";
+        RMC.style.display = "none";
+        AHF.style.display = "none";
+    }
+    else if (id === "ANM") {
+        ACT.style.display = "none";
+        ANM.style.display = "block";
+        RMC.style.display = "none";
+        AHF.style.display = "none";
+    }
+    else if (id === "RMC") {
+        ACT.style.display = "none";
+        ANM.style.display = "none";
+        RMC.style.display = "block";
+        AHF.style.display = "none";
+    }
+    else if (id === "AHF") {
+        ACT.style.display = "none";
+        ANM.style.display = "none";
+        RMC.style.display = "none";
+        AHF.style.display = "block";
     }
 }
