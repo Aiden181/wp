@@ -1,3 +1,4 @@
+
 window.addEventListener('scroll', stickyNavBar);
 window.addEventListener('scroll', highlightNavigation);
 window.addEventListener('scroll', isScrolling);
@@ -311,27 +312,40 @@ function updateMovieSynopsis(id) {
     AHF.style.display = "none";
 
     if (id === "ACT") {
+        stopAllVideosExcept("ACT_trailer");
         ACT.style.display = "block";
         ANM.style.display = "none";
         RMC.style.display = "none";
         AHF.style.display = "none";
     }
     else if (id === "ANM") {
+        stopAllVideosExcept("ANM_trailer");
         ACT.style.display = "none";
         ANM.style.display = "block";
         RMC.style.display = "none";
         AHF.style.display = "none";
     }
     else if (id === "RMC") {
+        stopAllVideosExcept("RMC_trailer");
         ACT.style.display = "none";
         ANM.style.display = "none";
         RMC.style.display = "block";
         AHF.style.display = "none";
     }
     else if (id === "AHF") {
+        stopAllVideosExcept("AHF_trailer");
         ACT.style.display = "none";
         ANM.style.display = "none";
         RMC.style.display = "none";
         AHF.style.display = "block";
     }
+}
+
+// stop videos that have youtube-video class except for the one that matches video ID
+function stopAllVideosExcept(videoID) {
+    $('.youtube-video').each(function () {
+        if (this.getAttribute("id") != videoID) {
+            this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+        }
+    });
 }

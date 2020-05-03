@@ -96,8 +96,7 @@
           <li><a class="nav-link" href="#aboutus" onclick="highlightNavOnClick('aboutus')">About Us</a></li>
           <li><a class="nav-link" href="#prices" onclick="highlightNavOnClick('prices')">Prices</a></li>
           <li><a class="nav-link" href="#nowshowing" onclick="highlightNavOnClick('nowshowing')">Now Showing</a></li>
-          <li><a class="nav-link" href="#synopsisarea" onclick="highlightNavOnClick('synopsisarea')">Synopsis Area</a>
-          </li>
+          <li><a class="nav-link" href="#synopsisarea" onclick="highlightNavOnClick('synopsisarea')">Synopsis Area</a></li>
           <li><a class="nav-link" href="#bookingarea" onclick="highlightNavOnClick('bookingarea')">Booking</a></li>
         </ul>
       </nav>
@@ -196,7 +195,7 @@
                   <p class="card-text">Fri - 9pm</p>
                   <p class="card-text">Sat - 6pm</p>
                   <p class="card-text">Sun - 6pm</p>
-                  <a href="#synopsisACT" class="btn btn-primary" onclick="updateMovieSynopsis('ACT')">More Details</a>
+                  <a href="#synopsisACT" class="btn btn-primary stop-video" onclick="updateMovieSynopsis('ACT')">More Details</a>
                 </div>
               </div>
             </div>
@@ -213,7 +212,7 @@
                   <p class="card-text">Fri - 6pm</p>
                   <p class="card-text">Sat - 12pm</p>
                   <p class="card-text">Sun - 12pm</p>
-                  <a href="#synopsisANM" class="btn btn-primary" onclick="updateMovieSynopsis('ANM')">More Details</a>
+                  <a href="#synopsisANM" class="btn btn-primary stop-video" onclick="updateMovieSynopsis('ANM')">More Details</a>
                 </div>
               </div>
             </div>
@@ -232,7 +231,7 @@
                   <p class="card-text">Fri - ...</p>
                   <p class="card-text">Sat - 3pm</p>
                   <p class="card-text">Sun - 3pm</p>
-                  <a href="#synopsisRMC" class="btn btn-primary" onclick="updateMovieSynopsis('RMC')">More Details</a>
+                  <a href="#synopsisRMC" class="btn btn-primary stop-video" onclick="updateMovieSynopsis('RMC')">More Details</a>
                 </div>
               </div>
             </div>
@@ -249,7 +248,7 @@
                   <p class="card-text">Fri - 12pm</p>
                   <p class="card-text">Sat - 9pm</p>
                   <p class="card-text">Sun - 9pm</p>
-                  <a href="#synopsisAHF" class="btn btn-primary" onclick="updateMovieSynopsis('AHF')">More Details</a>
+                  <a href="#synopsisAHF" class="btn btn-primary stop-video" onclick="updateMovieSynopsis('AHF')">More Details</a>
                 </div>
               </div>
             </div>
@@ -269,7 +268,7 @@
                 </div>
                 <div class="card-body">
                   <div class="resp-container">
-                    <iframe width="1045" height="800" src="https://www.youtube.com/embed/TcMBFSGVi1c"
+                    <iframe width="1045" height="800" class="youtube-video" id="ACT_trailer" src="https://www.youtube.com/embed/TcMBFSGVi1c?enablejsapi=1&version=3&playerapiid=ytplayer"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen></iframe>
                   </div>
@@ -313,7 +312,7 @@
                 </div>
                 <div class="card-body">
                   <div class="resp-container">
-                    <iframe id="dumbo" width="1045" height="800" src="https://www.youtube.com/embed/7NiYVoqBt-8"
+                    <iframe width="1045" height="800" class="youtube-video" id="ANM_trailer" src="https://www.youtube.com/embed/7NiYVoqBt-8?enablejsapi=1&version=3&playerapiid=ytplayer"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen></iframe>
                   </div>
@@ -360,7 +359,7 @@
                 </div>
                 <div class="card-body">
                   <div class="resp-container">
-                    <iframe width="1045" height="800" src="https://www.youtube.com/embed/uoDBvGF9pPU"
+                    <iframe width="1045" height="800" class="youtube-video" id="RMC_trailer" src="https://www.youtube.com/embed/uoDBvGF9pPU?enablejsapi=1&version=3&playerapiid=ytplayer"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen></iframe>
                   </div>
@@ -398,7 +397,7 @@
                 </div>
                 <div class="card-body">
                   <div class="resp-container">
-                    <iframe width="1045" height="800" src="https://www.youtube.com/embed/tXANCJQkUIE"
+                    <iframe width="1045" height="800" class="youtube-video" id="AHF_trailer" src="https://www.youtube.com/embed/tXANCJQkUIE?enablejsapi=1&version=3&playerapiid=ytplayer"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen></iframe>
                   </div>
@@ -609,6 +608,7 @@
       </main>
     </div>
   </div>
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script src="script.js"></script>
 
   <br>
