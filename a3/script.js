@@ -140,7 +140,8 @@ function countTotal() {
 }
 
 function updateBookingHeader(e) {
-    var movieID;
+    // get movie ID from value
+    var movieID = e.getAttribute('data-movie-id');
     var movieTitle;
     var movieDate;
     var movieTime;
@@ -168,15 +169,12 @@ function updateBookingHeader(e) {
     if (movieTime == "12pm") {
         document.getElementById('movieHour').value = "T12";
     } else if (movieTime == "3pm") {
-        document.getElementById('movieHour').value = "T15";
+        formHdocument.getElementById('movieHour').valueour = "T15";
     } else if (movieTime == "6pm") {
         document.getElementById('movieHour').value = "T18";
     } else if (movieTime == "9pm") {
         document.getElementById('movieHour').value = "T21";
     }
-
-    // get movie ID from value
-    movieID = e.getAttribute('value');
 
     // get movie title from ID
     switch (movieID) {
@@ -258,7 +256,7 @@ function isValidExpiryDate() {
 
 function isMovieSelected() {
     var formID = document.getElementById('movieID').value;
-    var formDate = document.getElementById('movieDate').value
+    var formDate = document.getElementById('movieDate').value;
     var formHour = document.getElementById('movieHour').value;
 
     if (formID == "" || formDate == "" || formHour == "") {
