@@ -136,7 +136,7 @@ function countTotal() {
 
     // get the string element and update
     var total = document.getElementById('totalMoney');
-    total.innerHTML = totalPrice.toFixed(2);
+    total.innerHTML = "$" + totalPrice.toFixed(2);
 }
 
 function updateBookingHeader(e) {
