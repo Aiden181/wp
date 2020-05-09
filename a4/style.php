@@ -1,3 +1,14 @@
+<?php
+/*** set the content type header ***/
+/*** Without this header, it wont work ***/
+header("Content-type: text/css");
+
+
+$font_family = 'Arial, Helvetica, sans-serif';
+$font_size = '0.7em';
+$border = '1px solid';
+?>
+
 body, html {
   height: 100%;
 }
@@ -94,6 +105,7 @@ body, html {
 {
   right: 0;
   left: 0;
+  height: 55px;
 }
 
 #navigation_bar li
@@ -130,13 +142,13 @@ body {
   line-height: 1.5;
 }
 
-#bookingcard1 {
+#bookingcard {
   position: relative;
   left: 22%;
   border: solid black;
   border-width: 1px;
-  height: 360px;
-  width: 600px;
+  height: 400px;
+  width: 650px;
 }
 
 .custInfo {
@@ -157,7 +169,7 @@ body {
 }
 
 .custInfo input {
-  width: 150px;
+  width: 180px;
 }
 
 .bookingLabels {
@@ -184,14 +196,14 @@ body {
   width: 130px;
 }
 
-#order {
+#orderButton {
   border: black solid;
-  border-width: 4px;
+  border-width: 2px;
   background-color: white;
   position: relative;
   width:100px;
-  left: 62.5%;
-  bottom: 50px;
+  left: 80%;
+  bottom: 160px;
 }
 
 .expiryTime {
@@ -206,6 +218,66 @@ body {
 
 .total {
   position: relative;
-  bottom: 20%;
+  bottom: 25%;
+  left: 18%;
+}
+
+.bookingHeader {
+  position: relative;
   left: 2%;
+  top: 2%;
+}
+
+#standard{
+  position: relative;
+  left: 3%;
+  top: 1%;
+}
+
+#firstClass {
+  position: relative;
+  left: 3%;
+  top: 1%;
+}
+
+#totalMoney {
+  border: dashed black;
+  border-width: 1px;
+  height: 30px;
+  width: 120px;
+  position: absolute;
+  left: 9%;
+  bottom: -40%;
+}
+
+.active {
+    color: rgb(255, 255, 255);
+    border-bottom: 3px solid rgb(255, 255, 255);
+}
+
+input:invalid {
+  border: 2px solid red;
+  background-color: salmon;
+}
+
+#totalMoney {
+  text-align: center;
+  font-size: 18px;
+}
+
+#submitErrorMessage {
+  position: relative;
+  width: 220px;
+  left: 60%;
+  bottom: 300px;
+  color: red;
+}
+
+.plotSummaryBody{
+  background-color: whitesmoke;
+  font-size: 16px;
+}
+
+.plotSummary{
+  font-size: 25px;
 }

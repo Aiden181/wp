@@ -2,9 +2,7 @@
 <html lang='en'>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Assignment 3</title>
+  <title>Assignment 4</title>
 
   <!--Bootstrap 4-->
   <meta charset="utf-8">
@@ -18,6 +16,8 @@
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
   <link id='stylecss' type="text/css" rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.google.com/specimen/Comic+Neue">
+  <link rel="stylesheet" type="text/css" href="style.php" media="screen">
+  <?php include 'tools.php'?>
 
   <script src='../wireframe.js'></script>
 
@@ -600,7 +600,7 @@
 
                   <input name="order" id="orderButton" type="submit" value="Order">
                 </form>
-                <span id="submitErrorMessage">Please select a movie and its date and time from Synopsis's "Make aBooking" section first.</span>
+                <span id="submitErrorMessage">Please select a movie and its date and time from Synopsis's "Make a Booking" section first.</span>
               </div>
             </div>
           </div>
