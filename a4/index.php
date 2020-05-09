@@ -14,7 +14,7 @@
 
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
-  <link id='stylecss' type="text/css" rel="stylesheet" href="style.css">
+  <link id='stylecss' type="text/css" rel="stylesheet" href="style.php">
   <link rel="stylesheet" href="https://fonts.google.com/specimen/Comic+Neue">
   <link rel="stylesheet" type="text/css" href="style.php" media="screen">
   <?php include 'tools.php'?>
