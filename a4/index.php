@@ -1,3 +1,5 @@
+<?php include 'tools.php'?>
+
 <!DOCTYPE html>
 <html lang='en'>
 
@@ -16,14 +18,13 @@
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
   <link id='stylecss' type="text/css" rel="stylesheet" href="style.php">
   <link rel="stylesheet" href="https://fonts.google.com/specimen/Comic+Neue">
-  <link rel="stylesheet" type="text/css" href="style.php" media="screen">
-  <?php include 'tools.php'?>
 
   <script src='../wireframe.js'></script>
 
   <!-- Parallax.js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+
 </head>
 
 <body>
@@ -445,8 +446,10 @@
                   <label id="movieDateHeader" style="font-size:20px"><b> - Day</b></label>
                   <label id="movieTimeHeader" style="font-size:20px"><b> - Time</b></label>
                 </div>
-                <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" method="POST"
-                  onsubmit="checkSubmission(event)">
+                <!-- <form method="POST" action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php"
+                  onsubmit="checkSubmission(event)"> -->
+                <form method="POST" action="index.php"
+                onsubmit="checkSubmission(event)">
                   <!--Ask for name-->
                   <div class="custInfo">
                     <input id="movieID" name="movie[id]" type="hidden" value="">
@@ -454,35 +457,37 @@
                     <input id="movieHour" name="movie[hour]" type="hidden" value="">
 
                     <label for="cust-name"><b>Name</b></label>
-                    <input disabled type="text" id="cust-name" name="cust[name]" pattern="^[A-Za-z]+$" required>
+                    <input  type="text" name="cust_name" id="cust-name"> <!--pattern="^[A-Za-z]+$" required>-->
 
                     <br>
                     <!--Ask for email-->
                     <label for="cust-email"><b>Email</b></label>
-                    <input disabled type="email" name="cust[email]" id="cust-email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+                    <input  type="email" name="cust_email" id="cust-email"> <!-- pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required> -->
 
                     <br>
                     <!--Ask for mobile phone input-->
                     <label for="cust-mobile"><b>Mobile</b></label>
-                    <input disabled type="tel" name="cust[mobile]" id="cust-mobile"
-                      pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$" required>
+                    <input  type="tel" name="cust_mobile" id="cust-mobile"> <!--
+                      pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$" required> -->
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="cust-credit"><b>Credit Card</b></label>
-                    <input disabled type="text" name="cust[card]" id="cust-credit" pattern="[0-9]{14,19}" required>
+                    <input  type="text" name="cust_card" id="cust-credit"> <!-- pattern="[0-9]{14,19}" required> -->
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="cust-expiry"><b>Credit Card</b></label>
-                    <input disabled type="month" name="cust[expiry]" id="cust-expiry">
+                    <input  type="month" name="cust_expiry" id="cust-expiry">
+
+                    <input type='submit' name='session-reset' value='Reset the session' >
                   </div>
 
                   <div class="bookingLabels">
                     <h6 id="standard" style="font-size: 18px;">Standard</h6>
                     <div>
                       <label for="seats-STA"><b>Adults</b>
-                        <select disabled name="seats[STA]" id="seats-STA" onchange="countTotal();isSeatSelected()">
+                        <select  name="seats[STA]" id="seats-STA" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option>1</option>
                           <option>2</option>
@@ -597,7 +602,27 @@
 
                   <input name="order" id="orderButton" type="submit" value="Order">
                 </form>
-                <span id="submitErrorMessage">Please select a movie and its date and time from Synopsis's "Make a Booking" section first.</span>
+
+                <span id="submitErrorMessage" class="container">
+                <?php
+                  echo "$nameErr </br>";
+                  echo "$emailErr </br>";
+                  echo "$mobileErr </br>";
+                  echo "$cardNumberErr </br>";
+                  echo "$cardExpiryErr </br>";
+                ?>
+                </span>
+
+                Your name is: <?php echo $_POST["cust_name"] ?>
+                <br>
+                Your email is: <?php echo $_POST["cust_email"] ?>
+                <br>
+                Your phone number is: <?php echo $_POST["cust_mobile"] ?>
+                <br>
+                Your credit card number is: <?php echo $_POST["cust_card"] ?>
+                <br>
+                Your credit card expiry date is: <?php echo $_POST["cust_expiry"] ?>
+
               </div>
             </div>
           </div>

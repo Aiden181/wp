@@ -262,8 +262,8 @@ input:invalid {
 
 #submitErrorMessage {
   position: relative;
-  width: 220px;
-  left: 60%;
+  width: 300px;
+  left: 26%;
   bottom: 300px;
   color: red;
 }
