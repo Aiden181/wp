@@ -19,6 +19,13 @@ if (isset($_POST['session-reset'])) {
 
 }
 
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
 $name = test_input($_POST["cust_name"]);
 if (!preg_match("/^[A-Za-z]+$/",$name)) {
   $nameErr = "Please enter a valid name";
