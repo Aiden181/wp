@@ -8,29 +8,29 @@
         die();
     }
 
-    ////////////////////
-    // init variables //
-    ////////////////////
+    //////////////////////////////////
+    // init arrays and their values //
+    //////////////////////////////////
     // personal info var
-    $name = $email = $mobile = $cardNumber = $cardExpiry = "";
+    $customer = array( "name", "email", "mobile", "card", "expiry");
     // movie info var
-    $movieID = $movieDate = $movieHour = "";
+    $movie = array( "id", "day", "hour");
     // seats info var
-    $seatSTA = $seatSTP = $seatSTC = $seatFCA = $seatFCP = $seatFCC = "";
+    $seats = array("STA", "STP", "STC", "FCA", "FCP", "FCC");
 
 
-    ////////////////////////////////////
-    // assign $_SESSION values to var //
-    ////////////////////////////////////
+    /////////////////////////////////////////////
+    // assign $_SESSION values to array values //
+    /////////////////////////////////////////////
     // personal info var
     if(isset($_SESSION["cart"]["cust"]["name"])) {
-        $name = $_SESSION["cart"]["cust"]["name"];
+        $customer["name"] = $_SESSION["cart"]["cust"]["name"];
     }
     if(isset($_SESSION["cart"]["cust"]["email"])) {
-        $email = $_SESSION["cart"]["cust"]["email"];
+        $customer["email"] = $_SESSION["cart"]["cust"]["email"];
     }
     if(isset($_SESSION["cart"]["cust"]["mobile"])) {
-        $mobile = $_SESSION["cart"]["cust"]["mobile"];
+        $customer["mobile"] = $_SESSION["cart"]["cust"]["mobile"];
     }
 
     // movie info var
