@@ -63,6 +63,61 @@
     if(isset($_SESSION["cart"]["seats"]["FCC"])) {
         $seatCount["FCC"] = $_SESSION["cart"]["seats"]["FCC"];
     }
+
+    ///////////////////////////////////////////////////////////////
+    // This function calculates gst and total price of the order //
+    ///////////////////////////////////////////////////////////////
+    
+    // make variable for GST and total price
+    $GST = 0;
+    $totalPrice = 0;
+    // calculate gst and total price function
+    function countTotal() {
+        // get access to global variables
+        global $GST;
+        global $totalPrice;
+        global $seatCount;
+        
+        // prices of each option
+        $STA = 20;
+        $STP = 15;
+        $STC = 12;
+        $FCA = 30;
+        $FCP = 26;
+        $FCC = 22;
+
+        // init total selection price variable
+        $STAprice = $STPtotal = $STCtotal = $FCAtotal = $FCPtotal = $FCCtotal = 0;
+    
+        // get the amount of each option and multiply by price
+        if(isset($_SESSION["cart"]["seats"]["STA"]))
+            $STAtotal = $seatCount["STA"] * $STA;
+        if(isset($_SESSION["cart"]["seats"]["STP"]))
+            $STPtotal = $seatCount["STP"] * $STP;
+        if(isset($_SESSION["cart"]["seats"]["STC"]))
+            $STCtotal = $seatCount["STC"] * $STC;
+        if(isset($_SESSION["cart"]["seats"]["FCA"]))
+            $FCAtotal = $seatCount["FCA"] * $FCA;
+        if(isset($_SESSION["cart"]["seats"]["FCP"]))
+            $FCPtotal = $seatCount["FCP"] * $FCP;
+        if(isset($_SESSION["cart"]["seats"]["FCC"]))
+            $FCCtotal = $seatCount["FCC"] * $FCC;
+    
+        // add up the total price
+        $totalPrice = $STAtotal + $STPtotal + $STCtotal + $FCAtotal + $FCPtotal + $FCCtotal;
+    
+        // Discount on Weekdays at 12:00
+        // get current day of the week
+        $currentDay = date("w");
+        // get current hour
+        $currentHour = date("H");
+    
+        // hour is 12 and not on saturday and sunday, give discount
+        if ($currentHour == 12 && $currentDay != 0 && $currentDay != 6) {
+            $totalPrice -= $totalPrice/11;
+        }
+        $GST = $totalPrice/11;
+        round($GST,2);
     }
 ?>
 
@@ -78,6 +133,12 @@
 <body>
     <!-- format the page here -->
 
+    <!-- PRICE PRINT OUT EXAMPLE-->
+    <?php
+        countTotal();
+        echo "GST: ". round($GST,2) . "</br>";
+        echo "Total price: $totalPrice </br>";
+    ?>
     
     <?php
     ///////////////////
