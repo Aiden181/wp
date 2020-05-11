@@ -217,14 +217,14 @@ function updateBookingHeader(e) {
 }
 
 function checkSubmission(e) {
-    // passes all validations
-    if (!isMovieSelected() && !isSeatSelected()) {
+    // check validation
+    if (!isMovieSelected()) {
         document.getElementById('submitErrorMessage').innerHTML = "Please select a movie and its date and time from Synopsis's \"Make a Booking\" section first!";
     }
-    else if (isMovieSelected() && !isSeatSelected()) {
+    else if (!isSeatSelected()) {
         document.getElementById('submitErrorMessage').innerHTML = "Please select at least 1 seat.";
     }
-    else if (isValidExpiryDate()) {
+    else if (isMovieSelected() && isSeatSelected() && isValidExpiryDate()) {
         return true;
     }
     e.preventDefault();
@@ -258,7 +258,7 @@ function isMovieSelected() {
     var formDate = document.getElementById('movieDate').value;
     var formHour = document.getElementById('movieHour').value;
 
-    if (formID == "" || formDate == "" || formHour == "") {
+    if (formID === "" || formDate === "" || formHour === "") {
         document.getElementById('submitErrorMessage').innerHTML = "Please select a movie and its date and time from Synopsis's \"Make a Booking\" section first!";
         return false;
     } else {
