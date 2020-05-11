@@ -137,11 +137,11 @@
     return $data;
   }
 
-  function keepSelectFieldAfterSubmit($str) {
+  function keepSelectFieldAfterSubmit($str1, $str2) {
     // if value is not null and equal to $str
     // echo selected
     // otherwise, echo nothing
-    echo (isset($_POST['seats']['STA']) && $_POST['seats']['STA'] === $str) ? 'selected' : '';
+    echo (isset($_POST['seats'][$str1]) && $_POST['seats'][$str1] === $str2) ? 'selected' : '';
   }
 
   // Print data and shape/structure of data

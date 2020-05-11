@@ -491,16 +491,16 @@
                       <label for="seats-STA"><b>Adults</b>
                         <select  name="seats[STA]" id="seats-STA" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
+                          <option <?php keepSelectFieldAfterSubmit('STA', '1'); ?>>1</option>
+                          <option <?php keepSelectFieldAfterSubmit('STA', '2'); ?>>2</option>
+                          <option <?php keepSelectFieldAfterSubmit('STA', '3'); ?>>3</option>
+                          <option <?php keepSelectFieldAfterSubmit('STA', '4'); ?>>4</option>
+                          <option <?php keepSelectFieldAfterSubmit('STA', '5'); ?>>5</option>
+                          <option <?php keepSelectFieldAfterSubmit('STA', '6'); ?>>6</option>
+                          <option <?php keepSelectFieldAfterSubmit('STA', '7'); ?>>7</option>
+                          <option <?php keepSelectFieldAfterSubmit('STA', '8'); ?>>8</option>
+                          <option <?php keepSelectFieldAfterSubmit('STA', '9'); ?>>9</option>
+                          <option <?php keepSelectFieldAfterSubmit('STA', '10'); ?>>10</option>
                         </select>
                       </label>
                       <br>
@@ -508,16 +508,16 @@
                       <label for="seats-STP"><b>Concession</b>
                         <select disabled name="seats[STP]" id="seats-STP" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
+                          <option <?php keepSelectFieldAfterSubmit('STP', '1'); ?>>1</option>
+                          <option <?php keepSelectFieldAfterSubmit('STP', '2'); ?>>2</option>
+                          <option <?php keepSelectFieldAfterSubmit('STP', '3'); ?>>3</option>
+                          <option <?php keepSelectFieldAfterSubmit('STP', '4'); ?>>4</option>
+                          <option <?php keepSelectFieldAfterSubmit('STP', '5'); ?>>5</option>
+                          <option <?php keepSelectFieldAfterSubmit('STP', '6'); ?>>6</option>
+                          <option <?php keepSelectFieldAfterSubmit('STP', '7'); ?>>7</option>
+                          <option <?php keepSelectFieldAfterSubmit('STP', '8'); ?>>8</option>
+                          <option <?php keepSelectFieldAfterSubmit('STP', '9'); ?>>9</option>
+                          <option <?php keepSelectFieldAfterSubmit('STP', '10'); ?>>10</option>
                         </select>
                       </label>
                       <br>
@@ -525,16 +525,16 @@
                       <label for="seats-STC"><b>Children</b>
                         <select disabled name="seats[STC]" id="seats-STC" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
+                          <option <?php keepSelectFieldAfterSubmit('STC', '1'); ?>>1</option>
+                          <option <?php keepSelectFieldAfterSubmit('STC', '2'); ?>>2</option>
+                          <option <?php keepSelectFieldAfterSubmit('STC', '3'); ?>>3</option>
+                          <option <?php keepSelectFieldAfterSubmit('STC', '4'); ?>>4</option>
+                          <option <?php keepSelectFieldAfterSubmit('STC', '5'); ?>>5</option>
+                          <option <?php keepSelectFieldAfterSubmit('STC', '6'); ?>>6</option>
+                          <option <?php keepSelectFieldAfterSubmit('STC', '7'); ?>>7</option>
+                          <option <?php keepSelectFieldAfterSubmit('STC', '8'); ?>>8</option>
+                          <option <?php keepSelectFieldAfterSubmit('STC', '9'); ?>>9</option>
+                          <option <?php keepSelectFieldAfterSubmit('STC', '10'); ?>>10</option>
                         </select>
                       </label>
                     </div>
@@ -548,16 +548,16 @@
                       <label for="seats-FCA"><b>Adults</b>
                         <select disabled name="seats[FCA]" id="seats-FCA" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCA', '1'); ?>>1</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCA', '2'); ?>>2</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCA', '3'); ?>>3</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCA', '4'); ?>>4</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCA', '5'); ?>>5</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCA', '6'); ?>>6</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCA', '7'); ?>>7</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCA', '8'); ?>>8</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCA', '9'); ?>>9</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCA', '10'); ?>>10</option>
                         </select>
                       </label>
                       <br>
@@ -565,16 +565,16 @@
                       <label for="seats-FCP"><b>Concession</b>
                         <select disabled name="seats[FCP]" id="seats-FCP" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCP', '1'); ?>>1</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCP', '2'); ?>>2</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCP', '3'); ?>>3</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCP', '4'); ?>>4</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCP', '5'); ?>>5</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCP', '6'); ?>>6</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCP', '7'); ?>>7</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCP', '8'); ?>>8</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCP', '9'); ?>>9</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCP', '10'); ?>>10</option>
                         </select>
                       </label>
                       <br>
@@ -582,16 +582,16 @@
                       <label for="seats-FCC"><b>Children</b>
                         <select disabled name="seats[FCC]" id="seats-FCC" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCC', '1'); ?>>1</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCC', '2'); ?>>2</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCC', '3'); ?>>3</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCC', '4'); ?>>4</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCC', '5'); ?>>5</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCC', '6'); ?>>6</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCC', '7'); ?>>7</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCC', '8'); ?>>8</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCC', '9'); ?>>9</option>
+                          <option <?php keepSelectFieldAfterSubmit('FCC', '10'); ?>>10</option>
                         </select>
                       </label>
                     </div>
