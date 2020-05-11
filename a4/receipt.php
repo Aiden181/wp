@@ -5,7 +5,7 @@
     if (empty($_SESSION)) {
         // redirect to index.php
         header("Location: index.php");
-        die();
+        exit();
     }
 
     //////////////////////////////////
@@ -70,12 +70,14 @@
     
     // make variable for GST and total price
     $GST = 0;
-    $totalPrice = 0;
+    $totalPriceBeforeGST = 0;
+    $totalPriceAfterGST = 0;
     // calculate gst and total price function
     function countTotal() {
         // get access to global variables
         global $GST;
-        global $totalPrice;
+        global $totalPriceBeforeGST;
+        global $totalPriceAfterGST;
         global $seatCount;
         
         // prices of each option
@@ -90,21 +92,21 @@
         $STAprice = $STPtotal = $STCtotal = $FCAtotal = $FCPtotal = $FCCtotal = 0;
     
         // get the amount of each option and multiply by price
-        if(isset($_SESSION["cart"]["seats"]["STA"]))
+        if(isset($_SESSION["cart"]["seats"]["STA"]) && is_numeric($_SESSION["cart"]["seats"]["STA"]))
             $STAtotal = $seatCount["STA"] * $STA;
-        if(isset($_SESSION["cart"]["seats"]["STP"]))
+        if(isset($_SESSION["cart"]["seats"]["STP"]) && is_numeric($_SESSION["cart"]["seats"]["STP"]))
             $STPtotal = $seatCount["STP"] * $STP;
-        if(isset($_SESSION["cart"]["seats"]["STC"]))
+        if(isset($_SESSION["cart"]["seats"]["STC"]) && is_numeric($_SESSION["cart"]["seats"]["STC"]))
             $STCtotal = $seatCount["STC"] * $STC;
-        if(isset($_SESSION["cart"]["seats"]["FCA"]))
+        if(isset($_SESSION["cart"]["seats"]["FCA"]) && is_numeric($_SESSION["cart"]["seats"]["FCA"]))
             $FCAtotal = $seatCount["FCA"] * $FCA;
-        if(isset($_SESSION["cart"]["seats"]["FCP"]))
+        if(isset($_SESSION["cart"]["seats"]["FCP"]) && is_numeric($_SESSION["cart"]["seats"]["FCP"]))
             $FCPtotal = $seatCount["FCP"] * $FCP;
-        if(isset($_SESSION["cart"]["seats"]["FCC"]))
+        if(isset($_SESSION["cart"]["seats"]["FCC"]) && is_numeric($_SESSION["cart"]["seats"]["FCC"]))
             $FCCtotal = $seatCount["FCC"] * $FCC;
     
         // add up the total price
-        $totalPrice = $STAtotal + $STPtotal + $STCtotal + $FCAtotal + $FCPtotal + $FCCtotal;
+        $totalPriceBeforeGST = $STAtotal + $STPtotal + $STCtotal + $FCAtotal + $FCPtotal + $FCCtotal;
     
         // Discount on Weekdays at 12:00
         // get current day of the week
@@ -116,7 +118,8 @@
         if ($currentHour == 12 && $currentDay != 0 && $currentDay != 6) {
             $totalPrice -= $totalPrice/11;
         }
-        $GST = $totalPrice/11;
+        $GST = $totalPriceBeforeGST/11;
+        $totalPriceAfterGST = $totalPriceBeforeGST + round($GST,2);
     }
 ?>
 
@@ -135,8 +138,9 @@
     <!-- PRICE PRINT OUT EXAMPLE-->
     <?php
         countTotal();
+        echo "Total price before GST: $totalPriceBeforeGST </br>";
         echo "GST: ". round($GST,2) . "</br>";
-        echo "Total price: $totalPrice </br>";
+        echo "Total price after GST: $totalPriceAfterGST </br>";
     ?>
     
     <?php
