@@ -117,7 +117,6 @@
             $totalPrice -= $totalPrice/11;
         }
         $GST = $totalPrice/11;
-        round($GST,2);
     }
 ?>
 
