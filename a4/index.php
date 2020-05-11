@@ -459,28 +459,28 @@
                     <input id="movieHour" name="movie[hour]" type="hidden" value="HA">
 
                     <label for="cust-name"><b>Name</b></label>
-                    <input  type="text" name="cust[name]" id="cust-name"> <!--pattern="^[A-Za-z]+$" required>-->
+                    <input  type="text" name="cust[name]" id="cust-name" value="<?php if (isset($_POST['cust']['name'])) {echo $_POST['cust']['name'];} ?>"> <!--pattern="^[A-Za-z]+$" required>-->
 
                     <br>
                     <!--Ask for email-->
                     <label for="cust-email"><b>Email</b></label>
-                    <input  type="email" name="cust[email]" id="cust-email"> <!-- pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required> -->
+                    <input  type="email" name="cust[email]" id="cust-email" value="<?php if (isset($_POST['cust']['email'])) {echo $_POST['cust']['email'];} ?>"> <!-- pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required> -->
 
                     <br>
                     <!--Ask for mobile phone input-->
                     <label for="cust-mobile"><b>Mobile</b></label>
-                    <input  type="tel" name="cust[mobile]" id="cust-mobile"> <!--
+                    <input  type="tel" name="cust[mobile]" id="cust-mobile" value="<?php if (isset($_POST['cust']['mobile'])) echo $_POST['cust']['mobile']; ?>"> <!--
                     pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$" required> -->
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="cust-credit"><b>Credit Card</b></label>
-                    <input  type="text" name="cust[card]" id="cust-credit"> <!-- pattern="[0-9]{14,19}" required> -->
+                    <input  type="text" name="cust[card]" id="cust-credit" value="<?php if (isset($_POST['cust']['card'])) echo $_POST['cust']['card']; ?>"> <!-- pattern="[0-9]{14,19}" required> -->
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="cust-expiry"><b>Credit Card</b></label>
-                    <input  type="month" name="cust[expiry]" id="cust-expiry">
+                    <input  type="month" name="cust[expiry]" id="cust-expiry" value="<?php if (isset($_POST['cust']['expiry'])) echo $_POST['cust']['expiry']; ?>">
 
                     <input type='submit' name='session-reset' value='Reset the session' >
                   </div>
