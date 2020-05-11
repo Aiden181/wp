@@ -440,6 +440,9 @@
           <h2>Booking</h2>
           <div class="row">
             <div class="col-sm-12">
+              <?php 
+                echo "$movieErr";
+              ?>
               <div id="bookingcard" class="card">
                 <div class="bookingHeader">
                   <label id="movieTitleHeader" style="font-size:20px"><b>Movie Title</b></label>
