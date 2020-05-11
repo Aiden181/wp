@@ -506,7 +506,7 @@
                       <br>
 
                       <label for="seats-STP"><b>Concession</b>
-                        <select disabled name="seats[STP]" id="seats-STP" onchange="countTotal();isSeatSelected()">
+                        <select  name="seats[STP]" id="seats-STP" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option <?php keepSelectFieldAfterSubmit('STP', '1'); ?>>1</option>
                           <option <?php keepSelectFieldAfterSubmit('STP', '2'); ?>>2</option>
@@ -523,7 +523,7 @@
                       <br>
 
                       <label for="seats-STC"><b>Children</b>
-                        <select disabled name="seats[STC]" id="seats-STC" onchange="countTotal();isSeatSelected()">
+                        <select  name="seats[STC]" id="seats-STC" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option <?php keepSelectFieldAfterSubmit('STC', '1'); ?>>1</option>
                           <option <?php keepSelectFieldAfterSubmit('STC', '2'); ?>>2</option>
@@ -546,7 +546,7 @@
                     <h6 id="firstClass" style="font-size: 18px;">First Class</h6>
                     <div>
                       <label for="seats-FCA"><b>Adults</b>
-                        <select disabled name="seats[FCA]" id="seats-FCA" onchange="countTotal();isSeatSelected()">
+                        <select  name="seats[FCA]" id="seats-FCA" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option <?php keepSelectFieldAfterSubmit('FCA', '1'); ?>>1</option>
                           <option <?php keepSelectFieldAfterSubmit('FCA', '2'); ?>>2</option>
@@ -563,7 +563,7 @@
                       <br>
 
                       <label for="seats-FCP"><b>Concession</b>
-                        <select disabled name="seats[FCP]" id="seats-FCP" onchange="countTotal();isSeatSelected()">
+                        <select  name="seats[FCP]" id="seats-FCP" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option <?php keepSelectFieldAfterSubmit('FCP', '1'); ?>>1</option>
                           <option <?php keepSelectFieldAfterSubmit('FCP', '2'); ?>>2</option>
@@ -580,7 +580,7 @@
                       <br>
 
                       <label for="seats-FCC"><b>Children</b>
-                        <select disabled name="seats[FCC]" id="seats-FCC" onchange="countTotal();isSeatSelected()">
+                        <select  name="seats[FCC]" id="seats-FCC" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option <?php keepSelectFieldAfterSubmit('FCC', '1'); ?>>1</option>
                           <option <?php keepSelectFieldAfterSubmit('FCC', '2'); ?>>2</option>
