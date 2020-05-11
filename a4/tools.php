@@ -137,6 +137,7 @@
     return $data;
   }
 
+  // keep seats selections even after user submit form
   function keepSelectFieldAfterSubmit($str1, $str2) {
     // if value is not null and equal to $str
     // echo selected
@@ -160,7 +161,7 @@
     echo '</ol></pre>';
 
   }
-
+    
   // Reset the session - Submit Button
   if (isset($_POST['session-reset'])) {
     foreach($_SESSION as $something => &$whatever) {
