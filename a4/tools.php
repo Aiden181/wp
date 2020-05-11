@@ -112,7 +112,7 @@
     }
 
     if (!isset($_POST['seats']['STA']) || !isset($_POST['seats']['STP']) || !isset($_POST['seats']['STC']) || !isset($_POST['seats']['FCA']) || !isset($_POST['seats']['FCP']) || !isset($_POST['seats']['FCC'])) {
-          $movieErr = "STOP HACKING OUR WEBSITE!";  // set error message
+      $movieErr = "STOP HACKING OUR WEBSITE!";  // set error message
     } else {
       $isSeatsSelected = true;
     }
@@ -124,26 +124,6 @@
       $_SESSION['cart'] = $_POST;
       // redirect to receipt.php
       header("Location: receipt.php");
-
-      /////////////////////////////////
-      // create order in receipt.php //
-      /////////////////////////////////
-
-      // // assign variable to file name
-      // $filename = "receipt.php";
-      // // open file to write
-      // $fp = fopen($filename, "w");
-      // // lock file before writing
-      // flock($fp, LOCK_EX);
-
-      // // write file
-      // fwrite($fp, "Here is the first line\n");
-      // fwrite($fp, "Here is the second line\n");
-      
-      // // unlock file
-      // flock($fp, LOCK_UN);
-      // // close file handle to prevent memory leak
-      // fclose($fp);
     }
   }
 
@@ -155,6 +135,13 @@
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
+  }
+
+  function keepSelectFieldAfterSubmit($str) {
+    // if value is not null and equal to $str
+    // echo selected
+    // otherwise, echo nothing
+    echo (isset($_POST['seats']['STA']) && $_POST['seats']['STA'] === $str) ? 'selected' : '';
   }
 
   // Print data and shape/structure of data
