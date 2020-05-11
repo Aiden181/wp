@@ -276,3 +276,10 @@ input:invalid {
 .plotSummary{
   font-size: 25px;
 }
+
+#resetButton {
+  position: relative;
+  top: 290px;
+  right: 960px;
+  width: 170px;
+}
