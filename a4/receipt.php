@@ -11,7 +11,7 @@
     //////////////////////////////////
     // init arrays and their values //
     //////////////////////////////////
-    // personal info var
+    // customer info var
     $customer = array( "name", "email", "mobile", "card", "expiry");
     // movie info var
     $movieInfo = array( "id", "day", "hour");
@@ -22,7 +22,7 @@
     /////////////////////////////////////////////
     // assign $_SESSION values to array values //
     /////////////////////////////////////////////
-    // personal info var
+    // set customer info value
     if(isset($_SESSION["cart"]["cust"]["name"])) {
         $customer["name"] = $_SESSION["cart"]["cust"]["name"];
     }
@@ -33,7 +33,7 @@
         $customer["mobile"] = $_SESSION["cart"]["cust"]["mobile"];
     }
 
-    // movie info var
+    // set movie info values
     if(isset($_SESSION["cart"]["movie"]["id"])) {
         $movieInfo["id"] = $_SESSION["cart"]["movie"]["id"];
     }
@@ -44,7 +44,7 @@
         $movieInfo["hour"] = $_SESSION["cart"]["movie"]["hour"];
     }
 
-    // seats info var
+    // set seat count values
     if(isset($_SESSION["cart"]["seats"]["STA"])) {
         $seatCount["STA"] = $_SESSION["cart"]["seats"]["STA"];
     }
