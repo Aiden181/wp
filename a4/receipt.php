@@ -14,9 +14,9 @@
     // personal info var
     $customer = array( "name", "email", "mobile", "card", "expiry");
     // movie info var
-    $movie = array( "id", "day", "hour");
+    $movieInfo = array( "id", "day", "hour");
     // seats info var
-    $seats = array("STA", "STP", "STC", "FCA", "FCP", "FCC");
+    $seatCount = array("STA", "STP", "STC", "FCA", "FCP", "FCC");
 
 
     /////////////////////////////////////////////
@@ -35,33 +35,34 @@
 
     // movie info var
     if(isset($_SESSION["cart"]["movie"]["id"])) {
-        $movieID = $_SESSION["cart"]["movie"]["id"];
+        $movieInfo["id"] = $_SESSION["cart"]["movie"]["id"];
     }
     if(isset($_SESSION["cart"]["movie"]["day"])) {
-        $movieDate = $_SESSION["cart"]["movie"]["day"];
+        $movieInfo["day"] = $_SESSION["cart"]["movie"]["day"];
     }
     if(isset($_SESSION["cart"]["movie"]["hour"])) {
-        $movieHour = $_SESSION["cart"]["movie"]["hour"];
+        $movieInfo["hour"] = $_SESSION["cart"]["movie"]["hour"];
     }
 
     // seats info var
     if(isset($_SESSION["cart"]["seats"]["STA"])) {
-        $seatSTA = $_SESSION["cart"]["seats"]["STA"];
+        $seatCount["STA"] = $_SESSION["cart"]["seats"]["STA"];
     }
     if(isset($_SESSION["cart"]["seats"]["STP"])) {
-        $seatSTP = $_SESSION["cart"]["seats"]["STP"];
+        $seatCount["STP"] = $_SESSION["cart"]["seats"]["STP"];
     }
     if(isset($_SESSION["cart"]["seats"]["STC"])) {
-        $seatSTC = $_SESSION["cart"]["seats"]["STC"];
+        $seatCount["STC"] = $_SESSION["cart"]["seats"]["STC"];
     }
     if(isset($_SESSION["cart"]["seats"]["FCA"])) {
-        $seatFCA = $_SESSION["cart"]["seats"]["FCA"];
+        $seatCount["FCA"] = $_SESSION["cart"]["seats"]["FCA"];
     }
     if(isset($_SESSION["cart"]["seats"]["FCP"])) {
-        $seatFCP = $_SESSION["cart"]["seats"]["FCP"];
+        $seatCount["FCP"] = $_SESSION["cart"]["seats"]["FCP"];
     }
     if(isset($_SESSION["cart"]["seats"]["FCC"])) {
-        $seatFCC = $_SESSION["cart"]["seats"]["FCC"];
+        $seatCount["FCC"] = $_SESSION["cart"]["seats"]["FCC"];
+    }
     }
 ?>
 
