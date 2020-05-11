@@ -116,14 +116,72 @@
     } else {
       $isSeatsSelected = true;
     }
-    $isSeatsSelected = true;  // still testing and debugging so keep this on
+    $isSeatsSelected = true;  // still testing and debugging so keep this
 
     // if all values are sanitised and validated
     if ($isNameValid && $isEmailValid && $isMobileValid && $isCardNumberValid && $isCardExpiryValid && $ismovieValid && $isSeatsSelected) {
-      // add to session (i.e. shopping cart)
+      // add to session array (i.e. shopping cart)
       $_SESSION['cart'] = $_POST;
-      // redirect to receipt.php
+
+
+      // format array to log
+      $info = array($_POST["movie"]["id"], $_POST["movie"]["day"] ,$_POST["movie"]["hour"], 
+      $_POST["cust"]["name"], $_POST["cust"]["email"], $_POST["cust"]["mobile"], $_POST["cust"]["card"], 
+      $_POST["cust"]["expiry"], $_POST["seats"]["STA"], $_POST["seats"]["STP"], $_POST["seats"]["STC"], 
+      $_POST["seats"]["FCA"], $_POST["seats"]["FCP"], $_POST["seats"]["FCC"]);
+
+
+      /////////////////////////////////////////////////////////////////////////
+      // check for multiple of the same entries to prevent same booking data //
+      /////////////////////////////////////////////////////////////////////////
+      // open file
+      $file = fopen("bookings.csv","r");
+
+      // lock file for reading
+      flock($file, LOCK_SH);
+
+      // go through each line
+      while ($line = fgetcsv($file)) {
+        $records[] = $line;
+      }
+      
+      $isDuplicate = false;
+      foreach ($records as $line => $inside) {
+        // same booking info
+        if ($inside == $info)
+        {
+          $isDuplicate = true;
+          break;
+        }
+        // reset array and continue checking
+        unset($infoToCheck);
+        $infoToCheck = array();
+      }
+
+      // unlock files
+      flock($file, LOCK_UN);
+
+      // close file handles to prevent memory leak
+      fclose($file);
+
+      //////////////////////////////////////////////////////////
+      // log into bookings if booking isn't already available //
+      //////////////////////////////////////////////////////////
+      if (!$isDuplicate) {
+        $file = fopen("bookings.csv","a");
+        flock($file, LOCK_EX);
+        // log booking to file
+        fputcsv($file, $info);
+        flock($file, LOCK_UN);
+        fclose($file);
+      }
+
+
+      /////////////////////////////
+      // redirect to receipt.php //
+      /////////////////////////////
       header("Location: receipt.php");
+      exit();
     }
   }
 
