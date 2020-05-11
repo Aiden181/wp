@@ -640,7 +640,7 @@
       <script>
         document.write(new Date().getFullYear());
       </script>
-      Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-05-02 (YYYY-MM-DD)
+      Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-05-11 (YYYY-MM-DD)
     </div>
 
     <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
