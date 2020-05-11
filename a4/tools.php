@@ -111,17 +111,12 @@
       }
     }
 
-    // go through seats array elements
-    if (isset($_POST['seats'])) {
-      foreach($_POST['seats'] as $seatingValue) {
-        // if value is empty (option is disabled) or 
-        if (empty($seatingValue) || $seatingValue < 1 || $seatingValue > 10) {
+    if (!isset($_POST['seats']['STA']) || !isset($_POST['seats']['STP']) || !isset($_POST['seats']['STC']) || !isset($_POST['seats']['FCA']) || !isset($_POST['seats']['FCP']) || !isset($_POST['seats']['FCC'])) {
           $movieErr = "STOP HACKING OUR WEBSITE!";  // set error message
-          return; // stop the loop
-        }
-      }
+    } else {
       $isSeatsSelected = true;
     }
+    $isSeatsSelected = true;  // still testing and debugging so keep this on
 
     // if all values are sanitised and validated
     if ($isNameValid && $isEmailValid && $isMobileValid && $isCardNumberValid && $isCardExpiryValid && $ismovieValid && $isSeatsSelected) {
