@@ -451,37 +451,36 @@
                 </div>
                 <!-- <form method="POST" action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php"
                   onsubmit="checkSubmission(event)"> -->
-                <form method="POST" action="index.php"
-                onsubmit="checkSubmission(event)">
+                <form method="POST" action="index.php" onsubmit="checkSubmission(event)">
                   <!--Ask for name-->
                   <div class="custInfo">
-                    <input id="movieID" name="movie[id]" type="hidden" value="">
-                    <input id="movieDate" name="movie[day]" type="hidden" value="">
-                    <input id="movieHour" name="movie[hour]" type="hidden" value="">
+                    <input id="movieID" name="movie[id]" type="hidden" value="ACT">
+                    <input id="movieDate" name="movie[day]" type="hidden" value="HA">
+                    <input id="movieHour" name="movie[hour]" type="hidden" value="HA">
 
                     <label for="cust-name"><b>Name</b></label>
-                    <input  type="text" name="cust_name" id="cust-name"> <!--pattern="^[A-Za-z]+$" required>-->
+                    <input  type="text" name="cust[name]" id="cust-name"> <!--pattern="^[A-Za-z]+$" required>-->
 
                     <br>
                     <!--Ask for email-->
                     <label for="cust-email"><b>Email</b></label>
-                    <input  type="email" name="cust_email" id="cust-email"> <!-- pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required> -->
+                    <input  type="email" name="cust[email]" id="cust-email"> <!-- pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required> -->
 
                     <br>
                     <!--Ask for mobile phone input-->
                     <label for="cust-mobile"><b>Mobile</b></label>
-                    <input  type="tel" name="cust_mobile" id="cust-mobile"> <!--
-                      pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$" required> -->
+                    <input  type="tel" name="cust[mobile]" id="cust-mobile"> <!--
+                    pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$" required> -->
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="cust-credit"><b>Credit Card</b></label>
-                    <input  type="text" name="cust_card" id="cust-credit"> <!-- pattern="[0-9]{14,19}" required> -->
+                    <input  type="text" name="cust[card]" id="cust-credit"> <!-- pattern="[0-9]{14,19}" required> -->
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="cust-expiry"><b>Credit Card</b></label>
-                    <input  type="month" name="cust_expiry" id="cust-expiry">
+                    <input  type="month" name="cust[expiry]" id="cust-expiry">
 
                     <input type='submit' name='session-reset' value='Reset the session' >
                   </div>
@@ -615,16 +614,6 @@
                   echo "$cardExpiryErr </br>";
                 ?>
                 </span>
-
-                Your name is: <?php echo $_POST["cust_name"] ?>
-                <br>
-                Your email is: <?php echo $_POST["cust_email"] ?>
-                <br>
-                Your phone number is: <?php echo $_POST["cust_mobile"] ?>
-                <br>
-                Your credit card number is: <?php echo $_POST["cust_card"] ?>
-                <br>
-                Your credit card expiry date is: <?php echo $_POST["cust_expiry"] ?>
 
               </div>
             </div>
