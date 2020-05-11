@@ -647,6 +647,22 @@
       Programming course at RMIT University in Melbourne, Australia.</div>
     <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
   </footer>
+
+  </br>
+
+<b>Debugging section</b>
+</br>
+<?php
+echo '$_POST array';
+preShow($_POST);     // ie echo a string
+
+echo '$_SESSION array';
+preShow($_SESSION);
+
+// $aaarg = preShow(, true);    // ie return as a string
+// echo "Why is \n $aaarg \n not working?"; 
+// printMyCode();    // prints all lines of code in this file with line numbers
+?>
 </body>
 
 </html>
