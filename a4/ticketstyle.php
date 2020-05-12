@@ -12,35 +12,24 @@ body {
 
 .containerGroup {
     border: 1px solid black;
-    height: 95mm;
-    width: 80mm;
+    width: 84mm;
     padding: 10px;
     position: relative;
 }
 
 .containerIndividual {
     border: 1px solid black;
-    height: 60mm;
-    width: 80mm;
+    width: 95mm;
     padding: 10px;
     position: relative;
 }
 
-#cinemax_logo_group {
+#cinemax_logo {
     width: 35%;
     height: 35%;
-    position: absolute;
-    bottom: -38px;
-    right: 105px;
-    z-index: -1;
-}
-
-#cinemax_logo_individual {
-    width: 35%;
-    height: 35%;
-    position: absolute;
-    bottom: -15px;
-    right: 105px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     z-index: -1;
 }
 
@@ -52,6 +41,6 @@ h3 {
     display: inline;
 }
 
-span {
-    display: block;
+#addPadding {
+    padding-bottom: 50px;
 }

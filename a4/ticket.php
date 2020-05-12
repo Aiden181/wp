@@ -97,10 +97,14 @@
             echo "  <div>Movie ID: <h3>$movieInfo[id]</h3></div>\n";
             echo "  <div>Movie Day - Hour: <h3>$movieInfo[day]</h3> - <h3>$movieInfo[hour]</h3></div>\n";
             echo "  <div>Seat types: </div>\n";
+            echo "  <div id='addPadding'>";
             foreach ($seatCount as $seatTypeArray => $seats) {
-                echo "<h3>" . getSeatType($seatTypeArray) . "($seats)</h3></br>\n";
+                if ($seats > 0) {
+                    echo "<h3>" . getSeatType($seatTypeArray) . "($seats)</h3></br>\n";
+                }
             }
-            echo "  <img id='cinemax_logo_group' src='https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg'>\n";
+            echo "  </div>";
+            echo "  <img id='cinemax_logo' src='https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg'>\n";
             echo "</div>";
         }
 
@@ -121,10 +125,12 @@
                     echo "  <div class=\"header\">\n";
                     echo "    <h2 class=\"movieTicket\">MOVIE TICKET</h2>";
                     echo "  </div>";
-                    echo "  <div>Movie ID: <h3>$movieInfo[id]</h3></div>\n";
-                    echo "  <div>Movie Day - Hour: <h3>$movieInfo[day]</h3> - <h3>$movieInfo[hour]</h3></div>\n";
-                    echo "  <div>Seat type: <h3>" . getSeatType($seatTypeArray) . "</h3></div>\n";
-                    echo "  <img id='cinemax_logo_individual' src='https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg'>\n";
+                    echo "  <div id='addPadding'>";
+                    echo "    <div>Movie ID: <h3>$movieInfo[id]</h3></div>\n";
+                    echo "    <div>Movie Day - Hour: <h3>$movieInfo[day]</h3> - <h3>$movieInfo[hour]</h3></div>\n";
+                    echo "    <div>Seat type: <h3>" . getSeatType($seatTypeArray) . "</h3></div>\n";
+                    echo "    </div>";
+                    echo "  <img id='cinemax_logo' src='https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg'>\n";
                     echo "</div>";
                     echo "</br>"; // add space between each ticket
                 }
