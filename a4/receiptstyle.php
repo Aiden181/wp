@@ -14,7 +14,8 @@ body {
     color: #555;
     height:297mm;
     width:210mm;
-    }
+    -webkit-print-color-adjust:exact;
+}
 
 #receipt-Title {
     position: relative;
