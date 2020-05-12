@@ -125,7 +125,7 @@
 
 
       // format array to log
-      $info = array($_POST["movie"]["id"], $_POST["movie"]["day"] ,$_POST["movie"]["hour"], 
+      $info = array($_POST["movie"]["id"], $_POST["movie"]["day"], $_POST["movie"]["hour"], 
       $_POST["cust"]["name"], $_POST["cust"]["email"], $_POST["cust"]["mobile"], $_POST["cust"]["card"], 
       $_POST["cust"]["expiry"], $_POST["seats"]["STA"], $_POST["seats"]["STP"], $_POST["seats"]["STC"], 
       $_POST["seats"]["FCA"], $_POST["seats"]["FCP"], $_POST["seats"]["FCC"]);
@@ -219,9 +219,10 @@
     echo '</ol></pre>';
 
   }
-    
+  
   // Reset the session - Submit Button
   if (isset($_POST['session-reset'])) {
+    unset($_SESSION['cart']);
     foreach($_SESSION as $something => &$whatever) {
       unset($whatever);
     }
