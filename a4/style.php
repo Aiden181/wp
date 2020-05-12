@@ -142,7 +142,7 @@ body {
   left: 22%;
   border: solid black;
   border-width: 1px;
-  height: 400px;
+  height: 430px;
   width: 650px;
 }
 
@@ -198,7 +198,7 @@ body {
   position: relative;
   width:100px;
   left: 80%;
-  bottom: 160px;
+  bottom: 130px;
 }
 
 .expiryTime {
