@@ -5,8 +5,6 @@ header("Content-type: text/css");
 ?>
 
 body {
-    position: relative;
-    left: 38%;
     border: 1px solid black;
     padding: 30px;
     border-width: 2px;
