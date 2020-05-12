@@ -268,12 +268,15 @@ input:invalid {
   color: red;
 }
 
-.plotSummaryBody{
+.plotSummaryBody {
   background-color: whitesmoke;
   font-size: 16px;
 }
 
-.plotSummary{
+.plotSummary {
   font-size: 25px;
 }
 
+#hackingMessage {
+  text-align: center;
+}

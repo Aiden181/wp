@@ -614,11 +614,11 @@
                   echo "$cardExpiryErr </br>";
                 ?>
                 </span>
-
               </div>
             </div>
           </div>
         </section>
+        <h1 id="hackingMessage"><b><?php echo $hackErr ?></b></h1>
       </main>
     </div>
   </div>

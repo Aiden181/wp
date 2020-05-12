@@ -10,7 +10,7 @@
   $customer = array( "name", "email", "mobile", "card", "expiry");
 
   // error messages
-  $nameErr = $emailErr = $mobileErr = $cardNumberErr = $cardExpiryErr = $movieErr = "";
+  $nameErr = $emailErr = $mobileErr = $cardNumberErr = $cardExpiryErr = $hackErr = "";
 
   // valid or invalid personal info, movie details, and seats booleans
   $isNameValid = $isEmailValid = $isMobileValid = $isCardNumberValid = $isCardExpiryValid = $ismovieValid = $isSeatsSelected = false;
@@ -103,16 +103,16 @@
     }
 
     if (empty($_POST["movie"]["id"]) || empty($_POST["movie"]["day"]) || empty($_POST["movie"]["hour"])) {
-      $movieErr = "STOP HACKING OUR WEBSITE!";
+      $hackErr = "STOP HACKING OUR WEBSITE!";
     } else {
       // field not empty, check if data is not null 
-      if (isset($_POST["movie"]["id"])) {
+      if (isset($_POST["movie"]["id"]) && isset($_POST["movie"]["day"]) && isset($_POST["movie"]["hour"])) {
           $ismovieValid = true;
       }
     }
 
     if (!isset($_POST['seats']['STA']) || !isset($_POST['seats']['STP']) || !isset($_POST['seats']['STC']) || !isset($_POST['seats']['FCA']) || !isset($_POST['seats']['FCP']) || !isset($_POST['seats']['FCC'])) {
-      $movieErr = "STOP HACKING OUR WEBSITE!";  // set error message
+      $hackErr = "STOP HACKING OUR WEBSITE!";  // set error message
     } else {
       $isSeatsSelected = true;
     }
