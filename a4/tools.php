@@ -115,12 +115,21 @@
     }
 
     // if any of the selections are disabled
-    if (!isset($_POST['seats']['STA']) || !isset($_POST['seats']['STP']) || !isset($_POST['seats']['STC']) || !isset($_POST['seats']['FCA']) || !isset($_POST['seats']['FCP']) || !isset($_POST['seats']['FCC'])) {
+    if (!isset($_POST['seats']['STA']) || !isset($_POST['seats']['STP']) || !isset($_POST['seats']['STC'])
+     || !isset($_POST['seats']['FCA']) || !isset($_POST['seats']['FCP']) || !isset($_POST['seats']['FCC'])) {
       $hackErr = "STOP HACKING OUR WEBSITE!";  // set error message
     }
     // fields not empty but are all empty
-    else if (empty($_POST['seats']['STA']) && empty($_POST['seats']['STP']) && empty($_POST['seats']['STC']) && empty($_POST['seats']['FCA']) && empty($_POST['seats']['FCP']) && empty($_POST['seats']['FCC'])) {
+    else if (empty($_POST['seats']['STA']) && empty($_POST['seats']['STP']) && empty($_POST['seats']['STC']) 
+    && empty($_POST['seats']['FCA']) && empty($_POST['seats']['FCP']) && empty($_POST['seats']['FCC'])) {
       array_push($errors, "Please select at least 1 seat!");
+    } 
+    // seat quantity not from 1 to 10
+    else if ((10 < $_POST['seats']['STA'] || $_POST['seats']['STA'] > 0) || (10 < $_POST['seats']['STP'] 
+    || $_POST['seats']['STP'] > 0) || (10 < $_POST['seats']['STC'] || $_POST['seats']['STC'] > 0) 
+    || (10 < $_POST['seats']['FCA'] || $_POST['seats']['FCA'] > 0) || (10 < $_POST['seats']['FCP'] 
+    || $_POST['seats']['FCP'] > 0) || (10 < $_POST['seats']['FCC'] || $_POST['seats']['FCC'] > 0 )) {
+      $hackErr = "STOP HACKING OUR WEBSITE!";  // set error message
     } else {
       $isSeatsSelected = true;
     }
