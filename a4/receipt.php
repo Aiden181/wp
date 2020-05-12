@@ -130,11 +130,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receipt</title>
 
+    <link id='stylecss' type="text/css" rel="stylesheet" href="receiptstyle.php">
     <!-- add your styling css file link here -->
 </head>
 <body>
-    <!-- format the page here -->
-
+    <!-- format the page here --> 
+    <h1>Receipt</h1>
+    <?php
+    $abnNumber = '00 123 456 789';
+    echo "ABN Number: " . $abnNumber;
+    echo "</br>";
+    ?>
     <!-- PRICE PRINT OUT EXAMPLE-->
     <?php
         countTotal();
