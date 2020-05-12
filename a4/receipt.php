@@ -142,7 +142,7 @@
     echo "ABN Number: " . $abnNumber;
     echo "</br>";
     date_default_timezone_set("Asia/Ho_Chi_Minh");
-    echo "Time Purchase: " . date("Y/m/d") . " " . date("h:i:sa") . "<br>";
+    echo "Time Purchase: " . date("Y/m/d") . " - " . date("h:i:sa") . "<br>";
     ?>
     <!-- PRICE PRINT OUT EXAMPLE-->
     <?php
