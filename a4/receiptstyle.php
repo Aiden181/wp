@@ -9,5 +9,6 @@ body {
     font-size: 16px;
     border: solid black;
     border-width: 2px;
+    font-family: 'Petrona', serif;
 }
 

@@ -131,6 +131,7 @@
     <title>Receipt</title>
 
     <link id='stylecss' type="text/css" rel="stylesheet" href="receiptstyle.php">
+    <link href="https://fonts.googleapis.com/css2?family=Petrona&display=swap" rel="stylesheet">
     <!-- add your styling css file link here -->
 </head>
 <body>
