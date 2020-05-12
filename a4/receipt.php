@@ -136,21 +136,17 @@
 </head>
 <body>
     <!-- format the page here --> 
-    <h1>Receipt</h1>
-    <?php
-    $abnNumber = '00 123 456 789';
-    echo "ABN Number: " . $abnNumber;
-    echo "</br>";
-    date_default_timezone_set("Asia/Ho_Chi_Minh");
-    echo "Time Purchase: " . date("Y/m/d") . " - " . date("h:i:sa") . "<br>";
-    ?>
+    <h1 id="receipt-Title">Receipt</h1>
+    
     <!-- PRICE PRINT OUT EXAMPLE-->
-    <?php
-        countTotal();
-        echo "Total price before GST:" . " $" . $totalPriceBeforeGST . "</br>";
-        echo "GST: " . " $" . round($GST,2) . "</br>";
-        echo "Total price after GST:" . " $" . $totalPriceAfterGST . "</br>";
-    ?>
+    <section id="First-Section">
+        <div>ABN Number: 00 123 456 789</div>
+        <div><?php countTotal() ?></div>
+        <div><?php echo "Total price before GST:" . " $" . $totalPriceBeforeGST . "</br>" ?></div>
+        <div><?php echo "GST: " . " $" . round($GST,2) . "</br>" ?></div>
+        <div><?php echo "Total price after GST:" . " $" . $totalPriceAfterGST . "</br>" ?></div>
+    </section>
+    
     
     <?php
     ///////////////////
