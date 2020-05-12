@@ -147,9 +147,9 @@
     <!-- PRICE PRINT OUT EXAMPLE-->
     <?php
         countTotal();
-        echo "Total price before GST: $totalPriceBeforeGST </br>";
-        echo "GST: ". round($GST,2) . "</br>";
-        echo "Total price after GST: $totalPriceAfterGST </br>";
+        echo "Total price before GST:" . " $" . $totalPriceBeforeGST . "</br>";
+        echo "GST: " . " $" . round($GST,2) . "</br>";
+        echo "Total price after GST:" . " $" . $totalPriceAfterGST . "</br>";
     ?>
     
     <?php
