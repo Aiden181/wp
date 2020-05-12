@@ -453,7 +453,7 @@
                   <div class="custInfo">
                     <input id="movieID" name="movie[id]" type="hidden" value="ACT">
                     <input id="movieDate" name="movie[day]" type="hidden" value="FRI">
-                    <input id="movieHour" name="movie[hour]" type="hidden" value="T9">
+                    <input id="movieHour" name="movie[hour]" type="hidden" value="T21">
 
                     <label for="cust-name"><b>Name</b></label>
                     <input  type="text" name="cust[name]" id="cust-name" value="<?php if (isset($_POST['cust']['name'])) {echo $_POST['cust']['name'];} ?>"> <!--pattern="^[A-Za-z]+$" required>-->
