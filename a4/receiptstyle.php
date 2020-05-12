@@ -70,9 +70,10 @@ body {
     }
     
     .invoice-box table tr.heading td {
-        background: #eee;
+        background: #343A40;
         border-bottom: 1px solid #ddd;
         font-weight: bold;
+        color: white;
     }
     
     .invoice-box table tr.details td {
