@@ -76,6 +76,78 @@
     <link href="https://fonts.googleapis.com/css2?family=Petrona&display=swap" rel="stylesheet">
 </head>
 <body>
+    <?php
+        echo "<h2>Group ticket</h2>";
+        generateGroupTickets();
+        echo "</br>";
+        echo "<h2>Individual ticket(s)</h2>";
+        generateIndividualTickets();
 
+        // this function generates a group/shared ticket (i.e. one for all 
+        // seat holders in the booking that shows quantity of each seat)
+        function generateGroupTickets() {
+            // get access to arrays
+            global $customer;
+            global $movieInfo;
+            global $seatCount;
+            echo "<div class=\"containerGroup\">\n";
+            echo "  <div class=\"header\">\n";
+            echo "    <h2 class=\"movieTicket\">MOVIE TICKET</h2>";
+            echo "  </div>";
+            echo "  <p>";
+            echo "  <div>Movie ID: <h3>$movieInfo[id]</h3></div>\n";
+            echo "  <div>Movie Day - Hour: <h3>$movieInfo[day]</h3> - <h3>$movieInfo[hour]</h3></div>\n";
+            foreach ($seatCount as $seatTypeArray => $seats) {
+                echo "  <div>Seat type: <h3>" . getSeatType($seatTypeArray) . "</h3></div>\n";
+            }
+            echo "  </p>";
+            echo "  <img id='cinemax_logo_group' src='https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg'>\n";
+            echo "</div>";
+        }
+
+        // this function generates individual tickets for each seat holder (e.g. 3 first 
+        // class adult tickets if 3 first class adult tickets have been purchased)
+        function generateIndividualTickets() {
+            // get access to arrays
+            global $customer;
+            global $movieInfo;
+            global $seatCount;
+            
+            // get seat element by traversing through seats array
+            foreach ($seatCount as $seatTypeArray => $seats) {
+                // echo "$seats </br>"; // debug
+                // generate ticket for each seat
+                for ($i = 0; $i < $seats; $i++) {
+                    echo "<div class=\"containerIndividual\">\n";
+                    echo "  <div class=\"header\">\n";
+                    echo "    <h2 class=\"movieTicket\">MOVIE TICKET</h2>";
+                    echo "  </div>";
+                    echo "  <div>Movie ID: <h3>$movieInfo[id]</h3></div>\n";
+                    echo "  <div>Movie Day - Hour: <h3>$movieInfo[day]</h3> - <h3>$movieInfo[hour]</h3></div>\n";
+                    echo "  <div>Seat type: <h3>" . getSeatType($seatTypeArray) . "</h3></div>\n";
+                    echo "  <img id='cinemax_logo_individual' src='https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg'>\n";
+                    echo "</div>";
+                    echo "</br>"; // add space between each ticket
+                }
+            }
+        }
+
+        // this function returns the full name of seat type from seat type ID
+        function getSeatType($seatID) {
+            if ($seatID === "STA") {
+                return "Standard Seat Adult";
+            } else if ($seatID === "STP") {
+                return "Standard Seat Concession";
+            } else if ($seatID === "STC") {
+                return "Standard Seat Child";
+            } else if ($seatID === "FCA") {
+                return "First Class Adult";
+            } else if ($seatID === "FCP") {
+                return "First Class Adult";
+            } else if ($seatID === "FCC") {
+                return "First Class Adult";
+            }
+        }
+    ?>
 </body>
 </html>
