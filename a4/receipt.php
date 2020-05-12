@@ -16,7 +16,7 @@
     // movie info var
     $movieInfo = array( "id", "day", "hour");
     // seats info var
-    $seatCount = array("STA", "STP", "STC", "FCA", "FCP", "FCC");
+    $seatCount = array("STA" => 0, "STP" => 0, "STC" => 0, "FCA" => 0, "FCP" => 0, "FCC" => 0);
 
 
     /////////////////////////////////////////////
@@ -45,22 +45,22 @@
     }
 
     // set seat count values
-    if(isset($_SESSION["cart"]["seats"]["STA"])) {
+    if(isset($_SESSION["cart"]["seats"]["STA"]) && is_numeric($_SESSION["cart"]["seats"]["STA"])) {
         $seatCount["STA"] = $_SESSION["cart"]["seats"]["STA"];
     }
-    if(isset($_SESSION["cart"]["seats"]["STP"])) {
+    if(isset($_SESSION["cart"]["seats"]["STP"]) && is_numeric($_SESSION["cart"]["seats"]["STP"])) {
         $seatCount["STP"] = $_SESSION["cart"]["seats"]["STP"];
     }
-    if(isset($_SESSION["cart"]["seats"]["STC"])) {
+    if(isset($_SESSION["cart"]["seats"]["STC"]) && is_numeric($_SESSION["cart"]["seats"]["STC"])) {
         $seatCount["STC"] = $_SESSION["cart"]["seats"]["STC"];
     }
-    if(isset($_SESSION["cart"]["seats"]["FCA"])) {
+    if(isset($_SESSION["cart"]["seats"]["FCA"]) && is_numeric($_SESSION["cart"]["seats"]["FCA"])) {
         $seatCount["FCA"] = $_SESSION["cart"]["seats"]["FCA"];
     }
-    if(isset($_SESSION["cart"]["seats"]["FCP"])) {
+    if(isset($_SESSION["cart"]["seats"]["FCP"]) && is_numeric($_SESSION["cart"]["seats"]["FCP"])) {
         $seatCount["FCP"] = $_SESSION["cart"]["seats"]["FCP"];
     }
-    if(isset($_SESSION["cart"]["seats"]["FCC"])) {
+    if(isset($_SESSION["cart"]["seats"]["FCC"]) && is_numeric($_SESSION["cart"]["seats"]["FCC"])) {
         $seatCount["FCC"] = $_SESSION["cart"]["seats"]["FCC"];
     }
 
@@ -132,20 +132,15 @@
 
     <link id='stylecss' type="text/css" rel="stylesheet" href="receiptstyle.php">
     <link href="https://fonts.googleapis.com/css2?family=Petrona&display=swap" rel="stylesheet">
-    <!-- add your styling css file link here -->
 </head>
 <body>
-    <!-- format the page here --> 
-    <!-- PRICE PRINT OUT EXAMPLE-->
     <div class="invoice-box">
         <table cellpadding="0" cellspacing="0">
             <tr class="top">
                 <td colspan="2">
                     <table>
                         <tr>
-                            <td class="title">
-                            <img id="cinemax_logo" src="https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg"
-                            </td>
+                            <img id="cinemax_logo" src="https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg">
                         </tr>
                     </table>
                 </td>
@@ -153,122 +148,125 @@
             
             <tr class="information">
                 <td colspan="2">
-                    <table>
-                        <tr>
-                            <td>
-                                <div><?php echo "Name: " . $customer["name"] ?></div>
-                                <div><?php echo "Email: " . $customer["email"] ?></div>
-                                <div><?php echo "Mobile: " . $customer["mobile"] ?></div>
-                            </td>
-                        </tr>
-                    </table>
+                    <tr>
+                        <td>
+                            <div><?php echo "Name: " . $customer["name"] ?></div>
+                            <div><?php echo "Email: " . $customer["email"] ?></div>
+                            <div><?php echo "Mobile: " . $customer["mobile"] ?></div>
+                        </td>
+                    </tr>
                 </td>
             </tr>
+        </table>
             
+        <table cellpadding="0" cellspacing="0">
             <tr class="heading">
-                <td>
-                    Movie Information
-                </td>
-                
-                <td>
-                    Value
-                </td>
+                <td> Movie Information </td>
+                <td> Value </td>
             </tr>
             
-            <tr class="details">
+            <tr class="item">
+                <td>Movie ID</td>
                 <td>
-                    Movie ID <br>
-                    Movie Day <br>
-                    Movie Hour <br>
-                </td>
-                
-                <td>
-                    <div><?php echo $movieInfo["id"] ?></div> 
-                    <div><?php echo $movieInfo["day"] ?></div> 
-                    <div><?php echo $movieInfo["hour"] ?></div>
+                    <?php echo $movieInfo["id"] ?>
                 </td>
             </tr>
-            
-            <tr class="heading">
+            <tr class="item">
+                <td>Movie Day</td>
                 <td>
-                    Seats Selected
-                </td>
-                
-                <td>
-                    Quantity
+                    <?php echo $movieInfo["day"] ?>
                 </td>
             </tr>
-            
-            <tr class="information">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td>
-                                STA Seat <br>
-                                STP Seat <br>
-                                STC Seat <br>
-                                FCA Seat <br>
-                                FCP Seat <br>
-                                FCC Seat <br>
-                            </td>
+            <tr class="item">
+                <td>Movie Hour</td>
+                <td>
+                    <?php echo $movieInfo["hour"] ?>
+                </td>
+            </tr>
+        </table>
 
-                            <td>
-                                <div><?php echo $seatCount["STA"] ?></div>
-                                <div><?php echo $seatCount["STP"] ?></div>
-                                <div><?php echo $seatCount["STC"] ?></div>
-                                <div><?php echo $seatCount["FCA"] ?></div>
-                                <div><?php echo $seatCount["FCP"] ?></div>
-                                <div><?php echo $seatCount["FCC"] ?></div>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            
+        <table cellpadding="0" cellspacing="0">
             <tr class="heading">
-                <td>
-                    Payment 
-                </td>
-                
-                <td>
-                    Value
-                </td>
+                <td> Seats Selection </td>
+                <td> Quantity </td>
+            </tr>
+                <tr class="item">
+                    <td>
+                        Standard Adult <br>
+                    </td>
+                    <td>
+                        <?php echo $seatCount["STA"] ?>
+                    </td>
+                </tr>
+                <tr class="item">
+                    <td>
+                        Standard Concession <br>
+                    </td>
+                    <td>
+                        <?php echo $seatCount["STP"] ?>
+                    </td>
+                </tr>
+                <tr class="item">
+                    <td>
+                        Standard Child <br>
+                    </td>
+                    <td>
+                        <?php echo $seatCount["STC"] ?>
+                    </td>
+                </tr>
+                <tr class="item">
+                    <td>
+                        First Class Adult <br>
+                    </td>
+                    <td>
+                        <?php echo $seatCount["FCA"] ?>
+                    </td>
+                </tr>
+                <tr class="item">
+                    <td>
+                        First Class Concession <br>
+                    </td>
+                    <td>
+                        <?php echo $seatCount["FCP"] ?>
+                    </td>
+                </tr>
+                <tr class="item">
+                    <td>
+                        First Class Child <br>
+                    </td>
+                    <td>
+                        <?php echo $seatCount["FCC"] ?>
+                    </td>
+                </tr>
+            </tr>
+        </table>
+            
+        <table cellpadding="0" cellspacing="0">
+            <tr class="heading">
+                <td> Payment </td>
+                <td> Value </td>
             </tr>
 
             <tr class="item">
-                <td>
-                    Sub Total
-                </td>
-                
+                <td> Sub Total </td>
                 <td>
                     <?php countTotal() ?>
-                    <div><?php echo " $" . $totalPriceBeforeGST ?></div>
+                    <?php echo "$" . $totalPriceBeforeGST ?>
                 </td>
             </tr>
             
-            <tr class="item last">
-                <td>
-                    GST
-                </td>
-                
-                <td>
-                    <div><?php echo " $" . round($GST,2)?></div>
-                </td>
+            <tr class="item">
+                <td> GST </td>
+                <td><?php echo "$" . round($GST,2) ?></td>
             </tr>
             
             <tr class="total">
                 <td></td>
-                
-                <td>
-                <div><?php echo "Final Price:" . " $" . $totalPriceAfterGST . "</br>" ?></div>
-                </td>
+                <td><?php echo "Final Price: " . "$" . $totalPriceAfterGST . "</br>" ?></td>
             </tr>
         </table>
     </div>
-</body>
 
-    
-    
     <?php
     ///////////////////
     // DEBUG SECTION //
