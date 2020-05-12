@@ -167,18 +167,18 @@
             
             <tr class="heading">
                 <td>
-                    Payment Method
+                    Movie Information
                 </td>
                 
                 <td>
-                    Check #
+                    Value
                 </td>
             </tr>
             
             <tr class="details">
                 <td>
                     Movie ID <br>
-                    Moive Day <br>
+                    Movie Day <br>
                     Movie Hour <br>
                 </td>
                 
@@ -195,7 +195,7 @@
                 </td>
                 
                 <td>
-                    Amount
+                    Quantity
                 </td>
             </tr>
             
@@ -227,17 +227,17 @@
             
             <tr class="heading">
                 <td>
-                    Movie Information
+                    Payment 
                 </td>
                 
                 <td>
-                   
+                    Value
                 </td>
             </tr>
 
             <tr class="item">
                 <td>
-                    Total price before GST
+                    Sub Total
                 </td>
                 
                 <td>
@@ -260,7 +260,7 @@
                 <td></td>
                 
                 <td>
-                <div><?php echo "Total price after GST:" . " $" . $totalPriceAfterGST . "</br>" ?></div>
+                <div><?php echo "Final Price:" . " $" . $totalPriceAfterGST . "</br>" ?></div>
                 </td>
             </tr>
         </table>
