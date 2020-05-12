@@ -116,7 +116,7 @@
     
         // hour is 12 and not on saturday and sunday, give discount
         if ($currentHour == 12 && $currentDay != 0 && $currentDay != 6) {
-            $totalPrice -= $totalPrice/11;
+            $totalPriceBeforeGST -= $totalPriceBeforeGST/11;
         }
         $GST = $totalPriceBeforeGST/11;
         $totalPriceAfterGST = $totalPriceBeforeGST + round($GST,2);
