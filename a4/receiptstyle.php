@@ -5,15 +5,10 @@ header("Content-type: text/css");
 ?>
 
 body {
-    border: 1px solid black;
-    padding: 30px;
-    border-width: 2px;
     font-size: 21px;
     line-height: 24px;
     font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
     color: #555;
-    height:297mm;
-    width:210mm;
     -webkit-print-color-adjust:exact;
 }
 
@@ -23,6 +18,13 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.invoice-box {
+    border: 2px solid black;
+    height: 297mm;
+    width: 210mm;
+    padding: 30px;
 }
 
 .invoice-box table {
@@ -78,4 +80,18 @@ body {
         display: block;
         text-align: center;
     }
+}
+
+#printTicketbutton {
+    background-color: #343A40;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
 }

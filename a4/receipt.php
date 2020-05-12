@@ -268,6 +268,7 @@
             </tr>
         </table>
     </div>
+    <a href="ticket.php" id="printTicketbutton" target="_blank">Print Ticket(s)</a>
 
     <?php
     ///////////////////
