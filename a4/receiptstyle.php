@@ -35,8 +35,9 @@ body {
 #cinemax_logo {
     width: 50%;
     height: 50%;
-    position: relative;
-    left: 24%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .invoice-box table {
