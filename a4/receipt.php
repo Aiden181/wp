@@ -118,8 +118,10 @@
         if ($currentHour == 12 && $currentDay != 0 && $currentDay != 6) {
             $totalPriceBeforeGST -= $totalPriceBeforeGST/11;
         }
+
+        // calculate GST and final price
         $GST = $totalPriceBeforeGST/11;
-        $totalPriceAfterGST = $totalPriceBeforeGST + round($GST,2);
+        $totalPriceAfterGST = round($totalPriceBeforeGST, 2) + round($GST, 2);
     }
 ?>
 
@@ -251,18 +253,18 @@
                 <td> Sub Total </td>
                 <td>
                     <?php countTotal() ?>
-                    <?php echo "$" . $totalPriceBeforeGST ?>
+                    <?php echo "$" . round($totalPriceBeforeGST, 2) ?>
                 </td>
             </tr>
             
             <tr class="item">
                 <td> GST </td>
-                <td><?php echo "$" . round($GST,2) ?></td>
+                <td><?php echo "$" . round($GST, 2) ?></td>
             </tr>
             
             <tr class="total">
                 <td></td>
-                <td><?php echo "Final Price: " . "$" . $totalPriceAfterGST . "</br>" ?></td>
+                <td><?php echo "Final Price: " . "$" . round($totalPriceAfterGST, 2) . "</br>" ?></td>
             </tr>
         </table>
     </div>
