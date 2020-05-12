@@ -6,11 +6,14 @@
   //////////////////////////////////
   // init arrays and their values //
   //////////////////////////////////
-  // personal info var
+  // customer info array
   $customer = array( "name", "email", "mobile", "card", "expiry");
 
-  // error messages
-  $nameErr = $emailErr = $mobileErr = $cardNumberErr = $cardExpiryErr = $hackErr = "";
+  // hacker error message
+  $hackErr = "";
+
+  // this array stores input error messages
+  $errors = array();
 
   // valid or invalid personal info, movie details, and seats booleans
   $isNameValid = $isEmailValid = $isMobileValid = $isCardNumberValid = $isCardExpiryValid = $ismovieValid = $isSeatsSelected = false;
@@ -20,14 +23,14 @@
     // validate customer name
     // if field is empty
     if (empty($_POST["cust"]["name"])) {
-      $nameErr = "Name is required!";
+      array_push($errors, "Name is required!");
     } else {
       // field not empty, check if data is not null 
       if (isset($_POST["cust"]["name"])) {
         $customer["name"] = test_input($_POST["cust"]["name"]);
         // not matching regex, format error message
         if (!preg_match("/^[a-zA-Z ]*$/", $customer["name"])) {
-          $nameErr = "Please enter an appropriate name!";
+          array_push($errors, "Please enter an appropriate name!");
         } else {  // name is valid, make boolean true
           $isNameValid = true;
         }
@@ -37,14 +40,14 @@
     // validate customer email
     // if field is empty
     if (empty($_POST["cust"]["email"])) {
-      $emailErr = "Email is required!";
+      array_push($errors, "Email is required!");
     } else {
       // field not empty, check if data is not null 
       if (isset($_POST["cust"]["email"])) {
         $customer["email"] = test_input($_POST["cust"]["email"]);
         // check if e-mail address is well-formed
         if (!filter_var($customer["email"], FILTER_VALIDATE_EMAIL)) {
-          $emailErr = "Invalid email format!";
+          array_push($errors, "Invalid email format!");
         } else {  // name is valid, make boolean true
           $isEmailValid = true;
         }
@@ -54,14 +57,14 @@
     // validate customer phone number
     // if field is empty
     if (empty($_POST["cust"]["mobile"])) {
-      $mobileErr = "Phone number is required!";
+      array_push($errors, "Phone number is required!");
     } else {
       // field not empty, check if data is not null 
       if (isset($_POST["cust"]["mobile"])) {
         $customer["mobile"] = test_input($_POST["cust"]["mobile"]);
         // not matching regex, format error message
         if (!preg_match("/^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$/", $customer["mobile"])) {
-          $mobileErr = "Please enter a valid phone number!";
+          array_push($errors, "Please enter a valid phone number!");
         } else {  // name is valid, make boolean true
           $isMobileValid = true;
         }
@@ -71,14 +74,14 @@
     // validate customer credit card number
     // if field is empty
     if (empty($_POST["cust"]["card"])) {
-      $cardNumberErr = "Credit card number is required!";
+      array_push($errors, "Credit card number is required!");
     } else {
       // field not empty, check if data is not null 
       if (isset($_POST["cust"]["card"])) {
         $customer["card"] = test_input($_POST["cust"]["card"]);
         // not matching regex, format error message
         if (!preg_match("/[0-9]{14,19}/", $customer["card"])) {
-          $cardNumberErr = "Please enter a valid credit card number!";
+          array_push($errors, "Please enter a valid credit card number!");
         } else {  // name is valid, make boolean true
           $isCardNumberValid = true;
         }
@@ -88,14 +91,14 @@
     // validate customer credit card expiry date
     // if field is empty
     if (empty($_POST["cust"]["expiry"])) {
-      $cardExpiryErr = "Credit card expiry date is required!";
+      array_push($errors, "Credit card expiry date is required!");
     } else {
       // field not empty, check if data is not null 
       if (isset($_POST["cust"]["expiry"])) {
         $customer["expiry"] = test_input($_POST["cust"]["expiry"]);
         // if expiry date is less or equal than current month and year, format error message
         if ($customer["expiry"] <= date("Y-m")) {
-          $cardExpiryErr = "Please enter a non-expired credit card!";
+          array_push($errors, "Please enter a non-expired credit card!");
         } else {  // name is valid, make boolean true
           $isCardExpiryValid = true;
         }

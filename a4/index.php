@@ -440,9 +440,6 @@
           <h2>Booking</h2>
           <div class="row">
             <div class="col-sm-12">
-              <?php 
-                echo "$movieErr";
-              ?>
               <div id="bookingcard" class="card">
                 <div class="bookingHeader">
                   <label id="movieTitleHeader" style="font-size:20px"><b>Movie Title</b></label>
@@ -455,8 +452,8 @@
                   <!--Ask for name-->
                   <div class="custInfo">
                     <input id="movieID" name="movie[id]" type="hidden" value="ACT">
-                    <input id="movieDate" name="movie[day]" type="hidden" value="HA">
-                    <input id="movieHour" name="movie[hour]" type="hidden" value="HA">
+                    <input id="movieDate" name="movie[day]" type="hidden" value="FRI">
+                    <input id="movieHour" name="movie[hour]" type="hidden" value="T9">
 
                     <label for="cust-name"><b>Name</b></label>
                     <input  type="text" name="cust[name]" id="cust-name" value="<?php if (isset($_POST['cust']['name'])) {echo $_POST['cust']['name'];} ?>"> <!--pattern="^[A-Za-z]+$" required>-->
@@ -481,8 +478,6 @@
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="cust-expiry"><b>Credit Card</b></label>
                     <input  type="month" name="cust[expiry]" id="cust-expiry" value="<?php if (isset($_POST['cust']['expiry'])) echo $_POST['cust']['expiry']; ?>">
-
-                    <input type='submit' name='session-reset' value='Reset the session' >
                   </div>
 
                   <div class="bookingLabels">
@@ -602,16 +597,15 @@
                     <p id="totalMoney"></p>
                   </div>
 
-                  <input name="order" id="orderButton" type="submit" value="Order">
+                  <input type="submit" name="order" id="orderButton" value="Order">
+                  <input type='submit' name='session-reset' value='Reset the session'>
                 </form>
 
                 <span id="submitErrorMessage" class="container">
                 <?php
-                  echo "$nameErr </br>";
-                  echo "$emailErr </br>";
-                  echo "$mobileErr </br>";
-                  echo "$cardNumberErr </br>";
-                  echo "$cardExpiryErr </br>";
+                  foreach ($errors as $message) {
+                    echo "$message </br>";
+                  }
                 ?>
                 </span>
               </div>
