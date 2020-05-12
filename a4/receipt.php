@@ -136,25 +136,146 @@
 </head>
 <body>
     <!-- format the page here --> 
-    <h1 id="receipt-Title">Receipt</h1>
-    
     <!-- PRICE PRINT OUT EXAMPLE-->
-    <section id="First-Section">
-        <div>ABN Number: 00 123 456 789</div>
-        <div><?php countTotal() ?></div>
-        <div><?php echo "Total price before GST:" . " $" . $totalPriceBeforeGST . "</br>" ?></div>
-        <div><?php echo "GST: " . " $" . round($GST,2) . "</br>" ?></div>
-        <div><?php echo "Total price after GST:" . " $" . $totalPriceAfterGST . "</br>" ?></div>
-    </section>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                            <img id="cinemax_logo" src="https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg"
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                <div><?php echo "Name: " . $customer["name"] ?></div>
+                                <div><?php echo "Email: " . $customer["email"] ?></div>
+                                <div><?php echo "Mobile: " . $customer["mobile"] ?></div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    Payment Method
+                </td>
+                
+                <td>
+                    Check #
+                </td>
+            </tr>
+            
+            <tr class="details">
+                <td>
+                    Movie ID <br>
+                    Moive Day <br>
+                    Movie Hour <br>
+                </td>
+                
+                <td>
+                    <div><?php echo $movieInfo["id"] ?></div> 
+                    <div><?php echo $movieInfo["day"] ?></div> 
+                    <div><?php echo $movieInfo["hour"] ?></div>
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    Seats Selected
+                </td>
+                
+                <td>
+                    Amount
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                STA Seat <br>
+                                STP Seat <br>
+                                STC Seat <br>
+                                FCA Seat <br>
+                                FCP Seat <br>
+                                FCC Seat <br>
+                            </td>
+
+                            <td>
+                                <div><?php echo $seatCount["STA"] ?></div>
+                                <div><?php echo $seatCount["STP"] ?></div>
+                                <div><?php echo $seatCount["STC"] ?></div>
+                                <div><?php echo $seatCount["FCA"] ?></div>
+                                <div><?php echo $seatCount["FCP"] ?></div>
+                                <div><?php echo $seatCount["FCC"] ?></div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    Movie Information
+                </td>
+                
+                <td>
+                   
+                </td>
+            </tr>
+
+            <tr class="item">
+                <td>
+                    Total price before GST
+                </td>
+                
+                <td>
+                    <?php countTotal() ?>
+                    <div><?php echo " $" . $totalPriceBeforeGST ?></div>
+                </td>
+            </tr>
+            
+            <tr class="item last">
+                <td>
+                    GST
+                </td>
+                
+                <td>
+                    <div><?php echo " $" . round($GST,2)?></div>
+                </td>
+            </tr>
+            
+            <tr class="total">
+                <td></td>
+                
+                <td>
+                <div><?php echo "Total price after GST:" . " $" . $totalPriceAfterGST . "</br>" ?></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
     
     
     <?php
     ///////////////////
     // DEBUG SECTION //
     ///////////////////
-    echo "</br>";
-    echo '$_SESSION array (for debug)';
-    preShow($_SESSION);
+    // echo "</br>";
+    // echo '$_SESSION array (for debug)';
+    // preShow($_SESSION);
 
     function preShow( $arr, $returnAsString=false ) {
         $ret  = '<pre>' . print_r($arr, true) . '</pre>';
