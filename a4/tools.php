@@ -105,32 +105,50 @@
       }
     }
 
+    // check if values are empty
     if (empty($_POST["movie"]["id"]) || empty($_POST["movie"]["day"]) || empty($_POST["movie"]["hour"])) {
       $hackErr = "STOP HACKING OUR WEBSITE!";
     } else {
       // field not empty, check if data is not null 
       if (isset($_POST["movie"]["id"]) && isset($_POST["movie"]["day"]) && isset($_POST["movie"]["hour"])) {
+        // check movie info
+        // tried my best to make the following statement look organized
+        if (($_POST["movie"]["id"] === "ACT" || $_POST["movie"]["id"] === "AHF" || $_POST["movie"]["id"] === "ANM" 
+        || $_POST["movie"]["id"] === "RMC ") && ($_POST["movie"]["day"] === "MON" || $_POST["movie"]["day"] === "TUE" 
+        || $_POST["movie"]["day"] === "WED" || $_POST["movie"]["day"] === "THU" || $_POST["movie"]["day"] === "FRI" 
+        || $_POST["movie"]["day"] === "SAT" || $_POST["movie"]["day"] === "SUN") && ($_POST["movie"]["hour"] === "T12" 
+        || $_POST["movie"]["hour"] === "T15" || $_POST["movie"]["hour"] === "T18" || $_POST["movie"]["hour"] === "T21")) {
           $ismovieValid = true;
+        }
+        // movie info invalid
+        else {
+          $hackErr = "STOP HACKING OUR WEBSITE!";
+        }
       }
     }
 
-    // if any of the selections are disabled
-    if (!isset($_POST['seats']['STA']) || !isset($_POST['seats']['STP']) || !isset($_POST['seats']['STC'])
-     || !isset($_POST['seats']['FCA']) || !isset($_POST['seats']['FCP']) || !isset($_POST['seats']['FCC'])) {
-      $hackErr = "STOP HACKING OUR WEBSITE!";  // set error message
+    // this validation code part looks a little better...
+    // if any of the selections are disabled even after movie is selected
+    if ($ismovieValid && (!isset($_POST['seats']['STA']) || !isset($_POST['seats']['STP']) || !isset($_POST['seats']['STC'])
+     || !isset($_POST['seats']['FCA']) || !isset($_POST['seats']['FCP']) || !isset($_POST['seats']['FCC']))) {
+      $hackErr = "STOP HACKING OUR WEBSITE! movie valid seat disabled";  // set error message
     }
     // fields not empty but are all empty
     else if (empty($_POST['seats']['STA']) && empty($_POST['seats']['STP']) && empty($_POST['seats']['STC']) 
     && empty($_POST['seats']['FCA']) && empty($_POST['seats']['FCP']) && empty($_POST['seats']['FCC'])) {
       array_push($errors, "Please select at least 1 seat!");
     } 
-    // seat quantity not from 1 to 10
-    else if ((10 < $_POST['seats']['STA'] || $_POST['seats']['STA'] > 0) || (10 < $_POST['seats']['STP'] 
-    || $_POST['seats']['STP'] > 0) || (10 < $_POST['seats']['STC'] || $_POST['seats']['STC'] > 0) 
-    || (10 < $_POST['seats']['FCA'] || $_POST['seats']['FCA'] > 0) || (10 < $_POST['seats']['FCP'] 
-    || $_POST['seats']['FCP'] > 0) || (10 < $_POST['seats']['FCC'] || $_POST['seats']['FCC'] > 0 )) {
-      $hackErr = "STOP HACKING OUR WEBSITE!";  // set error message
-    } else {
+    // seat is selected (check with is_numeric) but quantity is not from 1 to 10
+    else if ((is_numeric($_POST['seats']['STA']) && ($_POST['seats']['STA'] > 10 || $_POST['seats']['STA'] < 0)) 
+    || (is_numeric($_POST['seats']['STP']) && ($_POST['seats']['STP'] > 10 || $_POST['seats']['STP'] < 0)) 
+    || (is_numeric($_POST['seats']['STC']) && ($_POST['seats']['STC'] > 10 || $_POST['seats']['STC'] < 0)) 
+    || (is_numeric($_POST['seats']['FCA']) && ($_POST['seats']['FCA'] > 10 || $_POST['seats']['FCA'] < 0)) 
+    || (is_numeric($_POST['seats']['FCP']) && ($_POST['seats']['FCP'] > 10 || $_POST['seats']['FCP'] < 0)) 
+    || (is_numeric($_POST['seats']['FCC']) && ($_POST['seats']['FCC'] > 10 || $_POST['seats']['FCC'] < 0 ))) {
+      $hackErr = "STOP HACKING OUR WEBSITE! seat selected but bad amount";  // set error message
+    }
+    // everything is validated
+    else {
       $isSeatsSelected = true;
     }
 
