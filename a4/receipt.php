@@ -237,7 +237,7 @@
 
             <tr class="item">
                 <td>
-                    Total price before GST
+                    Total price before GSTw
                 </td>
                 
                 <td>
