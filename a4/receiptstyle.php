@@ -48,6 +48,7 @@ body {
 }
 
 .invoice-box table tr.heading td {
+    padding: 7px;
     background: #343A40;
     font-weight: bold;
     color: white;
