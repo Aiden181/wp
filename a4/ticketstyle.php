@@ -54,7 +54,7 @@ body {
 }
 
 .card {
-    background: linear-gradient(to bottom, #e84c3d 0%, #e84c3d 26%, #ecedef 26%, #ecedef 100%);
+    background: linear-gradient(to bottom, #343A40 0%, #343A40 26%, #ecedef 26%, #ecedef 100%);
     height: 11em;
     float: left;
     position: relative;
@@ -129,44 +129,22 @@ h1 span {
     float: left;
 }
 
-.eye {
+.popcorn {
     position: relative;
-    width: 2em;
-    height: 1.5em;
-    background: #fff;
-    margin: 0 auto;
-    border-radius: 1em/0.6em;
-    z-index: 1;
-}
-.eye::before, .eye::after {
-    content:"";
-    display: block;
-    position: absolute;
-    border-radius: 50%;
-}
-.eye::before {
-    width: 1em;
-    height: 1em;
-    background: #e84c3d;
-    z-index: 2;
-    left: 8px;
-    top: 4px;
-}
-.eye::after {
-    width: .5em;
-    height: .5em;
-    background: #fff;
-    z-index: 3;
-    left: 12px;
-    top: 8px;
+    bottom: 10%;
+    left: 25%;
+    height: 50%;
+    width: 50%
 }
 
 .number {
     text-align: center;
     text-transform: uppercase;
+    position: relative;
+    bottom: 35%;
 }
 .number h3 {
-    color: #e84c3d;
+    color: #343A40;
     margin: .9em 0 0 0;
     font-size: 2.5em;
 }
@@ -203,4 +181,7 @@ h1 span {
     74px 0 0 1px #343434,
     77px 0 0 1px #343434,
     81px 0 0 1px #343434;
+    position: relative;
+    bottom: 35%;
+    left: 4%;
 }

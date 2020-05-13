@@ -98,12 +98,16 @@
             
         </div>
         <div class="card cardRight">
-            <div class="eye"></div>
+            <div class="popcorn">
+                <img src="https://loading.io/s/icon/u998bl.svg" alt="">
+            </div>
             <div class="number">
             <h3>156</h3>
             <span>seat</span>
             </div>
-            <div class="barcode"></div>
+            <div class="barcode">
+                <img src="https://loading.io/s/icon/hqqmq0.svg" alt="">
+            </div>
         </div>
     </div>
 
