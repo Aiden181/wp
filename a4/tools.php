@@ -29,7 +29,7 @@
       if (isset($_POST["cust"]["name"])) {
         $customer["name"] = test_input($_POST["cust"]["name"]);
         // not matching regex, format error message
-        if (!preg_match("/^[a-zA-Z ]*$/", $customer["name"])) {
+        if (!preg_match("/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/", $customer["name"])) {
           array_push($errors, "Please enter an appropriate name!");
         } else {  // name is valid, make boolean true
           $isNameValid = true;

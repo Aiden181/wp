@@ -446,8 +446,6 @@
                   <label id="movieDateHeader" style="font-size:20px"><b> - Day</b></label>
                   <label id="movieTimeHeader" style="font-size:20px"><b> - Time</b></label>
                 </div>
-                <!-- <form method="POST" action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php"
-                  onsubmit="checkSubmission(event)"> -->
                 <form method="POST" action="index.php" onsubmit="checkSubmission(event)">
                   <!--Ask for name-->
                   <div class="custInfo">
@@ -456,7 +454,7 @@
                     <input id="movieHour" name="movie[hour]" type="hidden" value="T21">
 
                     <label for="cust-name"><b>Name</b></label>
-                    <input  type="text" name="cust[name]" id="cust-name" value="<?php if (isset($_POST['cust']['name'])) {echo $_POST['cust']['name'];} ?>"> <!--pattern="^[A-Za-z]+$" required>-->
+                    <input  type="text" name="cust[name]" id="cust-name" value="<?php if (isset($_POST['cust']['name'])) {echo $_POST['cust']['name'];} ?>"> <!--pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>-->
 
                     <br>
                     <!--Ask for email-->
