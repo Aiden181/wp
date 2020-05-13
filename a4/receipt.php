@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    // if $_SESSION (i.e. shopping cart is empty)
+    // if $_SESSION (i.e. shopping cart) is empty
     if (empty($_SESSION)) {
         // redirect to index.php
         header("Location: index.php");
