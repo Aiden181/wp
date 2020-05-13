@@ -78,32 +78,34 @@
 <body>
     <div class="cardWrap">
         <div class="card cardLeft">
-            <h1><img id='cinemax_logo' src='cinemax-logo-white_filled__02-10-17.svg'><span>Cinema</span></h1>
-            <div class="title">
-                <h2>How I met your Mother</h2>
-                <span>movie</span>
-            </div>
-            <div class="name">
-                <h2>Vladimir Kudinov</h2>
-                <span>name</span>
-            </div>
-            <div class="seat">
-                <h2>156</h2>
-                <span>day</span>
-            </div>
-            <div class="time">
-                <h2>12:00</h2>
-                <span>time</span>
+            <h1><img id='cinemax_logo' src='cinemax-logo-white_filled__02-10-17.svg' alt='Cinemax logo'></h1>
+            <div class="ticketInfo">
+                <div class="title">
+                    <h2>ACT</h2>
+                    <span>movie</span>
+                </div>
+                <div class="name">
+                    <h2>Robert Downey Jr.</h2>
+                    <span>name</span>
+                </div>
+                <div class="seat">
+                    <h2>MON</h2>
+                    <span>day</span>
+                </div>
+                <div class="time">
+                    <h2>T21</h2>
+                    <span>time</span>
+                </div>
             </div>
             
         </div>
         <div class="card cardRight">
             <div class="popcorn">
-                <img src="popcorn.svg" alt="">
+                <img src="popcorn.svg" alt="Popcorn">
             </div>
-            <div class="number">
-            <h3>156</h3>
-            <span>seat</span>
+            <div class="number ticketInfo">
+                <h3>STA</h3>
+                <span>seat</span>
             </div>
             <div class="barcode">
                 <!-- <img src="https://loading.io/s/icon/hqqmq0.svg" alt=""> -->

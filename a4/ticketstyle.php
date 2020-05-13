@@ -27,10 +27,8 @@ body {
 #cinemax_logo {
     width: 35%;
     height: 35%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: -1;
+    position: absolute;
+    top: -10px;
 }
 
 .movieTicket {
@@ -47,7 +45,7 @@ body {
 
 
 .cardWrap {
-    width: 27em;
+    width: 29em;
     margin: 3em auto;
     color: #fff;
     font-family: sans-serif;
@@ -65,7 +63,7 @@ body {
 .cardLeft {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    width: 16em;
+    width: 18em;
 }
 
 .cardRight {
@@ -91,12 +89,8 @@ body {
     bottom: -.4em;
 }
 
-h1 {
-    font-size: 1.1em;
-    margin-top: 0;
-}
-h1 span {
-    font-weight: normal;
+.ticketInfo {
+    position:absolute;
 }
 
 .title, .name, .seat, .time {
@@ -132,7 +126,7 @@ h1 span {
 .popcorn {
     position: relative;
     bottom: 10%;
-    left: 25%;
+    left: 30%;
     height: 50%;
     width: 50%
 }
@@ -146,7 +140,7 @@ h1 span {
 .number h3 {
     color: #343A40;
     margin: .9em 0 0 0;
-    font-size: 2.5em;
+    font-size: 2.3em;
 }
 .number span {
     display: block;
