@@ -4,11 +4,16 @@
 header("Content-type: text/css");
 ?>
 
+* {
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
 body {
     font-size: 21px;
     line-height: 24px;
     font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-    -webkit-print-color-adjust:exact;
 }
 
 #cinemax_logo {
