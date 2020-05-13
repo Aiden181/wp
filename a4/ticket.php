@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    // if $_SESSION (i.e. shopping cart is empty)
+    // if $_SESSION is empty)
     if (empty($_SESSION)) {
-        // redirect to index.php
-        header("Location: index.php");
+        // redirect to receipt.php
+        header("Location: receipt.php");
         exit();
     }
 
@@ -63,6 +63,10 @@
     if(isset($_SESSION["cart"]["seats"]["FCC"]) && is_numeric($_SESSION["cart"]["seats"]["FCC"])) {
         $seatCount["FCC"] = $_SESSION["cart"]["seats"]["FCC"];
     }
+
+    // group ticket card height and bar code position
+    $cardHeight = 140;
+    $barcodeTopPos = 105;
 ?>
 
 <!DOCTYPE html>
@@ -76,50 +80,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Petrona&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="cardWrap">
-        <div class="card cardLeft">
-            <h1><img id='cinemax_logo' src='cinemax-logo-white_filled__02-10-17.svg' alt='Cinemax logo'></h1>
-            <div class="ticketInfo">
-                <div class="title">
-                    <h2>ACT</h2>
-                    <span>movie</span>
-                </div>
-                <div class="name">
-                    <h2>Robert Downey Jr.</h2>
-                    <span>name</span>
-                </div>
-                <div class="seat">
-                    <h2>MON</h2>
-                    <span>day</span>
-                </div>
-                <div class="time">
-                    <h2>T21</h2>
-                    <span>time</span>
-                </div>
-            </div>
-            
-        </div>
-        <div class="card cardRight">
-            <div class="popcorn">
-                <img src="popcorn.svg" alt="Popcorn">
-            </div>
-            <div class="number ticketInfo">
-                <h3>STA</h3>
-                <span>seat</span>
-            </div>
-            <div class="barcode">
-                <!-- <img src="https://loading.io/s/icon/hqqmq0.svg" alt=""> -->
-            </div>
-        </div>
-    </div>
-
-    </div>
     <?php
         // echo "<h2>Group ticket</h2>";
-        // generateGroupTickets();
+        generateGroupTickets();
         // echo "</br>";
         // echo "<h2>Individual ticket(s)</h2>";
-        // generateIndividualTickets();
+        generateIndividualTickets();
 
         // this function generates a group/shared ticket (i.e. one for all 
         // seat holders in the booking that shows quantity of each seat)
@@ -128,22 +94,46 @@
             global $customer;
             global $movieInfo;
             global $seatCount;
-            echo "<div class=\"containerGroup\">\n";
-            echo "  <div class=\"header\">\n";
-            echo "    <h2 class=\"movieTicket\">MOVIE TICKET</h2>";
-            echo "  </div>";
-            echo "  <div>Movie ID: <h3>$movieInfo[id]</h3></div>\n";
-            echo "  <div>Movie Day - Hour: <h3>$movieInfo[day]</h3> - <h3>$movieInfo[hour]</h3></div>\n";
-            echo "  <div>Seat types: </div>\n";
-            echo "  <div id='addPadding'>";
-            foreach ($seatCount as $seatTypeArray => $seats) {
+            global $cardHeight;
+            global $barcodeTopPos;
+            
+            echo "    <div class=\"cardWrapGroup\">\n";
+            echo "        <div class=\"cardHeader\">\n";
+            echo "            <h1><img id='cinemax_logo' src='cinemax-logo-white_filled__02-10-17.svg' alt='Cinemax logo'></h1>\n";
+            echo "        </div>\n";
+            echo "        <div class=\"cardBody\">\n";
+            echo "            <div class=\"ticketInfo\">\n";
+            echo "                <div class=\"title\">\n";
+            echo "                    <span>movie</span>\n";
+            echo "                    <h2>$movieInfo[id]</h2>\n";
+            echo "                </div>\n";
+            echo "                <div class=\"day\">\n";
+            echo "                    <span>day</span>\n";
+            echo "                    <h2>$movieInfo[day]</h2>\n";
+            echo "                </div>\n";
+            echo "                <div class=\"time\">\n";
+            echo "                    <span>time</span>\n";
+            echo "                    <h2>$movieInfo[hour]</h2>\n";
+            echo "                </div>\n";
+            echo "                <div class=\"name\">\n";
+            echo "                    <span>name</span>\n";
+            echo "                    <h2>$customer[name]</h2>\n";
+            echo "                </div>\n";
+            echo "                <div class=\"seatGroup\">\n";
+            echo "                    <span>seat types</span>\n";
+            foreach ($seatCount as $seatType => $seats) {
                 if ($seats > 0) {
-                    echo "<h3>" . getSeatType($seatTypeArray) . "($seats)</h3></br>\n";
+                    echo "                    <h2 id='seatGroupText'>" . getSeatType($seatType) . "($seats " . $word = ($seats > 1 ? 'seats' : 'seat') . ")</h2>\n";
+                    // modify card height and bar code position
+                    $cardHeight += 13;
+                    $barcodeTopPos += 13;
                 }
             }
-            echo "  </div>";
-            echo "  <img id='cinemax_logo' src='cinemax-logo-white_filled__02-10-17.svg'>\n";
-            echo "</div>";
+            echo "                </div>\n";
+            echo "            <div class=\"barcodeGroup\">\n";
+            echo "            </div>\n";
+            echo "        </div>\n";
+            echo "    </div>\n";
         }
 
         // this function generates individual tickets for each seat holder (e.g. 3 first 
@@ -155,22 +145,44 @@
             global $seatCount;
             
             // get seat element by traversing through seats array
-            foreach ($seatCount as $seatTypeArray => $seats) {
-                // echo "$seats </br>"; // debug
+            foreach ($seatCount as $seatType => $seats) {
                 // generate ticket for each seat
                 for ($i = 0; $i < $seats; $i++) {
-                    echo "<div class=\"containerIndividual\">\n";
-                    echo "  <div class=\"header\">\n";
-                    echo "    <h2 class=\"movieTicket\">MOVIE TICKET</h2>";
-                    echo "  </div>";
-                    echo "  <div id='addPadding'>";
-                    echo "    <div>Movie ID: <h3>$movieInfo[id]</h3></div>\n";
-                    echo "    <div>Movie Day - Hour: <h3>$movieInfo[day]</h3> - <h3>$movieInfo[hour]</h3></div>\n";
-                    echo "    <div>Seat type: <h3>" . getSeatType($seatTypeArray) . "</h3></div>\n";
-                    echo "    </div>";
-                    echo "  <img id='cinemax_logo' src='cinemax-logo-white_filled__02-10-17.svg'>\n";
-                    echo "</div>";
-                    echo "</br>"; // add space between each ticket
+                    echo "    <div class=\"cardWrap\">\n";
+                    echo "        <div class=\"card cardLeft\">\n";
+                    echo "            <h1><img id='cinemax_logo' src='cinemax-logo-white_filled__02-10-17.svg' alt='Cinemax logo'></h1>\n";
+                    echo "            <div class=\"ticketInfo\">\n";
+                    echo "                <div class=\"title\">\n";
+                    echo "                    <h2>$movieInfo[id]</h2>\n";
+                    echo "                    <span>movie</span>\n";
+                    echo "                </div>\n";
+                    echo "                <div class=\"name\">\n";
+                    echo "                    <h2>$customer[name]</h2>\n";
+                    echo "                    <span>name</span>\n";
+                    echo "                </div>\n";
+                    echo "                <div class=\"day\">\n";
+                    echo "                    <h2>$movieInfo[day]</h2>\n";
+                    echo "                    <span>day</span>\n";
+                    echo "                </div>\n";
+                    echo "                <div class=\"time\">\n";
+                    echo "                    <h2>$movieInfo[hour]</h2>\n";
+                    echo "                    <span>time</span>\n";
+                    echo "                </div>\n";
+                    echo "            </div>\n";
+                    echo "        </div>\n";
+                    echo "        <div class=\"card cardRight\">\n";
+                    echo "            <div class=\"popcorn\">\n";
+                    echo "                <img src=\"popcorn.svg\" alt=\"Popcorn\">\n";
+                    echo "            </div>\n";
+                    echo "            <div class=\"seat ticketInfo\">\n";
+                    echo "                <h3>$seatType</h3>\n";
+                    echo "                <span>seat</span>\n";
+                    echo "            </div>\n";
+                    echo "            <div class=\"barcode\">\n";
+                    echo "                <!-- <img src=\"https://loading.io/s/icon/hqqmq0.svg\" alt=\"\"> -->\n";
+                    echo "            </div>\n";
+                    echo "        </div>\n";
+                    echo "    </div>\n";
                 }
             }
         }

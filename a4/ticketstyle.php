@@ -1,48 +1,28 @@
 <?php
-/*** set the content type header ***/
-/*** Without this header, it wont work ***/
-header("Content-type: text/css");
+    /*** set the content type header ***/
+    /*** Without this header, it wont work ***/
+    header("Content-type: text/css");
+
+    include "ticket.php";
 ?>
+
+* {
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
 
 body {
     font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
     font-size: 18px;
-    -webkit-print-color-adjust:exact;
-}
-
-.containerGroup {
-    border: 1px solid black;
-    width: 84mm;
-    padding: 10px;
-    position: relative;
-}
-
-.containerIndividual {
-    border: 1px solid black;
-    width: 95mm;
-    padding: 10px;
-    position: relative;
 }
 
 #cinemax_logo {
-    width: 35%;
-    height: 35%;
+    width: 110px;
+    height: 110px;
     position: absolute;
-    top: -10px;
+    top: -25px;
 }
-
-.movieTicket {
-    text-align: center;
-}
-
-.containerGroup h3 {
-    display: inline;
-}
-
-#addPadding {
-    padding-bottom: 50px;
-}
-
 
 .cardWrap {
     width: 29em;
@@ -90,19 +70,19 @@ body {
 }
 
 .ticketInfo {
-    position:absolute;
+    position: absolute;
 }
 
-.title, .name, .seat, .time {
+.title, .name, .day, .time, .seatGroup {
     text-transform: uppercase;
     font-weight: normal;
 }
-.title h2, .name h2, .seat h2, .time h2 {
+.title h2, .name h2, .day h2, .time h2, .seatGroup h2 {
     font-size: .9em;
     color: #525252;
     margin: 0;
 }
-.title span, .name span, .seat span, .time span {
+.title span, .name span, .day span, .time span, .seatGroup span {
     font-size: .7em;
     color: #a2aeae;
 }
@@ -111,7 +91,7 @@ body {
     margin: 2em 0 0 0;
 }
 
-.name, .seat {
+.name, .day {
     margin: .7em 0 0 0;
 }
 
@@ -119,7 +99,7 @@ body {
     margin: .7em 0 0 1em;
 }
 
-.seat, .time {
+.day, .time {
     float: left;
 }
 
@@ -131,18 +111,18 @@ body {
     width: 50%
 }
 
-.number {
+.seat {
     text-align: center;
     text-transform: uppercase;
     position: relative;
     bottom: 35%;
 }
-.number h3 {
+.seat h3 {
     color: #343A40;
     margin: .9em 0 0 0;
     font-size: 2.3em;
 }
-.number span {
+.seat span {
     display: block;
     color: #a2aeae;
 }
@@ -175,7 +155,97 @@ body {
     74px 0 0 1px #343434,
     77px 0 0 1px #343434,
     81px 0 0 1px #343434;
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+}
+
+.cardHeader {
+    background: #343A40;
+    float: left;
     position: relative;
-    bottom: 35%;
-    left: 4%;
+    padding: 1em;
+    margin-top: 100px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 27em;
+    height: 1.43em;
+}
+
+.cardBody {
+    background: #ecedef;
+    float: left;
+    position: relative;
+    bottom: 100px;
+    padding: 1em;
+    margin-top: 100px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 27em;
+    height: <?php echo $cardHeight . "px"?>;
+}
+
+.cardWrapGroup {
+    width: 29em;
+    margin: 3em auto;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.cardBody .title {
+    margin: 0 0 0 0;
+    float: left;
+}
+
+.cardBody .day, .cardBody .time {
+    margin: 0 0 0 1em;
+    float: left;
+}
+
+.cardBody .name {
+    margin: 3em 0 0 0;
+}
+
+.cardBody .seatGroup {
+    margin: .7em 0 0 0;
+}
+
+#seatsGroupText {
+    font-size: 2em;
+}
+
+.barcodeGroup {
+    height: 2em;
+    width: 0;
+    box-shadow: 1px 0 0 1px #343434,
+    5px 0 0 1px #343434,
+    10px 0 0 1px #343434,
+    11px 0 0 1px #343434,
+    15px 0 0 1px #343434,
+    18px 0 0 1px #343434,
+    22px 0 0 1px #343434,
+    23px 0 0 1px #343434,
+    26px 0 0 1px #343434,
+    30px 0 0 1px #343434,
+    35px 0 0 1px #343434,
+    37px 0 0 1px #343434,
+    41px 0 0 1px #343434,
+    44px 0 0 1px #343434,
+    47px 0 0 1px #343434,
+    51px 0 0 1px #343434,
+    56px 0 0 1px #343434,
+    59px 0 0 1px #343434,
+    64px 0 0 1px #343434,
+    68px 0 0 1px #343434,
+    72px 0 0 1px #343434,
+    74px 0 0 1px #343434,
+    77px 0 0 1px #343434,
+    81px 0 0 1px #343434;
+    position: absolute;
+    top: <?php echo $barcodeTopPos . "px"?>;
+    right: -185px;
+}
+
+#seatGroupText {
+    text-transform: capitalize;
 }
