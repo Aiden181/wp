@@ -76,12 +76,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Petrona&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="cardWrap">
+        <div class="card cardLeft">
+            <h1>Startup <span>Cinema</span></h1>
+            <div class="title">
+            <h2>How I met your Mother</h2>
+            <span>movie</span>
+            </div>
+            <div class="name">
+            <h2>Vladimir Kudinov</h2>
+            <span>name</span>
+            </div>
+            <div class="seat">
+            <h2>156</h2>
+            <span>seat</span>
+            </div>
+            <div class="time">
+            <h2>12:00</h2>
+            <span>time</span>
+            </div>
+            
+        </div>
+        <div class="card cardRight">
+            <div class="eye"></div>
+            <div class="number">
+            <h3>156</h3>
+            <span>seat</span>
+            </div>
+            <div class="barcode"></div>
+        </div>
+    </div>
+
+    </div>
     <?php
-        echo "<h2>Group ticket</h2>";
-        generateGroupTickets();
-        echo "</br>";
-        echo "<h2>Individual ticket(s)</h2>";
-        generateIndividualTickets();
+        // echo "<h2>Group ticket</h2>";
+        // generateGroupTickets();
+        // echo "</br>";
+        // echo "<h2>Individual ticket(s)</h2>";
+        // generateIndividualTickets();
 
         // this function generates a group/shared ticket (i.e. one for all 
         // seat holders in the booking that shows quantity of each seat)
