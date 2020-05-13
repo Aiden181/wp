@@ -217,7 +217,8 @@ body {
 .barcodeGroup {
     height: 2em;
     width: 0;
-    box-shadow: 1px 0 0 1px #343434,
+    box-shadow: 
+    1px 0 0 1px #343434,
     5px 0 0 1px #343434,
     10px 0 0 1px #343434,
     11px 0 0 1px #343434,
@@ -243,7 +244,7 @@ body {
     81px 0 0 1px #343434;
     position: absolute;
     top: <?php echo $barcodeTopPos . "px"?>;
-    right: -185px;
+    right: 100px;
 }
 
 #seatGroupText {

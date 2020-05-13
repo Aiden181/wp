@@ -66,7 +66,7 @@
 
     // group ticket card height and bar code position
     $cardHeight = 140;
-    $barcodeTopPos = 105;
+    $barcodeTopPos = 120;
 ?>
 
 <!DOCTYPE html>
@@ -125,11 +125,12 @@
                 if ($seats > 0) {
                     echo "                    <h2 id='seatGroupText'>" . getSeatType($seatType) . "($seats " . $word = ($seats > 1 ? 'seats' : 'seat') . ")</h2>\n";
                     // modify card height and bar code position
-                    $cardHeight += 13;
-                    $barcodeTopPos += 13;
+                    $cardHeight += 15;
+                    $barcodeTopPos += 15;
                 }
             }
             echo "                </div>\n";
+            echo "            </div>\n";
             echo "            <div class=\"barcodeGroup\">\n";
             echo "            </div>\n";
             echo "        </div>\n";
