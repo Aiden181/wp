@@ -31,7 +31,7 @@
   <!--Jumbotron-->
   <div class="container">
     <div class="header">
-      <img id="cinemax_logo" src="https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg"
+      <img id="cinemax_logo" src="cinemax-logo-white_filled__02-10-17.svg"
         alt="Cinemax logo" width="300">
 
       <div id="movieSlide" class="carousel slide" data-ride="carousel">

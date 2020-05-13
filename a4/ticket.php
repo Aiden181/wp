@@ -78,35 +78,35 @@
 <body>
     <div class="cardWrap">
         <div class="card cardLeft">
-            <h1>Startup <span>Cinema</span></h1>
+            <h1><img id='cinemax_logo' src='cinemax-logo-white_filled__02-10-17.svg'><span>Cinema</span></h1>
             <div class="title">
-            <h2>How I met your Mother</h2>
-            <span>movie</span>
+                <h2>How I met your Mother</h2>
+                <span>movie</span>
             </div>
             <div class="name">
-            <h2>Vladimir Kudinov</h2>
-            <span>name</span>
+                <h2>Vladimir Kudinov</h2>
+                <span>name</span>
             </div>
             <div class="seat">
-            <h2>156</h2>
-            <span>seat</span>
+                <h2>156</h2>
+                <span>day</span>
             </div>
             <div class="time">
-            <h2>12:00</h2>
-            <span>time</span>
+                <h2>12:00</h2>
+                <span>time</span>
             </div>
             
         </div>
         <div class="card cardRight">
             <div class="popcorn">
-                <img src="https://loading.io/s/icon/u998bl.svg" alt="">
+                <img src="popcorn.svg" alt="">
             </div>
             <div class="number">
             <h3>156</h3>
             <span>seat</span>
             </div>
             <div class="barcode">
-                <img src="https://loading.io/s/icon/hqqmq0.svg" alt="">
+                <!-- <img src="https://loading.io/s/icon/hqqmq0.svg" alt=""> -->
             </div>
         </div>
     </div>
@@ -140,7 +140,7 @@
                 }
             }
             echo "  </div>";
-            echo "  <img id='cinemax_logo' src='https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg'>\n";
+            echo "  <img id='cinemax_logo' src='cinemax-logo-white_filled__02-10-17.svg'>\n";
             echo "</div>";
         }
 
@@ -166,7 +166,7 @@
                     echo "    <div>Movie Day - Hour: <h3>$movieInfo[day]</h3> - <h3>$movieInfo[hour]</h3></div>\n";
                     echo "    <div>Seat type: <h3>" . getSeatType($seatTypeArray) . "</h3></div>\n";
                     echo "    </div>";
-                    echo "  <img id='cinemax_logo' src='https://www.cinemax.com/images/logos/cinemax-logo-white_filled__02-10-17.svg'>\n";
+                    echo "  <img id='cinemax_logo' src='cinemax-logo-white_filled__02-10-17.svg'>\n";
                     echo "</div>";
                     echo "</br>"; // add space between each ticket
                 }
