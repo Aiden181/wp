@@ -257,6 +257,7 @@
   // Reset the session - Submit Button
   if (isset($_POST['session-reset'])) {
     unset($_SESSION['cart']);
+    unset($_SESSION['ticket']);
     foreach($_SESSION as $something => &$whatever) {
       unset($whatever);
     }

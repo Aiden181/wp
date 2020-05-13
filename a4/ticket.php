@@ -81,11 +81,13 @@
 </head>
 <body>
     <?php
-        // echo "<h2>Group ticket</h2>";
-        generateGroupTickets();
-        // echo "</br>";
-        // echo "<h2>Individual ticket(s)</h2>";
-        generateIndividualTickets();
+
+        if ($_SESSION["ticket"]["ticket"] == "Print Group Ticket") {
+            generateGroupTickets();
+        }
+        else {
+            generateIndividualTickets();
+        }
 
         // this function generates a group/shared ticket (i.e. one for all 
         // seat holders in the booking that shows quantity of each seat)
@@ -132,7 +134,6 @@
             echo "                </div>\n";
             echo "            </div>\n";
             echo "            <div class=\"barcodeGroup\">\n";
-            echo "            </div>\n";
             echo "        </div>\n";
             echo "    </div>\n";
         }

@@ -268,7 +268,10 @@
             </tr>
         </table>
     </div>
-    <a href="ticket.php" id="printTicketbutton" target="_blank">Print Ticket(s)</a>
+    <form method="POST" action="receipt.php">
+        <input type="submit" name="ticket" id="printTicketbutton" value="Print Group Ticket">
+        <input type="submit" name="ticket" id="printTicketbutton" value="Print Individual Ticket(s)">
+    </form>
 
     <?php
     ///////////////////
@@ -277,6 +280,12 @@
     // echo "</br>";
     // echo '$_SESSION array (for debug)';
     // preShow($_SESSION);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $_SESSION['ticket'] = $_POST;
+        header("Location: ticket.php");
+        exit();
+    }
 
     function preShow( $arr, $returnAsString=false ) {
         $ret  = '<pre>' . print_r($arr, true) . '</pre>';
