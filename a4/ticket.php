@@ -102,6 +102,7 @@
             echo "    <div class=\"cardWrapGroup\">\n";
             echo "        <div class=\"cardHeader\">\n";
             echo "            <h1><img id='cinemax_logo' src='cinemax-logo-white_filled__02-10-17.svg' alt='Cinemax logo'></h1>\n";
+            echo "            <h2>Group Ticket</h2>\n";
             echo "        </div>\n";
             echo "        <div class=\"cardBody\">\n";
             echo "            <div class=\"ticketInfo\">\n";
@@ -132,6 +133,9 @@
                 }
             }
             echo "                </div>\n";
+            echo "            </div>\n";
+            echo "            <div class=\"popcornGroup\">\n";
+            echo "                <img src=\"popcorn.svg\" alt=\"Popcorn\">\n";
             echo "            </div>\n";
             echo "            <div class=\"barcodeGroup\">\n";
             echo "        </div>\n";

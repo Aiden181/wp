@@ -112,7 +112,7 @@ body {
     bottom: 10%;
     left: 30%;
     height: 50%;
-    width: 50%
+    width: 50%;
 }
 
 .seat {
@@ -135,7 +135,8 @@ body {
     height: 2em;
     width: 0;
     margin: 1.2em 0 0 .8em;
-    box-shadow: 1px 0 0 1px #343434,
+    box-shadow: 
+    1px 0 0 1px #343434,
     5px 0 0 1px #343434,
     10px 0 0 1px #343434,
     11px 0 0 1px #343434,
@@ -253,4 +254,21 @@ body {
 
 #seatGroupText {
     text-transform: capitalize;
+}
+
+.cardHeader h2 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin: 0;
+    text-transform: capitalize;
+    position: absolute;
+    top: 20px;
+    left: 370px;
+}
+
+.popcornGroup {
+    position: absolute;
+    left: 80%;
+    height: 18%;
+    width: 18%;
 }
