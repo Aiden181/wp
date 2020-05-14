@@ -126,7 +126,7 @@
             echo "                    <span>seat types</span>\n";
             foreach ($seatCount as $seatType => $seats) {
                 if ($seats > 0) {
-                    echo "                    <h2 id='seatGroupText'>" . getSeatType($seatType) . "($seats " . $word = ($seats > 1 ? 'seats' : 'seat') . ")</h2>\n";
+                    echo "                    <h2 id='seatGroupText'>" . getSeatType($seatType) . " ($seats " . $word = ($seats > 1 ? 'seats' : 'seat') . ")</h2>\n";
                     // modify card height and bar code position
                     $cardHeight += 15;
                     $barcodeTopPos += 15;
