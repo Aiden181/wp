@@ -89,7 +89,7 @@
         $FCC = 22;
 
         // init total selection price variable
-        $STAprice = $STPtotal = $STCtotal = $FCAtotal = $FCPtotal = $FCCtotal = 0;
+        $STAtotal = $STPtotal = $STCtotal = $FCAtotal = $FCPtotal = $FCCtotal = 0;
     
         // get the amount of each option and multiply by price
         if(isset($_SESSION["cart"]["seats"]["STA"]) && is_numeric($_SESSION["cart"]["seats"]["STA"]))
