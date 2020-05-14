@@ -30,7 +30,7 @@ body {
 
 .cardWrap {
     width: 29em;
-    margin: 3em auto;
+    margin: 0em auto;
     color: #fff;
     font-family: sans-serif;
 }
