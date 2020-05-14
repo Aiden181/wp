@@ -449,40 +449,40 @@
                 <form method="POST" action="index.php" onsubmit="checkSubmission(event)">
                   <!--Ask for name-->
                   <div class="custInfo">
-                    <input id="movieID" name="movie[id]" type="hidden" value="ACT">
-                    <input id="movieDate" name="movie[day]" type="hidden" value="FRI">
-                    <input id="movieHour" name="movie[hour]" type="hidden" value="T21">
+                    <input id="movieID" name="movie[id]" type="hidden">
+                    <input id="movieDate" name="movie[day]" type="hidden">
+                    <input id="movieHour" name="movie[hour]" type="hidden">
 
                     <label for="cust-name"><b>Name</b></label>
-                    <input  type="text" name="cust[name]" id="cust-name" value="<?php if (isset($_POST['cust']['name'])) {echo $_POST['cust']['name'];} ?>"> <!--pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>-->
+                    <input disabled type="text" name="cust[name]" id="cust-name" value="<?php if (isset($_POST['cust']['name'])) {echo $_POST['cust']['name'];} ?>" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
 
                     <br>
                     <!--Ask for email-->
                     <label for="cust-email"><b>Email</b></label>
-                    <input  type="email" name="cust[email]" id="cust-email" value="<?php if (isset($_POST['cust']['email'])) {echo $_POST['cust']['email'];} ?>"> <!-- pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required> -->
+                    <input disabled type="email" name="cust[email]" id="cust-email" value="<?php if (isset($_POST['cust']['email'])) {echo $_POST['cust']['email'];} ?>" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
 
                     <br>
                     <!--Ask for mobile phone input-->
                     <label for="cust-mobile"><b>Mobile</b></label>
-                    <input  type="tel" name="cust[mobile]" id="cust-mobile" value="<?php if (isset($_POST['cust']['mobile'])) echo $_POST['cust']['mobile']; ?>"> <!--
-                    pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$" required> -->
+                    <input disabled type="tel" name="cust[mobile]" id="cust-mobile" value="<?php if (isset($_POST['cust']['mobile'])) echo $_POST['cust']['mobile']; ?>" 
+                    pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$" required>
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="cust-credit"><b>Credit Card</b></label>
-                    <input  type="text" name="cust[card]" id="cust-credit" value="<?php if (isset($_POST['cust']['card'])) echo $_POST['cust']['card']; ?>"> <!-- pattern="[0-9]{14,19}" required> -->
+                    <input disabled type="text" name="cust[card]" id="cust-credit" value="<?php if (isset($_POST['cust']['card'])) echo $_POST['cust']['card']; ?>" pattern="[0-9]{14,19}" required>
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
                     <label for="cust-expiry"><b>Credit Card</b></label>
-                    <input  type="month" name="cust[expiry]" id="cust-expiry" value="<?php if (isset($_POST['cust']['expiry'])) echo $_POST['cust']['expiry']; ?>">
+                    <input disabled type="month" name="cust[expiry]" id="cust-expiry" value="<?php if (isset($_POST['cust']['expiry'])) echo $_POST['cust']['expiry']; ?>">
                   </div>
 
                   <div class="bookingLabels">
                     <h6 id="standard" style="font-size: 18px;">Standard</h6>
                     <div>
                       <label for="seats-STA"><b>Adults</b>
-                        <select  name="seats[STA]" id="seats-STA" onchange="countTotal();isSeatSelected()">
+                        <select disabled name="seats[STA]" id="seats-STA" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option <?php keepSelectFieldAfterSubmit('STA', '1'); ?>>1</option>
                           <option <?php keepSelectFieldAfterSubmit('STA', '2'); ?>>2</option>
@@ -499,7 +499,7 @@
                       <br>
 
                       <label for="seats-STP"><b>Concession</b>
-                        <select  name="seats[STP]" id="seats-STP" onchange="countTotal();isSeatSelected()">
+                        <select disabled name="seats[STP]" id="seats-STP" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option <?php keepSelectFieldAfterSubmit('STP', '1'); ?>>1</option>
                           <option <?php keepSelectFieldAfterSubmit('STP', '2'); ?>>2</option>
@@ -516,7 +516,7 @@
                       <br>
 
                       <label for="seats-STC"><b>Children</b>
-                        <select  name="seats[STC]" id="seats-STC" onchange="countTotal();isSeatSelected()">
+                        <select disabled name="seats[STC]" id="seats-STC" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option <?php keepSelectFieldAfterSubmit('STC', '1'); ?>>1</option>
                           <option <?php keepSelectFieldAfterSubmit('STC', '2'); ?>>2</option>
@@ -539,7 +539,7 @@
                     <h6 id="firstClass" style="font-size: 18px;">First Class</h6>
                     <div>
                       <label for="seats-FCA"><b>Adults</b>
-                        <select  name="seats[FCA]" id="seats-FCA" onchange="countTotal();isSeatSelected()">
+                        <select disabled name="seats[FCA]" id="seats-FCA" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option <?php keepSelectFieldAfterSubmit('FCA', '1'); ?>>1</option>
                           <option <?php keepSelectFieldAfterSubmit('FCA', '2'); ?>>2</option>
@@ -556,7 +556,7 @@
                       <br>
 
                       <label for="seats-FCP"><b>Concession</b>
-                        <select  name="seats[FCP]" id="seats-FCP" onchange="countTotal();isSeatSelected()">
+                        <select disabled name="seats[FCP]" id="seats-FCP" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option <?php keepSelectFieldAfterSubmit('FCP', '1'); ?>>1</option>
                           <option <?php keepSelectFieldAfterSubmit('FCP', '2'); ?>>2</option>
@@ -573,7 +573,7 @@
                       <br>
 
                       <label for="seats-FCC"><b>Children</b>
-                        <select  name="seats[FCC]" id="seats-FCC" onchange="countTotal();isSeatSelected()">
+                        <select disabled name="seats[FCC]" id="seats-FCC" onchange="countTotal();isSeatSelected()">
                           <option value="">Please Select</option>
                           <option <?php keepSelectFieldAfterSubmit('FCC', '1'); ?>>1</option>
                           <option <?php keepSelectFieldAfterSubmit('FCC', '2'); ?>>2</option>
@@ -624,7 +624,7 @@
       <script>
         document.write(new Date().getFullYear());
       </script>
-      Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-05-11 (YYYY-MM-DD)
+      Ly Khoi Viet, s3753278; Quach Gia Vi, s3757317. Last modified 2020-05-14 (YYYY-MM-DD)
     </div>
 
     <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
@@ -645,7 +645,7 @@ preShow($_SESSION);
 
 // $aaarg = preShow(, true);    // ie return as a string
 // echo "Why is \n $aaarg \n not working?"; 
-// printMyCode();    // prints all lines of code in this file with line numbers
+printMyCode();    // prints all lines of code in this file with line numbers
 ?>
 </body>
 
