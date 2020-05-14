@@ -240,10 +240,10 @@ function isValidExpiryDate() {
     var expiryMonth = dateTimeArray[1];
 
     var date = new Date();
-    var currentMonth = date.getMonth() + 1; // index starts from 0 so add 1 or else it'll be the month before
+    var currentMonth = date.getMonth() + 2; // index starts from 0 so add 1 or else it'll be the month before
     var currentYear = date.getFullYear();
 
-    // if expiry date is before current date
+    // if expiry date is within a month
     if ((expiryMonth <= currentMonth && expiryYear <= currentYear) || expiryYear < currentYear) {
         document.getElementById('submitErrorMessage').innerHTML = "Please enter an appropriate expiry date or enter a new card.";
         return false;

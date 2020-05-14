@@ -97,7 +97,8 @@
       if (isset($_POST["cust"]["expiry"])) {
         $customer["expiry"] = test_input($_POST["cust"]["expiry"]);
         // if expiry date is less or equal than current month and year, format error message
-        if ($customer["expiry"] <= date("Y-m")) {
+        // date('Y-m', strtotime('+2 days');
+        if ($customer["expiry"] <= date('Y-m', strtotime('+28 days'))) {
           array_push($errors, "Please enter a non-expired credit card!");
         } else {  // name is valid, make boolean true
           $isCardExpiryValid = true;
