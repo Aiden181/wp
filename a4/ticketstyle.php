@@ -6,6 +6,10 @@
     include "ticket.php";
 ?>
 
+.page {
+    background-color: white !important;
+}
+
 * {
     color-adjust: exact;
     -webkit-print-color-adjust: exact;
