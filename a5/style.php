@@ -260,7 +260,7 @@ body {
 .custInfo {
   position: relative;
   left: 50%;
-  bottom: -4%;
+  bottom: -5%;
 }
 
 .custInfo label {
@@ -281,7 +281,7 @@ body {
 
 .bookingLabels {
   position: relative;
-  bottom: 38%;
+  bottom: 34%;
   left: 2%;
   border: solid black;
   border-width: 1px;
@@ -325,7 +325,7 @@ body {
 
 .total {
   position: relative;
-  bottom: 33%;
+  bottom: 29%;
   left: 18%;
 }
 
