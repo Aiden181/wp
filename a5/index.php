@@ -501,7 +501,7 @@
 
                     <br>
                     <!--Ask for Credit Card input (Only Support Visa and Master Card-->
-                    <label for="cust-expiry"><b>Credit Card</b></label>
+                    <label for="cust-expiry"><b>Exipiry Date</b></label>
                     <input disabled type="month" name="cust[expiry]" id="cust-expiry" value="<?php if (isset($_POST['cust']['expiry'])) echo $_POST['cust']['expiry']; ?>">
                   </div>
 

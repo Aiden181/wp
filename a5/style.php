@@ -260,7 +260,7 @@ body {
 .custInfo {
   position: relative;
   left: 50%;
-  top: 8%;
+  bottom: -4%;
 }
 
 .custInfo label {
@@ -276,11 +276,12 @@ body {
 
 .custInfo input {
   width: 180px;
+  height: 30px;
 }
 
 .bookingLabels {
   position: relative;
-  bottom: 30%;
+  bottom: 38%;
   left: 2%;
   border: solid black;
   border-width: 1px;
@@ -309,7 +310,7 @@ body {
   position: relative;
   width:100px;
   left: 80%;
-  bottom: 130px;
+  bottom: 160px;
 }
 
 .expiryTime {
@@ -324,7 +325,7 @@ body {
 
 .total {
   position: relative;
-  bottom: 25%;
+  bottom: 33%;
   left: 18%;
 }
 
