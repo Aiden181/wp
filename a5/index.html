@@ -13,7 +13,6 @@
     <title>Zael</title>
 </head>
 <body>
-    
     <div class="row" id="row0">
             <div class="col-lg-6">
                 <div class="header_top_left">
@@ -63,7 +62,7 @@
                 </ul>
               </nav>
         </div>
-        <div class="col-lg-3";">
+        <div class="col-lg-3";>
 
             <!--Login Button-->
             <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
@@ -99,13 +98,13 @@
 
     <div class="row" id="row2">
         <div class="col-lg-3">
+
             <!--Categories-->
             <div class="item_categories">
                 <div class="item_categories_all">
-                    <i class="fa fa-bars"></i>
-                    <span>All Departments</span>
+                    <span onclick="displayCategories()">Categories</span>
                 </div>
-                <ul>
+                <ul class="menu-categories" id="categories">
                     <li><a href="#">Fresh Meat</a></li>
                     <li><a href="#">Vegetables</a></li>
                     <li><a href="#">Fruit & Nut Gifts</a></li>
@@ -120,6 +119,7 @@
                 </ul>
             </div>
         </div>
+
         <!--Search Box-->
         <div class="col-lg-6">
             <form class="search" action="/action_page.php" style="margin:auto;max-width:300px">
@@ -127,10 +127,26 @@
                 <button type="submit">Search</button>
               </form>
         </div>
-        <div class="col-lg-3">
-            
-        </div>
-      </div>
 
+        <div class="col-lg-3">
+        </div>
+    </div>
+
+    <script>
+        
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function displayCategories() {
+            var menu = document.getElementById("categories");
+            if (menu.classList.contains("show-menu")) {
+                menu.classList.remove("show-menu");
+                menu.classList.add("hide-menu");
+            }
+            else {
+                menu.classList.remove("hide-menu");
+                menu.classList.add("show-menu");
+            }
+        }
+        </script>
 </body>
 </html>

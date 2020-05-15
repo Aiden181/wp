@@ -255,7 +255,7 @@ span.psw {
 
 .item_categories ul {
 	border: 1px solid #ebebeb;
-	width: 44.5%;
+	width: 204px;
     padding-left: 40px;
     padding-top: 10px;
 	padding-bottom: 12px;
@@ -265,7 +265,52 @@ ul {
   list-style-type: none;
 }
 
+/* -------------------------------------- */
+/* animated drop down menu for categories */
+/* -------------------------------------- */
 
+/* hide list as default */
+.menu-categories {
+  display: block;
+  opacity: 0;
+}
 
+.hide-menu {
+  animation-name: hide-menu;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
 
+.show-menu {
+  animation-name: show-menu;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
 
+@keyframes hide-menu {
+  0% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes show-menu {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+/* ------------------------------ */
+/* end of animated drop down code */
+/* ------------------------------ */
