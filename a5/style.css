@@ -15,6 +15,50 @@
   background-color: white;
 }
 
+/*1st Row*/
+.header_top_right {
+  position: relative;
+  right: 30%;
+  text-align: right;
+  padding: 10px 0 13px;
+}
+
+.header_top_left ul li {
+  font-size: 14px;
+  color: #1c1c1c;
+  display: inline-block;
+  margin-right: 45px;
+  position: relative;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.header_top_right__social a {
+  font-size: 14px;
+  display: inline-block;
+  color: #1c1c1c;
+  margin-right: 20px;
+}
+
+
 /* Login Button */
 /* Full-width input fields */
 input[type="text"],
@@ -218,7 +262,10 @@ span.psw {
 }
 
 ul {
-	list-style-type: none;
+  list-style-type: none;
 }
+
+
+
 
 
