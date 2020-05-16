@@ -1,146 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<html>
+<title>Zael</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link id='stylecss' type="text/css" rel="stylesheet" href="style.css">
+<style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+</style>
+<body class="w3-content" style="max-width:1200px">
 
-    <title>Zael</title>
-</head>
-<body>
-    <div class="row" id="row0">
-            <div class="col-lg-6">
-                <div class="header_top_left">
-                    <ul>
-                        <li><i class="fa fa-envelope"></i> zael@gmail.com</li>
-                        <li>Free Shipping for all Order of $100</li>
-                    </ul>
-                </div>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <img id="zael-logo" src="Bold Black and Yellow Logo.png" alt="" style="width: 60%;">
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="#" class="w3-bar-item w3-button">M - Series</a>
+    <a href="#" class="w3-bar-item w3-button">P - Series</a>
+    <a href="#" class="w3-bar-item w3-button">Q - Series</a>
+    <a href="#" class="w3-bar-item w3-button">S - Series</a>
+    <a href="#" class="w3-bar-item w3-button">T - Series</a>
+    <a href="#" class="w3-bar-item w3-button">V - Series</a>
+    <a href="#" class="w3-bar-item w3-button">W - Series</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <nav class="navbar navbar-expand-sm bg-light justify-content-left">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    <p class="w3-right">
+        <i class="fa fa-user w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+      <i class="fa fa-shopping-cart w3-margin-left"></i
+    </p>
+  </header>
+
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <img src="banner2.png" alt="Jeans" style="width:100%">
+    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+      <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
+      <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
+      <h1 class="w3-hide-small">COLLECTION 2016</h1>
+      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
+    </div>
+  </div>
+
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p>8 items</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row w3-grayscale">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+            <img src="watch01.png" style="width:100%">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
             </div>
-            <div class="col-lg-6">
-                <div class="header_top_right">
-                    <div class="header_top_right_social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-youtube"></i></a>
-                    </div>
-                </div>
+          </div>
+          <p>M3/03 – PSYCHO<br><b class="w3-text-red">$1,750.00</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+            <img src="watch02.png" style="width:100%">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
             </div>
+          </div>
+          <p>M3/04 – PINKY<br><b class="w3-text-red">$1,750.00</b></p>
+      </div>
     </div>
 
-    <div class="row" id="row1">
-        <div class="col-lg-3">
-            <img id="zael-logo" src="Bold Black and Yellow Logo.png" alt="">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="watch03.png" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
         </div>
-        <div class="col-lg-6">
-            <nav class="navbar navbar-expand-sm justify-content-center navbar-light" id="header-nav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#productdetail.html">Shop</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                  </li>
-                </ul>
-              </nav>
-        </div>
-        <div class="col-lg-3";>
-
-            <!--Login Button-->
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
-            <div id="id01" class="modal">
-    
-                <form class="modal-content animate" action="/action_page.php" method="post">
-                        <div class="imgcontainer">
-                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                </div>
-
-                <div class="container">
-                    <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
-
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
-            
-                    <button type="submit" id="submitbtn">Login</button>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember" id="remember"> Remember me
-                    </label>
-                </div>
-
-                <div class="container" style="background-color:#f1f1f1">
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                    <span class="psw">Forgot <a href="#">password?</a></span>
-                </div>
-                </form>
+        <p>M2B/01<br><b>$1,474.00</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+            <img src="watch04.png" style="width:100%">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
             </div>
-        </div>
+          </div>
+          <p>M3/05 – PIMP<br><b class="w3-text-red">$1,750.00</b></p>
+      </div>
     </div>
 
-    <div class="row" id="row2">
-        <div class="col-lg-3">
-
-            <!--Categories-->
-            <div class="item_categories">
-                <div class="item_categories_all">
-                    <span onclick="displayCategories()">Categories</span>
-                </div>
-                <ul class="menu-categories" id="categories">
-                    <li><a href="#">Fresh Meat</a></li>
-                    <li><a href="#">Vegetables</a></li>
-                    <li><a href="#">Fruit & Nut Gifts</a></li>
-                    <li><a href="#">Fresh Berries</a></li>
-                    <li><a href="#">Ocean Foods</a></li>
-                    <li><a href="#">Butter & Eggs</a></li>
-                    <li><a href="#">Fastfood</a></li>
-                    <li><a href="#">Fresh Onion</a></li>
-                    <li><a href="#">Papayaya & Crisps</a></li>
-                    <li><a href="#">Oatmeal</a></li>
-                    <li><a href="#">Fresh Bananas</a></li>
-                </ul>
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+            <img src="watch05.png" style="width:100%">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
             </div>
+          </div>
+          <p>M3/01 SPACESHIP<br><b class="w3-text-red">$1,100.00</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="watch06.png" style="width:100%">
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
         </div>
-
-        <!--Search Box-->
-        <div class="col-lg-6">
-            <form class="search" action="/action_page.php" style="margin:auto;max-width:300px">
-                <input type="text" placeholder="Search Products" name="search2">
-                <button type="submit">Search</button>
-              </form>
-        </div>
-
-        <div class="col-lg-3">
-        </div>
+        <p>P3C/03 BEACH CLUB<br><b class="w3-text-red">$1,200.00</b></p>
+      </div>
     </div>
 
-    
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+            <img src="watch07.png" style="width:100%">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>P3B/06 RACING TEAM RED<br><b class="w3-text-red">$1,150.00</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+            <img src="watch08.png" style="width:100%">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>P3B/06 RACING TEAM RED<br><b class="w3-text-red">$1,150.00</b></p>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Footer -->
 
-    <script>
-        
-        /* When the user clicks on the button, 
-        toggle between hiding and showing the dropdown content */
-        function displayCategories() {
-            var menu = document.getElementById("categories");
-            if (menu.classList.contains("show-menu")) {
-                menu.classList.remove("show-menu");
-                menu.classList.add("hide-menu");
-            }
-            else {
-                menu.classList.remove("hide-menu");
-                menu.classList.add("show-menu");
-            }
-        }
-        </script>
+  <!-- End page content -->
+</div>
+
+<script>
+// Accordion 
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
+
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
 </body>
 </html>
