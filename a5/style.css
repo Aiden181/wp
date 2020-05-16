@@ -16,11 +16,22 @@
 }
 
 /*1st Row*/
-.header_top_right {
+#row0 {
+  background-color: whitesmoke;
+}
+
+.fa {
+  padding: 8px;
+  font-size: 18px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.header_top_right_social {
   position: relative;
-  right: 30%;
-  text-align: right;
-  padding: 10px 0 13px;
+  top: 6px;
+  left: 250px;
 }
 
 .header_top_left ul li {
@@ -29,6 +40,7 @@
   display: inline-block;
   margin-right: 45px;
   position: relative;
+  left: 210px;
 }
 
 .fa-facebook {
@@ -51,12 +63,6 @@
   color: white;
 }
 
-.header_top_right__social a {
-  font-size: 14px;
-  display: inline-block;
-  color: #1c1c1c;
-  margin-right: 20px;
-}
 
 
 /* Login Button */
@@ -75,13 +81,13 @@ input[type="password"] {
 button {
   background-color: #e04b11;
   color: white;
-  padding: 14px 20px;
+  padding: 5.5px 18px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 80%;
   position: relative;
-  top: 25px;
+  top: -52.5px;
 }
 
 button:hover {
@@ -314,3 +320,8 @@ ul {
 /* ------------------------------ */
 /* end of animated drop down code */
 /* ------------------------------ */
+
+#watchSlides {
+  position: relative;
+  
+}
