@@ -4,3 +4,11 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 ul {
   list-style-type: none;
  }
+
+ .footer {
+   background-color: #1e1e1e;
+ }
+
+ #payment-icon {
+   width: 30px;
+ }
