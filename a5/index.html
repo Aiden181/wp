@@ -21,13 +21,22 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <img id="zael-logo" src="Bold Black and Yellow Logo.png" alt="" style="width: 60%;">
   </div>
   <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-    <a href="#" class="w3-bar-item w3-button">M - Series</a>
-    <a href="#" class="w3-bar-item w3-button">P - Series</a>
-    <a href="#" class="w3-bar-item w3-button">Q - Series</a>
-    <a href="#" class="w3-bar-item w3-button">S - Series</a>
-    <a href="#" class="w3-bar-item w3-button">T - Series</a>
-    <a href="#" class="w3-bar-item w3-button">V - Series</a>
-    <a href="#" class="w3-bar-item w3-button">W - Series</a>
+    <div class="item_categories">
+      <div class="item_categories_all" onclick="menuAnimation(this)">
+          <i class="fa fa-bars"></i>
+          <span>All Models</span>
+      </div>
+        <ul>
+            <a href="#" class="w3-bar-item w3-button">M - Series</a>
+            <a href="#" class="w3-bar-item w3-button">P - Series</a>
+            <a href="#" class="w3-bar-item w3-button">Q - Series</a>
+            <a href="#" class="w3-bar-item w3-button">S - Series</a>
+            <a href="#" class="w3-bar-item w3-button">T - Series</a>
+            <a href="#" class="w3-bar-item w3-button">V - Series</a>
+            <a href="#" class="w3-bar-item w3-button">W - Series</a>
+        </ul>
+  </div>
+</div>
   </div>
 </nav>
 
@@ -173,45 +182,52 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
   </div>
 
-  <div class="footer">
-    <div id="copyright" class="w3-left w3-padding-24">
-      Copyright	&copy 2020 Zael
-    </div>
-    <div id="payment-icon" class="w3-right w3-padding-24" >
-      <img src="visa.png" alt="Visa">
-      <img src="mastercard.png" alt="Master Card">
-      <img src="paypal.png" alt="Paypal">
-      <img src="amazon.png" alt="Amazon">
+  <div class="row" id="footer">
+    <div class="col-lg" style="background-color:#1e1e1e;">
+      <div style="color: white;">
+        Copyright	&copy 2020 Zael
+      </div>
+      <div id="payment-icons">
+        <img src="visa.png" alt="Visa">
+        <img src="mastercard.png" alt="Master Card">
+        <img src="paypal.png" alt="Paypal">
+        <img src="amazon.png" alt="Amazon">
+      </div>
     </div>
   </div>
+
   <!-- End page content -->
 </div>
 </div>
 
 <script>
-// Accordion 
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
+  // Accordion 
+  function myAccFunc() {
+    var x = document.getElementById("demoAcc");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
   }
-}
 
-// Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
+  // Click on the "Jeans" link on page load to open the accordion for demo purposes
+  document.getElementById("myBtn").click();
 
 
-// Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
+  // Open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+  
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+
+  function menuAnimation(x) {
+  x.classList.toggle("change");
 }
 </script>
 
