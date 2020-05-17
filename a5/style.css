@@ -5,27 +5,32 @@ ul {
   list-style-type: none;
 }
 
+.fa {
+  color: #1e1e1e;
+}
+
 #navigation-bar {
   position: relative;
-  top: 60px;
+  top: 40px;
+  right: 23px;
 }
 
 #login-btn {
   position: relative;
-  left: 780px;
+  left: 820px;
   top: 18px;
 }
 
 #search-btn {                              
   position: relative;
-  left: 811px;
-  bottom: 18px;
+  left: 855px;
+  bottom: 15px;
 }
 
 #cart {
   position: relative;
-  left: 830px;
-  bottom: 55px;
+  left: 880px;
+  bottom: 48px;
 }
 
 #img-header1 h1 {
@@ -48,7 +53,7 @@ ul {
 #copyright {
   position: relative;
   top: 16px;
-  left: 12px;
+  left: 40px;
 }
 
 #visa {
@@ -69,8 +74,8 @@ ul {
 
 #payment-icons {
   position: relative;
-  left: 72%;
-  bottom: 12px;
+  left: 71%;
+  bottom: 8px;
 }
 
 #blankspace {
