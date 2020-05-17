@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html>
-<title>Zael</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html lang="en">
 
-<link id='stylecss' type="text/css" rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zael</title>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link id='stylecss' type="text/css" rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
 <body class="w3-content" style="max-width:1200px">
 
@@ -25,13 +34,13 @@
           <span>All Models</span>
         </div>
         <ul class="menu-categories" id="categories">
-          <a href="#" class="w3-bar-item w3-button">M - Series</a>
-          <a href="#" class="w3-bar-item w3-button">P - Series</a>
-          <a href="#" class="w3-bar-item w3-button">Q - Series</a>
-          <a href="#" class="w3-bar-item w3-button">S - Series</a>
-          <a href="#" class="w3-bar-item w3-button">T - Series</a>
-          <a href="#" class="w3-bar-item w3-button">V - Series</a>
-          <a href="#" class="w3-bar-item w3-button">W - Series</a>
+          <li><a href="#" class="w3-bar-item w3-button">M - Series</a></li>
+          <li><a href="#" class="w3-bar-item w3-button">P - Series</a></li>
+          <li><a href="#" class="w3-bar-item w3-button">Q - Series</a></li>
+          <li><a href="#" class="w3-bar-item w3-button">S - Series</a></li>
+          <li><a href="#" class="w3-bar-item w3-button">T - Series</a></li>
+          <li><a href="#" class="w3-bar-item w3-button">V - Series</a></li>
+          <li><a href="#" class="w3-bar-item w3-button">W - Series</a></li>
         </ul>
       </div>
     </div>
@@ -48,13 +57,12 @@
     <div class="w3-hide-large" style="margin-top:83px"></div>
 
     <!-- Top header -->
-    <header class="w3-container w3-xlarge">
-      <nav class="navbar navbar-expand-sm bg-light justify-content-left" id="navigation-bar">
+    <div class="header w3-container w3-xlarge">
+      <nav class="navbar navbar-expand-sm bg-light justify-content-left container-fluid" id="navigation-bar">
         <a href="#home">Home</a>
         <a href="productdetail.html">Shop</a>
         <a href="#about">About</a>
       </nav>
-      <p class="w3-right">
       <div id="login-btn">
         <a href="loginpage.html"><i class="fa fa-user w3-margin-right"></i></a>
       </div>
@@ -64,9 +72,11 @@
       <div id="cart">
         <a href="shoppingcart.html"><i class="fa fa-shopping-cart w3-margin-left"></i></a>
       </div>
+    </div>
 
-      </p>
-    </header>
+    <div>
+      <p></p>
+    </div>
 
     <!-- Image header -->
     <div class="w3-display-container w3-container">
@@ -141,7 +151,6 @@
     </div>
 
     <!-- End page content -->
-  </div>
   </div>
 
   <script>
