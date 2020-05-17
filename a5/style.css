@@ -5,6 +5,11 @@ ul {
   list-style-type: none;
 }
 
+#zael-logo {
+  position: relative;
+  top: 30px;
+}
+
 .fa {
   color: #1e1e1e;
 }
@@ -74,7 +79,7 @@ ul {
 
 #payment-icons {
   position: relative;
-  left: 71%;
+  left: 72%;
   bottom: 8px;
 }
 
