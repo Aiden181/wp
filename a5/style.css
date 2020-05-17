@@ -10,6 +10,24 @@ ul {
    top: 60px;
  }
 
+ #login-btn {
+   position: relative;
+   left: 780px;
+   top: 18px;
+ }
+
+ #search-btn {                              
+  position: relative;
+  left: 811px;
+  bottom: 18px;
+ }
+
+ #cart {
+  position: relative;
+  left: 830px;
+  bottom: 55px;
+ }
+
  #copyright {
    position: relative;
    top: 16px;
