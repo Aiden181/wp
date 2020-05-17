@@ -28,6 +28,24 @@ ul {
   bottom: 55px;
  }
 
+ #img-header1 h1{
+
+ }
+
+ #img-header2 {
+   position: absolute;
+   left: 450px;
+ }
+
+ #shopnow-btn2 {
+  position: relative;
+  left: 100px;
+ }
+
+ #img-header3 {
+   
+ }
+
  #copyright {
    position: relative;
    top: 16px;

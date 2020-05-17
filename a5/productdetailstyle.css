@@ -1,0 +1,61 @@
+.sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+
+ul {
+  list-style-type: none;
+ }
+
+ #navigation-bar {
+   position: relative;
+   top: 60px;
+ }
+
+ #login-btn {
+   position: relative;
+   left: 780px;
+   top: 18px;
+ }
+
+ #search-btn {                              
+  position: relative;
+  left: 811px;
+  bottom: 18px;
+ }
+
+ #cart {
+  position: relative;
+  left: 830px;
+  bottom: 55px;
+ }
+
+ #copyright {
+   position: relative;
+   top: 16px;
+   left: 12px;
+ }
+
+ #visa {
+   width: 6%;
+ }
+
+ #mastercard {
+  width: 6%;
+}
+
+#paypal {
+  width: 6%;
+}
+
+#amazon {
+  width: 6%;
+}
+
+#payment-icons {
+  position: relative;
+  left: 72%;
+  bottom: 12px;
+}
+
+#blankspace {
+  height: 300px;
+}

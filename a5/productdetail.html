@@ -3,12 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link id='stylecss' type="text/css" rel="stylesheet" href="productdetailstyle.css">
     <title>Shop</title>
 </head>
-<body>
+<body class="w3-content" style="max-width:1200px">
     
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+    <div class="w3-container w3-display-container w3-padding-16">
+      <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+      <a href="#home"><img id="zael-logo" src="Bold Black and Yellow Logo.png" alt="" style="width: 60%;"></a>
+    </div>
+    <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+      <div class="item_categories">
+        <div class="item_categories_all">
+            <i class="fa fa-bars"></i>
+            <span>All Models</span>
+        </div>
+          <ul>
+              <a href="#" class="w3-bar-item w3-button">M - Series</a>
+              <a href="#" class="w3-bar-item w3-button">P - Series</a>
+              <a href="#" class="w3-bar-item w3-button">Q - Series</a>
+              <a href="#" class="w3-bar-item w3-button">S - Series</a>
+              <a href="#" class="w3-bar-item w3-button">T - Series</a>
+              <a href="#" class="w3-bar-item w3-button">V - Series</a>
+              <a href="#" class="w3-bar-item w3-button">W - Series</a>
+          </ul>
+    </div>
+  </div>
+    </div>
+  </nav>
 
+  <!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <nav class="navbar navbar-expand-sm bg-light justify-content-left" id="navigation-bar">
+      <a href="#home">Home</a>
+      <a href="productdetail.html">Shop</a>
+      <a href="#about">About</a>
+    </nav>
+    <p class="w3-right">
+        <div id="login-btn">
+          <a href="loginpage.html"><i class="fa fa-user w3-margin-right"></i></a>
+        </div>
+        <div id="search-btn">
+          <i class="fa fa-search"></i>
+        </div>
+        <div id="cart">
+          <a href="shoppingcart.html"><i class="fa fa-shopping-cart w3-margin-left"></i></a>
+        </div>
+
+    </p>
+  </header>
+
+    <!-- Product grid -->
+    <div class="w3-row">
+        <div class="w3-col l3 s6">
+          <div class="w3-container">
+            <div class="w3-display-container">
+                <img src="watch01.png" style="width:100%">
+                <span class="w3-tag w3-display-topleft">New</span>
+                <div class="w3-display-middle w3-display-hover">
+                  <button id="addtocart" class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+                </div>
+              </div>
+              <p>M3/03 – PSYCHO<br><b class="w3-text-red">$1,750.00</b></p>
+          </div>
+          <div class="w3-container">
+            <div class="w3-display-container">
+                <img src="watch02.png" style="width:100%">
+                <div class="w3-display-middle w3-display-hover">
+                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+                </div>
+              </div>
+              <p>M3/04 – PINKY<br><b class="w3-text-red">$1,750.00</b></p>
+          </div>
+        </div>
+    
+        <div class="w3-col l3 s6">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="watch03.png" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>M2B/01<br><b class="w3-text-red">$1,474.00</b></p>
+          </div>
+          <div class="w3-container">
+            <div class="w3-display-container">
+                <img src="watch04.png" style="width:100%">
+                <span class="w3-tag w3-display-topleft">New</span>
+                <div class="w3-display-middle w3-display-hover">
+                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+                </div>
+              </div>
+              <p>M3/05 – PIMP<br><b class="w3-text-red">$1,750.00</b></p>
+          </div>
+        </div>
+    
+        <div class="w3-col l3 s6">
+          <div class="w3-container">
+            <div class="w3-display-container">
+                <img src="watch05.png" style="width:100%">
+                <div class="w3-display-middle w3-display-hover">
+                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+                </div>
+              </div>
+              <p>M3/01 SPACESHIP<br><b class="w3-text-red">$1,100.00</b></p>
+          </div>
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="watch06.png" style="width:100%">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>P3C/03 BEACH CLUB<br><b class="w3-text-red">$1,200.00</b></p>
+          </div>
+        </div>
+    
+        <div class="w3-col l3 s6">
+          <div class="w3-container">
+            <div class="w3-display-container">
+                <img src="watch07.png" style="width:100%">
+                <div class="w3-display-middle w3-display-hover">
+                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+                </div>
+              </div>
+              <p>S2/01<br><b class="w3-text-red">$1,250.00</b></p>
+          </div>
+          <div class="w3-container">
+            <div class="w3-display-container">
+                <img src="watch08.png" style="width:100%">
+                <div class="w3-display-middle w3-display-hover">
+                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+                </div>
+              </div>
+              <p>S1/01<br><b class="w3-text-red">$1,200.00</b></p>
+          </div>
+        </div>
+      </div>
+
+  <div id="blankspace">
+</div>
+
+  <!-- Subscribe section -->
+  <div class="w3-container w3-padding-32" style="background-color:#1e1e1e;">
+    <h1 style="color: white;">Subscribe</h1>
+    <p style="color: white;">Subsribe to receive the latest updates and promotions from Zael.</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Enter E-mail" style="width:100%"></p>
+    <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+  </div>
+
+  <div id="social-bar" class="w3-center w3-xxlarge" style="background-color: #f6f6f6;">
+    <a href="#" class="facebook"><i class="fa fa-facebook-square"></i></a> 
+    <a href="#" class="google"><i class="fa fa-instagram"></i></a> 
+    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>  
+    <a href="#" class="linkedin"><i class="fa fa-snapchat-square"></i></a>
+    <a href="#" class="youtube"><i class="fa fa-youtube-square"></i></a> 
+  </div>
+
+  <div class="row" id="footer">
+    <div class="col-lg" style="background-color:#1e1e1e;">
+      <div id="copyright" style="color: white;">
+        Copyright	&copy 2020 Zael
+      </div>
+      <div id="payment-icons">
+        <img src="visa.png" alt="Visa" id="visa">
+        <img src="mastercard.png" alt="Master Card" id="mastercard">
+        <img src="paypal.png" alt="Paypal" id="paypal">
+        <img src="amazon.png" alt="Amazon" id="amazon">
+      </div>
+    </div>
+  </div>
+
+  <!-- End page content -->
+</div>
 
 </body>
 </html>
