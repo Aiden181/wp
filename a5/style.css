@@ -78,5 +78,64 @@ ul {
   height: 300px;
 }
 
+.item_categories {
+  display: block;
+}
 
+.item_categories_all {
+  cursor: pointer;
+}
+
+
+/* -------------------------------------- */
+/* animated drop down menu for categories */
+/* -------------------------------------- */
+
+/* hide list as default */
+.menu-categories {
+  display: none;
+  opacity: 0;
+}
+
+.hide-menu {
+  display: block;
+  animation-name: hide-menu;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.show-menu {
+  display: block;
+  animation-name: show-menu;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hide-menu {
+  0% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes show-menu {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+/* ------------------------------ */
+/* end of animated drop down code */
+/* ------------------------------ */ 
 
