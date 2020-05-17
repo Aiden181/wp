@@ -46,16 +46,16 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.html" style="color: #1e1e1e;">Home</a></li>
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #1e1e1e;">Explore
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #1e1e1e;" onclick="displayCategories()">Explore
                 <span class="caret"></span></a>
-                <ul class="dropdown-menu ">
-                  <li><a href="#" class="w3-bar-item w3-button">M - Series</a></li>
-                  <li><a href="#" class="w3-bar-item w3-button">P - Series</a></li>
-                  <li><a href="#" class="w3-bar-item w3-button">Q - Series</a></li>
-                  <li><a href="#" class="w3-bar-item w3-button">S - Series</a></li>
-                  <li><a href="#" class="w3-bar-item w3-button">T - Series</a></li>
-                  <li><a href="#" class="w3-bar-item w3-button">V - Series</a></li>
-                  <li><a href="#" class="w3-bar-item w3-button">W - Series</a></li>
+                <ul class="menu-categories" id="categories">
+                  <li><a href="#">M - Series</a></li>
+                  <li><a href="#">P - Series</a></li>
+                  <li><a href="#">Q - Series</a></li>
+                  <li><a href="#">S - Series</a></li>
+                  <li><a href="#">T - Series</a></li>
+                  <li><a href="#">V - Series</a></li>
+                  <li><a href="#">W - Series</a></li>
                 </ul>
             </li>
             <li><a href="#" style="color: #1e1e1e;">About Us</a></li>
@@ -190,8 +190,18 @@
         menu.classList.add("show-menu");
       }
     }
+    
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropdown')) {
+        var menu = document.getElementById("categories");
+        if (menu.classList.contains("show-menu")) {
+          menu.classList.remove("show-menu");
+          menu.classList.add("hide-menu");
+        }
+      }
+    }
   </script>
 
 </body>
-
 </html>

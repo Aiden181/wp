@@ -91,20 +91,51 @@ ul {
   display: block;
 }
 
+/* change cursor icon to pointer when hovered over */
 .item_categories_all {
   cursor: pointer;
+}
+
+/* format drop down list and hide list as default */
+.menu-categories {
+  display: none;
+  opacity: 0;
+  width: 160px;
+  position: absolute;
+  left: -15px;
+  background-color: white;
+  z-index: 1;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+/* format list items */
+.menu-categories li {
+  position: relative;
+  left: -40px;
+  width: 160px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+/* format list items */
+.menu-categories li:hover {
+  background-color: rgb(196, 196, 196);
+}
+/* add line between each list item */
+.menu-categories li:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+/* make text in drop down list black */
+.menu-categories li a {
+  color: black;
 }
 
 
 /* -------------------------------------- */
 /* animated drop down menu for categories */
 /* -------------------------------------- */
-
-/* hide list as default */
-.menu-categories {
-  display: none;
-  opacity: 0;
-}
 
 .hide-menu {
   display: block;
