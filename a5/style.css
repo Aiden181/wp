@@ -5,3 +5,31 @@ ul {
   list-style-type: none;
  }
 
+ #copyright {
+   position: relative;
+   top: 16px;
+   left: 12px;
+ }
+
+ #visa {
+   width: 6%;
+ }
+
+ #mastercard {
+  width: 6%;
+}
+
+#paypal {
+  width: 6%;
+}
+
+#amazon {
+  width: 6%;
+}
+
+#payment-icons {
+  position: relative;
+  left: 72%;
+  bottom: 12px;
+}
+
