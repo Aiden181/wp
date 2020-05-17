@@ -3,60 +3,59 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 ul {
   list-style-type: none;
- }
+}
 
- #navigation-bar {
-   position: relative;
-   top: 60px;
- }
+#navigation-bar {
+  position: relative;
+  top: 60px;
+}
 
- #login-btn {
-   position: relative;
-   left: 780px;
-   top: 18px;
- }
+#login-btn {
+  position: relative;
+  left: 780px;
+  top: 18px;
+}
 
- #search-btn {                              
+#search-btn {                              
   position: relative;
   left: 811px;
   bottom: 18px;
- }
+}
 
- #cart {
+#cart {
   position: relative;
   left: 830px;
   bottom: 55px;
- }
+}
 
- #img-header1 h1{
+#img-header1 h1 {
+  text-shadow: 1px 1px black;
+}
 
- }
+#img-header2 {
+  text-shadow: 1px 1px black;
+}
 
- #img-header2 {
-   position: absolute;
-   left: 450px;
- }
+#img-header3 {
+  text-shadow: 1px 1px black;
+}
 
- #shopnow-btn2 {
+#shopnow-btn2 {
   position: relative;
   left: 100px;
- }
+}
 
- #img-header3 {
-   
- }
+#copyright {
+  position: relative;
+  top: 16px;
+  left: 12px;
+}
 
- #copyright {
-   position: relative;
-   top: 16px;
-   left: 12px;
- }
+#visa {
+  width: 6%;
+}
 
- #visa {
-   width: 6%;
- }
-
- #mastercard {
+#mastercard {
   width: 6%;
 }
 
