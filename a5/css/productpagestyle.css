@@ -32,6 +32,10 @@ ul {
   bottom: 15px;
 }
 
+button {
+  position: relative;
+}
+
 #cart {
   position: relative;
   left: 880px;
