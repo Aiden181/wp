@@ -45,7 +45,23 @@
         <div class="container-fluid" id="navigation-bar">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.html" style="color: #1e1e1e;">Home</a></li>
+<<<<<<< HEAD
             <li><a href="sevenfriday.html" style="color: #1e1e1e;">Shop</a></li>
+=======
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #1e1e1e;" onclick="displayCategories()">Explore
+                <span class="caret"></span></a>
+                <ul class="menu-categories" id="categories">
+                  <li><a href="#">M - Series</a></li>
+                  <li><a href="#">P - Series</a></li>
+                  <li><a href="#">Q - Series</a></li>
+                  <li><a href="#">S - Series</a></li>
+                  <li><a href="#">T - Series</a></li>
+                  <li><a href="#">V - Series</a></li>
+                  <li><a href="#">W - Series</a></li>
+                </ul>
+            </li>
+>>>>>>> 591153ae30d117714386514dae3e84e150b08b0b
             <li><a href="#" style="color: #1e1e1e;">About Us</a></li>
             <li><a href="#" style="color: #1e1e1e;">Contact</a></li>
           </ul>
@@ -178,8 +194,18 @@
         menu.classList.add("show-menu");
       }
     }
+    
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropdown')) {
+        var menu = document.getElementById("categories");
+        if (menu.classList.contains("show-menu")) {
+          menu.classList.remove("show-menu");
+          menu.classList.add("hide-menu");
+        }
+      }
+    }
   </script>
 
 </body>
-
 </html>
