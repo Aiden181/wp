@@ -1,0 +1,169 @@
+.sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+
+ul {
+  list-style-type: none;
+}
+
+#zael-logo {
+  position: relative;
+  top: 35px;
+}
+
+.fa {
+  color: #1e1e1e;
+}
+
+#navigation-bar {
+  position: relative;
+  top: 40px;
+  right: 23px;
+}
+
+#login-btn {
+  position: relative;
+  left: 820px;
+  top: 18px;
+}
+
+#search-btn {                              
+  position: relative;
+  left: 855px;
+  bottom: 15px;
+}
+
+#cart {
+  position: relative;
+  left: 880px;
+  bottom: 48px;
+}
+
+.button {
+  position: relative;
+  left: 25px;
+}
+
+#copyright {
+  position: relative;
+  top: 16px;
+  left: 40px;
+}
+
+#visa {
+  width: 6%;
+}
+
+#mastercard {
+  width: 6%;
+}
+
+#paypal {
+  width: 6%;
+}
+
+#amazon {
+  width: 6%;
+}
+
+#payment-icons {
+  position: relative;
+  left: 72%;
+  bottom: 8px;
+}
+
+#blankspace {
+  height: 300px;
+}
+
+.item_categories {
+  display: block;
+}
+
+/* change cursor icon to pointer when hovered over */
+.item_categories_all {
+  cursor: pointer;
+}
+
+/* format drop down list and hide list as default */
+.menu-categories {
+  display: none;
+  opacity: 0;
+  width: 160px;
+  position: absolute;
+  left: -15px;
+  background-color: white;
+  z-index: 1;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+/* format list items */
+.menu-categories li {
+  position: relative;
+  left: -40px;
+  width: 160px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+/* format list items */
+.menu-categories li:hover {
+  background-color: rgb(196, 196, 196);
+}
+/* add line between each list item */
+.menu-categories li:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+/* make text in drop down list black */
+.menu-categories li a {
+  color: black;
+}
+
+
+/* -------------------------------------- */
+/* animated drop down menu for categories */
+/* -------------------------------------- */
+
+.hide-menu {
+  display: block;
+  animation-name: hide-menu;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.show-menu {
+  display: block;
+  animation-name: show-menu;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hide-menu {
+  0% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes show-menu {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+/* ------------------------------ */
+/* end of animated drop down code */
+/* ------------------------------ */ 
+
