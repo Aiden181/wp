@@ -130,6 +130,10 @@ ul {
   bottom: 8px;
 }
 
+#blankspace {
+  height: 150px;
+}
+
 .item_categories {
   display: block;
 }
