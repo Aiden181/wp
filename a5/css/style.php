@@ -1,8 +1,7 @@
 <?php
   header("Content-type: text/css");
 
-  $homePageWidth = 1024;
-  $homePageHeight = 576;
+  $homePageWidth = 1150;
 ?>
 
 .sidebar a {
@@ -235,6 +234,11 @@ ul {
   object-fit: cover;
   top: 0;
   left: 0;
+}
+
+.home-watch-showcase-container {
+  margin: auto;
+  max-width: 1440px;
 }
 
 .watch-showcase-container {

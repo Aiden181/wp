@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link id='stylecss' type="text/css" rel="stylesheet" href="css/productpagestyle.css">
+    <link id='stylecss' type="text/css" rel="stylesheet" href="css/style.php" media="screen">
+    <link id='stylecss' type="text/css" rel="stylesheet" href="css/productpagestyle.php" media="screen">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -17,13 +18,17 @@
 
     <title>SevenFriday</title>
 </head>
-<body class="w3-content" style="max-width:1200px">
+<body>
   <?php
     include('includes/header.php');
   ?>
 
+  <br>
+  <br>
+  <br>
+
   <!-- Product grid -->
-  <div class="w3-row">
+  <div class="w3-row watch-showcase-container">
     <div class="w3-col l3 s6">
       <div class="w3-container">
         <div class="w3-display-container">

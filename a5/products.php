@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link id='stylecss' type="text/css" rel="stylesheet" href="css/productdetailstyle.php">
+    <link id='stylecss' type="text/css" rel="stylesheet" href="css/style.php" media="screen">
+    <link id='stylecss' type="text/css" rel="stylesheet" href="css/productpagestyle.php" media="screen">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -17,10 +18,14 @@
 
     <title>Product</title>
 </head>
-<body class="w3-content" style="max-width:1200px">
-  <?php
-      include('includes/header.php');
-  ?>
+<body>
+    <?php
+        include('includes/header.php');
+    ?>
+
+    <br>
+    <br>
+    <br>
 
     <div class="card">
         <img src="img/watches/sevenfriday1.png" style="width:40%" id="product-image">
@@ -36,9 +41,9 @@
         </div>
     </div>
 
-  <?php
-      include('includes/footer.php');
-      include('includes/javascript.php');
-  ?>
+    <?php
+        include('includes/footer.php');
+        include('includes/javascript.php');
+    ?>
 </body>
 </html>

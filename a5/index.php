@@ -76,7 +76,7 @@
   <br>
   <br>
 
-  <div class="w3-row watch-showcase-container">
+  <div class="w3-row home-watch-showcase-container">
     <div class="w3-col l3 s6">
       <div class="w3-container">
         <div class="w3-display-container">
@@ -86,15 +86,6 @@
           </div>
         </div>
         <p style="text-align: center;">P3B/06 RACING TEAM RED<br><b class="w3-text-red">$1,150.00</b></p>
-      </div>
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="img/watches/mvmt3.jpg" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p style="text-align: center;">CLASSIC BLACK ROSE<br><b class="w3-text-red">$110.00</b></p>
       </div>
     </div>
 
@@ -109,15 +100,6 @@
         </div>
         <p style="text-align: center;">MODERN 47<br><b class="w3-text-red">$695.00</b></p>
       </div>
-     <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="img/watches/dw7.jpg" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p style="text-align: center;">PETITE BRISTOL<br><b class="w3-text-red">$179.00</b></p>
-      </div>
     </div>
 
     <div class="w3-col l3 s6">
@@ -130,15 +112,6 @@
         </div>
         <p style="text-align: center;">PETITE DURHAM<br><b class="w3-text-red">$179.00</b></p>
       </div>
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="img/watches/movado4.png" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p style="text-align: center;">MODERN 47<br><b class="w3-text-red">$695.00</b></p>
-      </div>
     </div>
 
     <div class="w3-col l3 s6">
@@ -150,15 +123,6 @@
           </div>
         </div>
         <p style="text-align: center;">M3/04 – PINKY<br><b class="w3-text-red">$1,750.00</b></p>
-      </div>
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="img/watches/sevenfriday7.png" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p style="text-align: center;">M2/02<br><b class="w3-text-red">$1,474.00</b></p>
       </div>
     </div>
   </div>
