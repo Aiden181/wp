@@ -17,7 +17,7 @@
 
     <title>Contact</title>
 </head>
-<body class="w3-content" style="max-width:1200px">
+<body>
   <?php
       include('includes/header.php');
   ?>
