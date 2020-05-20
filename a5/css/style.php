@@ -255,3 +255,16 @@ ul {
   left: 600px;
   padding: 13px;
 }
+
+.aboutus-container {
+  width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;";
+}
+
+.aboutus-container h1 {
+  text-align: center;
+}

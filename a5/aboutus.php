@@ -17,16 +17,16 @@
 
     <title>About Us</title>
 </head>
-<body class="w3-content" style="max-width:1200px">
+<body>
   <?php
       include('includes/header.php');
   ?>
 
   <div class="aboutus-container">
       <div>
-          <h1 style="position: relative; left: 380px;"><b><u>About Us</u></b></h1>
+          <h1><b><u>About Us</u></b></h1>
           <br>
-          <div class="aboutus-content" style="width: 700px; position: relative;left: 120px; font-size: 16px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+          <div>
               Zael is a global lifestyle brand that creates industrial inspired watches, eyewear, apparel and accessories for individuals around the world who live everyday like it’s Friday
               <br>
               <br>
