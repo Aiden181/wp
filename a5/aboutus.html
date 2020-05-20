@@ -3,9 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link id='stylecss' type="text/css" rel="stylesheet" href="css/style.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <title>About Us</title>
 </head>
-<body>
-    <h1>About Us</h1>
+<body class="w3-content" style="max-width:1200px">
+    
+    <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px;" id="mySidebar">
+    <div class="w3-container w3-display-container w3-padding-16">
+      <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+      <a href="index.html"><img id="zael-logo" src="img/Bold_Black_and_Yellow_Logo.png" alt="" style="width: 60%;"></a>
+    </div>
+  </nav>
+
+   <!-- Overlay effect when opening sidebar on small screens -->
+   <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+   id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:250px">
+
+    <!-- Push down content on small screens -->
+    <div class="w3-hide-large" style="margin-top:83px"></div>
+
+    <!-- Top header -->
+    <div class="header w3-container w3-xlarge">
+      <nav class="navbar navbar-expand-sm bg-light justify-content-left container-fluid" id="navigation-bar">
+        <div class="container-fluid" id="navigation-bar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html" style="color: #1e1e1e;">Home</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #1e1e1e;"
+                onclick="displayCategories()">Explore
+                <span class="caret"></span></a>
+              <ul class="menu-categories" id="categories">
+                <li><a href="sevenfriday.html">SevenFriday</a></li>
+                <li><a href="movado.html">Movado</a></li>
+                <li><a href="dw.html">Daniel Wellington</a></li>
+                <li><a href="mvmt.html">MVMT</a></li>
+                <li><a href="royal.html">Royal</a></li>
+              </ul>
+            </li>
+            <li><a href="aboutus.html" style="color: #1e1e1e;">About Us</a></li>
+            <li><a href="contact.html" style="color: #1e1e1e;">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="search-btn" onclick="displaySearchBar()">
+        <i class="fa fa-search"></i>
+      </div>
+      <input class="search-box" type="text" placeholder="Search">
+      
+      <div id="login-btn">
+        <a href="loginpage.html"><i class="fa fa-user w3-margin-right"></i></a>
+      </div>
+      <div id="cart">
+        <a href="shoppingcart.html"><i class="fa fa-shopping-cart w3-margin-left"></i></a>
+      </div>
+    </div>
+
+    <div id="blankspace"></div>
+
+    <!-- Subscribe section -->
+    <div class="w3-container w3-padding-32" style="background-color:#1e1e1e;">
+      <h1 style="color: white;">Subscribe</h1>
+      <p style="color: white;">Subsribe to receive the latest updates and promotions from Zael.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter E-mail" style="width:100%"></p>
+      <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+    </div>
+
+    <!-- Footer -->
+
+    <div id="social-bar" class="w3-center w3-xxlarge" style="background-color: #f6f6f6;">
+      <a href="#" class="facebook"><i class="fa fa-facebook-square"></i></a>
+      <a href="#" class="google"><i class="fa fa-instagram"></i></a>
+      <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+      <a href="#" class="linkedin"><i class="fa fa-snapchat-square"></i></a>
+      <a href="#" class="youtube"><i class="fa fa-youtube-square"></i></a>
+    </div>
+
+    <div class="row" id="footer">
+      <div class="col-lg" style="background-color:#1e1e1e;">
+        <div id="copyright" style="color: white;">
+          <b>Copyright &copy 2020 Zael</b>
+        </div>
+        <div id="payment-icons">
+          <img src="img/visa.png" alt="Visa" id="visa">
+          <img src="img/mastercard.png" alt="Master Card" id="mastercard">
+          <img src="img/paypal.png" alt="Paypal" id="paypal">
+          <img src="img/amazon.png" alt="Amazon" id="amazon">
+        </div>
+      </div>
+    </div>
+
+    <!-- End page content -->
+  </div>
+
+  <script>
+    // Accordion 
+    function myAccFunc() {
+      var x = document.getElementById("demoAcc");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+
+    // Open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function displayCategories() {
+      var menu = document.getElementById("categories");
+      if (menu.classList.contains("show-menu")) {
+        menu.classList.remove("show-menu");
+        menu.classList.add("hide-menu");
+      }
+      else {
+        menu.classList.remove("hide-menu");
+        menu.classList.add("show-menu");
+      }
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropdown')) {
+        var menu = document.getElementById("categories");
+        if (menu.classList.contains("show-menu")) {
+          menu.classList.remove("show-menu");
+          menu.classList.add("hide-menu");
+        }
+      }
+    }
+
+    /* Expand search bar when user clicks onto search icon */
+    $("#search-btn").click(function () {
+      $(".search-box").toggleClass("search-box-active").focus;
+    });
+  </script>
+
 </body>
 </html>
