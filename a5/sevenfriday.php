@@ -32,7 +32,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">P3B/06 RACING TEAM RED<br><b class="w3-text-red">$1,150.00</b></p>
+        <p style="text-align: center;"><a href="">P3B/06 RACING TEAM RED</a><br><b class="w3-text-red">$1,150.00</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
@@ -41,7 +41,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">M1B/01M URBAN EXPLORER<br><b class="w3-text-red">$1,355.00</b></p>
+        <p style="text-align: center;"><a href="">M1B/01M URBAN EXPLORER</a><br><b class="w3-text-red">$1,355.00</b></p>
       </div>
     </div>
 
@@ -53,7 +53,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">P1C/01<br><b class="w3-text-red">$1,150.00</b></p>
+        <p style="text-align: center;"><a href="">P1C/01</a><br><b class="w3-text-red">$1,150.00</b></p>
       </div>
      <div class="w3-container">
         <div class="w3-display-container">
@@ -62,7 +62,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">M1B/01 URBAN EXPLORER<br><b class="w3-text-red">$1,250.00</b></p>
+        <p style="text-align: center;"><a href="">M1B/01 URBAN EXPLORER</a><br><b class="w3-text-red">$1,250.00</b></p>
       </div>
     </div>
 
@@ -75,7 +75,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">M3/05 – PIMP<br><b class="w3-text-red">$1,750.00</b></p>
+        <p style="text-align: center;"><a href="">M3/05 – PIMP</a><br><b class="w3-text-red">$1,750.00</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
@@ -84,7 +84,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">M3/01 SPACESHIP<br><b class="w3-text-red">$1,100.00</b></p>
+        <p style="text-align: center;"><a href="">M3/01 SPACESHIP</a><br><b class="w3-text-red">$1,100.00</b></p>
       </div>
     </div>
 
@@ -97,7 +97,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">M3/04 – PINKY<br><b class="w3-text-red">$1,750.00</b></p>
+        <p style="text-align: center;"><a href="">M3/04 – PINKY</a><br><b class="w3-text-red">$1,750.00</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
@@ -106,7 +106,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">M2/02<br><b class="w3-text-red">$1,474.00</b></p>
+        <p style="text-align: center;"><a href="">M2/02</a><br><b class="w3-text-red">$1,474.00</b></p>
       </div>
     </div>
   </div>

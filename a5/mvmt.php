@@ -32,7 +32,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">CLASSIC BLACK LEATHER<br><b class="w3-text-red">$95.00</b></p>
+        <p style="text-align: center;"><a href="">CLASSIC BLACK LEATHER</a><br><b class="w3-text-red">$95.00</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
@@ -41,7 +41,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">THE 40 - ROSE GOLD BROWN<br><b class="w3-text-red">$120.00</b></p>
+        <p style="text-align: center;"><a href="">THE 40 - ROSE GOLD BROWN</a><br><b class="w3-text-red">$120.00</b></p>
       </div>
     </div>
 
@@ -54,7 +54,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">CLASSIC BRONZE AGE<br><b class="w3-text-red">$82.50</b></p>
+        <p style="text-align: center;"><a href="">CLASSIC BRONZE AGE</a><br><b class="w3-text-red">$82.50</b></p>
       </div>
      <div class="w3-container">
         <div class="w3-display-container">
@@ -63,7 +63,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">THE 40 - ROSE GOLD NATURAL TAN<br><b class="w3-text-red">$120.00</b></p>
+        <p style="text-align: center;"><a href="">THE 40 - ROSE GOLD NATURAL TAN</a><br><b class="w3-text-red">$120.00</b></p>
       </div>
     </div>
 
@@ -75,7 +75,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">CLASSIC BLACK ROSE<br><b class="w3-text-red">$110.00</b></p>
+        <p style="text-align: center;"><a href="">CLASSIC BLACK ROSE</a><br><b class="w3-text-red">$110.00</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
@@ -84,7 +84,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">THE 40 - BLACK LINK<br><b class="w3-text-red">$130.00</b></p>
+        <p style="text-align: center;"><a href="">THE 40 - BLACK LINK</a><br><b class="w3-text-red">$130.00</b></p>
       </div>
     </div>
 
@@ -96,7 +96,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">CLASSIC WHITE BLACK<br><b class="w3-text-red">$95.00</b></p>
+        <p style="text-align: center;"><a href="">CLASSIC WHITE BLACK</a><br><b class="w3-text-red">$95.00</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
@@ -105,7 +105,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">THE 40 - GUNMETAL MESH<br><b class="w3-text-red">$125.00</b></p>
+        <p style="text-align: center;"><a href="">THE 40 - GUNMETAL MESH</a><br><b class="w3-text-red">$125.00</b></p>
       </div>
     </div>
   </div>

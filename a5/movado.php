@@ -33,7 +33,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">MOVADO BOLD EVOLUTION
+        <p style="text-align: center;"><a href="">MOVADO BOLD EVOLUTION</a>
           <br><b class="w3-text-red">$650.00</b></p>
       </div>
       <div class="w3-container">
@@ -44,7 +44,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">MODERN 47<br><b class="w3-text-red">$695.00</b></p>
+        <p style="text-align: center;"><a href="">MODERN 47</a><br><b class="w3-text-red">$695.00</b></p>
       </div>
     </div>
 
@@ -56,7 +56,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">MOVADO BOLD CERAMIC<br><b class="w3-text-red">$595.00</b></p>
+        <p style="text-align: center;"><a href="">MOVADO BOLD CERAMIC</a><br><b class="w3-text-red">$595.00</b></p>
       </div>
      <div class="w3-container">
         <div class="w3-display-container">
@@ -65,7 +65,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">MODERN 47<br><b class="w3-text-red">$695.00</b></p>
+        <p style="text-align: center;"><a href="">MODERN 47</a><br><b class="w3-text-red">$695.00</b></p>
       </div>
     </div>
 
@@ -77,7 +77,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">MOVADO BOLD CERAMIC<br><b class="w3-text-red">$695.00</b></p>
+        <p style="text-align: center;"><a href="">MOVADO BOLD CERAMIC</a><br><b class="w3-text-red">$695.00</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
@@ -86,7 +86,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">MODERN 47<br><b class="w3-text-red">$695.00</b></p>
+        <p style="text-align: center;"><a href="">MODERN 47</a><br><b class="w3-text-red">$695.00</b></p>
       </div>
     </div>
 
@@ -99,7 +99,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">MOVADO BOLD VERSO<br><b class="w3-text-red">$595.00</b></p>
+        <p style="text-align: center;"><a href="">MOVADO BOLD VERSO</a><br><b class="w3-text-red">$595.00</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
@@ -109,7 +109,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">MUSEUM SPORT<br><b class="w3-text-red">$995.00</b></p>
+        <p style="text-align: center;"><a href="">MUSEUM SPORT</a><br><b class="w3-text-red">$995.00</b></p>
       </div>
     </div>
   </div>

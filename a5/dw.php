@@ -32,7 +32,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">PETITE MELROSE<br><b class="w3-text-red">$189.00</b></p>
+        <p style="text-align: center;"><a href="">PETITE MELROSE</a><br><b class="w3-text-red">$189.00</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
@@ -41,7 +41,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;"> PETITE BRISTOL<br><b class="w3-text-red">$179.00</b></p>
+        <p style="text-align: center;"><a href="">PETITE BRISTOL</a><br><b class="w3-text-red">$179.00</b></p>
       </div>
     </div>
 
@@ -53,7 +53,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">PETITE STERLING<br><b class="w3-text-red">$189.00</b></p>
+        <p style="text-align: center;"><a href="">PETITE STERLING</a><br><b class="w3-text-red">$189.00</b></p>
       </div>
      <div class="w3-container">
         <div class="w3-display-container">
@@ -62,7 +62,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">PETITE DURHAM<br><b class="w3-text-red">$179.00</b></p>
+        <p style="text-align: center;"><a href="">PETITE DURHAM</a><br><b class="w3-text-red">$179.00</b></p>
       </div>
     </div>
 
@@ -74,7 +74,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">PETITE STERLING<br><b class="w3-text-red">$189.00</b></p>
+        <p style="text-align: center;"><a href="">PETITE STERLING</a><br><b class="w3-text-red">$189.00</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
@@ -84,7 +84,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">PETITE DURHAM<br><b class="w3-text-red">$89.50</b></p>
+        <p style="text-align: center;"><a href="">PETITE DURHAM</a><br><b class="w3-text-red">$89.50</b></p>
       </div>
     </div>
 
@@ -96,7 +96,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">PETITE STERLING<br><b class="w3-text-red">$189.00</b></p>
+        <p style="text-align: center;"><a href="">PETITE STERLING</a><br><b class="w3-text-red">$189.00</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
@@ -105,7 +105,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">PETITE READING<br><b class="w3-text-red">$179.00</b></p>
+        <p style="text-align: center;"><a href="">PETITE READING</a><br><b class="w3-text-red">$179.00</b></p>
       </div>
     </div>
   </div>
