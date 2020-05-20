@@ -227,3 +227,31 @@ ul {
   margin: auto;
   max-width: <?php echo $homePageWidth ."px" ?>;
 }
+
+.upper-footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 60px 0 50px;
+    border-top: 0px;
+    background-color: #1e1e1e; 
+}
+
+.upper-footer a {
+  color: white;
+  position: relative;
+  left: 575px;
+}
+
+.upper-footer p {
+  color: white;
+  position: relative;
+  left: 605px;
+}
+
+.section-title {
+  font-weight:bold;
+  color: white;
+  position: relative;
+  left: 600px;
+  padding: 13px;
+}

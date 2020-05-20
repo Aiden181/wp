@@ -1,3 +1,7 @@
+<?php
+  header("Content-type: text/css");
+?>
+
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 /* BASIC */
