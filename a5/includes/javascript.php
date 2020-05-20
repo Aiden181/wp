@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
   <script>
     // Accordion 
     function myAccFunc() {
@@ -52,4 +50,3 @@
       $(".search-box").toggleClass("search-box-active").focus;
     });
   </script>
-</html>

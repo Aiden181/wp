@@ -1,5 +1,13 @@
-.sidebar a {font-family: "Roboto", sans-serif}
-body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+<?php
+  header("Content-type: text/css");
+?>
+
+.sidebar a {
+  font-family: "Roboto", sans-serif
+}
+body, h1, h2, h3, h4, h5, h6, .w3-wide {
+  font-family: "Montserrat", sans-serif;
+}
 
 ul {
   list-style-type: none;
@@ -8,6 +16,7 @@ ul {
 #zael-logo {
   position: relative;
   top: 35px;
+  display: 
 }
 
 .fa {
@@ -16,8 +25,20 @@ ul {
 
 #navigation-bar {
   position: relative;
-  top: 40px;
-  right: 23px;
+  top: 80px;
+  right: 46px;
+}
+
+#login-btn {
+  position: relative;
+  left: 862px;
+  bottom: 15px;
+}
+
+#cart {
+  position: relative;
+  left: 880px;
+  bottom: 48px;
 }
 
 #search-btn {                              
@@ -60,18 +81,6 @@ ul {
   color: black;
 }
 
-#login-btn {
-  position: relative;
-  left: 862px;
-  bottom: 15px;
-}
-
-#cart {
-  position: relative;
-  left: 880px;
-  bottom: 48px;
-}
-
 #img-header1 h1 {
   text-shadow: 1px 1px black;
 }
@@ -108,26 +117,15 @@ ul {
   left: 40px;
 }
 
-#visa {
-  width: 6%;
-}
-
-#mastercard {
-  width: 6%;
-}
-
-#paypal {
-  width: 6%;
-}
-
-#amazon {
-  width: 6%;
-}
-
 #payment-icons {
   position: relative;
   left: 72%;
   bottom: 8px;
+  max-height: 50px;
+}
+
+#payment-icons img {
+  max-height: 50px;
 }
 
 #blankspace {
@@ -226,7 +224,18 @@ ul {
 /* end of animated drop down code */
 /* ------------------------------ */ 
 
+#carouselContainer {
+  margin: auto;
+  width: 960px;
+}
 
+.carousel {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  height: 540px;
+}
 .carousel-inner img
 {
   width: 100%;
@@ -234,7 +243,7 @@ ul {
 }
 .item
 {
-  height: 500px;
+  height: 540px;
 }
 .item img
 {
@@ -243,5 +252,5 @@ ul {
   object-fit: cover;
   top: 0;
   left: 0;
-  min-height: 500px;
+  min-height: 540px;
 }
