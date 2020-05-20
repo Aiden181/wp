@@ -17,57 +17,71 @@ ul {
 }
 
 #zael-logo {
+  width: 120px;
   position: relative;
-  top: 35px;
-  display: 
+  left: 30px;
+  z-index: 1;
 }
 
 .fa {
   color: #1e1e1e;
 }
 
-#navigation-bar {
+.navigation-bar {
+  width: 500px;
   position: relative;
-  top: 80px;
-  right: 46px;
+  right: 300px;
+  z-index: 1;
+}
+
+#icons-container {
+  text-align: center;
+  position: relative;
+  left: 500px;
+  bottom: 60px;
+  height: 40px;
 }
 
 #login-btn {
   position: relative;
-  left: 862px;
-  bottom: 15px;
+  bottom: 33px;
+  left: 11px;
 }
 
 #cart {
   position: relative;
-  left: 880px;
-  bottom: 48px;
+  bottom: 33px;
+  left: 20px;
 }
 
-#search-btn {                              
+#search-btn {
   position: relative;
-  left: 820px;
-  top: 18px;
+  left: 950px;
+  width: 34px;
   cursor: pointer;
 }
 
 .search-box {
+  text-align: center;
   font-family: "Montserrat", sans-serif;
-  width: 0px;
   position: absolute;
-  top: 80px;
-  right: 140px;
+  top: -5px;
+  right: 35px;
   box-sizing: border-box;
-  border: 2px solid black;
-  border-radius: 3px;
-  padding: 5px 10px;
+  border: 0px solid black;
+  border-radius: 0px;
+  padding: 0px 0px;
   outline: none;
   color: black;
   transition: all 0.8s ease;
+  width: 0px;
   opacity: 0;
 }
 
 .search-box-active {
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 5px 10px;
   width: 250px;
   opacity: 1;
 }
