@@ -17,6 +17,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <title>Movado</title>
+  <?php
+    include('includes/tools.php');
+  ?>
 </head>
 <body>
   <?php
@@ -27,97 +30,9 @@
   <br>
   <br>
 
-  <!-- Product grid -->
-  <div class="w3-row watch-showcase-container">
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="img/watches/movado1.png" style="width:100%">
-          <span class="w3-tag w3-display-topleft">New</span>
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p style="text-align: center;"><a href="">MOVADO BOLD EVOLUTION</a>
-          <br><b class="w3-text-red">$650.00</b></p>
-      </div>
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="img/watches/movado2.png" style="width:100%">
-          <span class="w3-tag w3-display-topleft">New</span>
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p style="text-align: center;"><a href="">MODERN 47</a><br><b class="w3-text-red">$695.00</b></p>
-      </div>
-    </div>
-
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="img/watches/movado7.png" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p style="text-align: center;"><a href="">MOVADO BOLD CERAMIC</a><br><b class="w3-text-red">$595.00</b></p>
-      </div>
-     <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="img/watches/movado3.png" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p style="text-align: center;"><a href="">MODERN 47</a><br><b class="w3-text-red">$695.00</b></p>
-      </div>
-    </div>
-
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="img/watches/movado8.png" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p style="text-align: center;"><a href="">MOVADO BOLD CERAMIC</a><br><b class="w3-text-red">$695.00</b></p>
-      </div>
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="img/watches/movado4.png" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p style="text-align: center;"><a href="">MODERN 47</a><br><b class="w3-text-red">$695.00</b></p>
-      </div>
-    </div>
-
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="img/watches/movado5.png" style="width:100%">
-          <span class="w3-tag w3-display-topleft">New</span>
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p style="text-align: center;"><a href="">MOVADO BOLD VERSO</a><br><b class="w3-text-red">$595.00</b></p>
-      </div>
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="img/watches/movado6.png" style="width:100%">
-          <span class="w3-tag w3-display-topleft">New</span>
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" style="position: relative; top: 70px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p style="text-align: center;"><a href="">MUSEUM SPORT</a><br><b class="w3-text-red">$995.00</b></p>
-      </div>
-    </div>
-  </div>
+  <?php
+    showcaseWatches($movadoList);
+  ?>
 
   <div id="blankspace"></div>
 
