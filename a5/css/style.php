@@ -290,3 +290,21 @@ ul {
 .aboutus-container h1 {
   text-align: center;
 }
+
+.parallax
+{
+  width: auto;
+  min-height: 450px;
+  max-height: 850px;
+  background: transparent;
+}
+
+.parallax-text-container {
+  z-index: 2;
+  color: white;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  top: 260px;
+  left: 22%;
+}

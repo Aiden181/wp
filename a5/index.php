@@ -17,15 +17,29 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Parallax.js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 </head>
 
 <body>
   <?php
     include('includes/header.php');
   ?>
+
+  <div class="parallax" data-parallax="scroll" data-image-src="img/petite-banner-2800x850.jpg">
+    <div class="parallax-text-container">
+      <h1>PETITE COLLECTION</h1>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
   
   <div id="carouselContainer">
-    <h1>NEW ARRIVALS - 2020 COLLECTION</h1>
+    <h1>NEW 2020 ARRIVALS</h1>
     <!-- Carousel -->
     <div id="newArrivalCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
