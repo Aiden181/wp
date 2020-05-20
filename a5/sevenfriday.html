@@ -53,7 +53,6 @@
                       <li><a href="movado.html">Movado</a></li>
                       <li><a href="dw.html">Daniel Wellington</a></li>
                       <li><a href="mvmt.html">MVMT</a></li>
-                      <li><a href="royal.html">Royal</a></li>
                     </ul>
                 </li>
                 <li><a href="#" style="color: #1e1e1e;">About Us</a></li>
@@ -61,11 +60,13 @@
               </ul>
             </div>
           </nav>
+          <div id="search-btn" onclick="displaySearchBar()">
+            <i class="fa fa-search"></i>
+          </div>
+          <input class="search-box" type="text" placeholder="Search">
+          
           <div id="login-btn">
             <a href="loginpage.html"><i class="fa fa-user w3-margin-right"></i></a>
-          </div>
-          <div id="search-btn">
-            <i class="fa fa-search"></i>
           </div>
           <div id="cart">
             <a href="shoppingcart.html"><i class="fa fa-shopping-cart w3-margin-left"></i></a>
@@ -239,6 +240,22 @@
         menu.classList.add("show-menu");
       }
     }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropdown')) {
+        var menu = document.getElementById("categories");
+        if (menu.classList.contains("show-menu")) {
+          menu.classList.remove("show-menu");
+          menu.classList.add("hide-menu");
+        }
+      }
+    }
+
+    /* Expand search bar when user clicks onto search icon */
+    $("#search-btn").click(function () {
+      $(".search-box").toggleClass("search-box-active").focus;
+    });
   </script>
 
 </body>
