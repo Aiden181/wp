@@ -32,7 +32,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;"><a href="">P3B/06 RACING TEAM RED</a><br><b class="w3-text-red">$1,150.00</b></p>
+        <p style="text-align: center;"><a href="racingteamred.php">P3B/06 RACING TEAM RED</a><br><b class="w3-text-red">$1,150.00</b></p>
       </div>
       <div class="w3-container">
         <div class="w3-display-container">
