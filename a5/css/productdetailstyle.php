@@ -1,3 +1,7 @@
+<?php
+  header("Content-type: text/css");
+?>
+
 .sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
@@ -225,3 +229,24 @@ ul {
 /* ------------------------------ */
 /* end of animated drop down code */
 /* ------------------------------ */ 
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  cursor: pointer;
+  width: 18%;
+  font-size: 18px;
+}
+.card button:hover {
+  opacity: 0.7;
+}
