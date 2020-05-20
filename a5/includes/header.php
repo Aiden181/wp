@@ -38,13 +38,20 @@
                     </ul>
                 </div>
             </nav>
-            <div id="search-btn" onclick="displaySearchBar()"><i class="fa fa-search"></i></div>
-            <input class="search-box" type="text" placeholder="Search">
-            
-            <div id="login-btn">
-                <a href="loginpage.php"><i class="fa fa-user w3-margin-right"></i></a>
+
+            <!-- Search icon and search bar-->
+            <div id="search">
+                <div id="search-btn" onclick="displaySearchBar()"><i class="fa fa-search"></i></div>
+                <input class="search-box" type="text" placeholder="Search">
             </div>
+
+            <!-- Login icon -->
+            <div id="login-btn">
+                <a href="loginpage.php"><i class="fa fa-user"></i></a>
+            </div>
+            
+            <!-- Shopping cart icon -->
             <div id="cart">
-                <a href="shoppingcart.php"><i class="fa fa-shopping-cart w3-margin-left"></i></a>
+                <a href="shoppingcart.php"><i class="fa fa-shopping-cart"></i></a>
             </div>
         </div>

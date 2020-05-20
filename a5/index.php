@@ -21,11 +21,11 @@
 
 <body>
   <?php
-      include('includes/header.php');
+    include('includes/header.php');
   ?>
   
   <div id="carouselContainer">
-    <h1>New arrivals - COLLECTION 2020</h1>
+    <h1>NEW ARRIVALS - 2020 COLLECTION</h1>
     <!-- Carousel -->
     <div id="newArrivalCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -39,22 +39,22 @@
       <div class="carousel-inner">
         <div class="item active">
           <img src="img/banner.jpg" alt="Banner">
-          <div class="w3-display-topleft w3-text-white" style="padding:24px 48px" id="img-header1">
-            <p><a href="sevenfriday.php" class="w3-button w3-black w3-padding-large w3-large" id="shopnow-btn1">SHOP NOW</a></p>
+          <div class="w3-display-topleft w3-text-white" style="padding: 24px 48px">
+            <p><a href="sevenfriday.php" class="w3-button w3-black w3-padding-large w3-large shopnow-btn-left">SHOP NOW</a></p>
           </div>
         </div>
 
         <div class="item">
           <img src="img/banner1.png" alt="Banner1">
-          <div class="w3-display-topleft w3-text-white" style="padding:24px 48px" id="img-header2">
-            <a href="movado.php" class="w3-button w3-black w3-padding-large w3-large" id="shopnow-btn2">SHOP NOW</a>
+          <div class="w3-display-topleft w3-text-white" style="padding: 24px 48px">
+            <a href="movado.php" class="w3-button w3-black w3-padding-large w3-large shopnow-btn-right">SHOP NOW</a>
           </div>
         </div>
 
         <div class="item">
           <img src="img/banner2.png" alt="Banner2">
-          <div class="w3-display-topleft w3-text-white" style="padding:24px 48px" id="img-header3">
-            <p><a href="mvmt.php" class="w3-button w3-black w3-padding-large w3-large" id="shopnow-btn3">SHOP NOW</a>
+          <div class="w3-display-topleft w3-text-white" style="padding: 24px 48px">
+            <p><a href="mvmt.php" class="w3-button w3-black w3-padding-large w3-large shopnow-btn-left">SHOP NOW</a>
             </p>
           </div>
         </div>
@@ -76,7 +76,7 @@
   <br>
   <br>
 
-  <div class="w3-row">
+  <div class="w3-row watch-showcase-container">
     <div class="w3-col l3 s6">
       <div class="w3-container">
         <div class="w3-display-container">

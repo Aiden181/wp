@@ -1,5 +1,8 @@
 <?php
   header("Content-type: text/css");
+
+  $homePageWidth = 1024;
+  $homePageHeight = 576;
 ?>
 
 .sidebar a {
@@ -81,34 +84,16 @@ ul {
   color: black;
 }
 
-#img-header1 h1 {
-  text-shadow: 1px 1px black;
-}
-
-#img-header2 {
-  text-shadow: 1px 1px black;
-}
-
-#img-header3 {
-  text-shadow: 1px 1px black;
-}
-
-#shopnow-btn1 {
+.shopnow-btn-left {
   position: relative;
-  top: 210px;
-  left: 80px;
+  top: 250px;
+  left: 120px;
 }
 
-#shopnow-btn2 {
+.shopnow-btn-right {
   position: relative;
-  top: 210px;
-  left: 620px;
-}
-
-#shopnow-btn3 {
-  position: relative;
-  top: 210px;
-  left: 80px;
+  top: 250px;
+  left: 660px;
 }
 
 #copyright {
@@ -224,33 +209,21 @@ ul {
 /* end of animated drop down code */
 /* ------------------------------ */ 
 
+
 #carouselContainer {
   margin: auto;
-  width: 960px;
+  max-width: <?php echo $homePageWidth ."px" ?>;
 }
-
-.carousel {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 960px;
-  height: 540px;
-}
-.carousel-inner img
-{
+.carousel-inner img {
   width: 100%;
   height: 100%;
-}
-.item
-{
-  height: 540px;
-}
-.item img
-{
-  width: 100%;
-  position: absolute;
+  position: relative;
   object-fit: cover;
   top: 0;
   left: 0;
-  min-height: 540px;
+}
+
+.watch-showcase-container {
+  margin: auto;
+  max-width: <?php echo $homePageWidth ."px" ?>;
 }
