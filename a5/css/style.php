@@ -251,26 +251,30 @@ ul {
     flex-wrap: wrap;
     padding: 60px 0 50px;
     border-top: 0px;
-    background-color: #1e1e1e; 
+    background-color: #1e1e1e;
+}
+
+.upper-footer-item {
+  padding-right: 50px;
 }
 
 .upper-footer a {
   color: white;
   position: relative;
-  left: 575px;
+  left: 0px;
 }
 
 .upper-footer p {
   color: white;
   position: relative;
-  left: 605px;
+  left: 35px;
 }
 
 .section-title {
   font-weight:bold;
   color: white;
   position: relative;
-  left: 600px;
+  left: 25px;
   padding: 13px;
 }
 
