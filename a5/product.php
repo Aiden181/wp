@@ -19,49 +19,64 @@
     <title>Product</title>
 </head>
 <body>
-  <?php
-      include('includes/header.php');
-  ?>
+    <?php
+        include('includes/header.php');
+    ?>
 
     <div class="container">
-            <div class="row">
-                <div class="col-sm-6"><img src="img/watches/mvmt1.jpg" alt=""></div>
-                <div class="col-sm-6">
-                    <h2>CLASSIC BLACK LEATHER</h2>
-                    <h3>TECHNICAL SPECIFICATIONS</h3>
-                    <br>
-                    <br>
-                    <table class="table">
-                        <tbody>
-                        <tr>
-                            <td>CASE SIZE</td>
-                            <td>45mm</td>
-                        </tr>
-                        <tr>
-                            <td>CASE THICKNESS</td>
-                            <td>9mm</td>
-                        </tr>
-                        <tr>
-                            <td>GLASS</td>
-                            <td>Hardened Mineral Crystal</td>
-                        </tr>
-                        <tr>
-                            <td>MOVEMENT</td>
-                            <td>Miyota Quartz</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <button class="add-to-cart" st>Add To Cart</button>
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="product-gallery">
+                    <div class="product-image">
+                        <img class="active" src="img/watches/sevenfriday1.png">
                     </div>
+                    <ul class="image-list">
+                        <li class="image-item"><img src="img/watches/sevenfriday1.png"></li>
+                        <li class="image-item"><img src="img/watches/sevenfriday1-1.png"></li>
+                        <li class="image-item"><img src="img/watches/sevenfriday1-2.png"></li>
+                        <li class="image-item"><img src="img/watches/sevenfriday1-3.png"></li>
+                        <li class="image-item"><img src="img/watches/sevenfriday1-4.png"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <h2>CLASSIC BLACK LEATHER</h2>
+                <h3>TECHNICAL SPECIFICATIONS</h3>
+                <br>
+                <br>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td>CASE SIZE</td>
+                        <td>45mm</td>
+                    </tr>
+                    <tr>
+                        <td>CASE THICKNESS</td>
+                        <td>9mm</td>
+                    </tr>
+                    <tr>
+                        <td>GLASS</td>
+                        <td>Hardened Mineral Crystal</td>
+                    </tr>
+                    <tr>
+                        <td>MOVEMENT</td>
+                        <td>Miyota Quartz</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <button class="add-to-cart" st>Add To Cart</button>
                 </div>
             </div>
         </div>
+    </div>
 
     <div id="blankspace"></div>
 
-  <?php
-      include('includes/footer.php');
-      include('includes/javascript.php');
-  ?>
+    <?php
+        include('includes/footer.php');
+        include('includes/javascript.php');
+    ?>
 </body>
 </html>

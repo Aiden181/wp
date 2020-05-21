@@ -1,58 +1,76 @@
-  <script>
-    // Accordion 
-    function myAccFunc() {
-      var x = document.getElementById("demoAcc");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else {
-        x.className = x.className.replace(" w3-show", "");
-      }
+<script>
+  // Accordion 
+  function myAccFunc() {
+    var x = document.getElementById("demoAcc");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
     }
+  }
 
-    // Open and close sidebar
-    function w3_open() {
-      document.getElementById("mySidebar").style.display = "block";
-      document.getElementById("myOverlay").style.display = "block";
+  // Open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function displayCategories() {
+    var menu = document.getElementById("categories");
+    if (menu.classList.contains("show-menu")) {
+      menu.classList.remove("show-menu");
+      menu.classList.add("hide-menu");
     }
-
-    function w3_close() {
-      document.getElementById("mySidebar").style.display = "none";
-      document.getElementById("myOverlay").style.display = "none";
+    else {
+      menu.classList.remove("hide-menu");
+      menu.classList.add("show-menu");
     }
+  }
 
-    /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-    function displayCategories() {
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function (event) {
+    if (!event.target.matches('.dropdown')) {
       var menu = document.getElementById("categories");
       if (menu.classList.contains("show-menu")) {
         menu.classList.remove("show-menu");
         menu.classList.add("hide-menu");
       }
-      else {
-        menu.classList.remove("hide-menu");
-        menu.classList.add("show-menu");
-      }
     }
+  }
 
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function (event) {
-      if (!event.target.matches('.dropdown')) {
-        var menu = document.getElementById("categories");
-        if (menu.classList.contains("show-menu")) {
-          menu.classList.remove("show-menu");
-          menu.classList.add("hide-menu");
-        }
-      }
+  /* Expand search bar when user clicks onto search icon */
+  $("#search-btn").click(function () {
+    $(".search-box").toggleClass("search-box-active").focus;
+  });
+
+  // Remove Items From Cart
+  $('a.remove').click(function(){
+    event.preventDefault();
+    $( this ).parent().parent().parent().hide( 400 );
+  })
+
+  // Product page active image change
+  const activeImage = document.querySelector(".product-image .active");
+  const productImages = document.querySelectorAll(".image-item");
+  function changeImage(e) {
+    activeImage.src = e.target.src;
+    // get elements from class to remove border from
+    var elements = document.getElementsByClassName("image-item");
+
+    // remove border from all images
+    for (var i = 0; i < elements.length; i++) {
+      child = elements[i].children[0];
+      child.classList.remove("image-list-img-border");
     }
-
-    /* Expand search bar when user clicks onto search icon */
-    $("#search-btn").click(function () {
-      $(".search-box").toggleClass("search-box-active").focus;
-    });
-
-    // Remove Items From Cart
-    $('a.remove').click(function(){
-      event.preventDefault();
-      $( this ).parent().parent().parent().hide( 400 );
-    })
-  </script>
+    // add border to selected preview image
+    e.target.classList.add("image-list-img-border");
+  }
+  productImages.forEach(image => image.addEventListener("click", changeImage));
+</script>
