@@ -29,6 +29,8 @@
                 <div class="col-sm-6">
                     <h2>CLASSIC BLACK LEATHER</h2>
                     <h3>TECHNICAL SPECIFICATIONS</h3>
+                    <br>
+                    <br>
                     <table class="table">
                         <tbody>
                         <tr>
