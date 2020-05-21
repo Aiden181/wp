@@ -24,7 +24,7 @@
 
   <?php include('includes/tools.php'); ?>
   
-  <!-- css code for parallax of this page -->
+  <!-- css code for parallax effect on this page only -->
   <style>
     .highlightNav {
       background-color: rgba(238, 238, 238, 0.7);
@@ -57,7 +57,7 @@
                   <a class="dropdown-toggle navbar-text" data-toggle="dropdown" href="#"
                   onclick="displayCategories()">Explore
                   <span class="caret"></span></a>
-                  <ul class="menu-categories" id="categories">
+                  <ul class="menu-categories" id="categories" style="position: absolute; top: 65px; left: 0">
                       <li><a href="sevenfriday.php">SevenFriday</a></li>
                       <li><a href="movado.php">Movado</a></li>
                       <li><a href="dw.php">Daniel Wellington</a></li>
@@ -153,10 +153,10 @@
   <br>
   <br>
 
-  <h1 class="watch-showcase-container">FEATURED WATCHES</h1>
+  <h1 class="watch-showcase-container" style="position: relative; left: 35px">FEATURED WATCHES</h1>
   <br>
 
-  <div class="w3-row home-watch-showcase-container">
+  <div class="w3-row watch-showcase-container">
     <div class="w3-col l3 s6">
       <div class="w3-container">
         <div class="w3-display-container">
@@ -263,7 +263,7 @@
 
     // Add the highlightNav class to the navbar when you reach its scroll position. Remove "highlightNav" when you leave the scroll position
     function highlightNavBar() {
-      if (window.pageYOffset >= highlight + 650) {
+      if (window.pageYOffset >= highlight + 600) {
         navBar.classList.add("highlightNav");
 
         var elements = document.getElementsByClassName("navbar-text");
