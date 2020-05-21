@@ -313,7 +313,7 @@ ul {
 /* --------------- */
 /* Contact Us Page */ 
 /* --------------- */
-input[type=text],[type=email], select, textarea {
+.contact-form > input[type=text],[type=email], select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -324,7 +324,7 @@ input[type=text],[type=email], select, textarea {
   resize: vertical;
 }
 
-input[type=submit] {
+.contact-form > input[type=submit] {
   background-color: #e04b11;
   color: white;
   padding: 12px 20px;
