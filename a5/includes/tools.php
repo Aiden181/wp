@@ -41,7 +41,7 @@
         // display watches from left to right using watchList array
         
         // contain the watch display
-        echo "        <div class=\"w3-row home-watch-showcase-container\">\n";
+        echo "        <div class=\"w3-row watch-showcase-container\">\n";
         if ($filter === "none") {
             foreach ($watchList as $watchName => $watchInfo) {
                 displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2]);

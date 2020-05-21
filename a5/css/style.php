@@ -1,7 +1,5 @@
 <?php
   header("Content-type: text/css");
-
-  $homePageWidth = 1024;
 ?>
 
 .sidebar a {
@@ -110,14 +108,6 @@ ul {
   height: 150px;
 }
 
-.item_categories {
-  display: block;
-}
-
-/* change cursor icon to pointer when hovered over */
-.item_categories_all {
-  cursor: pointer;
-}
 
 /* format drop down list and hide list as default */
 .menu-categories {
@@ -205,7 +195,7 @@ ul {
 
 #carouselContainer {
   margin: auto;
-  max-width: <?php echo $homePageWidth ."px" ?>;
+  max-width: 1024px;
 }
 .carousel-inner img {
   width: 100%;
@@ -216,14 +206,9 @@ ul {
   left: 0;
 }
 
-.home-watch-showcase-container {
-  margin: auto;
-  max-width: 1100px;
-}
-
 .watch-showcase-container {
   margin: auto;
-  max-width: <?php echo $homePageWidth ."px" ?>;
+  max-width: 1100px;
 }
 
 .upper-footer {
