@@ -26,7 +26,7 @@
          <h1 class="shoppingcart">Shopping Cart</h1>
          <div class="heading cf">
             <h1>My Cart</h1>
-            <a href="#" class="continue">Continue Shopping</a>
+            <a href="index.php" class="continue">Continue Shopping</a>
          </div>
          <div class="cart">
             <ul class="cartWrap">
