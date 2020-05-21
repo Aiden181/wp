@@ -23,16 +23,18 @@
             </ul>
         </nav>
 
-        <div id="icons-container">
+        <div class="w3-display-container" id="icons-container">
             <!-- Search icon and search bar-->
-            <div id="search-btn"><i class="fa fa-search"></i><input class="search-box" type="text" placeholder="Search"></div>
-            
+            <div>
+                <i id="search-btn" class="fa fa-search"></i>
+                <input class="search-box" type="text" placeholder="Search">
 
-            <!-- Login icon -->
-            <a id="login-btn" href="loginpage.php"><i class="fa fa-user"></i></a>
-            
-            <!-- Shopping cart icon -->
-            <a id="cart" href="shoppingcart.php"><i class="fa fa-shopping-cart"></i></a>
+                <!-- Login icon -->
+                <a href="loginpage.php"><i class="fa fa-user"></i></a>
+                
+                <!-- Shopping cart icon -->
+                <a href="shoppingcart.php"><i class="fa fa-shopping-cart"></i></a>
+            </div>
         </div>
         <!-- Search box -->
     </div>

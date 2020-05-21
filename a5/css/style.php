@@ -27,45 +27,25 @@ ul {
 }
 
 .navigation-bar {
-  width: 500px;
-  position: relative;
-  right: 300px;
+  text-align: left;
+}
+
+.navigation-bar li {
   z-index: 1;
 }
 
 #icons-container {
-  text-align: center;
+  text-align: right;
   position: relative;
-  left: 500px;
+  right: 5px;
   bottom: 60px;
-  height: 40px;
-}
-
-#login-btn {
-  position: relative;
-  bottom: 33px;
-  left: 11px;
-}
-
-#cart {
-  position: relative;
-  bottom: 33px;
-  left: 20px;
 }
 
 #search-btn {
-  position: relative;
-  left: 1213px;
-  width: 34px;
   cursor: pointer;
 }
 
 .search-box {
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  position: absolute;
-  top: -5px;
-  right: 35px;
   box-sizing: border-box;
   border: 0px solid black;
   border-radius: 0px;
