@@ -15,7 +15,7 @@ body {
 .add-to-cart {
   position: relative;
   display: inline-block;
-  background: #3e3e3f;
+  background: #E14A09;
   color: white;
   border: none;
   border-radius: 0;
@@ -28,10 +28,6 @@ body {
   letter-spacing: 0.0625rem;
 }
 
-
-/* ------------------- */
-/* Product detail Page */
-/* ------------------- */
 .product-image {
   display: none;
 }
@@ -76,6 +72,3 @@ body {
     opacity: 0.7;
   }
 }
-/* -------------------------- */
-/* End of Product detail Page */
-/* -------------------------- */
