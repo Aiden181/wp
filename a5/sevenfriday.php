@@ -31,7 +31,7 @@
   <br>
 
   <?php
-    showcaseWatches($sevenFridayList);
+    displayWatches("sevenfriday", "none");
   ?>
 
   <div id="blankspace"></div>

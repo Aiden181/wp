@@ -31,7 +31,7 @@
   <br>
 
   <?php
-    showcaseWatches($dwList);
+    displayWatches("Daniel Wellington", "none");
   ?>
 
   <div id="blankspace"></div>

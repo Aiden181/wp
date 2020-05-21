@@ -31,7 +31,7 @@
   <br>
 
   <?php
-    showcaseWatches($movadoList);
+    displayWatches("movado", "none");
   ?>
 
   <div id="blankspace"></div>

@@ -31,7 +31,7 @@
   <br>
 
   <?php
-    showcaseWatches($mvmtList);
+    displayWatches("MVMT", "none");
   ?>
 
   <div id="blankspace"></div>
