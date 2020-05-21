@@ -45,7 +45,7 @@
       </div>
   </div>
   <div class="w3-display-middle" style="z-index: 1;">
-      <a href="index.php"><img id="zael-logo" src="img/Bold_Black_and_Yellow_Logo.png" alt="Zael logo" style="width: 250px;top: 75px;"></a>
+    <img id="zael-logo" src="img/Bold_Black_and_Yellow_Logo.png" alt="Zael logo" style="width: 250px;top: 75px;">
   </div>
 
   <!-- Top header -->
