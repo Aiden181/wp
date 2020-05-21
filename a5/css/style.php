@@ -218,7 +218,7 @@ ul {
 
 .home-watch-showcase-container {
   margin: auto;
-  max-width: 1280px;
+  max-width: 1100px;
 }
 
 .watch-showcase-container {
@@ -271,22 +271,22 @@ ul {
   text-align: center;
 }
 
-.parallax
-{
+.parallax {
+  position: relative;
+  bottom: 130px;
   width: auto;
+  height: 735px;
   min-height: 450px;
-  max-height: 850px;
   background: transparent;
 }
 
 .parallax-text-container {
-  z-index: 2;
   color: white;
   width: 300px;
   text-align: center;
   position: relative;
-  top: 260px;
-  left: 22%;
+  top: 500px;
+  left: 55%;
 }
 
 

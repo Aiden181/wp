@@ -21,19 +21,82 @@
   <!-- Parallax.js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+
+  <?php include('includes/tools.php'); ?>
+  
+  <!-- css code for parallax of this page -->
+  <style>
+    .highlightNav {
+      background-color: rgba(238, 238, 238, 0.7);
+    }
+    .navbar-text {
+      color: #eeeeee;
+    }
+    .dark-text-color {
+      color: #1e1e1e;
+    }
+  </style>
 </head>
 
 <body>
-  <?php
-    include('includes/header.php');
-  ?>
-
-  <div class="parallax" data-parallax="scroll" data-image-src="img/petite-banner-2800x850.jpg">
-    <div class="parallax-text-container">
-      <h1 style="position: relative; bottom: 55px"><b>PETITE COLLECTION</b></h1>
-    </div>
+  <div class="parallax" data-parallax="scroll" data-image-src="img/classic-collection-banner_2800x850px.jpg">
+      <div class="parallax-text-container">
+          <h1 style="position: relative; bottom: 55px">CLASSIC COLLECTION</h1>
+      </div>
+  </div>
+  <div class="w3-display-middle" style="z-index: 1;">
+      <a href="index.php"><img id="zael-logo" src="img/Bold_Black_and_Yellow_Logo.png" alt="Zael logo" style="width: 250px;top: 75px;"></a>
   </div>
 
+  <!-- Top header -->
+  <div class="header w3-xlarge w3-top">
+      <nav class="navbar navbar-expand-sm bg-light justify-content-center container-fluid navigation-bar" id="navigation_bar">
+          <ul class="nav navbar-nav">
+              <li class="active"><a href="index.php" class="navbar-text">Home</a></li>
+              <li class="dropdown">
+                  <a class="dropdown-toggle navbar-text" data-toggle="dropdown" href="#"
+                  onclick="displayCategories()">Explore
+                  <span class="caret"></span></a>
+                  <ul class="menu-categories" id="categories">
+                      <li><a href="sevenfriday.php">SevenFriday</a></li>
+                      <li><a href="movado.php">Movado</a></li>
+                      <li><a href="dw.php">Daniel Wellington</a></li>
+                      <li><a href="mvmt.php">MVMT</a></li>
+                  </ul>
+              </li>
+              <li><a href="aboutus.php" class="navbar-text">About Us</a></li>
+              <li><a href="contact.php" class="navbar-text">Contact</a></li>
+          </ul>
+      </nav>
+
+      <div class="w3-display-container" id="icons-container" style="position: fixed; top: 20px;">
+          <!-- Search icon and search bar-->
+          <div>
+              <i id="search-btn" class="fa fa-search icons navbar-text"></i>
+              <input class="search-box" type="text" placeholder="Search">
+
+              <!-- Login icon -->
+              <a  href="loginpage.php"><i class="fa fa-user icons navbar-text"></i></a>
+              
+              <!-- Shopping cart icon -->
+              <a href="shoppingcart.php"><i class="fa fa-shopping-cart icons navbar-text"></i></a>
+          </div>
+      </div>
+      <!-- Search box -->
+  </div>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+  id="myOverlay"></div>
+
+  <!-- !START OF PAGE CONTENT! -->
+  <div class="w3-main">
+
+      <!-- Push down content on small screens -->
+      <div class="w3-hide-large" style="margin-top:83px"></div>
+
+
+  <br>
   <br>
   <br>
   <br>
@@ -187,5 +250,43 @@
     include('includes/footer.php');
     include('includes/javascript.php');
   ?>
+
+  <!-- script for parallax effect on this page only -->
+  <script>
+    window.addEventListener('scroll', highlightNavBar);
+
+    // Get the navbar and cinemax logo on top
+    var navBar = document.getElementById("navigation_bar");
+
+    // Get the offset position of the navbar
+    var highlight = navBar.offsetTop;
+
+    // Add the highlightNav class to the navbar when you reach its scroll position. Remove "highlightNav" when you leave the scroll position
+    function highlightNavBar() {
+      if (window.pageYOffset >= highlight + 650) {
+        navBar.classList.add("highlightNav");
+
+        var elements = document.getElementsByClassName("navbar-text");
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].classList.add("dark-text-color");
+        }
+        elements = document.getElementsByClassName("icons");
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].classList.remove("navbar-text");
+        }
+      } else {
+        navBar.classList.remove("highlightNav");
+
+        var elements = document.getElementsByClassName("navbar-text");
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].classList.remove("dark-text-color");
+        }
+        elements = document.getElementsByClassName("icons");
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].classList.add("navbar-text");
+        }
+      }
+    }
+  </script>
 </body>
 </html>
