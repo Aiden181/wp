@@ -35,6 +35,12 @@
     .dark-text-color {
       color: #1e1e1e;
     }
+    #zael-logo-home {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 1;
+    }
   </style>
 </head>
 
@@ -44,9 +50,7 @@
           <h1 style="position: relative; bottom: 55px">CLASSIC COLLECTION</h1>
       </div>
   </div>
-  <div class="w3-display-middle" style="z-index: 1;">
-    <img id="zael-logo" src="img/Bold_Black_and_Yellow_Logo.png" alt="Zael logo" style="width: 250px;top: 75px;">
-  </div>
+  <img id="zael-logo-home" src="img/Bold_Black_and_Yellow_Logo.png" alt="Zael logo">
 
   <!-- Top header -->
   <div class="header w3-xlarge w3-top">
