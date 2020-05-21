@@ -1,33 +1,33 @@
 brand,name,status,price,image url
-Daniel Wellington,CLASSIC DOVER,,$179.00 ,img/watches/dw1.jpg
-Daniel Wellington,CLASSIC CORNWALL,,$199.00 ,img/watches/dw2.jpg
-Daniel Wellington,CLASSIC ROSELYN,,$199.00 ,img/watches/dw3.jpg
-Daniel Wellington,CLASSIC BAYSWATER,,$199.00 ,img/watches/dw4.jpg
-Daniel Wellington,CLASSIC CAMBRIDGE,,$199.00 ,img/watches/dw5.jpg
-Daniel Wellington,CLASSIC GLASGOW,,$199.00 ,img/watches/dw6.jpg
-Daniel Wellington,CLASSIC CANTERBURY,,$199.00 ,img/watches/dw7.jpg
-Daniel Wellington,CLASSIC WARWICK,,$199.00 ,img/watches/dw8.jpg
-movado,MOVADO BOLD EVOLUTION,,$650.00 ,img/watches/movado1.png
-movado,MODERN 47,,$695.00 ,img/watches/movado2.png
-movado,MOVADO FACE,,$350.00 ,img/watches/movado3.png
-movado,MOVADO ULTRA SLIM,,$895.00 ,img/watches/movado4.png
-movado,MOVADO BOLD VERSO,,$595.00 ,img/watches/movado5.png
-movado,MUSEUM SPORT,,$995.00 ,img/watches/movado6.png
-movado,SERIES 800,,$1,495.00 ,img/watches/movado7.png
-movado,MOVADO BOLD CERAMIC,,$695.00 ,img/watches/movado8.png
-MVMT,CLASSIC BLACK LEATHER,,$95.00 ,img/watches/mvmt1.jpg
-MVMT,CLASSIC BRONZE AGE,Sale,$82.50 ,img/watches/mvmt2.jpg
-MVMT,CLASSIC BLACK ROSE,,$110.00 ,img/watches/mvmt3.jpg
-MVMT,CLASSIC WHITE BLACK,,$95.00 ,img/watches/mvmt4.jpg
-MVMT,THE 40 - ROSE GOLD BROWN,,$120.00 ,img/watches/mvmt5.jpg
-MVMT,THE 40 - ROSE GOLD NATURAL TAN,,$120.00 ,img/watches/mvmt6.jpg
-MVMT,THE 40 - BLACK LINK,,$130.00 ,img/watches/mvmt7.jpg
-MVMT,THE 40 - GUNMETAL MESH,,$125.00 ,img/watches/mvmt8.jpg
-sevenfriday,P3B/06 RACING TEAM RED,,"$1,150.00 ",img/watches/sevenfriday1.png
-sevenfriday,M1B/01M URBAN EXPLORER,,"$1,355.00 ",img/watches/sevenfriday2.png
-sevenfriday,M3/04 - PINKY,New,"$1,750.00 ",img/watches/sevenfriday3.png
-sevenfriday,M1B/01 URBAN EXPLORER,,"$1,250.00 ",img/watches/sevenfriday4.png
-sevenfriday,M3/05 - PIMP,New,"$1,750.00 ",img/watches/sevenfriday5.png
-sevenfriday,M3/01 SPACESHIP,,"$1,100.00 ",img/watches/sevenfriday6.png
-sevenfriday,M2/02,,"$1,474.00 ",img/watches/sevenfriday7.png
-sevenfriday,P1C/01,,"$1,150.00 ",img/watches/sevenfriday8.png
+Daniel Wellington,CLASSIC DOVER,,$179.00,img/watches/dw1.jpg
+Daniel Wellington,CLASSIC CORNWALL,,$199.00,img/watches/dw2.jpg
+Daniel Wellington,CLASSIC ROSELYN,,$199.00,img/watches/dw3.jpg
+Daniel Wellington,CLASSIC BAYSWATER,,$199.00,img/watches/dw4.jpg
+Daniel Wellington,CLASSIC CAMBRIDGE,,$199.00,img/watches/dw5.jpg
+Daniel Wellington,CLASSIC GLASGOW,,$199.00,img/watches/dw6.jpg
+Daniel Wellington,CLASSIC CANTERBURY,,$199.00,img/watches/dw7.jpg
+Daniel Wellington,CLASSIC WARWICK,,$199.00,img/watches/dw8.jpg
+movado,MOVADO BOLD EVOLUTION,,$650.00,img/watches/movado1.png
+movado,MODERN 47,,$695.00,img/watches/movado2.png
+movado,MOVADO FACE,,$350.00,img/watches/movado3.png
+movado,MOVADO ULTRA SLIM,,$895.00,img/watches/movado4.png
+movado,MOVADO BOLD VERSO,,$595.00,img/watches/movado5.png
+movado,MUSEUM SPORT,,$995.00,img/watches/movado6.png
+movado,SERIES 800,,"$1,295.00",img/watches/movado7.png
+movado,MOVADO BOLD CERAMIC,,$695.00,img/watches/movado8.png
+MVMT,CLASSIC BLACK LEATHER,,$95.00,img/watches/mvmt1.jpg
+MVMT,CLASSIC BRONZE AGE,Sale,$82.50,img/watches/mvmt2.jpg
+MVMT,CLASSIC BLACK ROSE,,$110.00,img/watches/mvmt3.jpg
+MVMT,CLASSIC WHITE BLACK,,$95.00,img/watches/mvmt4.jpg
+MVMT,THE 40 - ROSE GOLD BROWN,,$120.00,img/watches/mvmt5.jpg
+MVMT,THE 40 - ROSE GOLD NATURAL TAN,,$120.00,img/watches/mvmt6.jpg
+MVMT,THE 40 - BLACK LINK,,$130.00,img/watches/mvmt7.jpg
+MVMT,THE 40 - GUNMETAL MESH,,$125.00,img/watches/mvmt8.jpg
+sevenfriday,P3B/06 RACING TEAM RED,,"$1,150.00",img/watches/sevenfriday1.png
+sevenfriday,M1B/01M URBAN EXPLORER,,"$1,355.00",img/watches/sevenfriday2.png
+sevenfriday,M3/04 - PINKY,New,"$1,750.00",img/watches/sevenfriday3.png
+sevenfriday,M1B/01 URBAN EXPLORER,,"$1,250.00",img/watches/sevenfriday4.png
+sevenfriday,M3/05 - PIMP,New,"$1,750.00",img/watches/sevenfriday5.png
+sevenfriday,M3/01 SPACESHIP,,"$1,100.00",img/watches/sevenfriday6.png
+sevenfriday,M2/02,,"$1,474.00",img/watches/sevenfriday7.png
+sevenfriday,P1C/01,,"$1,150.00",img/watches/sevenfriday8.png
