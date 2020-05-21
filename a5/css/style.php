@@ -99,13 +99,13 @@ ul {
 
 .shopnow-btn-left {
   position: relative;
-  top: 250px;
+  top: 300px;
   left: 120px;
 }
 
 .shopnow-btn-right {
   position: relative;
-  top: 250px;
+  top: 300px;
   left: 660px;
 }
 
