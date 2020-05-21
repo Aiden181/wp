@@ -25,13 +25,13 @@
     <div class="container">
     <form action="/action_page.php">
         <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
 
         <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
 
         <label for="lname">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email..">
+        <input type="email" id="email" name="email" placeholder="Enter your email.." pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
 
         <label for="subject">Message</label>
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
