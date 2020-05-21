@@ -30,7 +30,7 @@
 
   <div class="parallax" data-parallax="scroll" data-image-src="img/petite-banner-2800x850.jpg">
     <div class="parallax-text-container">
-      <h1 style="position: relative; bottom: 55px">PETITE COLLECTION</h1>
+      <h1 style="position: relative; bottom: 55px"><b>PETITE COLLECTION</b></h1>
     </div>
   </div>
 
