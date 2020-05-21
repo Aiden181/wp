@@ -55,7 +55,7 @@ ul {
 
 #search-btn {
   position: relative;
-  left: 950px;
+  left: 1213px;
   width: 34px;
   cursor: pointer;
 }
