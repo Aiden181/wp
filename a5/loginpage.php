@@ -26,8 +26,8 @@
       
           <!-- Login Form -->
           <form>
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Login">
-            <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password">
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Login" pattern="^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$" required> <!-- Username is 8-20 characters long -->
+            <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" pattern=""^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$ required> <!-- Minimum eight characters, at least one letter and one number -->
             <input type="submit" class="fadeIn fourth" value="Log In">
           </form>
       
