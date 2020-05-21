@@ -264,7 +264,6 @@
 
   <?php
     include('includes/footer.php');
-    include('includes/javascript.php');
   ?>
 
   <!-- script for parallax effect on this page only -->

@@ -66,7 +66,7 @@
                     </tr>
                     </tbody>
                 </table>
-                <button class="add-to-cart" st>Add To Cart</button>
+                <button class="add-to-cart" onclick="">Add To Cart</button>
                 </div>
             </div>
         </div>
@@ -76,7 +76,6 @@
 
     <?php
         include('includes/footer.php');
-        include('includes/javascript.php');
     ?>
 </body>
 </html>

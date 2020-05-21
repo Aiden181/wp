@@ -24,13 +24,13 @@
             <li><a href="">Shipping</a></li>
             <li><a href="">Warranty and repair</a></li>
             <li><a href="">FAQ</a></li>
-            <li><a href="">Get in touch</a></li>
+            <li><a href="contact.php">Get in touch</a></li>
           </ul>
         </div>
         <div class="upper-footer-item footer-linklist">
           <h4 class="section-title">ABOUT US</h4>
           <ul>
-            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="aboutus.php">About us</a></li>
             <li><a href="" target="_blank">Press</a></li>
             <li><a href="">Wall of Fame</a></li>
           </ul>
@@ -65,3 +65,6 @@
 
     <!-- !END OF PAGE CONTENT FROM HEADER.PHP! -->
   </div>
+<?php
+  include('javascript.php');
+?>

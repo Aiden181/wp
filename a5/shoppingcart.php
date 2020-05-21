@@ -108,7 +108,6 @@
 
   <?php
       include('includes/footer.php');
-      include('includes/javascript.php');
   ?>
 </body>
 </html>
