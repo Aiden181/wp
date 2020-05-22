@@ -1,16 +1,18 @@
 <?php
 	$images = array();
 	array_push($images, 
-	"../img/watches/movado2.png", 
-	"../img/watches/movado2-1.png", 
-	"../img/watches/movado2-2.png");
+	"../img/watches/mvmt7.jpg", 
+	"../img/watches/mvmt7-1.png", 
+	"../img/watches/mvmt7-2.png",
+	"../img/watches/mvmt7-3.png",
+    "../img/watches/mvmt1-4.png");
 
-	$name = "MODERN 47";
-	$price = "695";
+	$name = "THE 40 - BLACK LINK";
+	$price = "130";
 	$caseSize = "40mm";
-	$caseThickness = "6.30mm";
-	$glass = "Crystal SAPPHIRE";
-	$movement = "SWISS QUARTZ MOVEMENT";
+	$caseThickness = "7mm";
+	$glass = "Hardened Mineral Crystal";
+	$movement = "Miyota Quart";
 ?>
 <?php
 	include('includes/header.php');
