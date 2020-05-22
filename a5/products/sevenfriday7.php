@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <title>Product</title>
+    <title>M2/02</title>
 </head>
 <body>
     <?php
@@ -28,18 +28,18 @@
             <?php
                 $images = array();
                 array_push($images, 
-                "../img/watches/sevenfriday1.png", 
-                "../img/watches/sevenfriday1-1.png", 
-                "../img/watches/sevenfriday1-2.png", 
-                "../img/watches/sevenfriday1-3.png", 
-                "../img/watches/sevenfriday1-4.png");
+                "../img/watches/sevenfriday7.png", 
+                "../img/watches/sevenfriday7-1.png", 
+                "../img/watches/sevenfriday7-2.png", 
+                "../img/watches/sevenfriday7-3.png", 
+                "../img/watches/sevenfriday7-4.png");
 
-                $name = "CLASSIC BLACK LEATHER";
-                $price = "1500";
-                $caseSize = "45mm";
-                $caseThickness = "9mm";
-                $glass = "Hardened Mineral Crystal";
-                $movement = "Miyota Quartz";
+                $name = "M2/02";
+                $price = "1474";
+                $caseSize = "47mm";
+                $caseThickness = "15mm";
+                $glass = "Hardened Anti-Reflective Mineral Glass";
+                $movement = "Automatic Movement - Customized Miyota 8215";
 
                 include('includes/productdetails.php')
             ?>
