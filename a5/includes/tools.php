@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    
     // this function displays watches which brand name matches the first parameter with filter
     function displayWatches($brandName, $filter) {
         $tempList = array();
@@ -150,4 +152,60 @@
         // otherwise, echo nothing
         echo (isset($_GET['orderby']) && $_GET['orderby'] === $str) ? 'selected' : '';
     }
+    
+    /* --------------------- */
+    /* SHOPPING CART SECTION */
+    /* --------------------- */
+    // get page path
+    $uri = $_SERVER['REQUEST_URI'];
+
+    // split into array with the following string as delimiter
+    $temp = explode("/Aiden181%20wp/a5/products/", $uri);
+    $temp2 = 0;
+
+    // ensure ? is split as well after $_GET form is submitted
+    if (isset($temp[1])) {
+        $temp2 = explode("?", $temp[1]);
+        
+        // assign current page URL
+        $currentPage = $temp2[0];
+    } else {
+        // assign current page URL
+        $currentPage = $temp[0];
+    }
+
+    /* ------------------------------- */
+    /* add items to cart session array */
+    /* ------------------------------- */
+    // initialize session array
+    if (empty($_SESSION)) {
+        $_SESSION['cart'] = array();
+        if (empty($_SESSION['cart'])) {
+            $_SESSION['cart'] = array();
+        }
+    }
+    // when user clicks add to cart
+    if (isset($_GET['item'])) {
+        // add item to cart
+        array_push($_SESSION['cart'], $_GET['item']);
+
+        // redirect to page to prevent continuously pushing when refresh page
+        header("Location:" . $currentPage);
+        exit();
+    } else if (isset($_GET['session-reset'])) {
+        unset($_SESSION['cart']);
+        foreach($_SESSION as $something => &$whatever) {
+            unset($whatever);
+        }
+    }
+    
+    //debug
+    preShow($temp);
+    preShow($temp2);
+
+    preShow($_GET);
+    preShow($_SESSION);
+    /* ---------------------------- */
+    /* END OF SHOPPING CART SECTION */
+    /* ---------------------------- */
 ?>
