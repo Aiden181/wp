@@ -28,7 +28,8 @@
   <br>
 
   <?php
-    displayWatches("MVMT", "none");
+    $brandName = "MVMT";
+    include('includes/brandpage.php');
   ?>
 
   <div id="blankspace"></div>

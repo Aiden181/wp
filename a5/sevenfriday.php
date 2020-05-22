@@ -28,7 +28,8 @@
   <br>
 
   <?php
-    displayWatches("sevenfriday", "none");
+    $brandName = "sevenfriday";
+    include('includes/brandpage.php');
   ?>
 
   <div id="blankspace"></div>

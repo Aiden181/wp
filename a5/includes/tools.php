@@ -102,4 +102,12 @@
         else
           echo $ret; 
     }
+
+    function keepSelectFieldAfterSubmit($str) {
+        // if value is not null and equal to $str
+        // echo selected
+        // otherwise, echo nothing
+        echo (isset($_GET['orderby']) && $_GET['orderby'] === $str) ? 'selected' : '';
+      }
+
 ?>

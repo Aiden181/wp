@@ -28,7 +28,8 @@
   <br>
 
   <?php
-    displayWatches("movado", "none");
+    $brandName = "movado";
+    include('includes/brandpage.php');
   ?>
 
   <div id="blankspace"></div>

@@ -28,7 +28,8 @@
   <br>
 
   <?php
-    displayWatches("Daniel Wellington", "none");
+    $brandName = "Daniel Wellington";
+    include('includes/brandpage.php');
   ?>
 
   <div id="blankspace"></div>
