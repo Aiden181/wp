@@ -297,13 +297,13 @@ ul {
   border-radius: 4px;
   cursor: pointer;
 }
-
-.container {
-  border-radius: 5px;
-  background-color: #f6f6f6;
-  padding: 20px;
-}
 /* ---------------------- */
 /* End Of Contact Us Page */
 /* ---------------------- */
 
+
+.sort {
+  width: 180px;
+  position: relative;
+  left: 85%;
+}

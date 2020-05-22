@@ -74,3 +74,9 @@ body {
     opacity: 0.7;
   }
 }
+
+.container {
+  border-radius: 5px;
+  background-color: #f6f6f6;
+  padding: 20px;
+}
