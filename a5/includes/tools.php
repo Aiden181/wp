@@ -149,14 +149,5 @@
         // echo selected
         // otherwise, echo nothing
         echo (isset($_GET['orderby']) && $_GET['orderby'] === $str) ? 'selected' : '';
-      }
-
-    /* -------------------------- */
-    /* SHOPPING CART CODE SECTION */
-    /* -------------------------- */
-    $cartArray = array();
-  
-    /* --------------------------------- */
-    /* END OF SHOPPING CART CODE SECTION */
-    /* --------------------------------- */
+    }
 ?>
