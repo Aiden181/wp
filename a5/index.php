@@ -219,7 +219,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">PETITE BRISTOL<br><b class="w3-text-red">$179.00</b></p>
+        <p style="text-align: center;">CLASSIC CAMBRIDGE<br><b class="w3-text-red">$199.00</b></p>
       </div>
     </div>
 
@@ -231,7 +231,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">PETITE DURHAM<br><b class="w3-text-red">$179.00</b></p>
+        <p style="text-align: center;">CLASSIC GLASGOW<br><b class="w3-text-red">$199.00</b></p>
       </div>
     </div>
 
@@ -243,7 +243,7 @@
             <button class="w3-button w3-black" style="position: relative; top: 60px;">Add To Cart <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p style="text-align: center;">MODERN 47<br><b class="w3-text-red">$695.00</b></p>
+        <p style="text-align: center;">MOVADO ULTRA SLIM<br><b class="w3-text-red">$895.00</b></p>
       </div>
     </div>
     
