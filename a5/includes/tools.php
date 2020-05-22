@@ -97,6 +97,45 @@
         echo "        </div>\n";
     }
 
+    function countWatches($brandName) {
+        $amount = 0;
+        $tempList = array();
+
+        // open watches.csv to get watch brand name and details
+        $filename = "watches.csv";
+        $file = fopen($filename, "r") or die("Unable to open file!");;
+        flock($file, LOCK_SH);
+    
+        // read the heading
+        $headings = fgetcsv($file);
+
+        // read through the line and store each line array element
+        while ($aLineOfCells = fgetcsv($file)) {
+            $tempList[] = $aLineOfCells;
+        }
+        
+        flock($file, LOCK_UN);
+        fclose($file);
+
+        // if name in array matches $brandName, add to watchList array
+        foreach ($tempList as $watch) {
+            //  debug
+            // echo "$watch[0] <br>";
+            // echo "$watch[1] <br>";
+            // echo "$watch[2] <br>";
+            // echo "$watch[3] <br>";
+            // echo "$watch[4] <br>";
+            // echo "$watch[5] <br>";
+            // echo "<br>";
+            // echo "<br>";
+
+            if ($watch[0] === $brandName) {
+                $amount++;
+            }
+        }
+        return $amount;
+    }
+
     function preShow( $arr, $returnAsString=false ) {
         $ret  = '<pre>' . print_r($arr, true) . '</pre>';
         if ($returnAsString)
