@@ -14,18 +14,21 @@ body {
 
 .add-to-cart {
   position: relative;
-  display: inline-block;
+  display: block;
   background: #E14A09;
   color: white;
   border: none;
-  border-radius: 0;
   padding: 1.25rem 2.5rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   cursor: pointer;
-  transform: translateZ(0);
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
   letter-spacing: 0.0625rem;
+}
+
+/* make button slightly darker when hovering mouse over */
+.add-to-cart:hover {
+  background-color: #BC3A07;
 }
 
 .product-image {
@@ -42,12 +45,9 @@ body {
     background-color: white;
   }
 
-  .imageList {
+  .image-list {
     position: relative;
     right: 40px;
-  }
-
-  .image-list {
     display: flex;
   }
 
@@ -63,11 +63,13 @@ body {
     cursor: pointer;
   }
 
+  /* for javascript attach border when selected */
   .image-list-img-border {
     border: 3px solid #E14A09;
     border-radius: 4px;
   }
-
+  
+  /* make image slightly transparent when hovering mouse over */
   .image-list img:hover {
     opacity: 0.7;
   }
