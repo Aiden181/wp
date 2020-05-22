@@ -94,7 +94,7 @@
         echo "                <button class=\"w3-button w3-black\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
         echo "              </div>\n";
         echo "            </div>\n";
-        echo "            <p style=\"text-align: center;\">$watchName<br><b class=\"w3-text-red\">$$watchPrice</b></p>\n";
+        echo "            <p style=\"text-align: center;\">$watchName<br><b class=\"w3-text-red\">$" . number_format(sprintf('%.2f', $watchPrice), 2) . "</b></p>\n";
         echo "          </div>\n";
         echo "        </div>\n";
     }
