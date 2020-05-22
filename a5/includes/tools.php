@@ -46,26 +46,26 @@
             foreach ($watchList as $watchName => $watchInfo) {
                 displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2]);
             }
-        } else if ($filter === "priceLowToHigh") {
+        } else if ($filter === "price-asc") {
             array_multisort($watchList, SORT_ASC);
             // display watches
             foreach ($watchList as $watchName => $watchInfo) {
                 displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2]);
             }
-        } else if ($filter === "priceHighToLow") {
+        } else if ($filter === "price-desc") {
             array_multisort($watchList, SORT_DESC);
             // display watches
             foreach ($watchList as $watchName => $watchInfo) {
                 displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2]);
             }
-        } else if ($filter === "aToZ") {
+        } else if ($filter === "name-asc") {
             // sort array name in ascending order
             ksort($watchList);
             // display watches
             foreach ($watchList as $watchName => $watchInfo) {
                 displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2]);
             }
-        } else if ($filter === "zToA") {
+        } else if ($filter === "name-desc") {
             // sort array name in descending order
             krsort($watchList);
             // display watches
