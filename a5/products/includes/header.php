@@ -22,7 +22,9 @@
     <link rel="icon" href="../img/favicon.png">
 </head>
 <body>
-    <?php include('../includes/tools.php'); ?>
+    <?php
+        include('../includes/tools.php');
+    ?>
     
     <div class="w3-display-topmiddle" style="z-index: 1;">
         <a href=../index.php><img id="zael-logo" src="../img/Bold_Black_and_Yellow_Logo.png" alt="Zael logo"></a>
