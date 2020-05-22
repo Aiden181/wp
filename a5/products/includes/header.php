@@ -10,20 +10,20 @@
     <div class="header w3-xlarge">
         <nav class="navbar navbar-expand-sm bg-light justify-content-center container-fluid navigation-bar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php" style="color: #1e1e1e;">Home</a></li>
+                <li class="active"><a href="../index.php" style="color: #1e1e1e;">Home</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #1e1e1e;"
                     onclick="displayCategories()">Explore
                     <span class="caret"></span></a>
                     <ul class="menu-categories" id="categories">
-                        <li><a href="sevenfriday.php">SevenFriday</a></li>
-                        <li><a href="movado.php">Movado</a></li>
-                        <li><a href="dw.php">Daniel Wellington</a></li>
-                        <li><a href="mvmt.php">MVMT</a></li>
+                        <li><a href="../sevenfriday.php">SevenFriday</a></li>
+                        <li><a href="../movado.php">Movado</a></li>
+                        <li><a href="../dw.php">Daniel Wellington</a></li>
+                        <li><a href="../mvmt.php">MVMT</a></li>
                     </ul>
                 </li>
-                <li><a href="aboutus.php" style="color: #1e1e1e;">About Us</a></li>
-                <li><a href="contact.php" style="color: #1e1e1e;">Contact</a></li>
+                <li><a href="../aboutus.php" style="color: #1e1e1e;">About Us</a></li>
+                <li><a href="../contact.php" style="color: #1e1e1e;">Contact</a></li>
             </ul>
         </nav>
 
@@ -34,10 +34,10 @@
                 <input class="search-box" type="text" placeholder="Search">
 
                 <!-- Login icon -->
-                <a href="loginpage.php"><i class="fa fa-user"></i></a>
+                <a href="../loginpage.php"><i class="fa fa-user"></i></a>
                 
                 <!-- Shopping cart icon -->
-                <a href="shoppingcart.php"><i class="fa fa-shopping-cart"></i></a>
+                <a href="../shoppingcart.php"><i class="fa fa-shopping-cart"></i></a>
             </div>
         </div>
         <!-- Search box -->
