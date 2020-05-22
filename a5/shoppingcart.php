@@ -104,7 +104,7 @@
             <li class="totalRow"><span class="label">Shipping</span><span class="value">$5.00</span></li>
             <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li>
             <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
-            <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
+            <li class="totalRow"><a href="checkout.php" class="btn continue">Checkout</a></li>
          </ul>
       </div>
    </div>
