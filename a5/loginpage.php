@@ -11,6 +11,9 @@
     <link id='stylecss' type="text/css" rel="stylesheet" href="css/loginpagestyle.php" media="screen">
 
     <title>Login</title>
+
+    <!-- website icon -->
+    <link rel="icon" href="img/favicon.png">
 </head>
 <body>
     <div class="wrapper fadeInDown" id="bg-image">
