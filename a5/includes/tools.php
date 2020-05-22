@@ -1,6 +1,6 @@
 <?php
     session_start();
-    
+       
     // this function displays watches which brand name matches the first parameter with filter
     function displayWatches($brandName, $filter) {
         $tempList = array();
@@ -83,6 +83,7 @@
 
     // function for displayWatches function, display a watch with params
     function displayWatch($watchName, $watchStatus, $watchPrice, $watchImageUrl, $watchDetailsPage) {
+        global $currentPage;
         echo "        <div class=\"w3-col l3 s6\">\n";
         echo "          <div class=\"w3-container\">\n";
         echo "            <div class=\"w3-display-container\">\n";
@@ -90,9 +91,9 @@
         if ($watchStatus != "") {
             echo "          <span class=\"w3-tag w3-display-topleft\">$watchStatus</span>";
         }
-        echo "              <div class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
-        echo "                <button class=\"w3-button w3-black\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
-        echo "              </div>\n";
+        echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
+        echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"$watchName\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
+        echo "            </form>\n";
         echo "            </div>\n";
         echo "            <p style=\"text-align: center;\">$watchName<br><b class=\"w3-text-red\">$" . number_format(sprintf('%.2f', $watchPrice), 2) . "</b></p>\n";
         echo "          </div>\n";
@@ -122,12 +123,12 @@
         // if name in array matches $brandName, add to watchList array
         foreach ($tempList as $watch) {
             //  debug
-            // echo "$watch[0] <br>";
-            // echo "$watch[1] <br>";
-            // echo "$watch[2] <br>";
-            // echo "$watch[3] <br>";
-            // echo "$watch[4] <br>";
-            // echo "$watch[5] <br>";
+            // echo "$watch[0] <br>";   // brand name
+            // echo "$watch[1] <br>";   // name
+            // echo "$watch[2] <br>";   // status
+            // echo "$watch[3] <br>";   // price
+            // echo "$watch[4] <br>";   // image url
+            // echo "$watch[5] <br>";   // website
             // echo "<br>";
             // echo "<br>";
 
@@ -136,6 +137,56 @@
             }
         }
         return $amount;
+    }
+
+    // this function retrieves value from watch name from watches.csv file
+    // $item: "brand"/"status"/"price"/"image"/"website"
+    // $name: watch name (String)
+    function getValueFromName($item, $name) {
+        $tempList = array();
+
+        // open watches.csv to get watch brand name and details
+        $filename = "watches.csv";
+        $file = fopen($filename, "r") or die("Unable to open file!");;
+        flock($file, LOCK_SH);
+    
+        // read the heading
+        $headings = fgetcsv($file);
+
+        // read through the line and store each line array element
+        while ($aLineOfCells = fgetcsv($file)) {
+            $tempList[] = $aLineOfCells;
+        }
+        
+        flock($file, LOCK_UN);
+        fclose($file);
+
+        // if name in array matches $name, return price
+        foreach ($tempList as $watch) {
+            //  debug
+            // echo "$watch[0] <br>";   // brand name
+            // echo "$watch[1] <br>";   // name
+            // echo "$watch[2] <br>";   // status
+            // echo "$watch[3] <br>";   // price
+            // echo "$watch[4] <br>";   // image url
+            // echo "$watch[5] <br>";   // website
+            // echo "<br>";
+            // echo "<br>";
+
+            if ($watch[1] === $name) {
+                if ($item === "brand") {
+                    return $watch[0];
+                } else if ($item === "status") {
+                    return $watch[2];
+                } else if( $item === "price") {
+                    return $watch[3];
+                } else if ($item === "image") {
+                    return $watch[4];
+                } else if ($item === "website") {
+                    return $watch[5];
+                }
+            }
+        }
     }
 
     function preShow( $arr, $returnAsString=false ) {
@@ -153,26 +204,33 @@
         echo (isset($_GET['orderby']) && $_GET['orderby'] === $str) ? 'selected' : '';
     }
     
-    /* --------------------- */
-    /* SHOPPING CART SECTION */
-    /* --------------------- */
+    /* ----------------------------------------------------- */
+    /* --------------- SHOPPING CART SECTION --------------- */
+    /* ----------------------------------------------------- */
+
     // get page path
     $uri = $_SERVER['REQUEST_URI'];
 
-    // split into array with the following string as delimiter
-    $temp = explode("/Aiden181%20wp/a5/products/", $uri);
-    $temp2 = 0;
+    // // split into array with the following string as delimiter
+    // $temp = explode("/Aiden181%20wp/a5/", $uri);
+    // $temp1 = explode("products/", $temp[1]);
+    // $temp2 = explode("?", $temp1[0]);
 
-    // ensure ? is split as well after $_GET form is submitted
-    if (isset($temp[1])) {
-        $temp2 = explode("?", $temp[1]);
+    // // ensure ? is split as well after $_GET form is submitted
+    // if (isset($temp1[0])) {
+    //     $temp2 = explode("?", $temp1[0]);
         
-        // assign current page URL
-        $currentPage = $temp2[0];
-    } else {
-        // assign current page URL
-        $currentPage = $temp[0];
-    }
+    //     // assign current page URL
+    //     $currentPage = $temp2[0];
+    // } else {
+    //     // assign current page URL
+    //     $currentPage = $temp1[1];
+    // }
+    $temp1 = str_replace('/Aiden181%20wp/a5/', '', $uri);
+    $temp2 = str_replace('products/', '', $temp1);
+    $temp3 = explode('?', $temp2);
+
+    $currentPage = $temp3[0];
 
     /* ------------------------------- */
     /* add items to cart session array */
@@ -184,28 +242,50 @@
             $_SESSION['cart'] = array();
         }
     }
+    
     // when user clicks add to cart
     if (isset($_GET['item'])) {
-        // add item to cart
-        array_push($_SESSION['cart'], $_GET['item']);
+        // add to value if item is available in the cart
+        foreach ($_SESSION['cart'] as $key => $value) {
+            echo "key: $key" . "<br>";
+            if ($key === $_GET['item']) {
+                $_SESSION['cart'][$_GET['item']]++;
+            }
+        }
 
-        // redirect to page to prevent continuously pushing when refresh page
+        // add item to cart (items that are already in won't be added)
+        $_SESSION['cart'] += array($_GET['item'] => 1);
+
+        // debug
+        // echo '$_GET["item"]' .$_GET['item'] . "<br>";
+        // echo 'name: ' . $_SESSION[$_GET['item']] . "<br>";
+        // echo "value: " . $_SESSION['cart'][$_GET['item']] . "<br>";
+
+        // redirect to page to prevent continuously adding to session when refresh page
         header("Location:" . $currentPage);
         exit();
-    } else if (isset($_GET['session-reset'])) {
+    }
+    else if (isset($_GET['session-reset'])) {
         unset($_SESSION['cart']);
         foreach($_SESSION as $something => &$whatever) {
             unset($whatever);
         }
     }
-    
-    //debug
-    preShow($temp);
-    preShow($temp2);
 
-    preShow($_GET);
-    preShow($_SESSION);
-    /* ---------------------------- */
-    /* END OF SHOPPING CART SECTION */
-    /* ---------------------------- */
+    //debug
+    // echo '$temp1 array';
+    // preShow($temp1);
+    // echo '$temp2 array';
+    // preShow($temp2);
+    // echo '$temp3 array';
+    // preShow($temp3);
+
+    // echo '$_GET array';
+    // preShow($_GET);
+    // echo '$_SESSION array';
+    // preShow($_SESSION);
+
+    /* ------------------------------------------------------------ */
+    /* --------------- END OF SHOPPING CART SECTION --------------- */
+    /* ------------------------------------------------------------ */
 ?>

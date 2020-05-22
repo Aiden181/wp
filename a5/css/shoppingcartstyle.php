@@ -2,7 +2,6 @@
   header("Content-type: text/css");
 ?>
 
-/*Shopping Cart*/
 @import "compass/css3";
  @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Montserrat:400,700);
  @import "compass/reset";
@@ -308,6 +307,3 @@
 		 text-align: center;
 	}
 }
- 
- 
-/* End Of Shopping Cart */ 
