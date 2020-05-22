@@ -65,6 +65,9 @@
 
     <!-- !END OF PAGE CONTENT FROM HEADER.PHP! -->
   </div>
-<?php
-  include('../includes/javascript.php');
-?>
+  
+  <?php
+    include('../includes/javascript.php');
+  ?>
+</body>
+</html>
