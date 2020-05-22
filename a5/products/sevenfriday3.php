@@ -5,7 +5,7 @@
 	"../img/watches/sevenfriday3-1.png", 
 	"../img/watches/sevenfriday3-2.png");
 
-	$name = "M3/04 – PINKY";
+	$name = "M3/04 - PINKY";
 	$price = "1750";
 	$caseSize = "47mm";
 	$caseThickness = "15mm";
