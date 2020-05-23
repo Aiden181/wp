@@ -80,3 +80,36 @@ body {
   background-color: #f6f6f6;
   padding: 20px;
 }
+
+/*Product Quantity Box */
+.qtySelector{
+	border: 1px solid #ddd;
+	width: 107px;
+	height: 35px;
+	margin: 10px auto 0;
+}
+.qtySelector .fa{
+	padding: 10px 5px;
+	width: 35px;
+	height: 100%;
+	float: left;
+	cursor: pointer;
+}
+.qtySelector .fa.clicked{
+	font-size: 12px;
+	padding: 12px 5px;
+}
+.qtySelector .fa-minus{
+	border-right: 1px solid #ddd;
+}
+.qtySelector .fa-plus{
+	border-left: 1px solid #ddd;
+}
+.qtySelector .qtyValue{
+	border: none;
+	padding: 5px;
+	width: 35px;
+	height: 100%;
+	float: left;
+	text-align: center
+}
