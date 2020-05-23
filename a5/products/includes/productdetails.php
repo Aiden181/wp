@@ -47,7 +47,6 @@
         <input type="text" class="qtyValue" value="1" />
         <i class="fa fa-plus increaseQty"></i>
     </div>
-    <br>
     
     <h3 style="position: relative;  display: inline;"><b class="w3-text-red">$<?php echo number_format(sprintf("%.2f", $price), 2) ?></b>
         <h5 style="display: inline">incl. VAT</h5>
