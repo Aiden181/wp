@@ -233,6 +233,13 @@
         echo (isset($_GET['orderby']) && $_GET['orderby'] === $str) ? 'selected' : '';
     }
     
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
+    
     /* ----------------------------------------------------- */
     /* --------------- SHOPPING CART SECTION --------------- */
     /* ----------------------------------------------------- */
@@ -272,36 +279,58 @@
         }
     }
     
-    // when user clicks add to cart
-    if (isset($_GET['item'])) {
-        // add to value if item is available in the cart
-        foreach ($_SESSION['cart'] as $key => $value) {
-            echo "key: $key" . "<br>";
-            if ($key === $_GET['item']) {
-                $_SESSION['cart'][$_GET['item']]++;
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        // when user clicks add to cart
+        if (isset($_GET['item'])) {
+            // validate input
+            $item = test_input($_GET['item']);
+
+            // format submitted value
+            // debug
+            // echo $_GET['item'] . "<br>";
+
+            $tempArray = explode(',', $item);
+            $name = $tempArray[0];
+            $qty = $tempArray[1];
+
+            // debug
+            // echo $name . "<br>";
+            // echo $qty . "<br>";
+
+            // add to value if item is available in the cart
+            foreach ($_SESSION['cart'] as $key => $value) {
+                if ($key === $name) {
+                    $_SESSION['cart'][$key] += $qty;
+                }
             }
+
+            foreach ($_SESSION['cart'] as $key => $value) {
+                if ($key === $item) {
+                    $_SESSION['cart'][$item]++;
+                }
+            }
+
+            // add item to cart (items that are already in won't be added)
+            $_SESSION['cart'] += array($name => $qty);
+
+            // debug
+            // echo '$_GET["item"]' .$item . "<br>";
+            // echo 'name: ' . $_SESSION[$item] . "<br>";
+            // echo "value: " . $_SESSION['cart'][$item] . "<br>";
+
+            // redirect to page to prevent continuously adding to session when refresh page
+            header("Location:" . $currentPage);
+            exit();
         }
-
-        // add item to cart (items that are already in won't be added)
-        $_SESSION['cart'] += array($_GET['item'] => 1);
-
-        // debug
-        // echo '$_GET["item"]' .$_GET['item'] . "<br>";
-        // echo 'name: ' . $_SESSION[$_GET['item']] . "<br>";
-        // echo "value: " . $_SESSION['cart'][$_GET['item']] . "<br>";
-
-        // redirect to page to prevent continuously adding to session when refresh page
-        header("Location:" . $currentPage);
-        exit();
-    }
-    else if (isset($_GET['session-reset'])) {
-        unset($_SESSION['cart']);
-        $_SESSION['cart'] = array();
-        // foreach($_SESSION as $something => &$whatever) {
-        //     unset($whatever);
-        // }
-        header("Location:" . $currentPage);
-        exit();
+        else if (isset($_GET['session-reset'])) {
+            unset($_SESSION['cart']);
+            $_SESSION['cart'] = array();
+            // foreach($_SESSION as $something => &$whatever) {
+            //     unset($whatever);
+            // }
+            header("Location:" . $currentPage);
+            exit();
+        }
     }
 
     //debug

@@ -73,4 +73,34 @@
     e.target.classList.add("image-list-img-border");
   }
   productImages.forEach(image => image.addEventListener("click", changeImage));
+
+  function updateQty(id) {
+    var qtyValue = document.getElementById("qty-value").value;
+    if (!isNaN(qtyValue)) {
+      Math.round(qtyValue);
+      if (id === "decrease-qty") {
+        if (qtyValue > 1) {
+          qtyValue--;
+          document.getElementById("qty-value").value = qtyValue;
+        }
+      } else {
+          qtyValue++;
+          document.getElementById("qty-value").value = qtyValue;
+      }
+    }
+  }
+
+  function checkSubmission(e) {
+    // format the value before submitting
+    var qtyValue = document.getElementById("qty-value").value;
+
+    if (isNaN(qtyValue) || qtyValue < 1) {
+      e.preventDefault();
+      return false;
+    }
+
+    var string = "<?php echo $name ?>," + Math.round(qtyValue);
+    document.getElementById("addToCart").value = string;
+    return true;
+  }
 </script>

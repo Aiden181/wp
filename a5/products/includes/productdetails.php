@@ -5,11 +5,11 @@
         </div>
         <ul class="image-list">
             <?php
-            foreach ($images as $image) {
-                if ($image != "") {
-                    echo "<li class=\"image-item\"><img src=$image></li>";
+                foreach ($images as $image) {
+                    if ($image != "") {
+                        echo "<li class=\"image-item\"><img src=$image></li>";
+                    }
                 }
-            }
             ?>
         </ul>
     </div>
@@ -43,9 +43,9 @@
     </table>
 
     <div class="qtySelector text-center">
-        <i class="fa fa-minus decreaseQty"></i>
-        <input type="text" class="qtyValue" value="1" />
-        <i class="fa fa-plus increaseQty"></i>
+        <i class="fa fa-minus decreaseQty" id="decrease-qty" onclick="updateQty(this.id)"></i>
+        <input type="text" class="qtyValue" id="qty-value" value="1">
+        <i class="fa fa-plus increaseQty" id="increase-qty" onclick="updateQty(this.id)"></i>
     </div>
     
     <h3 style="position: relative;  display: inline;"><b class="w3-text-red">$<?php echo number_format(sprintf("%.2f", $price), 2) ?></b>
@@ -55,10 +55,10 @@
     <br>
     <br>
 
-    <form action="<?php echo $currentPage ?>" method="GET">
+    <form action="<?php echo $currentPage ?>" method="GET" onsubmit="checkSubmission(event)">
         <!-- uncomment reset button for debug -->
         <!-- <button type="hidden" name='session-reset' value='Reset the session' onclick="this.form.submit()">Reset the session</button> -->
-        <button type="hidden" class="add-to-cart" name="item" onclick="this.form.submit()" value="<?php echo $name ?>">Add To Cart</button>
+        <button id="addToCart" type="hidden" class="add-to-cart" name="item" value='<?php echo "$name,1" ?>'>Add To Cart</button>
     </form>
     </div>
 </div>
