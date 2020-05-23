@@ -69,7 +69,7 @@
                   echo "               <div class=\"infoWrap\">\n";
                   echo "                  <div class=\"cartSection\">\n";
                   echo "                     <img src=\"\" alt=\"\" class=\"itemImg\" />\n";
-                  echo "                     <h3>" . "$name" . "</h3>\n";
+                  echo "                     <h3>" . strtoupper($name) . "</h3>\n";
                   echo "                     <p> <input type=\"text\" class=\"qty\" placeholder=\"\" value=\"$qty\"/></p>\n";
                   echo "                  </div>\n";
                   echo "                  <div class=\"prodTotal cartSection\">\n";
@@ -101,7 +101,7 @@
             <li class="totalRow"><span class="label">Shipping</span><span class="value"><?php echo number_format(sprintf('%.2f', $shipping), 2) ?></span></li>
             <li class="totalRow"><span class="label">Tax</span><span class="value"><?php echo number_format(sprintf('%.2f', $subTotal*$tax/100), 2) ?></span></li>
             <li class="totalRow final"><span class="label">Total</span><span class="value">$<?php echo number_format(sprintf('%.2f', $totalPrice), 2) ?></span></li>
-            <li class="totalRow"><a href="checkout.php" class="btn continue">Checkout</a></li>
+            <li class="totalRow"><a href="<?php echo (empty($_SESSION['cart']) ? "index.php" : "checkout.php")?>" class="btn continue">Checkout</a></li>
          </ul>
       </div>
    </div>
