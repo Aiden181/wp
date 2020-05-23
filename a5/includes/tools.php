@@ -1,5 +1,12 @@
 <?php
     session_start();
+
+    function sortByAsc($a, $b) {
+        return $a['1'] - $b['1'];
+    }
+    function sortByDesc($a, $b) {
+        return $b['1'] - $a['1'];
+    }
     
     // this function displays watches which brand name matches the first parameter, also filter
     function displayWatches($brandName, $filter) {
@@ -44,21 +51,45 @@
 
         // display watches from left to right using watchList array
         // contain the watch display
-        echo "        <div class=\"w3-row watch-showcase-container\">\n";
+        echo "<div class=\"w3-row watch-showcase-container\">\n";
         if ($filter === "none") {
             foreach ($watchList as $watchName => $watchInfo) {
                 displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2], $watchInfo[3]);
             }
         } else if ($filter === "price-asc") {
-            array_multisort($watchList, SORT_ASC);
+            $tempList = $watchList;
+            $tempList2 = array();
+            usort($watchList, 'sortByAsc');
+
+            foreach($watchList as $watchName => $watchInfo) {
+                foreach($tempList as $tempName => $tempInfo) {
+                    // same page link, update name
+                    if ($watchInfo[3] === $tempInfo[3]) {
+                        $tempList2[$tempName] = $watchInfo;
+                    }
+                }
+            }
+
             // display watches
-            foreach ($watchList as $watchName => $watchInfo) {
+            foreach ($tempList2 as $watchName => $watchInfo) {
                 displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2], $watchInfo[3]);
             }
         } else if ($filter === "price-desc") {
-            array_multisort($watchList, SORT_DESC);
+            $tempList = $watchList;
+            $tempList2 = array();
+            usort($watchList, 'sortByDesc');
+
+            foreach($watchList as $watchName => $watchInfo) {
+                foreach($tempList as $tempName => $tempInfo) {
+                    // same page link, update name
+                    if ($watchInfo[3] === $tempInfo[3]) {
+                        $tempList2[$tempName] = $watchInfo;
+                    }
+                }
+            }
+
             // display watches
-            foreach ($watchList as $watchName => $watchInfo) {
+            foreach ($tempList2 as $watchName => $watchInfo) {
                 displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2], $watchInfo[3]);
             }
         } else if ($filter === "name-asc") {
@@ -77,7 +108,7 @@
             }
         }
         // display container end div
-        echo "        </div>\n";
+        echo "</div>\n";
     }
 
     // function for displayWatches function, display a watch with params
