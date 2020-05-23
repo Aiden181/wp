@@ -311,7 +311,7 @@
             }
 
             // add item to cart (items that are already in won't be added)
-            $_SESSION['cart'] += array($name => $qty);
+            $_SESSION['cart'] += array($name => (empty($qty) ? 1 : $qty));
 
             // debug
             // echo '$_GET["item"]' .$item . "<br>";
