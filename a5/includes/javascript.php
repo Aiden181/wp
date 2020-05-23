@@ -93,13 +93,14 @@
   function checkSubmission(e) {
     // format the value before submitting
     var qtyValue = document.getElementById("qty-value").value;
+    var name = document.getElementById("addToCart").value.split(",")[0];
 
     if (isNaN(qtyValue) || qtyValue < 1) {
       e.preventDefault();
       return false;
     }
 
-    var string = "<?php echo $name ?>," + Math.round(qtyValue);
+    var string = name + "," + Math.round(qtyValue);
     document.getElementById("addToCart").value = string;
     return true;
   }
