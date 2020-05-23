@@ -74,7 +74,7 @@
             <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <input type="text" class="form-control" id="firstName" placeholder="First Name" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" value="" required>
                 <div class="invalid-feedback">
                 Valid first name is required.
                 </div>
@@ -82,7 +82,7 @@
             </div>
             <div class="col-md-6 mb-3">
                 <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <input type="text" class="form-control" id="lastName" placeholder="Last Name" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" value="" required>
                 <div class="invalid-feedback">
                 Valid last name is required.
                 </div>
@@ -91,7 +91,7 @@
 
             <div class="mb-3">
             <label for="email">Email <span class="text-muted">(Optional)</span></label>
-            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+            <input type="email" class="form-control" id="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" placeholder="you@example.com">
             <br>
             </div>
 
@@ -109,12 +109,12 @@
             <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="cc-name">Name on card</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                <input type="text" class="form-control" id="cc-name" placeholder="" patter="^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})$" required>
                 <small class="text-muted">Full name as displayed on card</small>
             </div>
             <div class="col-md-6 mb-3">
                 <label for="cc-number">Credit card number</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                <input type="text" class="form-control" id="cc-number" placeholder="" pattern="[0-9]{14,19}" required>
                 <div class="invalid-feedback">
                 Credit card number is required
                 </div>
@@ -131,7 +131,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <label for="cc-cvv">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                <input type="text" class="form-control" id="cc-cvv" placeholder="" pattern="^[0-9]{3,4}$" required>
                 <div class="invalid-feedback">
                 Security code required
                 </div>
