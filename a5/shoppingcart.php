@@ -33,6 +33,16 @@
          <a href="index.php" class="continue">Continue Shopping</a>
       </div>
       <div class="cart">
+         <!-- Clear cart button -->
+         <form action="<?php echo $currentPage ?>" method="GET">
+            <button class="clear-cart-btn" type="hidden" name='session-reset' value='Clear cart session' onclick="this.form.submit()">Clear cart</button>
+         </form>
+
+         <br>
+         <br>
+         <br>
+         <br>
+         
          <ul class="cartWrap">
             <?php
                // make array that only has names of items

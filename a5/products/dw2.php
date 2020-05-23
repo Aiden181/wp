@@ -7,7 +7,7 @@
 	"../img/watches/dw2-3.png", 
 	"../img/watches/dw2-4.png");
 
-	$name = "CLASSIC ROSELYN";
+	$name = "CLASSIC CORNWALL";
 	$price = "199";
 	$caseSize = "36mm - 40mm";
 	$caseThickness = "6mm";

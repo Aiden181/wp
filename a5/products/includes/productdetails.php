@@ -57,7 +57,8 @@
     <br>
 
     <form action="<?php echo $currentPage ?>" method="GET">
-        <button name='session-reset' value='Reset the session' onclick="this.form.submit()">Reset the session</button>
+        <!-- uncomment reset button for debug -->
+        <!-- <button type="hidden" name='session-reset' value='Reset the session' onclick="this.form.submit()">Reset the session</button> -->
         <button type="hidden" class="add-to-cart" name="item" onclick="this.form.submit()" value="<?php echo $name ?>">Add To Cart</button>
     </form>
     </div>

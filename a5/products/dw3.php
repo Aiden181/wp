@@ -7,7 +7,7 @@
 	"../img/watches/dw3-3.png", 
 	"../img/watches/dw3-4.png");
 
-	$name = "CLASSIC DOVER";
+	$name = "CLASSIC ROSELYN";
 	$price = "179";
 	$caseSize = "36mm - 40mm";
 	$caseThickness = "6mm";
