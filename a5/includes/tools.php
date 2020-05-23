@@ -265,9 +265,12 @@
     }
     else if (isset($_GET['session-reset'])) {
         unset($_SESSION['cart']);
-        foreach($_SESSION as $something => &$whatever) {
-            unset($whatever);
-        }
+        $_SESSION['cart'] = array();
+        // foreach($_SESSION as $something => &$whatever) {
+        //     unset($whatever);
+        // }
+        header("Location:" . $currentPage);
+        exit();
     }
 
     //debug
