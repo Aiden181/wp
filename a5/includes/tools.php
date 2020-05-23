@@ -1,14 +1,13 @@
 <?php
     session_start();
-       
-    // this function displays watches which brand name matches the first parameter with filter
+    
+    // this function displays watches which brand name matches the first parameter, also filter
     function displayWatches($brandName, $filter) {
         $tempList = array();
         $watchList = array();
 
         // open watches.csv to get watch brand name and details
-        $filename = "watches.csv";
-        $file = fopen($filename, "r") or die("Unable to open file!");;
+        $file = fopen("watches.csv", "r") or die("Unable to open file!");;
         flock($file, LOCK_SH);
     
         // read the heading
@@ -25,12 +24,12 @@
         // if name in array matches $brandName, add to watchList array
         foreach ($tempList as $watch) {
             //  debug
-            // echo "$watch[0] <br>";
-            // echo "$watch[1] <br>";
-            // echo "$watch[2] <br>";
-            // echo "$watch[3] <br>";
-            // echo "$watch[4] <br>";
-            // echo "$watch[5] <br>";
+            // echo "$watch[0] <br>";   // brand name
+            // echo "$watch[1] <br>";   // name
+            // echo "$watch[2] <br>";   // status
+            // echo "$watch[3] <br>";   // price
+            // echo "$watch[4] <br>";   // image url
+            // echo "$watch[5] <br>";   // product detail page
             // echo "<br>";
             // echo "<br>";
 
@@ -92,7 +91,7 @@
             echo "          <span class=\"w3-tag w3-display-topleft\">$watchStatus</span>";
         }
         echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
-        echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"$watchName\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
+        echo "              <button type=\"hidden\" class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"$watchName\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
         echo "            </form>\n";
         echo "            </div>\n";
         echo "            <p style=\"text-align: center;\">$watchName<br><b class=\"w3-text-red\">$" . number_format(sprintf('%.2f', $watchPrice), 2) . "</b></p>\n";
@@ -146,8 +145,7 @@
         $tempList = array();
 
         // open watches.csv to get watch brand name and details
-        $filename = "watches.csv";
-        $file = fopen($filename, "r") or die("Unable to open file!");;
+        $file = fopen("watches.csv", "r") or die("Unable to open file!");;
         flock($file, LOCK_SH);
     
         // read the heading
@@ -169,7 +167,7 @@
             // echo "$watch[2] <br>";   // status
             // echo "$watch[3] <br>";   // price
             // echo "$watch[4] <br>";   // image url
-            // echo "$watch[5] <br>";   // website
+            // echo "$watch[5] <br>";   // product detail page
             // echo "<br>";
             // echo "<br>";
 

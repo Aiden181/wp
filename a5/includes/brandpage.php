@@ -36,5 +36,6 @@
 <br>
 
 <?php
+    // display all watches that match the brand name
     displayWatches($brandName, isset($_GET['orderby']) ? $_GET['orderby'] : 'none');
 ?>

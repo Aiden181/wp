@@ -15,6 +15,7 @@
     </div>
 </div>
 
+<!-- variables are from each -->
 <div class="col-sm-6">
     <h2><?php echo $name ?></h2>
     <h3>TECHNICAL SPECIFICATIONS</h3>
@@ -50,7 +51,7 @@
 
     <form action="<?php echo $currentPage ?>" method="GET">
         <button name='session-reset' value='Reset the session' onclick="this.form.submit()">Reset the session</button>
-        <button class="add-to-cart" name="item" onclick="this.form.submit()" value="<?php echo $name ?>">Add To Cart</button>
+        <button type="hidden" class="add-to-cart" name="item" onclick="this.form.submit()" value="<?php echo $name ?>">Add To Cart</button>
     </form>
     </div>
 </div>
