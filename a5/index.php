@@ -169,9 +169,11 @@
               <div class="w3-display-container">
                 <a href=products/movado2.php><img src="img/watches/movado2.png" style="width:100%"></a>
                 <span class="w3-tag w3-display-topleft">New</span>
-                <div class="w3-display-hover" style="position: absolute; top: 75%; left: 25%;">
-                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-                </div>
+                <?php
+                  echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
+                  echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"MODERN 47\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
+                  echo "            </form>\n";
+                ?>
               </div>
               <p style="text-align: center;">MODERN 47<br><b class="w3-text-red">$695.00</b></p>
             </div>
@@ -182,11 +184,13 @@
               <div class="w3-display-container">
                 <a href=products/sevenfriday3.php><img src="img/watches/sevenfriday3.png" style="width:100%"></a>
                 <span class="w3-tag w3-display-topleft">New</span>
-                <div class="w3-display-hover" style="position: absolute; top: 75%; left: 25%;">
-                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-                </div>
+                <?php
+                  echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
+                  echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"M3/04 - PINKY\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
+                  echo "            </form>\n";
+                ?>
               </div>
-              <p style="text-align: center;">M3/04 – PINKY<br><b class="w3-text-red">$1,750.00</b></p>
+              <p style="text-align: center;">M3/04 - PINKY<br><b class="w3-text-red">$1,750.00</b></p>
             </div>
           </div>
 
@@ -194,9 +198,11 @@
             <div class="w3-container">
               <div class="w3-display-container">
                 <a href=products/sevenfriday1.php><img src="img/watches/sevenfriday1.png" style="width:100%"></a>
-                <div class="w3-display-hover" style="position: absolute; top: 75%; left: 25%;">
-                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-                </div>
+                <?php
+                  echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
+                  echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"P3B/06 RACING TEAM RED\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
+                  echo "            </form>\n";
+                ?>
               </div>
               <p style="text-align: center;">P3B/06 RACING TEAM RED<br><b class="w3-text-red">$1,150.00</b></p>
             </div>
@@ -206,9 +212,11 @@
             <div class="w3-container">
               <div class="w3-display-container">
                 <a href=products/mvmt3.php><img src="img/watches/mvmt3.jpg" style="width:100%"></a>
-                <div class="w3-display-hover" style="position: absolute; top: 75%; left: 25%;">
-                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-                </div>
+                <?php
+                  echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
+                  echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"CLASSIC BLACK ROSE\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
+                  echo "            </form>\n";
+                ?>
               </div>
               <p style="text-align: center;">CLASSIC BLACK ROSE<br><b class="w3-text-red">$110.00</b></p>
             </div>
@@ -218,9 +226,11 @@
           <div class="w3-container">
               <div class="w3-display-container">
                 <a href=products/dw7.php><img src="img/watches/dw7.jpg" style="width:100%"></a>
-                <div class="w3-display-hover" style="position: absolute; top: 75%; left: 25%;">
-                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-                </div>
+                <?php
+                  echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
+                  echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"CLASSIC CAMBRIDGE\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
+                  echo "            </form>\n";
+                ?>
               </div>
               <p style="text-align: center;">CLASSIC CAMBRIDGE<br><b class="w3-text-red">$199.00</b></p>
             </div>
@@ -230,9 +240,11 @@
             <div class="w3-container">
               <div class="w3-display-container">
                 <a href=products/dw6.php><img src="img/watches/dw6.jpg" style="width:100%"></a>
-                <div class="w3-display-hover" style="position: absolute; top: 75%; left: 25%;">
-                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-                </div>
+                <?php
+                  echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
+                  echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"CLASSIC GLASGOW\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
+                  echo "            </form>\n";
+                ?>
               </div>
               <p style="text-align: center;">CLASSIC GLASGOW<br><b class="w3-text-red">$199.00</b></p>
             </div>
@@ -242,9 +254,11 @@
             <div class="w3-container">
               <div class="w3-display-container">
                 <a href=products/movado4.php><img src="img/watches/movado4.png" style="width:100%"></a>
-                <div class="w3-display-hover" style="position: absolute; top: 75%; left: 25%;">
-                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-                </div>
+                <?php
+                  echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
+                  echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"MOVADO ULTRA SLIM\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
+                  echo "            </form>\n";
+                ?>
               </div>
               <p style="text-align: center;">MOVADO ULTRA SLIM<br><b class="w3-text-red">$895.00</b></p>
             </div>
@@ -254,9 +268,11 @@
             <div class="w3-container">
               <div class="w3-display-container">
                 <a href=products/sevenfriday7.php><img src="img/watches/sevenfriday7.png" style="width:100%"></a>
-                <div class="w3-display-hover" style="position: absolute; top: 75%; left: 25%;">
-                  <button class="w3-button w3-black">Add To Cart <i class="fa fa-shopping-cart"></i></button>
-                </div>
+                <?php
+                  echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
+                  echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"M2/02\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
+                  echo "            </form>\n";
+                ?>
               </div>
               <p style="text-align: center;">M2/02<br><b class="w3-text-red">$1,474.00</b></p>
             </div>
