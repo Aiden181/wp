@@ -307,3 +307,27 @@
 		 text-align: center;
 	}
 }
+
+.clear-cart-btn {
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: -0.015em;
+	font-size: 1em;
+	padding: 15px;
+	color: #fff;
+	background: #e04b11;
+	font-weight: bold;
+	border-radius: 50px;
+	border-style: none;
+	float: right;
+	text-align: center;
+	-webkit-transition: all 0.15s linear;
+	-moz-transition: all 0.15s linear;
+	-ms-transition: all 0.15s linear;
+	-o-transition: all 0.15s linear;
+	transition: all 0.15s linear;
+}
+
+.clear-cart-btn:hover, .clear-cart-btn:focus, .clear-cart-btn:active {
+	 background: #f69679;
+}
