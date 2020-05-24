@@ -35,16 +35,15 @@
       $username = isset($_POST['username']) ? $_POST['username'] : '';
       $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-      echo $username;
-      echo $password;
-
-      // 
+      // if username is in the admin account list and password matches, add to session and 
+      // redirects to index.php
       if (isset($login[$username]) && $login[$username] == $password) {
-          $_SESSION['User']['username'] = $username;
+        // add to session
+        $_SESSION['User']['username'] = $username;
 
-          // redirects to index.php upon successful login
-          header("location: index.php");
-          exit;
+        // redirects to index.php upon successful login
+        header("location: index.php");
+        exit;
       }
       else { // login failed, show error message
           $Msg = "<span style='color: red'> Invalid Login Details </span>";
@@ -59,7 +58,7 @@
         <h2 class="active"> Sign In </h2>
 
         <!-- Login Form -->
-        <form action="loginpage.php" method="post">
+        <form action="login.php" method="post">
           <input type="text" id="username" name="username" class="fadeIn second" placeholder="Login">
           <input type="password" id="password" name="password" class="fadeIn third" placeholder="Password">
           <input type="submit" name="login" class="fadeIn fourth" value="Log In">
