@@ -14,4 +14,13 @@
     } else {
         echo "<p>Connected successfully</p>";
     }
+
+    // sql to create table
+    $sql = "CREATE TABLE products (
+        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        brand VARCHAR(50) NOT NULL,
+        prodname VARCHAR(100) NOT NULL,
+        specs VARCHAR(200) NOT NULL,
+        price INT(10) NOT NULL
+    )";
 ?>
