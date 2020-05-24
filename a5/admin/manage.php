@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Manage Products</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
@@ -20,26 +20,28 @@
     </style>
     <script type="text/javascript">
         $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
+            $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
 </head>
 <body>
+  <?php include('../includes/tools.php'); ?>
+
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Products Details</h2>
+                        <h2 class="pull-left">Manage Products</h2>
                         <a href="create.php" class="btn btn-success pull-right" style="background-color:#e04b11; border: none;">Add New Product</a>
                     </div>
                     <?php
                     // Include config file
-                    require_once "include/config.php";
+                    require_once "../includes/database.php";
                     
                     // Attempt select query execution
                     $sql = "SELECT * FROM products";
-                    if($result = mysqli_query($link, $sql)){
+                    if($result = mysqli_query($conn, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";
@@ -76,11 +78,11 @@
                             echo "<p class='lead'><em>No records were found.</em></p>";
                         }
                     } else{
-                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
                     }
  
                     // Close connection
-                    mysqli_close($link);
+                    mysqli_close($conn);
                     ?>
                 </div>
             </div>        
