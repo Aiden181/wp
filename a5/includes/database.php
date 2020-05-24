@@ -11,17 +11,34 @@
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error());
-    } else {
-        echo "<p>Connected successfully</p>";
     }
+    // else {
+    //     echo "<p>Connected successfully</p>";
+    // }
 
-    // sql to create table
-    $sql = "CREATE TABLE products (
-        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        brand VARCHAR(50) NOT NULL,
-        prodname VARCHAR(100) NOT NULL,
-        specs VARCHAR(200) NOT NULL,
-        price INT(10) NOT NULL,
-        img VARBINARY (MAX) NOT NULL
+    // drop table query for testing
+    // $conn->query("DROP TABLE IF EXISTS products");
+
+    // --------------------------------- //
+    // ----- create products table ----- //
+    // --------------------------------- //
+    // id : product id
+    // brand : product brand
+    // name : product name
+    // status : product status (new, sale,...)
+    // price : product price
+    // img1 -> img5 : product images
+    $sql = "CREATE TABLE IF NOT EXISTS products (
+        id VARCHAR(20) NOT NULL PRIMARY KEY,
+        brand VARCHAR(128) NOT NULL,
+        name VARCHAR(128) NOT NULL,
+        status VARCHAR(32) NOT NULL,
+        price FLOAT NOT NULL,
+        img1 VARCHAR(256) NOT NULL,
+        img2 VARCHAR(256) NOT NULL,
+        img3 VARCHAR(256) NOT NULL,
+        img4 VARCHAR(256) NOT NULL,
+        img5 VARCHAR(256) NOT NULL
     )";
+    $conn->query($sql);
 ?>
