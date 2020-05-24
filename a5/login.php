@@ -29,7 +29,7 @@
       unset($_SESSION['User']);
     }
 
-    // 
+    // after user presses log in button
     if (isset($_POST['login'])) {
       // if username and password in $_POST are set then assign those values to the variable 
       $username = isset($_POST['username']) ? $_POST['username'] : '';
