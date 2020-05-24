@@ -341,10 +341,12 @@
     // echo '$temp3 array';
     // preShow($temp3);
 
-    // echo '$_GET array';
-    // preShow($_GET);
-    // echo '$_SESSION array';
-    // preShow($_SESSION);
+    echo '$_GET array';
+    preShow($_GET);
+    echo '$_POST array';
+    preShow($_POST);
+    echo '$_SESSION array';
+    preShow($_SESSION);
 
     /* ------------------------------------------------------------ */
     /* --------------- END OF SHOPPING CART SECTION --------------- */
