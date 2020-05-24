@@ -11,21 +11,6 @@
 	$caseThickness = "10mm";
 	$glass = "Crystal K1";
 	$movement = "SWISS QUARTZ MOVEMENT";
-?>
-<?php
-	include('includes/header.php');
-?>
 
-<div class="container">
-	<div class="row">
-		<?php
-			include('includes/productdetails.php')
-		?>
-	</div>
-</div>
-
-<div id="blankspace"></div>
-
-<?php
-	include('includes/footer.php');
+	include('includes/productdetails.php')
 ?>

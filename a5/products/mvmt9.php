@@ -13,21 +13,6 @@
 	$caseThickness = "12mm";
 	$glass = "Hardened Mineral Crystal";
 	$movement = "Battery Powered 6 Hand Chronograph With Date";
-?>
-<?php
-	include('includes/header.php');
-?>
 
-<div class="container">
-	<div class="row">
-		<?php
-			include('includes/productdetails.php')
-		?>
-	</div>
-</div>
-
-<div id="blankspace"></div>
-
-<?php
-	include('includes/footer.php');
+	include('includes/productdetails.php')
 ?>
