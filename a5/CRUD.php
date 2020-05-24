@@ -31,7 +31,7 @@
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Products Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right">Add New Product</a>
+                        <a href="create.php" class="btn btn-success pull-right" style="background-color:#e04b11; border: none;">Add New Product</a>
                     </div>
                     <?php
                     // Include config file
@@ -60,6 +60,7 @@
                                         echo "<td>" . $row['prodname'] . "</td>";
                                         echo "<td>" . $row['specs'] . "</td>";
                                         echo "<td>" . $row['price'] . "</td>";
+                                        echo "<td>" . $row['img'] . "</td>";
                                         echo "<td>";
                                             echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
                                             echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";

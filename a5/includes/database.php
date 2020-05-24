@@ -21,6 +21,7 @@
         brand VARCHAR(50) NOT NULL,
         prodname VARCHAR(100) NOT NULL,
         specs VARCHAR(200) NOT NULL,
-        price INT(10) NOT NULL
+        price INT(10) NOT NULL,
+        img VARBINARY (MAX) NOT NULL
     )";
 ?>
