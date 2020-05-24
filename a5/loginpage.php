@@ -14,6 +14,8 @@
 
     <!-- website icon -->
     <link rel="icon" href="img/favicon.png">
+
+    <?php include('includes/database.php'); ?>
 </head>
 <body>
     <div class="wrapper fadeInDown" id="bg-image">
