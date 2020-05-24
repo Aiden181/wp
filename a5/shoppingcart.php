@@ -101,7 +101,14 @@
             <li class="totalRow"><span class="label">Shipping</span><span class="value"><?php echo number_format(sprintf('%.2f', $shipping), 2) ?></span></li>
             <li class="totalRow"><span class="label">Tax</span><span class="value"><?php echo number_format(sprintf('%.2f', $subTotal*$tax/100), 2) ?></span></li>
             <li class="totalRow final"><span class="label">Total</span><span class="value">$<?php echo number_format(sprintf('%.2f', $totalPrice), 2) ?></span></li>
-            <li class="totalRow"><a href="<?php echo (empty($_SESSION['cart']) ? "index.php" : "checkout.php")?>" class="btn continue">Checkout</a></li>
+
+            <?php
+               if (empty($_SESSION['cart'])) {
+                  echo "<li class=\"totalRow\"><a disabled='disabled' href class=\"btn continue\">Checkout</a></li>";
+               } else {
+                  echo "<li class=\"totalRow\"><a href=\"checkout.php\" class=\"btn continue\">Checkout</a></li>";
+               }
+            ?>
          </ul>
       </div>
    </div>
