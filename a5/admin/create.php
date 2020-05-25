@@ -39,10 +39,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $price = $input_price;
     }
 
-    // Validate Price
+    // Validate Image
     $input_img = ($_POST["img"]);
-    if(empty($input_salary)){
-        $img_err = "Please enter a product name.";  
+    if(empty($input_img)){
+        $img_err = "Please include product's picture.";  
     }
     $target_dir = "img/watches";
     $target_file = $target_dir . basename($_FILES["img"]["name"]);
@@ -137,6 +137,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div class="wrapper">
         <div class="container-fluid">
+        <button type="button" class="btn" style="position: relative; right: 30%; top: 70px ;background-color: #e04b11; color:"><a href="manage.php" style="color:white">Manage</a></button>
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">

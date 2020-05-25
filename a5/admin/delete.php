@@ -54,6 +54,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 <body>
     <div class="wrapper">
         <div class="container-fluid">
+        <button type="button" class="btn" style="position: relative; background-color: #e04b11; color:"><a href="manage.php" style="color:white">Manage</a></button>
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
