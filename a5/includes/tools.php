@@ -5,114 +5,69 @@
     require_once "database.php";
 
     function displayWatches($brandName, $filter) {
-        $tempList = array();
-        $watchList = array();
-
-        // open watches.csv to get watch brand name and details
-        $file = fopen("watches.csv", "r") or die("Unable to open file!");;
-        flock($file, LOCK_SH);
-    
-        // read the heading
-        $headings = fgetcsv($file);
-
-        // read through the line and store each line array element
-        while ($aLineOfCells = fgetcsv($file)) {
-            $tempList[] = $aLineOfCells;
+        global $conn;
+        // Attempt select query execution
+        // product filter price ascending
+        if ($filter === "price-asc") {
+            $sql = "SELECT * FROM products WHERE brand='$brandName' ORDER BY `price` ASC";
         }
-        
-        flock($file, LOCK_UN);
-        fclose($file);
-
-        // if name in array matches $brandName, add to watchList array
-        foreach ($tempList as $watch) {
-            //  debug
-            // echo "$watch[0] <br>";   // brand name
-            // echo "$watch[1] <br>";   // name
-            // echo "$watch[2] <br>";   // status
-            // echo "$watch[3] <br>";   // price
-            // echo "$watch[4] <br>";   // image url
-            // echo "$watch[5] <br>";   // product detail page
-            // echo "<br>";
-            // echo "<br>";
-
-            if ($watch[0] === $brandName) {
-                $watchList[$watch[1]] = array();
-                array_push($watchList[$watch[1]], $watch[2]);   // status (New, Sale, ...)
-                array_push($watchList[$watch[1]], $watch[3]);   // price
-                array_push($watchList[$watch[1]], $watch[4]);   // image URL
-                array_push($watchList[$watch[1]], "products/" . $watch[5]);   // product detail web page
-            }
+        // product filter price descending
+        else if ($filter === "price-desc") {
+            $sql = "SELECT * FROM products WHERE brand='$brandName' ORDER BY `price` DESC";
+        }
+        // product filter name ascending
+        else if ($filter === "name-asc") {
+            $sql = "SELECT * FROM products WHERE brand='$brandName' ORDER BY `name` ASC";
+        }
+        // product filter name descending
+        else if ($filter === "name-desc") {
+            $sql = "SELECT * FROM products WHERE brand='$brandName' ORDER BY `name` DESC";
+        }
+        // no product filter, or someone is messing with the $_GET value in URL
+        else {
+            $sql = "SELECT * FROM products WHERE brand='$brandName'";
         }
 
-        // display watches from left to right using watchList array
-        // contain the watch display
-        echo "<div class=\"w3-row watch-showcase-container\">\n";
-        if ($filter === "none") {
-            foreach ($watchList as $watchName => $watchInfo) {
-                displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2], $watchInfo[3]);
-            }
-        } else if ($filter === "price-asc") {
-            $tempList = $watchList;
-            $tempList2 = array();
-            usort($watchList, 'sortByAsc');
+        if ($result = mysqli_query($conn, $sql)) {
+            if (mysqli_num_rows($result) > 0) {
 
-            foreach($watchList as $watchName => $watchInfo) {
-                foreach($tempList as $tempName => $tempInfo) {
-                    // same page link, update name
-                    if ($watchInfo[3] === $tempInfo[3]) {
-                        $tempList2[$tempName] = $watchInfo;
-                    }
+                // ------------------------------------------------- //
+                // display watches from left to right, top to bottom //
+                // ------------------------------------------------- //
+                // contain the watch display
+                echo "<div class=\"w3-row watch-showcase-container\">\n";
+
+                // go through each row in fetched SELECT query result to get values
+                while ($row = mysqli_fetch_array($result)) {
+                    // remove '../' in image links
+                    $imgUrl = str_replace("../", "", $row['img1']);
+
+                    displayWatch($row['id'], $row['name'], $row['status'], $row['price'], $imgUrl);
                 }
-            }
+                // display container end div
+                echo "</div>\n";
 
-            // display watches
-            foreach ($tempList2 as $watchName => $watchInfo) {
-                displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2], $watchInfo[3]);
+                // Free result set
+                mysqli_free_result($result);
+            } else {
+                echo "<p class='lead'><em>No records were found.</em></p>";
             }
-        } else if ($filter === "price-desc") {
-            $tempList = $watchList;
-            $tempList2 = array();
-            usort($watchList, 'sortByDesc');
-
-            foreach($watchList as $watchName => $watchInfo) {
-                foreach($tempList as $tempName => $tempInfo) {
-                    // same page link, update name
-                    if ($watchInfo[3] === $tempInfo[3]) {
-                        $tempList2[$tempName] = $watchInfo;
-                    }
-                }
-            }
-
-            // display watches
-            foreach ($tempList2 as $watchName => $watchInfo) {
-                displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2], $watchInfo[3]);
-            }
-        } else if ($filter === "name-asc") {
-            // sort array name in ascending order
-            ksort($watchList);
-            // display watches
-            foreach ($watchList as $watchName => $watchInfo) {
-                displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2], $watchInfo[3]);
-            }
-        } else if ($filter === "name-desc") {
-            // sort array name in descending order
-            krsort($watchList);
-            // display watches
-            foreach ($watchList as $watchName => $watchInfo) {
-                displayWatch($watchName, $watchInfo[0], $watchInfo[1], $watchInfo[2], $watchInfo[3]);
-            }
+        } else {
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
         }
-        // display container end div
-        echo "</div>\n";
+
+        // Close connection
+        mysqli_close($conn);
     }
+    
 
-    // function for displayWatches function, display a watch with params
-    function displayWatch($watchName, $watchStatus, $watchPrice, $watchImageUrl, $watchDetailsPage) {
+    // this function display a watch with appropriate parameters
+    function displayWatch($watchID, $watchName, $watchStatus, $watchPrice, $watchImageUrl) {
         global $currentPage;
         echo "        <div class=\"w3-col l3 s6\">\n";
         echo "          <div class=\"w3-container\">\n";
         echo "            <div class=\"w3-display-container\">\n";
-        echo "              <a href=$watchDetailsPage><img src=$watchImageUrl style=\"width:100%\"></a>\n";
+        echo "              <a href=\"products/$watchID.php\"><img src=\"$watchImageUrl\" style=\"width:100%\"></a>\n";
         if ($watchStatus != "") {
             echo "          <span class=\"w3-tag w3-display-topleft\">$watchStatus</span>";
         }
@@ -124,92 +79,93 @@
         echo "          </div>\n";
         echo "        </div>\n";
     }
-
-    function countWatches($brandName) {
-        $amount = 0;
-        $tempList = array();
-
-        // open watches.csv to get watch brand name and details
-        $filename = "watches.csv";
-        $file = fopen($filename, "r") or die("Unable to open file!");;
-        flock($file, LOCK_SH);
     
-        // read the heading
-        $headings = fgetcsv($file);
+    function countWatches($brandName) {
+        global $conn;
+        $amount = 0;
+        // Include config file
+        // require_once "database.php";
 
-        // read through the line and store each line array element
-        while ($aLineOfCells = fgetcsv($file)) {
-            $tempList[] = $aLineOfCells;
-        }
-        
-        flock($file, LOCK_UN);
-        fclose($file);
+        // Attempt select query execution
+        $sql = "SELECT * FROM products WHERE brand='$brandName'";
 
-        // if name in array matches $brandName, add to watchList array
-        foreach ($tempList as $watch) {
-            //  debug
-            // echo "$watch[0] <br>";   // brand name
-            // echo "$watch[1] <br>";   // name
-            // echo "$watch[2] <br>";   // status
-            // echo "$watch[3] <br>";   // price
-            // echo "$watch[4] <br>";   // image url
-            // echo "$watch[5] <br>";   // website
-            // echo "<br>";
-            // echo "<br>";
+        if ($result = mysqli_query($conn, $sql)) {
+            if (mysqli_num_rows($result) > 0) {
+                // go through each row in fetched SELECT query result and count up the amount of watches
+                while ($row = mysqli_fetch_array($result)) {
+                    $amount++;
+                }
 
-            if ($watch[0] === $brandName) {
-                $amount++;
+                // Free result set
+                mysqli_free_result($result);
+            } else {
+                echo "<p class='lead'><em>No records were found.</em></p>";
             }
+        } else {
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
         }
+
         return $amount;
     }
 
     // this function retrieves value from watch name from watches.csv file
-    // $item: "brand"/"status"/"price"/"image"/"website"
+    // $item: "id"/"brand"/"name"/"status"/"price"/"img1"/"img2"/"img3"/"img4"/"img5"/
     // $name: watch name (String)
     function getValueFromName($item, $name) {
-        $tempList = array();
+        global $conn;
 
-        // open watches.csv to get watch brand name and details
-        $file = fopen("watches.csv", "r") or die("Unable to open file!");;
-        flock($file, LOCK_SH);
-    
-        // read the heading
-        $headings = fgetcsv($file);
+        // Attempt select query execution
+        $sql = "SELECT * FROM products WHERE name='$name'";
 
-        // read through the line and store each line array element
-        while ($aLineOfCells = fgetcsv($file)) {
-            $tempList[] = $aLineOfCells;
-        }
-        
-        flock($file, LOCK_UN);
-        fclose($file);
-
-        // if name in array matches $name, return price
-        foreach ($tempList as $watch) {
-            //  debug
-            // echo "$watch[0] <br>";   // brand name
-            // echo "$watch[1] <br>";   // name
-            // echo "$watch[2] <br>";   // status
-            // echo "$watch[3] <br>";   // price
-            // echo "$watch[4] <br>";   // image url
-            // echo "$watch[5] <br>";   // product detail page
-            // echo "<br>";
-            // echo "<br>";
-
-            if ($watch[1] === $name) {
-                if ($item === "brand") {
-                    return $watch[0];
-                } else if ($item === "status") {
-                    return $watch[2];
-                } else if( $item === "price") {
-                    return $watch[3];
-                } else if ($item === "image") {
-                    return $watch[4];
-                } else if ($item === "website") {
-                    return $watch[5];
+        if ($result = mysqli_query($conn, $sql)) {
+            if (mysqli_num_rows($result) > 0) {
+                // go through each row in fetched SELECT query result and count up the amount of watches
+                while ($row = mysqli_fetch_array($result)) {
+                    if ($row['name'] === $name) {
+                        if ($item === "id") {
+                            mysqli_free_result($result);
+                            return $row['id'];
+                            break;
+                        } else if ($item === "brand") {
+                            mysqli_free_result($result);
+                            return $row['brand'];
+                            break;
+                        } else if ($item === "status") {
+                            mysqli_free_result($result);
+                            return $row['status'];
+                            break;
+                        } else if ( $item === "price") {
+                            mysqli_free_result($result);
+                            return $row['price'];
+                            break;
+                        } else if ($item === "img1") {
+                            mysqli_free_result($result);
+                            return $row['img1'];
+                            break;
+                        } else if ($item === "img2") {
+                            mysqli_free_result($result);
+                            return $row['img2'];
+                            break;
+                        } else if ($item === "img3") {
+                            mysqli_free_result($result);
+                            return $row['img3'];
+                            break;
+                        } else if ($item === "img4") {
+                            mysqli_free_result($result);
+                            return $row['img4'];
+                            break;
+                        } else if ($item === "img5") {
+                            mysqli_free_result($result);
+                            return $row['img5'];
+                            break;
+                        }
+                    }
                 }
+            } else {
+                echo "<p class='lead'><em>No records were found.</em></p>";
             }
+        } else {
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
         }
     }
 
