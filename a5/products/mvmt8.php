@@ -1,7 +1,7 @@
 <?php
 	$images = array();
 	array_push($images, 
-	"../img/watches/mvmt8.jpg", 
+	"../img/watches/mvmt8.png", 
 	"../img/watches/mvmt8-1.png", 
 	"../img/watches/mvmt8-2.png",
 	"../img/watches/mvmt8-3.png",
