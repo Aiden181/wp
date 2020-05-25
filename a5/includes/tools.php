@@ -345,10 +345,64 @@
     preShow($_GET);
     echo '$_POST array';
     preShow($_POST);
+    echo '$_FILES array';
+    preShow($_FILES);
     echo '$_SESSION array';
     preShow($_SESSION);
 
     /* ------------------------------------------------------------ */
     /* --------------- END OF SHOPPING CART SECTION --------------- */
     /* ------------------------------------------------------------ */
+
+
+    /* -------------------------------- */
+    /* WATCHES.CSV TO DATABSE MIGRATION */
+    /* -------------------------------- */
+    // require_once "includes/database.php";
+    // $tempList = array();
+
+    // // open watches.csv to get watch brand name and details
+    // $file = fopen("watches.csv", "r") or die("Unable to open file!");;
+    // flock($file, LOCK_SH);
+
+    // // read the heading
+    // $headings = fgetcsv($file);
+
+    // // read through the line and store each line array element
+    // while ($aLineOfCells = fgetcsv($file)) {
+    //     $tempList[] = $aLineOfCells;
+    // }
+    
+    // flock($file, LOCK_UN);
+    // fclose($file);
+
+    // $sql = "";
+    // // if name in array matches $brandName, add to watchList array
+    // foreach ($tempList as $watch) {
+    //     //  debug
+    //     echo "$watch[0] <br>";   // id
+    //     echo "$watch[1] <br>";   // brand
+    //     echo "$watch[2] <br>";   // name
+    //     echo "$watch[3] <br>";   // status
+    //     echo "$watch[4] <br>";   // price
+    //     echo "$watch[5] <br>";   // img1
+    //     echo "$watch[6] <br>";   // img2
+    //     echo "$watch[7] <br>";   // img3
+    //     echo "$watch[8] <br>";   // img4
+    //     echo "$watch[9] <br>";   // img5
+    //     echo "<br>";
+    //     echo "<br>";
+
+    //     $sql = "INSERT IGNORE INTO products (`id`, `brand`, `name`, `status`, `price`, `img1`, `img2`, `img3`, `img4`, `img5`) 
+    //     VALUES ('$watch[0]', '$watch[1]', '$watch[2]', '$watch[3]', '$watch[4]', '$watch[5]', '$watch[6]', '$watch[7]', '$watch[8]', '$watch[9]');";
+        
+    //     if (mysqli_multi_query($conn, $sql)) {
+    //         echo "<p>New record created successfully</p>";
+    //     } else {
+    //         echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>";
+    //     }
+    // }
+    /* --------------------------------------- */
+    /* END OF WATCHES.CSV TO DATABSE MIGRATION */
+    /* --------------------------------------- */
 ?>
