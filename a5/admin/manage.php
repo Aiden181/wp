@@ -30,7 +30,14 @@
     </script>
 </head>
 <body>
-  <?php include('../includes/tools.php'); ?>
+    <?php
+    include('../includes/tools.php');
+
+    if (!isset($_SESSION['User'])) {
+        echo "You should not be here. Only follow links!";
+        die();
+    }
+    ?>
 
     <div class="wrapper">
         <div class="container-fluid">
