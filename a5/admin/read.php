@@ -71,16 +71,24 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                         <h1>View Record</h1>
                     </div>
                     <div class="form-group">
-                        <label>Name</label>
-                        <p class="form-control-static"><?php echo $row["name"]; ?></p>
+                        <label>Brand</label>
+                        <p class="form-control-static"><?php echo $row["brand"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Address</label>
-                        <p class="form-control-static"><?php echo $row["address"]; ?></p>
+                        <label>Product Name</label>
+                        <p class="form-control-static"><?php echo $row["prodname"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Salary</label>
-                        <p class="form-control-static"><?php echo $row["salary"]; ?></p>
+                        <label>Specs</label>
+                        <p class="form-control-static"><?php echo $row["specs"]; ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <p class="form-control-static"><?php echo $row["price"]; ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Image</label>
+                        <p class="form-control-static"><?php echo $row["img"]; ?></p>
                     </div>
                     <p><a href="manage.php" class="btn btn-primary">Back</a></p>
                 </div>
