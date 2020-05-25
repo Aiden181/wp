@@ -70,11 +70,11 @@
         </div>
         <div class="col-md-8 order-md-1">
         <h3 class="mb-3">Billing address</h3>
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation">
             <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="First Name" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" value="" required>
+                <input type="text" class="form-control" id="firstName" value="<?php if (isset($_POST['cust']['fname'])) {echo $_POST['cust']['fname'];} ?>" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
                 <div class="invalid-feedback">
                 Valid first name is required.
                 </div>
@@ -82,7 +82,7 @@
             </div>
             <div class="col-md-6 mb-3">
                 <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Last Name" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" value="" required>
+                <input type="text" class="form-control" id="lastName" value="<?php if (isset($_POST['cust']['lname'])) {echo $_POST['cust']['lname'];} ?>" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
                 <div class="invalid-feedback">
                 Valid last name is required.
                 </div>
@@ -91,13 +91,13 @@
 
             <div class="mb-3">
             <label for="email">Email <span class="text-muted">(Optional)</span></label>
-            <input type="email" class="form-control" id="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" placeholder="you@example.com">
+            <input type="email" class="form-control" id="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="you@example.com">
             <br>
             </div>
 
             <div class="mb-3">
             <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            <input type="text" class="form-control" id="address" value="<?php if (isset($_POST['cust']['address'])) {echo $_POST['cust']['address'];} ?>" placeholder="1234 Main St" patter="^[#.0-9a-zA-Z\s,-]+$" required>
             <div class="invalid-feedback">
                 Please enter your shipping address.
             </div>
@@ -108,13 +108,13 @@
             <br>
             <div class="row">
             <div class="col-md-6 mb-3">
-                <label for="cc-name">Name on card</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" patter="^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})$" required>
+                <label for="cc-name">Card Holder Name</label>
+                <input type="text" class="form-control" id="cc-name" value="<?php if (isset($_POST['cust']['cardholdername'])) {echo $_POST['cust']['cardholdername'];} ?>" patter="^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})$" required>
                 <small class="text-muted">Full name as displayed on card</small>
             </div>
             <div class="col-md-6 mb-3">
                 <label for="cc-number">Credit card number</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" pattern="[0-9]{14,19}" required>
+                <input type="text" class="form-control" id="cc-number" value="<?php if (isset($_POST['cust']['card'])) echo $_POST['cust']['card']; ?>" pattern="[0-9]{14,19}" required>
                 <div class="invalid-feedback">
                 Credit card number is required
                 </div>
@@ -124,14 +124,14 @@
             <div class="row">
             <div class="col-md-3 mb-3">
                 <label for="cc-expiration">Expiration</label>
-                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                <input type="month" class="form-control" id="cc-expiration" value="<?php if (isset($_POST['cust']['expiry'])) echo $_POST['cust']['expiry']; ?>" required>
                 <div class="invalid-feedback">
                 Expiration date required
                 </div>
             </div>
             <div class="col-md-3 mb-3">
                 <label for="cc-cvv">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="" pattern="^[0-9]{3}$" required>
+                <input type="text" class="form-control" id="cc-cvv" value="<?php if (isset($_POST['cust']['cvv'])) echo $_POST['cust']['cvv']; ?>" pattern="^[0-9]{3}$" required>
                 <div class="invalid-feedback">
                 Security code required
                 </div>
@@ -148,6 +148,7 @@
 
   <?php
       include('includes/footer.php');
+      include('includes/tools.php');
   ?>
 </body>
 </html>
