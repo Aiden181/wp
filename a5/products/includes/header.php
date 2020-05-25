@@ -58,7 +58,7 @@
                 <input class="search-box" type="text" placeholder="Search">
 
                 <!-- Login icon -->
-                <a href="../loginpage.php"><i class="fa fa-user"></i></a>
+                <a href="../login.php"><i class="fa fa-user"></i></a>
                 
                 <!-- Shopping cart icon -->
                 <a href="../shoppingcart.php"><i class="fa fa-shopping-cart"></i></a>
