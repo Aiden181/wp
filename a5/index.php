@@ -30,7 +30,7 @@
   if (!isset($_SESSION['User'])) {
     $loginIconLink = "login.php";
   } else {
-    $loginIconLink = "admin/manage.php";
+    $loginIconLink = "admin/index.php";
   }
   ?>
   
