@@ -291,3 +291,7 @@ input[type=text]:placeholder {
 * {
   box-sizing: border-box;
 }
+
+.button5 {
+  border-radius: 50%;
+  }
