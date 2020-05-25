@@ -24,7 +24,7 @@
         }
     </style>
     <script type="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
@@ -51,13 +51,10 @@
                     </div>
                     <br>
                     <?php
-                    // Include config file
-                    require_once "../includes/database.php";
-
                     // Attempt select query execution
                     $sql = "SELECT * FROM products";
-                    if($result = mysqli_query($conn, $sql)){
-                        if(mysqli_num_rows($result) > 0){
+                    if ($result = mysqli_query($conn, $sql)) {
+                        if (mysqli_num_rows($result) > 0) {
                             echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";
                                     echo "<tr>";
@@ -70,7 +67,7 @@
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
-                                while($row = mysqli_fetch_array($result)){
+                                while($row = mysqli_fetch_array($result)) {
                                     echo "<tr>";
                                         echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>" . $row['brand'] . "</td>";

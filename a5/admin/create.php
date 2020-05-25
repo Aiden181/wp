@@ -35,13 +35,13 @@
 
 
     // Processing form data when form is submitted
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Validate ID
         if (isset($_POST["id"])) {
             $input_id = trim($_POST["id"]);
-            if(empty($input_id)) {
+            if (empty($input_id)) {
                 $id_err = "Please enter product id.";
-            } else{
+            } else {
                 $id = $input_id;
             }
         }
@@ -49,9 +49,9 @@
         // Validate Brand Name
         if (isset($_POST["brand"])) {
             $input_brand = trim($_POST["brand"]);
-            if(empty($input_brand)) {
+            if (empty($input_brand)) {
                 $brand_err = "Please enter product brand.";
-            } else{
+            } else {
                 $brand = $input_brand;
             }
         }
@@ -59,9 +59,9 @@
         // Validate Product Name
         if (isset($_POST["name"])) {
             $input_name = trim($_POST["name"]);
-            if(empty($input_name)) {
+            if (empty($input_name)) {
                 $name_err = "Please enter product name.";
-            } else{
+            } else {
                 $name = $input_name;
             }
         }
@@ -75,11 +75,11 @@
         // Validate Price
         if (isset($_POST["price"])) {
             $input_price = trim($_POST["price"]);
-            if(empty($input_price)) {
+            if (empty($input_price)) {
                 $price_err = "Please enter the price for your product.";
-            } else if(!ctype_digit($input_price)) {
+            } else if (!ctype_digit($input_price)) {
                 $price_err = "Please enter a positive integer value.";
-            } else{
+            } else {
                 $price = $input_price;
             }
         }
@@ -87,7 +87,7 @@
         // Validate Image(s)
         if (isset($_POST["submit"])) {
             // no images uploaded
-            if($_FILES["files"]['tmp_name']['0'] === "") {
+            if ($_FILES["files"]['tmp_name']['0'] === "") {
                 array_push($img_err, "Please upload an image.");
             }
             // image(s) uploaded
@@ -109,7 +109,7 @@
 
                     // Check if image file is a actual image or fake image
                     $check = getimagesize($fileTemp);
-                    if($check !== 0) {
+                    if ($check !== 0) {
                         // array_push($img_err, "File is an image - " . $check["mime"] . ".");
                         $uploadOk = 1;
                     } else {
@@ -128,7 +128,7 @@
                         $uploadOk = 0;
                     }
                     // Allow certain file formats
-                    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+                    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
                         array_push($img_err, "Only JPG, JPEG, and PNG files are allowed!");
                         $uploadOk = 0;
                     }
@@ -166,11 +166,11 @@
 
 
         // Check input errors before inserting in database
-        if($id_err === "" && $brand_err === "" && $name_err === "" && $price_err === "" && $_FILES['files']['error']['0'] == 0) {
+        if ($id_err === "" && $brand_err === "" && $name_err === "" && $price_err === "" && $_FILES['files']['error']['0'] == 0) {
             // Prepare an insert statement
             $sql = "INSERT INTO products (id, brand, name, status, price, img1, img2, img3, img4, img5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-            if($stmt = mysqli_prepare($conn, $sql)) {
+            if ($stmt = mysqli_prepare($conn, $sql)) {
                 // Bind variables to the prepared statement as parameters
                 mysqli_stmt_bind_param($stmt, "ssssdsssss", $param_id, $param_brand, $param_name, $param_status, $param_price, $param_img1, $param_img2, $param_img3, $param_img4, $param_img5);
 
@@ -187,11 +187,11 @@
                 $param_img5 = $img[4];
 
                 // Attempt to execute the prepared statement
-                if(mysqli_stmt_execute($stmt)){
+                if (mysqli_stmt_execute($stmt)){
                     // Records created successfully. Redirect to landing page
                     header("location: index.php");
                     exit();
-                } else{
+                } else {
                     echo "Something went wrong. Please try again later.";
                 }
 
@@ -201,7 +201,7 @@
 
             // Close connection
             mysqli_close($conn);
-        } else{
+        } else {
             // URL doesn't contain id parameter. Redirect to error page
             header("location: error.php");
             exit();
