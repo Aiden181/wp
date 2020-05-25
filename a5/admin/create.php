@@ -6,52 +6,61 @@ require_once "../includes/database.php";
 $name = $address = $salary = "";
 $name_err = $address_err = $salary_err = "";
 
-$id = $brand = $name = $status = $img1 = $img2 = $img3 = $img4 = $img4 = "";
+$id = $brand = $prodname = $specs = $img1 = $img2 = $img3 = $img4 = $img4 = "";
 $price = 0.00;
+$brand_err = $prodname_err = $specs_err = $price_err = "";
+
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    // Validate name
-    $input_name = trim($_POST["name"]);
-    if(empty($input_name)){
-        $name_err = "Please enter a name.";
-    } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $name_err = "Please enter a valid name.";
-    } else{
-        $name = $input_name;
-    }
+     // Validate Brand Name
+     $input_brand = trim($_POST["brand"]);
+     if(empty($input_brand)){
+         $brand_err = "Please enter a product brand.";     
+     } else{
+         $brand = $input_brand;
+     }
     
-    // Validate address
-    $input_address = trim($_POST["address"]);
+    // Validate Product Name
+    $input_prodname = trim($_POST["prodname"]);
     if(empty($input_address)){
-        $address_err = "Please enter an address.";     
+        $prodname_err = "Please enter a product name.";     
     } else{
-        $address = $input_address;
+        $prodname = $input_prodname;
+    }
+
+    // Validate Product Name
+    $input_specs = trim($_POST["specs"]);
+    if(empty($input_specs)){
+        $specs_err = "Please enter product's specs.";     
+    } else{
+        $specs = $input_specs;
     }
     
     // Validate salary
-    $input_salary = trim($_POST["salary"]);
+    $input_price = trim($_POST["price"]);
     if(empty($input_salary)){
-        $salary_err = "Please enter the salary amount.";     
+        $price_err = "Please enter the price for your product.";     
     } elseif(!ctype_digit($input_salary)){
-        $salary_err = "Please enter a positive integer value.";
+        $price_err = "Please enter a positive integer value.";
     } else{
-        $salary = $input_salary;
+        $price = $input_price;
     }
     
     // Check input errors before inserting in database
-    if(empty($name_err) && empty($address_err) && empty($salary_err)){
+    if(empty($brand_err) && empty($prodname_err) && empty($specs_err) && empty($price_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO employees (name, address, salary) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO products (brand, prodname, specs, price) VALUES (?, ?, ?,?)";
          
         if($stmt = mysqli_prepare($conn, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_name, $param_address, $param_salary);
+            mysqli_stmt_bind_param($stmt, "sss", $param_brand, $param_prodname, $param_specs, $param_price);
             
             // Set parameters
-            $param_name = $name;
-            $param_address = $address;
-            $param_salary = $salary;
+            $param_brand = $brand;
+            $param_prodname = $prodname;
+            $param_specs = $specs;
+            $param_price = $price;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -91,30 +100,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h2>Add Product</h2>
+                        <h2>Create New Product</h2>
                     </div>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
+                        <div class="form-group <?php echo (!empty($brand_err)) ? 'has-error' : ''; ?>">
                             <label>Brand</label>
-                            <input type="text" name="brand" class="form-control" value="<?php echo $name; ?>">
-                            <span class="help-block"><?php echo $name_err;?></span>
+                            <input type="text" name="brand" class="form-control" value="<?php echo $brand; ?>">
+                            <span class="help-block"><?php echo $brand_err;?></span>
                         </div>
-                        <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
+                        <div class="form-group <?php echo (!empty($prodname_err)) ? 'has-error' : ''; ?>">
                             <label>Product</label>
-                            <input type="text" name="product" class="form-control" value="<?php echo $name; ?>">
-                            <span class="help-block"><?php echo $name_err;?></span>
+                            <input type="text" name="product" class="form-control" value="<?php echo $prodname; ?>">
+                            <span class="help-block"><?php echo $prodname_err;?></span>
                         </div>
-                        <div class="form-group <?php echo (!empty($address_err)) ? 'has-error' : ''; ?>">
+                        <div class="form-group <?php echo (!empty($specs_err)) ? 'has-error' : ''; ?>">
                             <label>Specs</label>
-                            <textarea name="specs" class="form-control"><?php echo $address; ?></textarea>
-                            <span class="help-block"><?php echo $address_err;?></span>
+                            <input type="text" name="specs" class="form-control" value="<?php echo $specs; ?>">
+                            <span class="help-block"><?php echo $specs_err;?></span>
                         </div>
-                        <div class="form-group <?php echo (!empty($salary_err)) ? 'has-error' : ''; ?>">
+                        <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
                             <label>Price</label>
-                            <input type="text" name="price" class="form-control" value="<?php echo $salary; ?>">
-                            <span class="help-block"><?php echo $salary_err;?></span>
+                            <input type="number" name="price" class="form-control" value="<?php echo $price; ?>">
+                            <span class="help-block"><?php echo $price_err;?></span>
                         </div>
-                        <input type="submit" class="btn btn-primary" value="Submit" style="background-color: #e04b11; border: none;">
+                        <input type="submit" class="btn btn-primary" value="Create New Product" style="background-color: #e04b11; border: none;">
                         <a href="manage.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
