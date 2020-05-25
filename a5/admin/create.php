@@ -171,7 +171,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records created successfully. Redirect to landing page
-                header("location: manage.php");
+                header("location: index.php");
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -248,7 +248,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             <span class="help-block"><?php foreach ($img_err as $errMsg) { echo "$errMsg <br>"; }?></span>
                         </div>
                         <input type="submit" class="btn btn-primary" name="submit" value="Add Product" style="background-color: #e04b11; border: none;">
-                        <a href="manage.php" class="btn btn-default">Cancel</a>
+                        <a href="index.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
             </div>
