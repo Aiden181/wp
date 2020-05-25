@@ -25,7 +25,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 
-  <?php include('includes/tools.php'); ?>
+  <?php
+  include('includes/tools.php');
+  if (!isset($_SESSION['User'])) {
+    $loginIconLink = "login.php";
+  } else {
+    $loginIconLink = "admin/manage.php";
+  }
+  ?>
   
   <!-- css code for parallax effect on this page only -->
   <style>
@@ -83,7 +90,7 @@
               <input class="search-box" type="text" placeholder="Search">
 
               <!-- Login icon -->
-              <a  href="login.php"><i class="fa fa-user icons navbar-text"></i></a>
+              <a  href="<?php echo $loginIconLink ?>"><i class="fa fa-user icons navbar-text"></i></a>
               
               <!-- Shopping cart icon -->
               <a href="shoppingcart.php"><i class="fa fa-shopping-cart icons navbar-text"></i></a>
