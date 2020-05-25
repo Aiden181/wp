@@ -24,7 +24,7 @@
         }
     </style>
     <script type="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
@@ -39,42 +39,42 @@
     }
     ?>
 
-    <div class="wrapper">
-        <div class="container-fluid">
-        <button type="button" class="btn" style="position: relative; right: 45%; background-color: #e04b11; color:"><a href="../index.php" style="color:white">Home Page</a></button>
-        <button type="button" class="btn" style="position: relative; left: 62% ;background-color: #e04b11; color:"><a href="../logout.php" style="color:white">Logout</a></button>
+    <div class="container">
+        <div>
+        <a href="../index.php" style="color:white"><button type="button" class="btn" style="background-color: #e04b11;">Home Page</button></a>
+        <a href="../logout.php" style="color:white"><button type="button" class="btn" style="float: right; background-color: #e04b11;">Logout</button></a>
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Manage Products</h2>
                         <a href="create.php" class="btn btn-success pull-right" style="background-color:#e04b11; border: none;">Add New Product</a>
                     </div>
+                    <br>
                     <?php
-                    // Include config file
-                    require_once "../includes/database.php";
-                    
                     // Attempt select query execution
                     $sql = "SELECT * FROM products";
-                    if($result = mysqli_query($conn, $sql)){
-                        if(mysqli_num_rows($result) > 0){
+                    if ($result = mysqli_query($conn, $sql)) {
+                        if (mysqli_num_rows($result) > 0) {
                             echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";
                                     echo "<tr>";
-                                        echo "<th>#</th>";
+                                        echo "<th>ID</th>";
                                         echo "<th>Brand</th>";
                                         echo "<th>Product Name</th>";
+                                        echo "<th>Status</th>";
                                         echo "<th>Price</th>";
                                         echo "<th>Image</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
-                                while($row = mysqli_fetch_array($result)){
+                                while($row = mysqli_fetch_array($result)) {
                                     echo "<tr>";
                                         echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>" . $row['brand'] . "</td>";
-                                        echo "<td>" . $row['prodname'] . "</td>";
+                                        echo "<td>" . $row['name'] . "</td>";
+                                        echo "<td>" . $row['status'] . "</td>";
                                         echo "<td>" . $row['price'] . "</td>";
-                                        echo "<td>" . $row['img'] . "</td>";
+                                        echo "<td><img style=\"max-width: 75px;\" src='" . $row['img1'] . "' alt='" . $row['id'] . "preview image'></td>";
                                         echo "<td>";
                                             echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
                                             echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
@@ -82,7 +82,7 @@
                                         echo "</td>";
                                     echo "</tr>";
                                 }
-                                echo "</tbody>";                            
+                                echo "</tbody>";
                             echo "</table>";
                             // Free result set
                             mysqli_free_result($result);
@@ -92,12 +92,12 @@
                     } else{
                         echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
                     }
- 
+
                     // Close connection
                     mysqli_close($conn);
                     ?>
                 </div>
-            </div>        
+            </div>
         </div>
     </div>
 </body>

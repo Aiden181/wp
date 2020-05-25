@@ -1,36 +1,36 @@
-brand,name,status,price,image url,website
-Daniel Wellington,CLASSIC DOVER,,179,img/watches/dw1.jpg,dw1.php
-Daniel Wellington,CLASSIC CORNWALL,,199,img/watches/dw2.jpg,dw2.php
-Daniel Wellington,CLASSIC ROSELYN,,199,img/watches/dw3.jpg,dw3.php
-Daniel Wellington,CLASSIC BAYSWATER,,199,img/watches/dw4.jpg,dw4.php
-Daniel Wellington,CLASSIC CAMBRIDGE,,199,img/watches/dw5.jpg,dw5.php
-Daniel Wellington,CLASSIC GLASGOW,,199,img/watches/dw6.jpg,dw6.php
-Daniel Wellington,CLASSIC CANTERBURY,,199,img/watches/dw7.jpg,dw7.php
-Daniel Wellington,CLASSIC WARWICK,,199,img/watches/dw8.jpg,dw8.php
-movado,MOVADO BOLD EVOLUTION,,650,img/watches/movado1.png,movado1.php
-movado,MODERN 47,,695,img/watches/movado2.png,movado2.php
-movado,MOVADO FACE,,350,img/watches/movado3.png,movado3.php
-movado,MOVADO ULTRA SLIM,,895,img/watches/movado4.png,movado4.php
-movado,MOVADO BOLD VERSO,,595,img/watches/movado5.png,movado5.php
-movado,MUSEUM SPORT,,995,img/watches/movado6.png,movado6.php
-movado,SERIES 800,,1295,img/watches/movado7.png,movado7.php
-movado,MOVADO BOLD CERAMIC,,695,img/watches/movado8.png,movado8.php
-MVMT,CLASSIC BLACK LEATHER,,95,img/watches/mvmt1.jpg,mvmt1.php
-MVMT,CLASSIC BRONZE AGE,Sale,82.5,img/watches/mvmt2.jpg,mvmt2.php
-MVMT,CLASSIC BLACK ROSE,,110,img/watches/mvmt3.jpg,mvmt3.php
-MVMT,CLASSIC WHITE BLACK,,95,img/watches/mvmt4.jpg,mvmt4.php
-MVMT,THE 40 - ROSE GOLD BROWN,,120,img/watches/mvmt5.jpg,mvmt5.php
-MVMT,THE 40 - ROSE GOLD NATURAL TAN,,120,img/watches/mvmt6.jpg,mvmt6.php
-MVMT,THE 40 - BLACK LINK,,130,img/watches/mvmt7.jpg,mvmt7.php
-MVMT,THE 40 - GUNMETAL MESH,,125,img/watches/mvmt8.jpg,mvmt8.php
-MVMT,CHRONO GUNMETAL SANDSTONE,,135,img/watches/mvmt9.jpg,mvmt9.php
-sevenfriday,P3B/06 RACING TEAM RED,,1150,img/watches/sevenfriday1.png,sevenfriday1.php
-sevenfriday,M1B/01M URBAN EXPLORER,,1355,img/watches/sevenfriday2.png,sevenfriday2.php
-sevenfriday,M3/04 - PINKY,New,1750,img/watches/sevenfriday3.png,sevenfriday3.php
-sevenfriday,M1B/01 URBAN EXPLORER,,1250,img/watches/sevenfriday4.png,sevenfriday4.php
-sevenfriday,M3/05 - PIMP,New,1750,img/watches/sevenfriday5.png,sevenfriday5.php
-sevenfriday,M3/01 SPACESHIP,,1100,img/watches/sevenfriday6.png,sevenfriday6.php
-sevenfriday,M2/02,,1474,img/watches/sevenfriday7.png,sevenfriday7.php
-sevenfriday,P1C/01,,1150,img/watches/sevenfriday8.png,sevenfriday8.php
-sevenfriday,W1/01 BLADE,,1250,img/watches/sevenfriday9.png,sevenfriday9.php
-sevenfriday,Q3/05,,1220,img/watches/sevenfriday10.png,sevenfriday10.php
+id,brand,name,status,price,image1,image2,image3,image4,image5
+dw1,Daniel Wellington,CLASSIC DOVER,,179,../img/watches/dw1.png,../img/watches/dw1-1.png,../img/watches/dw1-2.png,../img/watches/dw1-3.png,../img/watches/dw1-4.png
+dw2,Daniel Wellington,CLASSIC CORNWALL,,199,../img/watches/dw2.png,../img/watches/dw2-1.png,../img/watches/dw2-2.png,../img/watches/dw2-3.png,../img/watches/dw2-4.png
+dw3,Daniel Wellington,CLASSIC ROSELYN,,199,../img/watches/dw3.png,../img/watches/dw3-1.png,../img/watches/dw3-2.png,../img/watches/dw3-3.png,../img/watches/dw3-4.png
+dw4,Daniel Wellington,CLASSIC BAYSWATER,,199,../img/watches/dw4.png,../img/watches/dw4-1.png,../img/watches/dw4-2.png,../img/watches/dw4-3.png,../img/watches/dw4-4.png
+dw5,Daniel Wellington,CLASSIC CAMBRIDGE,,199,../img/watches/dw5.png,../img/watches/dw5-1.png,../img/watches/dw5-2.png,../img/watches/dw5-3.png,../img/watches/dw5-4.png
+dw6,Daniel Wellington,CLASSIC GLASGOW,,199,../img/watches/dw6.png,../img/watches/dw6-1.png,../img/watches/dw6-2.png,../img/watches/dw6-3.png,../img/watches/dw6-4.png
+dw7,Daniel Wellington,CLASSIC CANTERBURY,,199,../img/watches/dw7.png,../img/watches/dw7-1.png,../img/watches/dw7-2.png,../img/watches/dw7-3.png,../img/watches/dw7-4.png
+dw8,Daniel Wellington,CLASSIC WARWICK,,199,../img/watches/dw8.png,../img/watches/dw8-1.png,../img/watches/dw8-2.png,../img/watches/dw8-3.png,../img/watches/dw8-4.png
+movado1,movado,MOVADO BOLD EVOLUTION,,650,../img/watches/movado1.png,../img/watches/movado1.png,../img/watches/movado1-2.png,../img/watches/movado1-3.png,../img/watches/movado1-4.png
+movado2,movado,MODERN 47,,695,../img/watches/movado2.png,../img/watches/movado2-1.png,../img/watches/movado2-2.png,../img/watches/movado2-3.png,../img/watches/movado2-4.png
+movado3,movado,MOVADO FACE,,350,../img/watches/movado3.png,../img/watches/movado3-1.png,../img/watches/movado3-2.png,../img/watches/movado3-3.png,../img/watches/movado3-4.png
+movado4,movado,MOVADO ULTRA SLIM,,895,../img/watches/movado4.png,../img/watches/movado4-1.png,../img/watches/movado4-2.png,../img/watches/movado4-3.png,../img/watches/movado4-4.png
+movado5,movado,MOVADO BOLD VERSO,,595,../img/watches/movado5.png,../img/watches/movado5-1.png,../img/watches/movado5-2.png,../img/watches/movado5-3.png,../img/watches/movado5-4.png
+movado6,movado,MUSEUM SPORT,,995,../img/watches/movado6.png,../img/watches/movado6-1.png,../img/watches/movado6-2.png,../img/watches/movado6-3.png,../img/watches/movado6-4.png
+movado7,movado,SERIES 800,,1295,../img/watches/movado7.png,../img/watches/movado7-1.png,../img/watches/movado7-2.png,../img/watches/movado7-3.png,../img/watches/movado7-4.png
+movado8,movado,MOVADO BOLD CERAMIC,,695,../img/watches/movado8.png,../img/watches/movado8-1.png,../img/watches/movado8-2.png,../img/watches/movado8-3.png,../img/watches/movado8-4.png
+mvmt1,MVMT,CLASSIC BLACK LEATHER,,95,../img/watches/mvmt1.png,../img/watches/mvmt1-1.png,../img/watches/mvmt1-2.png,../img/watches/mvmt1-3.png,../img/watches/mvmt1-4.png
+mvmt2,MVMT,CLASSIC BRONZE AGE,Sale,82.5,../img/watches/mvmt2.png,../img/watches/mvmt2-1.png,../img/watches/mvmt2-2.png,../img/watches/mvmt2-3.png,../img/watches/mvmt2-4.png
+mvmt3,MVMT,CLASSIC BLACK ROSE,,110,../img/watches/mvmt3.png,../img/watches/mvmt3-1.png,../img/watches/mvmt3-2.png,../img/watches/mvmt3-3.png,../img/watches/mvmt3-4.png
+mvmt4,MVMT,CLASSIC WHITE BLACK,,95,../img/watches/mvmt4.png,../img/watches/mvmt4-1.png,../img/watches/mvmt4-2.png,../img/watches/mvmt4-3.png,../img/watches/mvmt4-4.png
+mvmt5,MVMT,THE 40 - ROSE GOLD BROWN,,120,../img/watches/mvmt5.png,../img/watches/mvmt5-1.png,../img/watches/mvmt5-2.png,../img/watches/mvmt5-3.png,../img/watches/mvmt5-4.png
+mvmt6,MVMT,THE 40 - ROSE GOLD NATURAL TAN,,120,../img/watches/mvmt6.png,../img/watches/mvmt6-1.png,../img/watches/mvmt6-2.png,../img/watches/mvmt6-3.png,../img/watches/mvmt6-4.png
+mvmt7,MVMT,THE 40 - BLACK LINK,,130,../img/watches/mvmt7.png,../img/watches/mvmt7-1.png,../img/watches/mvmt7-2.png,../img/watches/mvmt7-3.png,../img/watches/mvmt7-4.png
+mvmt8,MVMT,THE 40 - GUNMETAL MESH,,125,../img/watches/mvmt8.png,../img/watches/mvmt8-1.png,../img/watches/mvmt8-2.png,../img/watches/mvmt8-3.png,../img/watches/mvmt8-4.png
+mvmt9,MVMT,CHRONO GUNMETAL SANDSTONE,,135,../img/watches/mvmt9.png,../img/watches/mvmt9-1.png,../img/watches/mvmt9-2.png,../img/watches/mvmt9-3.png,../img/watches/mvmt9-4.png
+sevenfriday1,sevenfriday,P3B/06 RACING TEAM RED,,1150,../img/watches/sevenfriday1.png,../img/watches/sevenfriday1.png,../img/watches/sevenfriday1-2.png,../img/watches/sevenfriday1-3.png,../img/watches/sevenfriday1-4.png
+sevenfriday2,sevenfriday,M1B/01M URBAN EXPLORER,,1355,../img/watches/sevenfriday2.png,../img/watches/sevenfriday2-1.png,../img/watches/sevenfriday2-2.png,../img/watches/sevenfriday2-3.png,../img/watches/sevenfriday2-4.png
+sevenfriday3,sevenfriday,M3/04 - PINKY,New,1750,../img/watches/sevenfriday3.png,../img/watches/sevenfriday3-1.png,../img/watches/sevenfriday3-2.png,../img/watches/sevenfriday3-3.png,../img/watches/sevenfriday3-4.png
+sevenfriday4,sevenfriday,M1B/01 URBAN EXPLORER,,1250,../img/watches/sevenfriday4.png,../img/watches/sevenfriday4-1.png,../img/watches/sevenfriday4-2.png,../img/watches/sevenfriday4-3.png,../img/watches/sevenfriday4-4.png
+sevenfriday5,sevenfriday,M3/05 - PIMP,New,1750,../img/watches/sevenfriday5.png,../img/watches/sevenfriday5-1.png,../img/watches/sevenfriday5-2.png,../img/watches/sevenfriday5-3.png,../img/watches/sevenfriday5-4.png
+sevenfriday6,sevenfriday,M3/01 SPACESHIP,,1100,../img/watches/sevenfriday6.png,../img/watches/sevenfriday6-1.png,../img/watches/sevenfriday6-2.png,../img/watches/sevenfriday6-3.png,../img/watches/sevenfriday6-4.png
+sevenfriday7,sevenfriday,M2/02,,1474,../img/watches/sevenfriday7.png,../img/watches/sevenfriday7-1.png,../img/watches/sevenfriday7-2.png,../img/watches/sevenfriday7-3.png,../img/watches/sevenfriday7-4.png
+sevenfriday8,sevenfriday,P1C/01,,1150,../img/watches/sevenfriday8.png,../img/watches/sevenfriday8-1.png,../img/watches/sevenfriday8-2.png,../img/watches/sevenfriday8-3.png,../img/watches/sevenfriday8-4.png
+sevenfriday9,sevenfriday,W1/01 BLADE,,1250,../img/watches/sevenfriday9.png,../img/watches/sevenfriday9-1.png,../img/watches/sevenfriday9-2.png,../img/watches/sevenfriday9-3.png,../img/watches/sevenfriday9-4.png
+sevenfriday10,sevenfriday,Q3/05,,1220,../img/watches/sevenfriday10.png,../img/watches/sevenfriday10-1.png,../img/watches/sevenfriday10-2.png,../img/watches/sevenfriday10-3.png,../img/watches/sevenfriday10-4.png
