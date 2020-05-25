@@ -43,7 +43,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 <head>
     <meta charset="UTF-8">
     <title>View Record</title>
+
+    <!-- website icon -->
+    <link rel="icon" href="../img/favicon.png">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+
     <style type="text/css">
         .wrapper{
             width: 500px;
