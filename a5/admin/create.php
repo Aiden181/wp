@@ -6,9 +6,9 @@ require_once "../includes/database.php";
 $name = $address = $salary = "";
 $name_err = $address_err = $salary_err = "";
 
-$id = $brand = $prodname = $specs = $img1 = $img2 = $img3 = $img4 = $img4 = "";
+$id = $brand = $prodname = $img1 = $img2 = $img3 = $img4 = $img4 = "";
 $price = 0.00;
-$brand_err = $prodname_err = $specs_err = $price_err = "";
+$brand_err = $prodname_err = $price_err = "";
 
  
 // Processing form data when form is submitted
@@ -28,16 +28,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $prodname = $input_prodname;
     }
-
-    // Validate Product Name
-    $input_specs = trim($_POST["specs"]);
-    if(empty($input_specs)){
-        $specs_err = "Please enter product's specs.";     
-    } else{
-        $specs = $input_specs;
-    }
     
-    // Validate salary
+    // Validate Price
     $input_price = trim($_POST["price"]);
     if(empty($input_salary)){
         $price_err = "Please enter the price for your product.";     
@@ -48,18 +40,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($brand_err) && empty($prodname_err) && empty($specs_err) && empty($price_err)){
+    if(empty($brand_err) && empty($prodname_err) && empty($price_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO products (brand, prodname, specs, price) VALUES (?, ?, ?,?)";
+        $sql = "INSERT INTO products (brand, prodname, price) VALUES (?, ?, ?)";
          
         if($stmt = mysqli_prepare($conn, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_brand, $param_prodname, $param_specs, $param_price);
+            mysqli_stmt_bind_param($stmt, "sss", $param_brand, $param_prodname, $param_price);
             
-            // Set parameters
+            // Set Parameters
             $param_brand = $brand;
             $param_prodname = $prodname;
-            $param_specs = $specs;
             $param_price = $price;
             
             // Attempt to execute the prepared statement
@@ -109,14 +100,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span class="help-block"><?php echo $brand_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($prodname_err)) ? 'has-error' : ''; ?>">
-                            <label>Product</label>
+                            <label>Product Name</label>
                             <input type="text" name="product" class="form-control" value="<?php echo $prodname; ?>">
                             <span class="help-block"><?php echo $prodname_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($specs_err)) ? 'has-error' : ''; ?>">
-                            <label>Specs</label>
-                            <input type="text" name="specs" class="form-control" value="<?php echo $specs; ?>">
-                            <span class="help-block"><?php echo $specs_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
                             <label>Price</label>
