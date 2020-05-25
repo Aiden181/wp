@@ -34,6 +34,8 @@
 
     <div class="wrapper">
         <div class="container-fluid">
+        <button type="button" class="btn" style="position: relative; right: 45%; background-color: #e04b11; color:"><a href="../index.php" style="color:white">Home Page</a></button>
+        <button type="button" class="btn" style="position: relative; left: 62% ;background-color: #e04b11; color:"><a href="../logout.php" style="color:white">Logout</a></button>
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">

@@ -159,6 +159,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
 <body>
     <div class="wrapper">
         <div class="container-fluid">
+        <button type="button" class="btn" style="position: relative; right: 30%; top: 70px ;background-color: #e04b11; color:"><a href="manage.php" style="color:white">Manage</a></button>
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
