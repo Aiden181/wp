@@ -24,8 +24,6 @@
         echo "You should not be here. Only follow links!";
         die();
     }
-    // Include config file
-    require_once "../includes/database.php";
 
     // Define variables and initialize with empty values
     $id = $brand = $name = $status = "";

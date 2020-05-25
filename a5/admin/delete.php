@@ -24,8 +24,6 @@
         echo "You should not be here. Only follow links!";
         die();
     }
-    // Include config file
-    require_once "../includes/database.php";
 
     // Process delete operation after confirmation
     if(isset($_POST["id"]) && !empty($_POST["id"])) {

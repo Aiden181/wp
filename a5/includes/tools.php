@@ -1,14 +1,9 @@
 <?php
     session_start();
 
-    function sortByAsc($a, $b) {
-        return $a['1'] - $b['1'];
-    }
-    function sortByDesc($a, $b) {
-        return $b['1'] - $a['1'];
-    }
-    
-    // this function displays watches which brand name matches the first parameter, also filter
+    // Include database file
+    require_once "database.php";
+
     function displayWatches($brandName, $filter) {
         $tempList = array();
         $watchList = array();

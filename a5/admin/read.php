@@ -24,8 +24,6 @@
         echo "You should not be here. Only follow links!";
         die();
     }
-    // Include config file
-    require_once "../includes/database.php";
 
     // Check existence of id parameter before processing further
     if(isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
