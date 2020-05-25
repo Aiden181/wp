@@ -49,7 +49,6 @@
                                         echo "<th>#</th>";
                                         echo "<th>Brand</th>";
                                         echo "<th>Product Name</th>";
-                                        echo "<th>Specs</th>";
                                         echo "<th>Price</th>";
                                         echo "<th>Image</th>";
                                     echo "</tr>";
@@ -60,7 +59,6 @@
                                         echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>" . $row['brand'] . "</td>";
                                         echo "<td>" . $row['prodname'] . "</td>";
-                                        echo "<td>" . $row['specs'] . "</td>";
                                         echo "<td>" . $row['price'] . "</td>";
                                         echo "<td>" . $row['img'] . "</td>";
                                         echo "<td>";
