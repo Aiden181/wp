@@ -218,7 +218,7 @@
           <div class="w3-col l3 s6">
             <div class="w3-container">
               <div class="w3-display-container">
-                <a href=products/mvmt3.php><img src="img/watches/mvmt3.jpg" style="width:100%"></a>
+                <a href=products/mvmt3.php><img src="img/watches/mvmt3.png" style="width:100%"></a>
                 <?php
                   echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
                   echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"CLASSIC BLACK ROSE\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
@@ -232,7 +232,7 @@
           <div class="w3-col l3 s6">
           <div class="w3-container">
               <div class="w3-display-container">
-                <a href=products/dw7.php><img src="img/watches/dw7.jpg" style="width:100%"></a>
+                <a href=products/dw7.php><img src="img/watches/dw7.png" style="width:100%"></a>
                 <?php
                   echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
                   echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"CLASSIC CAMBRIDGE\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
@@ -246,7 +246,7 @@
           <div class="w3-col l3 s6">
             <div class="w3-container">
               <div class="w3-display-container">
-                <a href=products/dw6.php><img src="img/watches/dw6.jpg" style="width:100%"></a>
+                <a href=products/dw6.php><img src="img/watches/dw6.png" style="width:100%"></a>
                 <?php
                   echo "            <form action=\"$currentPage\" method=\"GET\" class=\"w3-display-hover\" style=\"position: absolute; top: 75%; left: 25%;\">\n";
                   echo "              <button class=\"w3-button w3-black add-to-cart\" name='item' onclick=\"this.form.submit()\" value=\"CLASSIC GLASGOW\">Add To Cart <i class=\"fa fa-shopping-cart\"></i></button>\n";
