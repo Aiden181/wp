@@ -208,10 +208,10 @@
                         }
                     }
                     foreach($_FILES["files"]["name"] as $key => $imageName) {
-                        array_push($img, "../img/watches/$imageName");
+                        if (!empty($imageName)) {
+                            array_push($img, "../img/watches/$imageName");
+                        }
                     }
-                }
-            }
 
             // Check input errors before inserting in database
             if ($id_err === "" && $brand_err === "" && $name_err === "" && $price_err === "" && $image_err == 0) {

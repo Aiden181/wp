@@ -157,7 +157,9 @@
                     }
                 }
                 foreach($_FILES["files"]["name"] as $key => $imageName) {
-                    array_push($img, "../img/watches/$imageName");
+                    if (!empty($imageName)) {
+                        array_push($img, "../img/watches/$imageName");
+                    }
                 }
             }
         }
