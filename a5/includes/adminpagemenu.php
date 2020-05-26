@@ -51,19 +51,7 @@
                 <hr>
                 <li>
                     <a href="create.php"><span>Create</span></a>
-                </li>
-                <hr>
-                <li>
-                    <a href="read.php"><span>Read</span></a>
-                </li>
-                <hr>
-                <li>
-                    <a href="update.php"><span>Update</span></a>
-                </li>
-                <hr>
-                <li>
-                    <a href="delete.php"><span>Delete</span></a>
-                </li>
+                </li>           
             </ul>
             <br>
             <br>
