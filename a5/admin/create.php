@@ -79,8 +79,8 @@
             $input_price = trim($_POST["price"]);
             if (empty($input_price)) {
                 $price_err = "Please enter the price for your product.";
-            } else if (!ctype_digit($input_price)) {
-                $price_err = "Please enter a positive integer value.";
+            } else if (is_numeric($input_price) && $input_price < 0) {
+                $price_err = "Please enter a positive value.";
             } else {
                 $price = $input_price;
             }
@@ -315,7 +315,7 @@
                         </div>
                         <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
                             <label>Price</label>
-                            <input type="number" min="0" name="price" class="form-control" value="<?php echo $price; ?>">
+                            <input type="number" min="0" step="0.01" name="price" class="form-control" value="<?php echo $price; ?>">
                             <span class="help-block"><?php echo $price_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($caseSize_err)) ? 'has-error' : ''; ?>">
