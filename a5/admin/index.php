@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
-
+    
     <style type="text/css">
         .wrapper{
             width: 650px;
@@ -22,6 +22,41 @@
         table tr td:last-child a{
             margin-right: 15px;
         }
+
+        .sidenav {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #e04b11;
+        overflow-x: hidden;
+        padding-top: 20px;
+        }
+
+        .sidenav a {
+        padding: 6px 1px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
+        }
+
+        .sidenav a:hover {
+        color: #f1f1f1;
+        }
+
+        .main {
+        margin-left: 160px; /* Same as the width of the sidenav */
+        font-size: 28px; /* Increased text to enable scrolling */
+        padding: 0px 10px;
+        }
+
+        @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+        }
     </style>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -32,6 +67,7 @@
 <body>
     <?php
     include('../includes/tools.php');
+    include('../includes/adminpagemenu.php');
 
     if (!isset($_SESSION['User'])) {
         echo "You should not be here. Only follow links!";
@@ -39,10 +75,10 @@
     }
     ?>
 
+    
+
     <div class="container">
         <div>
-        <a href="../index.php" style="color:white"><button type="button" class="btn" style="background-color: #e04b11; font-weight: bold">Home Page</button></a>
-        <a href="../logout.php" style="color:white"><button type="button" class="btn" style="float: right; background-color: #e04b11; font-weight: bold">Logout</button></a>
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
