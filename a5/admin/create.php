@@ -27,13 +27,12 @@
     }
 
     // Define variables and initialize with empty values
-    $id = $brand = $name = $status = "";
+    $id = $brand = $name = $status = $caseSize = $caseThickness = $glass = $movement = "";
     $price = 0.00;
-    $id_err = $brand_err = $name_err = $price_err = "";
+    $id_err = $brand_err = $name_err = $price_err = $caseSize_err = $caseThickness_err = $glass_err = $movement_err = "";
     $img = array();
     $img_err = array();
     $image_err = 0;
-    $uploadOk = 1; // set upload failure or success
 
 
     // Processing form data when form is submitted
@@ -68,7 +67,7 @@
             }
         }
 
-        // Validate Product Name
+        // Validate Product Status
         if (isset($_POST["status"])) {
             $input_status = trim($_POST["status"]);
             $status = $input_status;
@@ -84,6 +83,30 @@
             } else {
                 $price = $input_price;
             }
+        }
+
+        // Validate Product Case Size
+        if (isset($_POST["caseSize"])) {
+            $input_caseSize = trim($_POST["caseSize"]);
+            $caseSize = $input_caseSize;
+        }
+
+        // Validate Product Case Thickness
+        if (isset($_POST["caseThickness"])) {
+            $input_caseThickness = trim($_POST["caseThickness"]);
+            $caseThickness = $input_caseThickness;
+        }
+
+        // Validate Product Glass Type
+        if (isset($_POST["glass"])) {
+            $input_glass = trim($_POST["glass"]);
+            $glass = $input_glass;
+        }
+
+        // Validate Product Movement Type
+        if (isset($_POST["movement"])) {
+            $input_movement = trim($_POST["movement"]);
+            $movement = $input_movement;
         }
 
         // Validate Image(s)
@@ -111,29 +134,24 @@
                     $check = getimagesize($fileTemp);
                     if ($check !== 0) {
                         // array_push($img_err, "File is an image - " . $check["mime"] . ".");
-                        $uploadOk = 1;
                     } else {
                         array_push($img_err, "File is not an image.");
-                        $uploadOk = 0;
                         $image_err++;
                     }
 
                     // Check if file already exists
                     if (file_exists($target_file)) {
                         array_push($img_err, "File already exists!");
-                        $uploadOk = 0;
                         $image_err++;
                     }
                     // Check file size (disallow files larger than 3 MegaBytes or 3,000,000 Bytes)
                     if ($fileSize > 3000000) {
                         array_push($img_err, "Your file is too large!");
-                        $uploadOk = 0;
                         $image_err++;
                     }
                     // Allow certain file formats
                     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
                         array_push($img_err, "Only JPG, JPEG, and PNG files are allowed!");
-                        $uploadOk = 0;
                         $image_err++;
                     }
                 }
@@ -160,11 +178,18 @@
 
         // Check input errors before inserting in database
         if ($id_err === "" && $brand_err === "" && $name_err === "" && $price_err === "" && $image_err == 0) {
-            // Check if $uploadOk is set to 0 by an error
-            if ($uploadOk == 0) {
-                array_push($img_err, "Sorry, your file was not uploaded.");
-            // if everything is ok, upload file
-            } else {
+            // upload images
+            foreach($_FILES["files"]["tmp_name"] as $key => $tmp_name) {
+                $fileName = $_FILES["files"]["name"][$key];
+                $fileTemp = $_FILES["files"]["tmp_name"][$key];
+
+                // specifies the directory where the file is going to be placed
+                $target_dir = "../img/watches/";
+                // specifies the path of the file to be uploaded
+                $target_file = $target_dir . basename($fileName);
+                // holds the file extension of the file (in lower case)
+                $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
                 if (move_uploaded_file($fileTemp, $target_file)) {
                     array_push($img_err, "The file ". basename($fileName). " has been uploaded successfully.");
                 } else {
@@ -173,11 +198,16 @@
             }
 
             // Prepare an insert statement
-            $sql = "INSERT INTO products (id, brand, name, status, price, img1, img2, img3, img4, img5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO products 
+            (id, brand, name, status, price, img1, img2, img3, img4, img5, case_size, case_thickness, glass, movement) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             if ($stmt = mysqli_prepare($conn, $sql)) {
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "ssssdsssss", $param_id, $param_brand, $param_name, $param_status, $param_price, $param_img1, $param_img2, $param_img3, $param_img4, $param_img5);
+                mysqli_stmt_bind_param($stmt, "ssssdsssssssss", 
+                $param_id, $param_brand, $param_name, $param_status, $param_price, 
+                $param_img1, $param_img2, $param_img3, $param_img4, $param_img5, 
+                $param_caseSize, $param_caseThickness, $param_glass, $param_movement);
 
                 // Set parameters
                 $param_id = $id;
@@ -190,9 +220,51 @@
                 $param_img3 = $img[2];
                 $param_img4 = $img[3];
                 $param_img5 = $img[4];
+                
+                $param_caseSize = $caseSize;
+                $param_caseThickness = $caseThickness;
+                $param_glass = $glass;
+                $param_movement = $movement;
 
                 // Attempt to execute the prepared statement
-                if (mysqli_stmt_execute($stmt)){
+                if (mysqli_stmt_execute($stmt)) {
+                    // ------------------- //
+                    // create product file //
+                    // ------------------- //
+
+                    $filename = "../products/$id.php";
+                    $fp = fopen($filename, "w");
+                    flock($fp, LOCK_EX);
+                
+                    fwrite($fp, '<?php' . "\n");
+                    fwrite($fp, '$images = array();' . "\n");
+                    fwrite($fp, 'array_push($images, ' . "\n");
+
+                    // get last element in array
+                    $last = end($img);
+                    // go through all available image links
+                    foreach ($img as $imgLink) {
+                        // if last element then close the array
+                        if ($imgLink == $last) {
+                            fwrite($fp, '"' . "$imgLink" . '");' . "\n");
+                        } else {
+                            fwrite($fp, '"' . "$imgLink" . '", ' . "\n");
+                        }
+                    }
+                    fwrite($fp,  "\n");
+                    fwrite($fp, '$name = "' . $name . '";' . "\n");
+                    fwrite($fp, '$price = "' . $price . '";' . "\n");
+                    fwrite($fp, '$caseSize = "' . $caseSize . '";' . "\n");
+                    fwrite($fp, '$caseThickness = "' . $caseThickness . '";' . "\n");
+                    fwrite($fp, '$glass = "' . $glass . '";' . "\n");
+                    fwrite($fp, '$movement = "' . $movement . '";' . "\n");
+                    fwrite($fp,  "\n");
+                    fwrite($fp, "include('includes/productdetails.php');\n");
+                    fwrite($fp, '?>');
+                    
+                    flock($fp, LOCK_UN);
+                    fclose($fp);
+
                     // Records created successfully. Redirect to landing page
                     header("Location: index.php");
                     exit();
@@ -236,7 +308,7 @@
                             <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
                             <span class="help-block"><?php echo $name_err;?></span>
                         </div>
-                        <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
+                        <div class="form-group">
                             <label>Product Status</label>
                             <input type="text" name="status" class="form-control" value="<?php echo $status; ?>">
                         </div>
@@ -245,9 +317,29 @@
                             <input type="number" min="0" name="price" class="form-control" value="<?php echo $price; ?>">
                             <span class="help-block"><?php echo $price_err;?></span>
                         </div>
+                        <div class="form-group <?php echo (!empty($caseSize_err)) ? 'has-error' : ''; ?>">
+                            <label>Product Case Size</label>
+                            <input type="text" name="caseSize" class="form-control" value="<?php echo $caseSize; ?>">
+                            <span class="help-block"><?php echo $caseSize_err;?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($caseThickness_err)) ? 'has-error' : ''; ?>">
+                            <label>Product Case Thickness</label>
+                            <input type="text" name="caseThickness" class="form-control" value="<?php echo $caseThickness; ?>">
+                            <span class="help-block"><?php echo $caseThickness_err;?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($glass_err)) ? 'has-error' : ''; ?>">
+                            <label>Product Glass Type</label>
+                            <input type="text" name="glass" class="form-control" value="<?php echo $glass; ?>">
+                            <span class="help-block"><?php echo $glass_err;?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($movement_err)) ? 'has-error' : ''; ?>">
+                            <label>Product Movement Type</label>
+                            <input type="text" name="movement" class="form-control" value="<?php echo $movement; ?>">
+                            <span class="help-block"><?php echo $movement_err;?></span>
+                        </div>
                         <div class="form-group <?php echo (!empty($img_err)) ? 'has-error' : ''; ?>">
                             <label>Image</label>
-                            <input type="file" class="form-control" name="files[]" id="files[5]" multiple value="<?php echo $img; ?>">
+                            <input type="file" class="form-control" name="files[]" id="files[]" multiple value="<?php echo $img; ?>">
                             <span class="help-block"><?php foreach ($img_err as $errMsg) { echo "$errMsg <br>"; }?></span>
                         </div>
                         <input type="submit" class="btn btn-primary" name="submit" value="Add Product" style="background-color: #e04b11; border: none;">
