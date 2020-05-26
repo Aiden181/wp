@@ -42,27 +42,27 @@
     <div class="sidenav">
             <ul style="list-style: none;">
                 <li>
-                    <a href="../index.php"><i class="fas fa-home"></i><span> Home</span></a>
+                    <a href="../index.php"><span> Home</span></a>
                 </li>
                 <hr>
                 <li>
-                    <a href="index.php"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+                    <a href="index.php"><span>Dashboard</span></a>
                 </li>
                 <hr>
                 <li>
-                    <a href="create.php"><i class=""></i><span>Create</span></a>
+                    <a href="create.php"><span>Create</span></a>
                 </li>
                 <hr>
                 <li>
-                    <a href="read.php"><i class=""></i><span>Read</span></a>
+                    <a href="read.php"><span>Read</span></a>
                 </li>
                 <hr>
                 <li>
-                    <a href="update.php"><i class=""></i><span>Update</span></a>
+                    <a href="update.php"><span>Update</span></a>
                 </li>
                 <hr>
                 <li>
-                    <a href="delete.php"><i class=""></i><span>Delete</span></a>
+                    <a href="delete.php"><span>Delete</span></a>
                 </li>
             </ul>
             <br>
