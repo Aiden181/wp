@@ -27,10 +27,15 @@
 
     // Process delete operation after confirmation
     if (isset($_POST["id"]) && !empty($_POST["id"])) {
-        // Prepare a delete statement
-        $sql = "DELETE FROM products WHERE id = ?";
+        
+        // get image links so we can delete them from local drive
+        $select_sql = "SELECT `img1`, `img2`, `img3`, `img4`, `img5` FROM products WHERE id = ?;";
+        // delete statement
+        $delete_sql = "DELETE FROM products WHERE id = ?;";
 
-        if ($stmt = mysqli_prepare($conn, $sql)) {
+        // send query, get results, store result rows as array, go through each array element and
+        // delete the image from available url
+        if ($stmt = mysqli_prepare($conn, $select_sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_id);
 
@@ -39,8 +44,40 @@
 
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
-                // Records deleted successfully. Redirect to landing page
-                header("location: index.php");
+                $result = mysqli_stmt_get_result($stmt);
+
+                if (mysqli_num_rows($result) == 1) {
+                    /* Fetch result row as an associative array. Since the result set
+                    contains only one row, we don't need to use while loop */
+                    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                }
+                // delete product images
+                foreach ($row as $value) {
+                    unlink($value);
+                }
+
+            } else {
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+
+        if ($stmt = mysqli_prepare($conn, $delete_sql)) {
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_id);
+
+            // Set parameters
+            $param_id = trim($_POST["id"]);
+
+            // Attempt to execute the prepared statement
+            if (mysqli_stmt_execute($stmt)) {
+                // delete product detail file
+                unlink("../products/$param_id.php");
+
+                // records deleted successfully. Redirect to landing page
+                header("Location: index.php");
                 exit();
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
@@ -56,7 +93,7 @@
         // Check existence of id parameter
         if (empty(trim($_GET["id"]))) {
             // URL doesn't contain id parameter. Redirect to error page
-            header("location: error.php");
+            header("Location: error.php");
             exit();
         }
     }
