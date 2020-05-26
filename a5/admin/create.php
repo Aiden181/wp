@@ -79,8 +79,8 @@
             $input_price = trim($_POST["price"]);
             if (empty($input_price)) {
                 $price_err = "Please enter the price for your product.";
-            } else if (!ctype_digit($input_price)) {
-                $price_err = "Please enter a positive integer value.";
+            } else if (is_numeric($input_price) && $input_price < 0) {
+                $price_err = "Please enter a positive value.";
             } else {
                 $price = $input_price;
             }
@@ -114,7 +114,7 @@
         if (isset($_POST["submit"])) {
             // no images uploaded
             if ($_FILES["files"]['tmp_name']['0'] === "") {
-                array_push($img_err, "Please upload an image.");
+                array_push($img_err, "Please upload at least 1 image.");
             }
             // image(s) uploaded
             else {
@@ -194,7 +194,7 @@
                 if (move_uploaded_file($fileTemp, $target_file)) {
                     array_push($img_err, "The file ". basename($fileName). " has been uploaded successfully.");
                 } else {
-                    array_push($img_err, "There was an error uploading your file.");
+                    // array_push($img_err, "There was an error uploading your file.");
                 }
             }
 
@@ -216,11 +216,11 @@
                 $param_name = $name;
                 $param_status = $status;
                 $param_price = $price;
-                $param_img1 = $img[0];
-                $param_img2 = $img[1];
-                $param_img3 = $img[2];
-                $param_img4 = $img[3];
-                $param_img5 = $img[4];
+                $param_img1 = isset($img[0]) ? $img[0] : "";;
+                $param_img2 = isset($img[1]) ? $img[1] : "";
+                $param_img3 = isset($img[2]) ? $img[2] : "";
+                $param_img4 = isset($img[3]) ? $img[3] : "";
+                $param_img5 = isset($img[4]) ? $img[4] : "";
                 
                 $param_caseSize = $caseSize;
                 $param_caseThickness = $caseThickness;
@@ -315,7 +315,7 @@
                         </div>
                         <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
                             <label>Price</label>
-                            <input type="number" min="0" name="price" class="form-control" value="<?php echo $price; ?>">
+                            <input type="number" min="0" step="0.01" name="price" class="form-control" value="<?php echo $price; ?>">
                             <span class="help-block"><?php echo $price_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($caseSize_err)) ? 'has-error' : ''; ?>">
