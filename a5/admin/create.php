@@ -272,6 +272,7 @@
                     header("Location: index.php");
                     exit();
                 } else {
+                    var_dump(mysql_error());
                     echo "Something went wrong. Please try again later.";
                 }
 
@@ -281,10 +282,6 @@
 
             // Close connection
             mysqli_close($conn);
-        } else {
-            // URL doesn't contain id parameter. Redirect to error page
-            header("Location: error.php");
-            exit();
         }
     }
     ?>
@@ -340,10 +337,10 @@
                             <input type="text" name="movement" class="form-control" value="<?php echo $movement; ?>">
                             <span class="help-block"><?php echo $movement_err;?></span>
                         </div>
-                        <div class="form-group <?php echo (!empty($img_err)) ? 'has-error' : ''; ?>">
-                            <label>Image</label>
-                            <input type="file" class="form-control" name="files[]" id="files[]" multiple value="<?php echo $img; ?>">
-                            <span class="help-block"><?php foreach ($img_err as $errMsg) { echo "$errMsg <br>"; }?></span>
+                        <div class="form-group">
+                            <label>Image (Maximum of 5 images)</label>
+                            <input type="file" class="form-control" name="files[]" id="files[]" multiple value="">
+                            <span class="help-block"></span>
                         </div>
                         <input type="submit" class="btn btn-primary" name="submit" value="Add Product" style="background-color: #e04b11; border: none;">
                         <a href="index.php" class="btn btn-default">Cancel</a>
