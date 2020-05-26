@@ -14,6 +14,28 @@
             width: 500px;
             margin: 0 auto;
         }
+
+        @media (min-width: 50px) {
+            .image-list {
+                list-style: none;
+                position: relative;
+                right: 40px;
+                display: flex;
+            }
+            .image-list input {
+                max-width: 215px;
+            }
+
+            .image-list li {
+                margin: 20px 0 0 0;
+                background-color: white;
+            }
+            .image-list img {
+                width: 100%;
+                max-width: 215px;
+                border: 1px solid #e04b11;
+            }
+        }
     </style>
 </head>
 <body>
@@ -30,7 +52,6 @@
     $id = $brand = $name = $status = $img1 = $img2 = $img3 = $img4 =$img5 = $caseSize = $caseThickness = $glass = $movement = "";
     $price = 0.00;
     $id_err = $brand_err = $name_err = $price_err = $caseSize_err = $caseThickness_err = $glass_err = $movement_err = "";
-    $img = array();
     $img_err = array();
     $image_err = 0;
 
@@ -67,6 +88,12 @@
                     $img3 = $row["img3"];
                     $img4 = $row["img4"];
                     $img5 = $row["img5"];
+
+                    $getImg1 = $row["img1"];
+                    $getImg2 = $row["img2"];
+                    $getImg3 = $row["img3"];
+                    $getImg4 = $row["img4"];
+                    $getImg5 = $row["img5"];
                     
                     $caseSize = $row["case_size"];
                     $caseThickness = $row["case_thickness"];
@@ -86,8 +113,8 @@
         mysqli_close($conn);
     } else {
         // URL doesn't contain id parameter. Redirect to error page
-        // header("location: error.php");
-        // exit();
+        header("Location: error.php");
+        exit();
     }
 
     // Processing form data when form is submitted
@@ -130,8 +157,8 @@
                 $input_price = trim($_POST["price"]);
                 if (empty($input_price)) {
                     $price_err = "Please enter the price for your product.";
-                } else if (!ctype_digit($input_price)) {
-                    $price_err = "Please enter a positive integer value.";
+                } else if (is_numeric($input_price) && $input_price < 0) {
+                    $price_err = "Please enter a positive value.";
                 } else {
                     $price = $input_price;
                 }
@@ -163,13 +190,8 @@
 
             // Validate Image(s)
             if (isset($_POST["submit"])) {
-                // no images uploaded
-                if ($_FILES["files"]['tmp_name']['0'] === "") {
-                    array_push($img_err, "Please upload an image.");
-                }
-                // image(s) uploaded
-                else {
-                    foreach($_FILES["files"]["tmp_name"] as $key => $tmp_name) {
+                foreach($_FILES["files"]["tmp_name"] as $key => $tmp_name) {
+                    if (!empty($tmp_name)) {
                         // assign array values to intuitive variable
                         $fileName = $_FILES["files"]["name"][$key];
                         $fileTemp = $_FILES["files"]["tmp_name"][$key];
@@ -207,41 +229,18 @@
                             $image_err++;
                         }
                     }
-                    foreach($_FILES["files"]["name"] as $key => $imageName) {
-                        if (!empty($imageName)) {
-                            array_push($img, "../img/watches/$imageName");
-                        }
-                    }
+                }
+            }
 
             // Check input errors before inserting in database
             if ($id_err === "" && $brand_err === "" && $name_err === "" && $price_err === "" && $image_err == 0) {
-                // upload images
-                foreach($_FILES["files"]["tmp_name"] as $key => $tmp_name) {
-                    $fileName = $_FILES["files"]["name"][$key];
-                    $fileTemp = $_FILES["files"]["tmp_name"][$key];
-
-                    // specifies the directory where the file is going to be placed
-                    $target_dir = "../img/watches/";
-                    // specifies the path of the file to be uploaded
-                    $target_file = $target_dir . basename($fileName);
-                    // holds the file extension of the file (in lower case)
-                    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-                    if (move_uploaded_file($fileTemp, $target_file)) {
-                        array_push($img_err, "The file ". basename($fileName). " has been uploaded successfully.");
-                    } else {
-                        array_push($img_err, "There was an error uploading your file.");
-                    }
-                }
-
-                // Prepare update statement
-                $sql = "UPDATE products SET brand=?, name=?, status=?, price=?, img1=?, img2=?, img3=?, img4=?, img5=?, case_size=?, case_thickness=?, glass=?, movement=? WHERE id=?;";
+                // Update fields that are not image link first
+                $sql = "UPDATE products SET brand=?, name=?, status=?, price=?, case_size=?, case_thickness=?, glass=?, movement=? WHERE id=?;";
 
                 if ($stmt = mysqli_prepare($conn, $sql)) {
                     // Bind variables to the prepared statement as parameters
-                    mysqli_stmt_bind_param($stmt, "sssdssssssssss", 
+                    mysqli_stmt_bind_param($stmt, 'sssdsssss', 
                     $param_brand, $param_name, $param_status, $param_price, 
-                    $param_img1, $param_img2, $param_img3, $param_img4, $param_img5, 
                     $param_caseSize, $param_caseThickness, $param_glass, $param_movement, 
                     $param_id);
 
@@ -250,24 +249,17 @@
                     $param_name = $name;
                     $param_status = $status;
                     $param_price = $price;
-                    $param_img1 = $img[0];
-                    $param_img2 = $img[1];
-                    $param_img3 = $img[2];
-                    $param_img4 = $img[3];
-                    $param_img5 = $img[4];
-                    $param_id = $id;
-                
                     $param_caseSize = $caseSize;
                     $param_caseThickness = $caseThickness;
                     $param_glass = $glass;
                     $param_movement = $movement;
+                    $param_id = $id;
 
                     // Attempt to execute the prepared statement
                     if (mysqli_stmt_execute($stmt)) {
-
                         // Records updated successfully. Redirect to landing page
-                        header("Location: index.php");
-                        exit();
+                        // header("Location: index.php");
+                        // exit();
                     } else {
                         var_dump(mysql_error());
                         echo "Something went wrong. Please try again later.";
@@ -276,7 +268,71 @@
                     // Close statement
                     mysqli_stmt_close($stmt);
                 }
-            
+
+
+                // Update image links in database and upload images to drive
+                foreach($_FILES["files"]["tmp_name"] as $key => $tmp_name) {
+                    if (!empty($tmp_name)) {
+                        $sql = "";
+                        $image = "../img/watches/";
+                        if ($key == 0) {
+                            $sql .= "UPDATE products SET img1=? WHERE id=?;";
+                            $image .= $_FILES["files"]["name"]['0'];
+                        } else if ($key == 1) {
+                            $sql .= "UPDATE products SET img2=? WHERE id=?;";
+                            $image .= $_FILES["files"]["name"]['1'];
+                        } else if ($key == 2) {
+                            $sql .= "UPDATE products SET img3=? WHERE id=?;";
+                            $image .= $_FILES["files"]["name"]['2'];
+                        } else if ($key == 3) {
+                            $sql .= "UPDATE products SET img4=? WHERE id=?;";
+                            $image .= $_FILES["files"]["name"]['3'];
+                        } else if ($key == 4) {
+                            $sql .= "UPDATE products SET img5=? WHERE id=?;";
+                            $image .= $_FILES["files"]["name"]['4'];
+                        }
+
+                        if ($stmt = mysqli_prepare($conn, $sql)) {
+                            // Bind variables to the prepared statement as parameters
+                            mysqli_stmt_bind_param($stmt, 'ss', $param_img, $param_id);
+
+                            // Set parameters
+                            $param_img = $image;
+                            $param_id = $id;
+
+                            // Attempt to execute the prepared statement
+                            if (mysqli_stmt_execute($stmt)) {
+                                // assign array values to intuitive variable
+                                $fileName = $_FILES["files"]["name"][$key];
+                                $fileTemp = $_FILES["files"]["tmp_name"][$key];
+        
+                                // specifies the directory where the file is going to be placed
+                                $target_dir = "../img/watches/";
+
+                                // specifies the path of the file to be uploaded
+                                $target_file = $target_dir . basename($fileName);
+                                
+                                if (move_uploaded_file($fileTemp, $target_file)) {
+                                    array_push($img_err, "The file ". basename($fileName). " has been uploaded successfully.");
+                                } else {
+                                    array_push($img_err, "There was an error uploading your file.");
+                                }
+                                // Don't redirect upon successful update because it's annoying
+                                // Records updated successfully. Redirect to landing page
+                                // header("Location: index.php");
+                                // exit();
+                            } else {
+                                var_dump(mysql_error());
+                                echo "Something went wrong. Please try again later.";
+                            }
+
+                            // Close statement
+                            mysqli_stmt_close($stmt);
+                        }
+                    }
+                }
+                
+                // update product detail page
                 // Prepare a select statement
                 $sql = "SELECT * FROM products WHERE id = ?";
                 if ($stmt = mysqli_prepare($conn, $sql)) {
@@ -296,8 +352,8 @@
                             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                         } else {
                             // URL doesn't contain valid id parameter. Redirect to error page
-                            header("location: error.php");
-                            exit();
+                            // header("Location: error.php");
+                            // exit();
                         }
 
                     } else {
@@ -312,13 +368,13 @@
                 mysqli_close($conn);
             } else {
                 // URL doesn't contain id parameter. Redirect to error page
-                // header("location: error.php");
+                // header("Location: error.php");
                 // exit();
             }
         }
     }
     ?>
-    <div class="wrapper">
+    <div class="container">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -347,7 +403,7 @@
                         </div>
                         <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
                             <label>Price</label>
-                            <input type="number" min="0" name="price" class="form-control" value="<?php echo $price; ?>">
+                            <input type="number" min="0" step="0.01" name="price" class="form-control" value="<?php echo $price; ?>">
                             <span class="help-block"><?php echo $price_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($caseSize_err)) ? 'has-error' : ''; ?>">
@@ -370,12 +426,63 @@
                             <input type="text" name="movement" class="form-control" value="<?php echo $movement; ?>">
                             <span class="help-block"><?php echo $movement_err;?></span>
                         </div>
-                        <div class="form-group <?php echo (!empty($img_err)) ? 'has-error' : ''; ?>">
-                            <label>Image</label>
-                            <input type="file" class="form-control" name="files[]" id="files" multiple value="<?php echo $img; ?>">
-                            <span class="help-block"><?php foreach ($img_err as $errMsg) { echo "$errMsg <br>"; }?></span>
-                        </div>
-                        <input type="submit" class="btn btn-primary" name="submit" value="Add Product" style="background-color: #e04b11; border: none;">
+
+                        <?php
+                        $id = $row["id"];
+                        $img1 = isset($row["img1"]) ? $row["img1"] : "";
+                        $img2 = isset($row["img2"]) ? $row["img2"] : "";
+                        $img3 = isset($row["img3"]) ? $row["img3"] : "";
+                        $img4 = isset($row["img4"]) ? $row["img4"] : "";
+                        $img5 = isset($row["img5"]) ? $row["img5"] : "";
+
+                        function printImages($link) {
+                            global $id;
+                            echo "
+                            <div class=\"container\">
+                            <li class=\"image-item\">
+                                <img src=\"$link\" alt=\"$id image\">
+                                <input  type=\"file\" class=\"form-control\" name=\"files[]\" id=\"files[]\" value=\"<?php echo $link; ?>\">
+                                <p>$link</p>
+                            </li>
+                            </div>\n";
+                        }
+                        
+                        echo "<ul class='image-list'>";
+                        foreach ($row as $rowValue) {
+                            if (!empty($rowValue)) {
+                                if ($rowValue == $row["img1"]) {
+                                    printImages($img1);
+                                } else if ($rowValue == $row["img2"]) {
+                                    printImages($img2);
+                                } else if ($rowValue == $row["img3"]) {
+                                    printImages($img3);
+                                } else if ($rowValue == $row["img4"]) {
+                                    printImages($img4);
+                                } else if ($rowValue == $row["img5"]) {
+                                    printImages($img5);
+                                }
+                            }
+                        }
+                        echo "</ul>";
+
+                        // echo $img1 . "<br>";
+                        // echo $img2 . "<br>";
+                        // echo $img3 . "<br>";
+                        // echo $img4 . "<br>";
+                        // echo $img5 . "<br>";
+                        if (empty($img1) || empty($img2) || empty($img3) || empty($img4) || empty($img5)) {
+                            echo "
+                            <div class=\"form-group\">
+                                <label>Add more product images</label>
+                                <input type=\"file\" class=\"form-control\" name=\"files[]\" id=\"files[]\" multiple value=\"\">
+                                <span class=\"help-block\"></span>
+                            </div>";
+                        }
+                        ?>
+
+                        <br>
+
+                        <input type="submit" class="btn btn-primary" name="submit" value="Update Product Details" style="background-color: #e04b11; border: none;">
                         <a href="index.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
