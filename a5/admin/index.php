@@ -41,13 +41,13 @@
 
     <div class="container">
         <div>
-        <a href="../index.php" style="color:white"><button type="button" class="btn" style="background-color: #e04b11;">Home Page</button></a>
-        <a href="../logout.php" style="color:white"><button type="button" class="btn" style="float: right; background-color: #e04b11;">Logout</button></a>
+        <a href="../index.php" style="color:white"><button type="button" class="btn" style="background-color: #e04b11; font-weight: bold">Home Page</button></a>
+        <a href="../logout.php" style="color:white"><button type="button" class="btn" style="float: right; background-color: #e04b11; font-weight: bold">Logout</button></a>
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Manage Products</h2>
-                        <a href="create.php" class="btn btn-success pull-right" style="background-color:#e04b11; border: none;">Add New Product</a>
+                        <h2 class="pull-left" style="text-transform: uppercase">Manage Products</h2>
+                        <a href="create.php" class="btn btn-success pull-right" style="background-color:#e04b11; border: none; font-weight: bold">Add New Product</a>
                     </div>
                     <br>
                     <?php
@@ -57,13 +57,14 @@
                         if (mysqli_num_rows($result) > 0) {
                             echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";
-                                    echo "<tr>";
+                                    echo "<tr style=\"background-color: #e04b11; color: white; font-weight: bold\">";
                                         echo "<th>ID</th>";
                                         echo "<th>Brand</th>";
                                         echo "<th>Product Name</th>";
                                         echo "<th>Status</th>";
                                         echo "<th>Price</th>";
                                         echo "<th>Image</th>";
+                                        echo "<th>Actions</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";

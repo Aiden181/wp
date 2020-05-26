@@ -32,6 +32,8 @@
     $id_err = $brand_err = $name_err = $price_err = "";
     $img = array();
     $img_err = array();
+    $image_err = 0;
+    $uploadOk = 1; // set upload failure or success
 
 
     // Processing form data when form is submitted
@@ -104,8 +106,6 @@
                     $target_file = $target_dir . basename($fileName);
                     // holds the file extension of the file (in lower case)
                     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-                    // set upload failure or success
-                    $uploadOk = 1;
 
                     // Check if image file is a actual image or fake image
                     $check = getimagesize($fileTemp);
@@ -115,33 +115,26 @@
                     } else {
                         array_push($img_err, "File is not an image.");
                         $uploadOk = 0;
+                        $image_err++;
                     }
 
                     // Check if file already exists
                     if (file_exists($target_file)) {
                         array_push($img_err, "File already exists!");
                         $uploadOk = 0;
+                        $image_err++;
                     }
                     // Check file size (disallow files larger than 3 MegaBytes or 3,000,000 Bytes)
                     if ($fileSize > 3000000) {
                         array_push($img_err, "Your file is too large!");
                         $uploadOk = 0;
+                        $image_err++;
                     }
                     // Allow certain file formats
                     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
                         array_push($img_err, "Only JPG, JPEG, and PNG files are allowed!");
                         $uploadOk = 0;
-                    }
-                    // Check if $uploadOk is set to false by an error
-                    if ($uploadOk == 0) {
-                        array_push($img_err, "Sorry, your file was not uploaded.");
-                    // if everything is ok, upload file
-                    } else {
-                        if (move_uploaded_file($fileTemp, $target_file)) {
-                            array_push($img_err, "The file ". basename($fileName). " has been uploaded successfully.");
-                        } else {
-                            array_push($img_err, "There was an error uploading your file.");
-                        }
+                        $image_err++;
                     }
                 }
                 foreach($_FILES["files"]["name"] as $key => $imageName) {
@@ -155,7 +148,7 @@
         // echo $brand_err . "<br>";
         // echo $name_err . "<br>";
         // echo $price_err . "<br>";
-        // echo $_FILES['files']['error']['0'] . "<br>";
+        // echo $image_err;. "<br>";
         // echo "<br>";
         // echo $id . "<br>";
         // echo $brand . "<br>";
@@ -166,7 +159,19 @@
 
 
         // Check input errors before inserting in database
-        if ($id_err === "" && $brand_err === "" && $name_err === "" && $price_err === "" && $_FILES['files']['error']['0'] == 0) {
+        if ($id_err === "" && $brand_err === "" && $name_err === "" && $price_err === "" && $image_err == 0) {
+            // Check if $uploadOk is set to 0 by an error
+            if ($uploadOk == 0) {
+                array_push($img_err, "Sorry, your file was not uploaded.");
+            // if everything is ok, upload file
+            } else {
+                if (move_uploaded_file($fileTemp, $target_file)) {
+                    array_push($img_err, "The file ". basename($fileName). " has been uploaded successfully.");
+                } else {
+                    array_push($img_err, "There was an error uploading your file.");
+                }
+            }
+
             // Prepare an insert statement
             $sql = "INSERT INTO products (id, brand, name, status, price, img1, img2, img3, img4, img5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -189,7 +194,7 @@
                 // Attempt to execute the prepared statement
                 if (mysqli_stmt_execute($stmt)){
                     // Records created successfully. Redirect to landing page
-                    header("location: index.php");
+                    header("Location: index.php");
                     exit();
                 } else {
                     echo "Something went wrong. Please try again later.";
@@ -203,7 +208,7 @@
             mysqli_close($conn);
         } else {
             // URL doesn't contain id parameter. Redirect to error page
-            header("location: error.php");
+            header("Location: error.php");
             exit();
         }
     }
