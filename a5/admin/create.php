@@ -20,6 +20,7 @@
     <?php
     // Include config file
     include('../includes/tools.php');
+    include('../includes/adminpagemenu.php');
 
     if (!isset($_SESSION['User'])) {
         echo "You should not be here. Only follow links!";
