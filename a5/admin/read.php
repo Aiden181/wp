@@ -10,9 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
 
     <style type="text/css">
-        .wrapper{
-            width: 500px;
-            margin: 0 auto;
+        img {
+            max-width: 640px;
         }
     </style>
 </head>
@@ -117,21 +116,29 @@
                         <label>Price</label>
                         <p class="form-control-static"><?php echo $price; ?></p>
                     </div>
+                    <hr>
                     <div class="form-group">
                         <label>Case Size</label>
                         <p class="form-control-static"><?php echo $caseSize; ?></p>
                     </div>
+                    <hr>
                     <div class="form-group">
                         <label>Case Thickness</label>
                         <p class="form-control-static"><?php echo $caseThickness; ?></p>
                     </div>
+                    <hr>
                     <div class="form-group">
                         <label>Glass</label>
                         <p class="form-control-static"><?php echo $glass; ?></p>
                     </div>
+                    <hr>
                     <div class="form-group">
                         <label>Movement</label>
                         <p class="form-control-static"><?php echo $movement; ?></p>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Images URL and preview (images restricted to 640px)</label>
                     </div>
 
 
@@ -143,11 +150,13 @@
                         $temp3 = str_replace('.jpg', '', strval($temp2));
                         $imageNumber = str_replace('.jpeg', '', strval($temp2));
 
-                        echo "                    <div class=\"form-group\">\n";
-                        echo "                        <label>Image $imageNumber URL and Preview</label>\n";
-                        echo "                        <p class=\"form-control-static\"><b>URL:</b> $link</p>\n";
-                        echo "                        <img src=\"$link\" alt=\"$id image $imageNumber\">\n";
-                        echo "                    </div>\n";
+                        echo "  <div class=\"form-group\">
+                        <p class=\"form-control-static\"><b>Name:</b> $imageNumber</p>
+                                    <p class=\"form-control-static\"><b>URL:</b> $link</p>
+                                    <img src=\"$link\" alt=\"$id image $imageNumber\">
+                                </div>
+                                <br>
+                                <br>\n";
                     }
 
                     foreach ($row as $rowValue) {
