@@ -34,7 +34,7 @@
           <input type="text" id="lname" name="lastname" placeholder="Your last name.." value="<?php if (isset($_POST['cust']['lname'])) {echo $_POST['cust']['lname'];} ?>" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
 
           <label for="lname">Email</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email.." pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
+          <input type="email" id="email" name="email" placeholder="Enter your email.." value="<?php if (isset($_POST['cust']['email'])) {echo $_POST['cust']['email'];} ?>" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
 
           <label for="subject">Message</label>
           <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
