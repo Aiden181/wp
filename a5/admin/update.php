@@ -233,7 +233,7 @@
             }
 
             // Check input errors before inserting in database
-            if ($id_err === "" && $brand_err === "" && $name_err === "" && $price_err === "" && $image_err == 0) {
+            if ($id_err === "" && $brand_err === "" && $name_err === "" && $price_err === "" && sizeof($img_err) == 0) {
                 // Update fields that are not image link first
                 $sql = "UPDATE products SET brand=?, name=?, status=?, price=?, case_size=?, case_thickness=?, glass=?, movement=? WHERE id=?;";
 
