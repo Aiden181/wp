@@ -72,24 +72,23 @@
                     $name = $row["name"];
                     $status = $row["status"];
                     $price = $row["price"];
+
                     $img1 = $row["img1"];
                     $img2 = $row["img2"];
                     $img3 = $row["img3"];
                     $img4 = $row["img4"];
                     $img5 = $row["img5"];
-
-                    $getImg1 = $row["img1"];
-                    $getImg2 = $row["img2"];
-                    $getImg3 = $row["img3"];
-                    $getImg4 = $row["img4"];
-                    $getImg5 = $row["img5"];
                     
                     $caseSize = $row["case_size"];
                     $caseThickness = $row["case_thickness"];
                     $glass = $row["glass"];
                     $movement = $row["movement"];
                 }
-
+                else {
+                    // URL doesn't contain valid id parameter. Redirect to error page
+                    header("Location: error.php");
+                    exit();
+                }
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -97,22 +96,13 @@
             // Close statement
             mysqli_stmt_close($stmt);
         }
-
-        // Close connection
-        mysqli_close($conn);
     } else {
         // URL doesn't contain id parameter. Redirect to error page
         header("Location: error.php");
         exit();
     }
-
     // Processing form data when form is submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST["id"]) && !empty($_POST["id"])) {
-            // Get hidden input value
-            $id = trim($_POST["id"]);
-        }
-
         // Processing form data when form is submitted
         if (isset($_POST["submit"])) {
             // Validate Brand Name
@@ -199,23 +189,19 @@
                             // array_push($img_err, "File is an image - " . $check["mime"] . ".");
                         } else {
                             array_push($img_err, "File is not an image.");
-                            $image_err++;
                         }
 
                         // Check if file already exists
                         if (file_exists($target_file)) {
                             array_push($img_err, "File already exists!");
-                            $image_err++;
                         }
                         // Check file size (disallow files larger than 3 MegaBytes or 3,000,000 Bytes)
                         if ($fileSize > 3000000) {
                             array_push($img_err, "Your file is too large!");
-                            $image_err++;
                         }
                         // Allow certain file formats
                         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
                             array_push($img_err, "Only JPG, JPEG, and PNG files are allowed!");
-                            $image_err++;
                         }
                     }
                 }
@@ -413,10 +399,6 @@
 
                 // Close connection
                 mysqli_close($conn);
-            } else {
-                // URL doesn't contain id parameter. Redirect to error page
-                // header("Location: error.php");
-                // exit();
             }
         }
     }
