@@ -49,11 +49,11 @@
     }
 
     // Define variables and initialize with empty values
-    $id = $brand = $name = $status = $img1 = $img2 = $img3 = $img4 =$img5 = $caseSize = $caseThickness = $glass = $movement = "";
+    $id = $brand = $name = $status = $img1 = $img2 = $img3 = $img4 =$img5 = $caseSize = $caseThickness = $glass = $movement = $pageUpdate = "";
     $price = 0.00;
     $id_err = $brand_err = $name_err = $price_err = $caseSize_err = $caseThickness_err = $glass_err = $movement_err = "";
     $img_err = array();
-    $image_err = 0;
+    $imgLinks = array();
 
     // Get parameters
     if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
@@ -359,17 +359,61 @@
                     // Attempt to execute the prepared statement
                     if (mysqli_stmt_execute($stmt)) {
                         $result = mysqli_stmt_get_result($stmt);
-
-                        if (mysqli_num_rows($result) == 1) {
-                            /* Fetch result row as an associative array. Since the result set
-                            contains only one row, we don't need to use while loop */
-                            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                        } else {
-                            // URL doesn't contain valid id parameter. Redirect to error page
-                            // header("Location: error.php");
-                            // exit();
+                        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                        
+                        foreach ($row as $rowValue) {
+                            if (!empty($rowValue)) {
+                                if ($rowValue == $row["img1"]) {
+                                    array_push($imgLinks, $img1);
+                                } else if ($rowValue == $row["img2"]) {
+                                    array_push($imgLinks, $img2);
+                                } else if ($rowValue == $row["img3"]) {
+                                    array_push($imgLinks, $img3);
+                                } else if ($rowValue == $row["img4"]) {
+                                    array_push($imgLinks, $img4);
+                                } else if ($rowValue == $row["img5"]) {
+                                    array_push($imgLinks, $img5);
+                                }
+                            }
                         }
 
+                        // ------------------ //
+                        // write product file //
+                        // ------------------ //
+                        $filename = "../products/$id.php";
+                        $fp = fopen($filename, "w");
+                        flock($fp, LOCK_EX);
+                        
+                        fwrite($fp, '<?php' . "\n");
+                        fwrite($fp, '$images = array();' . "\n");
+                        fwrite($fp, 'array_push($images, ' . "\n");
+
+                        // get last element in array
+                        $last = end($imgLinks);
+                        // go through all available image links
+                        foreach ($imgLinks as $link) {
+                            // if last element then close the array
+                            if ($link == $last) {
+                                fwrite($fp, '"' . "$link" . '");' . "\n");
+                            } else {
+                                fwrite($fp, '"' . "$link" . '", ' . "\n");
+                            }
+                        }
+                        fwrite($fp,  "\n");
+                        fwrite($fp, '$name = "' . $name . '";' . "\n");
+                        fwrite($fp, '$price = "' . $price . '";' . "\n");
+                        fwrite($fp, '$caseSize = "' . $caseSize . '";' . "\n");
+                        fwrite($fp, '$caseThickness = "' . $caseThickness . '";' . "\n");
+                        fwrite($fp, '$glass = "' . $glass . '";' . "\n");
+                        fwrite($fp, '$movement = "' . $movement . '";' . "\n");
+                        fwrite($fp,  "\n");
+                        fwrite($fp, "include('includes/productdetails.php');\n");
+                        fwrite($fp, '?>');
+                        
+                        flock($fp, LOCK_UN);
+                        fclose($fp);
+
+                        $pageUpdate = "Product detail page has been updated successfully!";
                     } else {
                         echo "Oops! Something went wrong. Please try again later.";
                     }
@@ -389,58 +433,58 @@
     }
     ?>
     <div class="container">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header">
-                        <h2>Update Product Details</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h2>Update Product Details</h2>
+                </div>
+                <?php echo $pageUpdate === "" ? "" : "<div> $pageUpdate</div> <br>" ?>
+                <form action="update.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
+                    <div class="form-group <?php echo (!empty($id_err)) ? 'has-error' : ''; ?>">
+                        <label>Product ID</label>
+                        <input type="text" name="id" readonly="readonly" class="form-control" value="<?php echo $id; ?>">
+                        <span class="help-block"><?php echo $id_err;?></span>
                     </div>
-                    <form action="update.php" method="post" enctype="multipart/form-data">
-                        <div class="form-group <?php echo (!empty($id_err)) ? 'has-error' : ''; ?>">
-                            <label>Product ID</label>
-                            <input type="text" name="id" readonly="readonly" class="form-control" value="<?php echo $id; ?>">
-                            <span class="help-block"><?php echo $id_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($brand_err)) ? 'has-error' : ''; ?>">
-                            <label>Product Brand Name</label>
-                            <input type="text" name="brand" class="form-control" value="<?php echo $brand; ?>">
-                            <span class="help-block"><?php echo $brand_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
-                            <label>Product Name</label>
-                            <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
-                            <span class="help-block"><?php echo $name_err;?></span>
-                        </div>
-                        <div class="form-group">
-                            <label>Product Status</label>
-                            <input type="text" name="status" class="form-control" value="<?php echo $status; ?>">
-                        </div>
-                        <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
-                            <label>Price</label>
-                            <input type="number" min="0" step="0.01" name="price" class="form-control" value="<?php echo $price; ?>">
-                            <span class="help-block"><?php echo $price_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($caseSize_err)) ? 'has-error' : ''; ?>">
-                            <label>Product Case Size</label>
-                            <input type="text" name="caseSize" class="form-control" value="<?php echo $caseSize; ?>">
-                            <span class="help-block"><?php echo $caseSize_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($caseThickness_err)) ? 'has-error' : ''; ?>">
-                            <label>Product Case Thickness</label>
-                            <input type="text" name="caseThickness" class="form-control" value="<?php echo $caseThickness; ?>">
-                            <span class="help-block"><?php echo $caseThickness_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($glass_err)) ? 'has-error' : ''; ?>">
-                            <label>Product Glass Type</label>
-                            <input type="text" name="glass" class="form-control" value="<?php echo $glass; ?>">
-                            <span class="help-block"><?php echo $glass_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($movement_err)) ? 'has-error' : ''; ?>">
-                            <label>Product Movement Type</label>
-                            <input type="text" name="movement" class="form-control" value="<?php echo $movement; ?>">
-                            <span class="help-block"><?php echo $movement_err;?></span>
-                        </div>
-
+                    <div class="form-group <?php echo (!empty($brand_err)) ? 'has-error' : ''; ?>">
+                        <label>Product Brand Name</label>
+                        <input type="text" name="brand" class="form-control" value="<?php echo $brand; ?>">
+                        <span class="help-block"><?php echo $brand_err;?></span>
+                    </div>
+                    <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
+                        <label>Product Name</label>
+                        <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
+                        <span class="help-block"><?php echo $name_err;?></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Status</label>
+                        <input type="text" name="status" class="form-control" value="<?php echo $status; ?>">
+                    </div>
+                    <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
+                        <label>Price</label>
+                        <input type="number" min="0" step="0.01" name="price" class="form-control" value="<?php echo $price; ?>">
+                        <span class="help-block"><?php echo $price_err;?></span>
+                    </div>
+                    <div class="form-group <?php echo (!empty($caseSize_err)) ? 'has-error' : ''; ?>">
+                        <label>Product Case Size</label>
+                        <input type="text" name="caseSize" class="form-control" value="<?php echo $caseSize; ?>">
+                        <span class="help-block"><?php echo $caseSize_err;?></span>
+                    </div>
+                    <div class="form-group <?php echo (!empty($caseThickness_err)) ? 'has-error' : ''; ?>">
+                        <label>Product Case Thickness</label>
+                        <input type="text" name="caseThickness" class="form-control" value="<?php echo $caseThickness; ?>">
+                        <span class="help-block"><?php echo $caseThickness_err;?></span>
+                    </div>
+                    <div class="form-group <?php echo (!empty($glass_err)) ? 'has-error' : ''; ?>">
+                        <label>Product Glass Type</label>
+                        <input type="text" name="glass" class="form-control" value="<?php echo $glass; ?>">
+                        <span class="help-block"><?php echo $glass_err;?></span>
+                    </div>
+                    <div class="form-group <?php echo (!empty($movement_err)) ? 'has-error' : ''; ?>">
+                        <label>Product Movement Type</label>
+                        <input type="text" name="movement" class="form-control" value="<?php echo $movement; ?>">
+                        <span class="help-block"><?php echo $movement_err;?></span>
+                    </div>
+                    
                     <br>
 
                     <label>Images</label>
@@ -520,10 +564,9 @@
                     ?>
 
                     <br>
-                        <input type="submit" class="btn btn-primary" name="submit" value="Update Product Details" style="background-color: #e04b11; border: none;">
-                        <a href="index.php" class="btn btn-default">Cancel</a>
-                    </form>
-                </div>
+                    <input type="submit" class="btn btn-primary" name="submit" value="Update Product Details" style="background-color: #e04b11; border: none;">
+                    <a href="index.php" class="btn btn-default">Cancel</a>
+                </form>
             </div>
         </div>
     </div>
