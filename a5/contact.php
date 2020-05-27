@@ -28,10 +28,10 @@
     <div class="container">
       <form class="contact-form" action="/action_page.php">
           <label for="fname">First Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name.." pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
+          <input type="text" id="fname" name="firstname" placeholder="Your name.." value="<?php if (isset($_POST['cust']['fname'])) {echo $_POST['cust']['fname'];} ?>" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
 
           <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="lastname" placeholder="Your last name.." pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name.." value="<?php if (isset($_POST['cust']['lname'])) {echo $_POST['cust']['lname'];} ?>" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
 
           <label for="lname">Email</label>
           <input type="email" id="email" name="email" placeholder="Enter your email.." pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>

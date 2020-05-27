@@ -91,7 +91,7 @@
 
             <div class="mb-3">
             <label for="email">Email <span class="text-muted">(Optional)</span></label>
-            <input type="email" class="form-control" id="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="you@example.com">
+            <input type="email" class="form-control" id="email" value="<?php if (isset($_POST['cust']['email'])) {echo $_POST['cust']['email'];} ?>" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="you@example.com">
             <br>
             </div>
 
