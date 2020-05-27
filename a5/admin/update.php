@@ -542,25 +542,26 @@
         </div>
     </div>
     <?php
-        $filename = "../products/$id.php";
-        $fp = fopen($filename, "r");
-        flock($fp, LOCK_SH);
-    
-        // read the heading
-        $headings = fgetcsv($fp);
-    
-        // read through the line and 
-        while ($aLineOfCells = fgetcsv($fp)) {
-            $records[] = $aLineOfCells;
-        }
+    // debug
+    // $filename = "../products/$id.php";
+    // $fp = fopen($filename, "r");
+    // flock($fp, LOCK_SH);
 
-        foreach($records as $key => $lineArray) {
-            foreach($lineArray as $key2 => $line) {
-                echo $line ."<br>";
-            }
-        }
-        flock($fp, LOCK_UN);
-        fclose($fp);
+    // // read the heading
+    // $headings = fgetcsv($fp);
+
+    // // read through the line and 
+    // while ($aLineOfCells = fgetcsv($fp)) {
+    //     $records[] = $aLineOfCells;
+    // }
+
+    // foreach($records as $key => $lineArray) {
+    //     foreach($lineArray as $key2 => $line) {
+    //         echo $line ."<br>";
+    //     }
+    // }
+    // flock($fp, LOCK_UN);
+    // fclose($fp);
     ?>
 </body>
 </html>
