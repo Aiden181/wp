@@ -441,6 +441,9 @@
                             <span class="help-block"><?php echo $movement_err;?></span>
                         </div>
 
+                    <br>
+
+                    <label>Images</label>
                         <?php
                         $id = $row["id"];
                         $img1 = isset($row["img1"]) ? $row["img1"] : "";
@@ -452,50 +455,74 @@
                         function printImages($link) {
                             global $id;
                             echo "
-                            <div class=\"container\">
-                            <li class=\"image-item\">
-                                <img src=\"$link\" alt=\"$id image\">
-                                <input  type=\"file\" class=\"form-control\" name=\"files[]\" id=\"files[]\" value=\"<?php echo $link; ?>\">
+                    <?php
+                    function printImages($link) {
+                        global $id;
+                        echo "
+                        <div class=\"inline-block\">";
+
+                        // remove image button
+                        echo "  <button><input type=\"hidden\" class=\"form-control\" name=\"remove-img[]\" id=\"remove-img\" value=\"$link\">Remove image</button>";
+                        echo "  <img src=\"$link\" alt=\"$id image\">
+                                <input type=\"file\" class=\"form-control\" name=\"files[]\" id=\"files[]\" value=\"<?php echo $link; ?>\">
                                 <p>$link</p>
-                            </li>
-                            </div>\n";
-                        }
-                        
-                        echo "<ul class='image-list'>";
-                        foreach ($row as $rowValue) {
-                            if (!empty($rowValue)) {
-                                if ($rowValue == $row["img1"]) {
-                                    printImages($img1);
-                                } else if ($rowValue == $row["img2"]) {
-                                    printImages($img2);
-                                } else if ($rowValue == $row["img3"]) {
-                                    printImages($img3);
-                                } else if ($rowValue == $row["img4"]) {
-                                    printImages($img4);
-                                } else if ($rowValue == $row["img5"]) {
-                                    printImages($img5);
-                                }
+                        </div>";
+                    }
+                    
+                    echo "<div class='container'>";
+                    foreach ($row as $rowValue) {
+                        if (!empty($rowValue)) {
+                            if ($rowValue == $row["img1"]) {
+                                printImages($img1);
+                            } else if ($rowValue == $row["img2"]) {
+                                printImages($img2);
+                            } else if ($rowValue == $row["img3"]) {
+                                printImages($img3);
+                            } else if ($rowValue == $row["img4"]) {
+                                printImages($img4);
+                            } else if ($rowValue == $row["img5"]) {
+                                printImages($img5);
                             }
                         }
-                        echo "</ul>";
+                    }
+                    echo "</div>";
 
-                        // echo $img1 . "<br>";
-                        // echo $img2 . "<br>";
-                        // echo $img3 . "<br>";
-                        // echo $img4 . "<br>";
-                        // echo $img5 . "<br>";
-                        if (empty($img1) || empty($img2) || empty($img3) || empty($img4) || empty($img5)) {
-                            echo "
-                            <div class=\"form-group\">
-                                <label>Add more product images</label>
-                                <input type=\"file\" class=\"form-control\" name=\"files[]\" id=\"files[]\" multiple value=\"\">
-                                <span class=\"help-block\"></span>
-                            </div>";
-                        }
-                        ?>
+                    $empty = 0;
+                    if (empty($img1)) {
+                        $empty++;
+                    }
+                    if (empty($img2)) {
+                        $empty++;
+                    }
+                    if (empty($img3)) {
+                        $empty++;
+                    }
+                    if (empty($img4)) {
+                        $empty++;
+                    }
+                    if (empty($img5)) {
+                        $empty++;
+                    }
 
-                        <br>
+                    if ($empty > 1) {
+                        echo "
+                        <div class=\"form-group\">
+                            <label>Add more product images</label>
+                            <input type=\"file\" class=\"form-control\" name=\"files[]\" id=\"files[]\" multiple value=\"\">
+                            <span class=\"help-block\"></span>
+                        </div>";
+                    }
+                    else if ($empty == 1) {
+                        echo "
+                        <div class=\"form-group\">
+                            <label>Add one more product image</label>
+                            <input type=\"file\" class=\"form-control\" name=\"files[]\" id=\"files[]\" value=\"\">
+                            <span class=\"help-block\"></span>
+                        </div>";
+                    }
+                    ?>
 
+                    <br>
                         <input type="submit" class="btn btn-primary" name="submit" value="Update Product Details" style="background-color: #e04b11; border: none;">
                         <a href="index.php" class="btn btn-default">Cancel</a>
                     </form>
