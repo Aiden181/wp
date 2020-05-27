@@ -53,13 +53,13 @@
             </div>
             
             <h3 style="position: relative;  display: inline;"><b class="w3-text-red">$<?php echo number_format(sprintf("%.2f", $price), 2) ?></b>
-                <h5 style="display: inline">incl. VAT</h5>
+                <h5 style="display: inline">excl. VAT</h5>
             </h3>
 
             <br>
             <br>
 
-            <form action="<?php echo $currentPage ?>" method="GET" onsubmit="checkSubmission(event)">
+            <form action="<?php echo $currentPage ?>" method="GET" onsubmit="checkAddToCart(event)">
                 <!-- uncomment reset button for debug -->
                 <!-- <button type="hidden" name='session-reset' value='Reset the session' onclick="this.form.submit()">Reset the session</button> -->
                 <button id="addToCart" type="hidden" class="add-to-cart" name="item" value='<?php echo "$name,1" ?>'>Add To Cart</button>
