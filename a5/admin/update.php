@@ -232,6 +232,7 @@
 
                     // Attempt to execute the prepared statement
                     if (mysqli_stmt_execute($stmt)) {
+                        // Don't go anywhere
                         // Records updated successfully. Redirect to landing page
                         // header("Location: index.php");
                         // exit();
@@ -396,9 +397,47 @@
                     // Close statement
                     mysqli_stmt_close($stmt);
                 }
+            }
+        }
+        else if (isset($_POST["remove-img"])) {
+            $temp = explode(",", $_POST['remove-img']);
+            $imgNum = strval($temp[0]);
+            $imgLink = strval($temp[1]);
 
-                // Close connection
-                mysqli_close($conn);
+            if ($imgNum === "img1") {
+                $sql = "UPDATE products SET img1='' WHERE id=?;";
+                $img1 = "";
+            } else if ($imgNum === "img2") {
+                $sql = "UPDATE products SET img2='' WHERE id=?;";
+                $img2 = "";
+            } else if ($imgNum === "img3") {
+                $sql = "UPDATE products SET img3='' WHERE id=?;";
+                $img3 = "";
+            } else if ($imgNum === "img4") {
+                $sql = "UPDATE products SET img4='' WHERE id=?;";
+                $img4 = "";
+            } else if ($imgNum === "img5") {
+                $sql = "UPDATE products SET img5='' WHERE id=?;";
+                $img5 = "";
+            }
+
+            if ($stmt = mysqli_prepare($conn, $sql)) {
+                // Bind variables to the prepared statement as parameters
+                mysqli_stmt_bind_param($stmt, "s", $param_id);
+
+                // Set parameters
+                $param_id = $id;
+
+                // Attempt to execute the prepared statement
+                if (mysqli_stmt_execute($stmt)) {
+                    // remove file upon successful query execution
+                    unlink($imgLink);
+                } else {
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+
+                // Close statement
+                mysqli_stmt_close($stmt);
             }
         }
     }
@@ -466,72 +505,30 @@
                         }
                         ?>
                     </div>
-                    <br>
-                    <?php
-                    function printImages($link) {
-                        global $id;
-                        echo "
-                        <div class=\"inline-block\">";
 
-                        // remove image button
-                        echo "  <button><input type=\"hidden\" class=\"form-control\" name=\"remove-img[]\" id=\"remove-img\" value=\"$link\">Remove image</button>";
-                        echo "  <img src=\"$link\" alt=\"$id image\">
-                                <input type=\"file\" class=\"form-control\" name=\"files[]\" id=\"files[]\" value=\"<?php echo $link; ?>\">
-                                <p>$link</p>
-                        </div>";
+                    <br>
+
+                    <?php
+                    function printImages($link, $imgNum) {
+                        global $id;
+                        echo "<div class=\"inline-block\">";
+                        if ($link != "") {
+                            // remove image button
+                            echo "<button type=\"submit\" class=\"form-control\" name=\"remove-img\" id=\"remove-img\" value=\"$imgNum,$link\">Remove image</button>";
+                            echo "<img src=\"$link\" alt=\"$id image\">";
+                        }
+                        echo "<input type=\"file\" class=\"form-control\" name=\"files[]\" id=\"files[]\" value=\"<?php echo $link; ?>\">";
+                        echo "<p>$link</p>";
+                        echo "</div>";
                     }
                     
                     echo "<div class='container'>";
-                    foreach ($row as $rowValue) {
-                        if (!empty($rowValue)) {
-                            if ($rowValue == $row["img1"]) {
-                                printImages($img1);
-                            } else if ($rowValue == $row["img2"]) {
-                                printImages($img2);
-                            } else if ($rowValue == $row["img3"]) {
-                                printImages($img3);
-                            } else if ($rowValue == $row["img4"]) {
-                                printImages($img4);
-                            } else if ($rowValue == $row["img5"]) {
-                                printImages($img5);
-                            }
-                        }
-                    }
+                    printImages($img1, "img1");
+                    printImages($img2, "img2");
+                    printImages($img3, "img3");
+                    printImages($img4, "img4");
+                    printImages($img5, "img5");
                     echo "</div>";
-
-                    $empty = 0;
-                    if (empty($img1)) {
-                        $empty++;
-                    }
-                    if (empty($img2)) {
-                        $empty++;
-                    }
-                    if (empty($img3)) {
-                        $empty++;
-                    }
-                    if (empty($img4)) {
-                        $empty++;
-                    }
-                    if (empty($img5)) {
-                        $empty++;
-                    }
-
-                    if ($empty > 1) {
-                        echo "
-                        <div class=\"form-group\">
-                            <label>Add more product images</label>
-                            <input type=\"file\" class=\"form-control\" name=\"files[]\" id=\"files[]\" multiple value=\"\">
-                            <span class=\"help-block\"></span>
-                        </div>";
-                    }
-                    else if ($empty == 1) {
-                        echo "
-                        <div class=\"form-group\">
-                            <label>Add one more product image</label>
-                            <input type=\"file\" class=\"form-control\" name=\"files[]\" id=\"files[]\" value=\"\">
-                            <span class=\"help-block\"></span>
-                        </div>";
-                    }
                     ?>
 
                     <br>
@@ -542,6 +539,8 @@
         </div>
     </div>
     <?php
+    // Close connection
+    mysqli_close($conn);
     // debug
     // $filename = "../products/$id.php";
     // $fp = fopen($filename, "r");
