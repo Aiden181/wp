@@ -10,29 +10,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
 
     <style type="text/css">
-        .wrapper{
-            width: 500px;
-            margin: 0 auto;
-        }
-
         @media (min-width: 50px) {
-            .image-list {
-                list-style: none;
-                position: relative;
-                right: 40px;
-                display: flex;
+            .inline-block {
+                display: inline-block;
+                padding-right: 20px;
             }
-            .image-list input {
-                max-width: 215px;
+            .inline-block input, .inline-block button {
+                width: 210px;
+                display: block;
             }
-
-            .image-list li {
-                margin: 20px 0 0 0;
-                background-color: white;
-            }
-            .image-list img {
+            .inline-block img {
                 width: 100%;
-                max-width: 215px;
+                max-width: 210px;
                 border: 1px solid #e04b11;
             }
         }
