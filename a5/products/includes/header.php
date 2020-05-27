@@ -22,15 +22,7 @@
     <link rel="icon" href="../img/favicon.png">
 </head>
 <body>
-    <?php
-        include('../includes/tools.php');
-
-        if (!isset($_SESSION['User'])) {
-            $loginIconLink = "../login.php";
-        } else {
-            $loginIconLink = "../admin/index.php";
-        }
-    ?>
+    <?php include('../includes/tools.php'); ?>
     
     <div class="w3-display-topmiddle" style="z-index: 1;">
         <a href=../index.php><img id="zael-logo" src="../img/Bold_Black_and_Yellow_Logo.png" alt="Zael logo"></a>
@@ -64,7 +56,15 @@
                 <input class="search-box" type="text" placeholder="Search">
 
                 <!-- Login icon -->
-                <a href="<?php echo $loginIconLink ?>"><i class="fa fa-user"></i></a>
+                <?php 
+                    if (!isset($_SESSION['User'])) {
+                        $loginIconLink = "login.php";
+                        echo "<a href='login.php'><i class='fa fa-user'></i></a>";
+                    } else {
+                        $loginIconLink = "admin/index.php";
+                        echo "<a href='admin/index.php'><i class='fa fa-user-circle-o'></i></a>";
+                    }
+                ?>
                 
                 <!-- Shopping cart icon -->
                 <a href="../shoppingcart.php"><i class="fa fa-shopping-cart"></i></a>
