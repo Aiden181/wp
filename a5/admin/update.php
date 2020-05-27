@@ -270,26 +270,40 @@
                 }
 
 
-                // Update image links in database and upload images to drive
+                // Update image links in database and upload images to drive as well as deleting the old image
                 foreach($_FILES["files"]["tmp_name"] as $key => $tmp_name) {
                     if (!empty($tmp_name)) {
                         $sql = "";
                         $image = "../img/watches/";
                         if ($key == 0) {
+                            // setup update query
                             $sql .= "UPDATE products SET img1=? WHERE id=?;";
+                            // get image
                             $image .= $_FILES["files"]["name"]['0'];
+                            // delete old image
+                            unlink($img1);
+                            // assign new link
+                            $img1 = $image;
                         } else if ($key == 1) {
                             $sql .= "UPDATE products SET img2=? WHERE id=?;";
                             $image .= $_FILES["files"]["name"]['1'];
+                            unlink($img2);
+                            $img2 = $image;
                         } else if ($key == 2) {
                             $sql .= "UPDATE products SET img3=? WHERE id=?;";
                             $image .= $_FILES["files"]["name"]['2'];
+                            unlink($img3);
+                            $img3 = $image;
                         } else if ($key == 3) {
                             $sql .= "UPDATE products SET img4=? WHERE id=?;";
                             $image .= $_FILES["files"]["name"]['3'];
+                            unlink($img4);
+                            $img4 = $image;
                         } else if ($key == 4) {
                             $sql .= "UPDATE products SET img5=? WHERE id=?;";
                             $image .= $_FILES["files"]["name"]['4'];
+                            unlink($img5);
+                            $img5 = $image;
                         }
 
                         if ($stmt = mysqli_prepare($conn, $sql)) {
