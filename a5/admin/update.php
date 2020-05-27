@@ -444,17 +444,14 @@
                     <br>
 
                     <label>Images</label>
+                    <div>
                         <?php
-                        $id = $row["id"];
-                        $img1 = isset($row["img1"]) ? $row["img1"] : "";
-                        $img2 = isset($row["img2"]) ? $row["img2"] : "";
-                        $img3 = isset($row["img3"]) ? $row["img3"] : "";
-                        $img4 = isset($row["img4"]) ? $row["img4"] : "";
-                        $img5 = isset($row["img5"]) ? $row["img5"] : "";
-
-                        function printImages($link) {
-                            global $id;
-                            echo "
+                        foreach ($img_err as $error) {
+                            echo $error;
+                        }
+                        ?>
+                    </div>
+                    <br>
                     <?php
                     function printImages($link) {
                         global $id;
