@@ -11,8 +11,12 @@
 
     <style type="text/css">
         .wrapper{
-            width: 500px;
+            width: 600px;
             margin: 0 auto;
+        }
+        #imgInput {
+            width: 250px;
+            height: 40px;
         }
     </style>
 </head>
@@ -332,10 +336,27 @@
                             <span class="help-block"><?php echo $movement_err;?></span>
                         </div>
                         <div class="form-group">
-                            <label>Image (Maximum of 5 images)</label>
-                            <input type="file" class="form-control" name="files[]" id="files[]" multiple value="">
-                            <span class="help-block"></span>
+                            <label>Image</label>
+                            <span class="help-block" style="color: #A94442">
+                                <?php
+                                foreach ($img_err as $error) {
+                                    echo $error;
+                                }
+                                ?>
+                            </span>
+                            Image 1 (preview image)
+                            <input type="file" class="form-control" name="files[]" id="imgInput" value="">
+                            <br>
+                            <input type="file" class="form-control" name="files[]" id="imgInput" value="">
+                            <br>
+                            <input type="file" class="form-control" name="files[]" id="imgInput" value="">
+                            <br>
+                            <input type="file" class="form-control" name="files[]" id="imgInput" value="">
+                            <br>
+                            <input type="file" class="form-control" name="files[]" id="imgInput" value="">
+                            <br>
                         </div>
+
                         <input type="submit" class="btn btn-primary" name="submit" value="Add Product" style="background-color: #e04b11; border: none;">
                         <a href="index.php" class="btn btn-default">Cancel</a>
                     </form>
