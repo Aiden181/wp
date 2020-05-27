@@ -19,6 +19,7 @@
 <body>
     <?php
     include('../includes/tools.php');
+    include('../includes/adminpagemenu.php');
 
     if (!isset($_SESSION['User'])) {
         echo "You should not be here. Only follow links!";
@@ -80,18 +81,22 @@
                         <label>ID</label>
                         <p class="form-control-static"><?php echo $row["id"]; ?></p>
                     </div>
+                    <hr>
                     <div class="form-group">
                         <label>Brand</label>
                         <p class="form-control-static"><?php echo $row["brand"]; ?></p>
                     </div>
+                    <hr>
                     <div class="form-group">
                         <label>Product Name</label>
                         <p class="form-control-static"><?php echo $row["name"]; ?></p>
                     </div>
+                    <hr>
                     <div class="form-group">
                         <label>Specs</label>
                         <p class="form-control-static"><?php echo $row["status"]; ?></p>
                     </div>
+                    <hr>
                     <div class="form-group">
                         <label>Price</label>
                         <p class="form-control-static"><?php echo $row["price"]; ?></p>
@@ -135,7 +140,7 @@
                         }
                     }
                     ?>
-                    <p><a href="index.php" class="btn btn-primary">Back</a></p>
+                    <p><a href="index.php" class="btn btn-primary" style="background-color: #e04b11; border:none" >Back</a></p>
                 </div>
             </div>
         </div>
