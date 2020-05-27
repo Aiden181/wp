@@ -18,7 +18,7 @@
     ?>
 </head>
 <body>
-    <div>Hello, this is an error page, you probably put something wrong in your input fields.</div>
+    <div>Hello, this is an error page, you probably put something wrong in your input fields or went to a place you're not supposed to.</div>
     <div>Uh... this is awkward...</div>
     <a href="index.php">Click here to go back to the manage page</a>
 </body>
