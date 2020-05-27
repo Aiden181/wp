@@ -273,12 +273,33 @@
             header("Location:" . $currentPage);
             exit();
         }
+        // remove item from cart button
+        else if (isset($_GET['remove'])) {
+            $item = test_input($_GET['remove']);
+            
+            foreach ($_SESSION['cart'] as $key => $value) {
+                if ($key = $item) {
+                    unset($_SESSION['cart'][$key]);
+                    break;
+                }
+            }
+            // redirect page to remove $_GET parameter from URL
+            header("Location:" . $currentPage);
+            exit();
+        }
+        // item quantity change
+        else if (isset($_GET['qty'])) {
+
+            // redirect page to remove $_GET parameter from URL
+            // header("Location:" . $currentPage);
+            // exit();
+        }
+        // clear cart button
         else if (isset($_GET['session-reset'])) {
             unset($_SESSION['cart']);
             $_SESSION['cart'] = array();
-            // foreach($_SESSION as $something => &$whatever) {
-            //     unset($whatever);
-            // }
+
+            // redirect page to remove $_GET parameter from URL
             header("Location:" . $currentPage);
             exit();
         }
