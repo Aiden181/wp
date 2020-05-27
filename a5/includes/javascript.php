@@ -50,9 +50,9 @@
     $(".search-box").toggleClass("search-box-active").focus;
   });
 
-  // Remove Items From Cart
-  $('a.remove').click(function(){
-    event.preventDefault();
+  // Remove item From Cart
+  $('.remove-btn.remove').click(function(){
+    // event.preventDefault();
     $( this ).parent().parent().parent().hide( 400 );
   })
 

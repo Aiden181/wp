@@ -49,26 +49,27 @@
                $itemNames = array_keys($_SESSION['cart']);
                $subTotal = $totalPrice = $shipping = 0;
 
+               // print out each item
                for ($i = 0; $i < sizeof($_SESSION['cart']); $i++) {
                   // assign these long code chunks to easy-to-read variables
                   $name = $itemNames[$i];
                   $qty = $_SESSION['cart'][$itemNames[$i]];
                   $price = getValueFromName("price", "$name") * $qty;
+                  $img = str_replace("../", "", getValueFromName("img1", "$name"));
 
                   // debug
                   // echo "name: $name" . "<br>";
                   // echo "qty: $qty" . "<br>";
                   // echo "price: $price" . "<br>";
 
-                  // print out each item
                   if ($i % 2 == 0) {
-                     echo "            <li class=\"items even\">\n";
+                     echo "         <li class=\"items even\">\n";
                   } else {
-                     echo "            <li class=\"items odd\">\n";
+                     echo "         <li class=\"items odd\">\n";
                   }
                   echo "               <div class=\"infoWrap\">\n";
                   echo "                  <div class=\"cartSection\">\n";
-                  echo "                     <img src=\"\" alt=\"\" class=\"itemImg\" />\n";
+                  echo "                     <img src='$img' alt=\"$name image\" class=\"itemImg\" />\n";
                   echo "                     <h3>" . strtoupper($name) . "</h3>\n";
                   echo "                     <p> <input type=\"text\" class=\"qty\" placeholder=\"\" value=\"$qty\"/></p>\n";
                   echo "                  </div>\n";
@@ -76,7 +77,9 @@
                   echo "                     <p>$" . number_format(sprintf('%.2f', $price), 2) . "</p>\n";
                   echo "                  </div>\n";
                   echo "                  <div class=\"cartSection removeWrap\">\n";
-                  echo "                     <a href=\"#\" class=\"remove\">x</a>\n";
+                  echo "                     <form action='shoppingcart.php' method'get'>\n";
+                  echo "                        <button type='submit' class='remove remove-btn' name='remove' value='$name'>x</button>";
+                  echo "                     </form>\n";
                   echo "                  </div>\n";
                   echo "               </div>\n";
                   echo "            </li>";
@@ -104,7 +107,7 @@
 
             <?php
                if (empty($_SESSION['cart'])) {
-                  echo "<li class=\"totalRow\"><a disabled='disabled' href class=\"btn continue\">Checkout</a></li>";
+                  echo "<li class=\"totalRow\"><a disabled='disabled' href='' class=\"btn continue\">Checkout</a></li>";
                } else {
                   echo "<li class=\"totalRow\"><a href=\"checkout.php\" class=\"btn continue\">Checkout</a></li>";
                }
