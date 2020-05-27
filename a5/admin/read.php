@@ -47,6 +47,22 @@
                     /* Fetch result row as an associative array. Since the result set
                     contains only one row, we don't need to use while loop */
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+                    $id = $row["id"];
+                    $brand = $row["brand"];
+                    $name = $row["name"];
+                    $status = $row["status"];
+                    $price = $row["price"];
+                    $caseSize = $row["case_size"];
+                    $caseThickness = $row["case_thickness"];
+                    $glass = $row["glass"];
+                    $movement = $row["movement"];
+
+                    $img1 = $row["img1"];
+                    $img2 = $row["img2"];
+                    $img3 = $row["img3"];
+                    $img4 = $row["img4"];
+                    $img5 = $row["img5"];
                 } else {
                     // URL doesn't contain valid id parameter. Redirect to error page
                     header("location: error.php");
@@ -78,40 +94,50 @@
                     </div>
                     <div class="form-group">
                         <label>ID</label>
-                        <p class="form-control-static"><?php echo $row["id"]; ?></p>
+                        <p class="form-control-static"><?php echo $id; ?></p>
                     </div>
                     <div class="form-group">
                         <label>Brand</label>
-                        <p class="form-control-static"><?php echo $row["brand"]; ?></p>
+                        <p class="form-control-static"><?php echo $brand; ?></p>
                     </div>
                     <div class="form-group">
                         <label>Product Name</label>
-                        <p class="form-control-static"><?php echo $row["name"]; ?></p>
+                        <p class="form-control-static"><?php echo $name; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Specs</label>
-                        <p class="form-control-static"><?php echo $row["status"]; ?></p>
+                        <label>Status</label>
+                        <p class="form-control-static"><?php echo !empty($status) ? $status : "None"; ?></p>
                     </div>
                     <div class="form-group">
                         <label>Price</label>
-                        <p class="form-control-static"><?php echo $row["price"]; ?></p>
+                        <p class="form-control-static"><?php echo $price; ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Case Size</label>
+                        <p class="form-control-static"><?php echo $caseSize; ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Case Thickness</label>
+                        <p class="form-control-static"><?php echo $caseThickness; ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Glass</label>
+                        <p class="form-control-static"><?php echo $glass; ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Movement</label>
+                        <p class="form-control-static"><?php echo $movement; ?></p>
                     </div>
 
 
                     <?php
-                    $id = $row["id"];
-                    $img1 = $row["img1"];
-                    $img2 = $row["img2"];
-                    $img3 = $row["img3"];
-                    $img4 = $row["img4"];
-                    $img5 = $row["img5"];
-
                     function printImages($link) {
                         global $id, $img1, $img2, $img3, $img4, $img5;
                         $temp = str_replace('../img/watches/', '', strval($link));
                         $temp2 = str_replace('.png', '', strval($temp));
                         $temp3 = str_replace('.jpg', '', strval($temp2));
                         $imageNumber = str_replace('.jpeg', '', strval($temp2));
+
                         echo "                    <div class=\"form-group\">\n";
                         echo "                        <label>Image $imageNumber URL and Preview</label>\n";
                         echo "                        <p class=\"form-control-static\"><b>URL:</b> $link</p>\n";
