@@ -33,7 +33,6 @@
     $id_err = $brand_err = $name_err = $price_err = $caseSize_err = $caseThickness_err = $glass_err = $movement_err = "";
     $img = array();
     $img_err = array();
-    $image_err = 0;
 
 
     // Processing form data when form is submitted
@@ -137,23 +136,19 @@
                         // array_push($img_err, "File is an image - " . $check["mime"] . ".");
                     } else {
                         array_push($img_err, "File is not an image.");
-                        $image_err++;
                     }
 
                     // Check if file already exists
                     if (file_exists($target_file)) {
                         array_push($img_err, "File already exists!");
-                        $image_err++;
                     }
                     // Check file size (disallow files larger than 3 MegaBytes or 3,000,000 Bytes)
                     if ($fileSize > 3000000) {
                         array_push($img_err, "Your file is too large!");
-                        $image_err++;
                     }
                     // Allow certain file formats
                     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
                         array_push($img_err, "Only JPG, JPEG, and PNG files are allowed!");
-                        $image_err++;
                     }
                 }
                 foreach($_FILES["files"]["name"] as $key => $imageName) {
@@ -169,7 +164,6 @@
         // echo $brand_err . "<br>";
         // echo $name_err . "<br>";
         // echo $price_err . "<br>";
-        // echo $image_err;. "<br>";
         // echo "<br>";
         // echo $id . "<br>";
         // echo $brand . "<br>";
@@ -180,7 +174,7 @@
 
 
         // Check input errors before inserting in database
-        if ($id_err === "" && $brand_err === "" && $name_err === "" && $price_err === "" && $image_err == 0) {
+        if ($id_err === "" && $brand_err === "" && $name_err === "" && $price_err === "" && sizeof($img_err) == 0) {
             // upload images
             foreach($_FILES["files"]["tmp_name"] as $key => $tmp_name) {
                 $fileName = $_FILES["files"]["name"][$key];
