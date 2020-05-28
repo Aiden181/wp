@@ -289,10 +289,13 @@
         }
         // item quantity change
         else if (isset($_GET['qty'])) {
-
+            $temp = explode(",", $_GET['qty']);
+            $name = $temp[0];
+            $qty = $temp[1];
+            $_SESSION['cart'][$name] = $qty;
             // redirect page to remove $_GET parameter from URL
-            // header("Location:" . $currentPage);
-            // exit();
+            header("Location:" . $currentPage);
+            exit();
         }
         // clear cart button
         else if (isset($_GET['session-reset'])) {

@@ -56,6 +56,7 @@
                   $qty = $_SESSION['cart'][$itemNames[$i]];
                   $price = getValueFromName("price", "$name") * $qty;
                   $img = str_replace("../", "", getValueFromName("img1", "$name"));
+                  $id = getValueFromName("id", "$name");
 
                   // debug
                   // echo "name: $name" . "<br>";
@@ -69,16 +70,19 @@
                   }
                   echo "               <div class=\"infoWrap\">\n";
                   echo "                  <div class=\"cartSection\">\n";
-                  echo "                     <img src='$img' alt=\"$name image\" class=\"itemImg\" />\n";
+                  echo "                     <a href='products/$id.php'>";
+                  echo "                     <img src='$img' alt=\"$name image\" class=\"itemImg\" /></a>\n";
                   echo "                     <h3>" . strtoupper($name) . "</h3>\n";
-                  echo "                     <p> <input type=\"text\" class=\"qty\" placeholder=\"\" value=\"$qty\"/></p>\n";
+                  echo "                     <form action='shoppingcart.php' method'get'\n";
+                  echo "                        <p> <input type='text' class='qty' id='qty-$id' name='qty' onchange='checkSetQuantity(event)' value='$qty'></p>\n";
+                  echo "                     </form>\n";
                   echo "                  </div>\n";
                   echo "                  <div class=\"prodTotal cartSection\">\n";
                   echo "                     <p>$" . number_format(sprintf('%.2f', $price), 2) . "</p>\n";
                   echo "                  </div>\n";
                   echo "                  <div class=\"cartSection removeWrap\">\n";
-                  echo "                     <form action='shoppingcart.php' method'get'>\n";
-                  echo "                        <button type='submit' class='remove remove-btn' name='remove' value='$name'>x</button>";
+                  echo "                     <form id='submitQtyChange-$id' action='shoppingcart.php' method'get'>\n";
+                  echo "                        <button type='submit' class='remove remove-btn' name='remove' id='remove-item-$id' value='$name'>x</button>";
                   echo "                     </form>\n";
                   echo "                  </div>\n";
                   echo "               </div>\n";
