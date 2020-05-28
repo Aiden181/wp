@@ -213,8 +213,9 @@
     //     // assign current page URL
     //     $currentPage = $temp1[1];
     // }
-    $temp1 = str_replace('/Aiden181%20wp/a5/', '', $uri);
-    $temp2 = str_replace('products/', '', $temp1);
+    $temp0 = str_replace('/Aiden181%20wp/a5/', '', $uri);
+    $temp1 = str_replace('products/', '', $temp0);
+    $temp2 = str_replace('admin/', '', $temp1);
     $temp3 = explode('?', $temp2);
 
     $currentPage = $temp3[0];
