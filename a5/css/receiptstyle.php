@@ -2,7 +2,13 @@
 /*** set the content type header ***/
 /*** Without this header, it wont work ***/
 header("Content-type: text/css");
+
+include "receipt.php";
 ?>
+
+.page {
+    background-color: white !important;
+}
 
 * {
     color-adjust: exact;
@@ -26,7 +32,7 @@ body {
 
 .invoice-box {
     border: 2px solid black;
-    height: 297mm;
+    height: <?php echo $receiptHeight?>mm;
     width: 210mm;
     padding: 30px;
 }
