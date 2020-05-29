@@ -65,7 +65,7 @@
                         </li>";
                         $subTotal += $price;
                     }
-                    $totalPrice = $subTotal + $subTotal*$tax/100;
+                    $totalPrice = $subTotal + $subTotal*$tax/100 + $shipping;
 
                     ?>
 
@@ -95,7 +95,7 @@
 
                     <div class="mb-3">
                         <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                        <input type="email" class="form-control" name="cust[email]" id="email" value="<?php echo (isset($_POST['cust']['email'])) ? $_POST['cust']['email'] : '' ?>" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="you@example.com">
+                        <input type="email" class="form-control" name="cust[email]" id="email" value="<?php echo (isset($_POST['cust']['email'])) ? $_POST['cust']['email'] : '' ?>"placeholder="you@example.com" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
                         <div class="invalid-feedback"> <?php echo $emailError ?> </div>
                     </div>
                     <br>

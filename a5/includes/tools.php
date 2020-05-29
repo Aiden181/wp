@@ -331,150 +331,239 @@
     /* ------------------------------------------------------------ */
 
 
-    /* ----------------------------------------------------------------------- */
-    /* --------------- CHECKOUT AND CONTACT PAGES VALIDATION SECTION --------- */
-    /* ----------------------------------------------------------------------- */
-    //Customer Inputs Array
-    $customer = array( "fname","lname", "email", "address", "cardname","card", "cvv", "expiry");
+/* ---------------------------------------------------------- */
+/* --------------- CHECKOUT PAGE VALIDATION SECTION --------- */
+/* ---------------------------------------------------------- */
+//Customer Inputs Array
+$customer = array( "fname","lname", "email" => "", "address", "cardname","card", "cvv", "expiry");
 
-    // Valid or Invalid Personal Info
-    $isFirstNameValid = $isLastNameValid =$isEmailValid = $isAddressValid = $isCardHolderNameValid = $isCardNumberValid = $isCVValid = $isCardExpiryValid = false;
+// Valid or Invalid Personal Info
+$isFirstNameValid = $isLastNameValid = $isAddressValid = $isCardHolderNameValid = $isCardNumberValid = $isCVValid = $isCardExpiryValid = false;
 
-    $fnameError = "Valid first name is required.";
-    $lnameError = "Valid last name is required.";
-    $emailError = "";
-    $addressError = "Please enter your shipping address.";
-    $cardNameError = "Full name as displayed on card.";
-    $cardNumError = "Credit card number is required.";
-    $cardExpiryError = "Expiration date required.";
-    $cvvError = "Security code required.";
+$fnameError = "Valid first name is required.";
+$lnameError = "Valid last name is required.";
+$emailError = "";
+$addressError = "Please enter your shipping address.";
+$cardNameError = "Full name as displayed on card.";
+$cardNumError = "Credit card number is required.";
+$cardExpiryError = "Expiration date required.";
+$cvvError = "Security code required.";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST['checkout-submit'])) {
-            // Validate First Name
-            if (empty($_POST["cust"]["fname"])) {
-                $fnameError = "First Name is required!";
-            } else {
-                if (isset($_POST["cust"]["fname"])) {
-                    $customer["fname"] = test_input($_POST["cust"]["fname"]);
-                    // not matching regex, format error message
-                    if (!preg_match("/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/", $customer["fname"])) {
-                        $fnameError = "Please enter an appropriate name!";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['checkout-submit'])) {
+        // Validate First Name
+        if (empty($_POST["cust"]["fname"])) {
+            $fnameError = "First Name is required!";
+        } else {
+            if (isset($_POST["cust"]["fname"])) {
+                $customer["fname"] = test_input($_POST["cust"]["fname"]);
+                // not matching regex, format error message
+                if (!preg_match("/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/", $customer["fname"])) {
+                    $fnameError = "Please enter an appropriate name!";
+                } else {  
                     } else {  
-                        $isFirstNameValid = true;
-                    }
-                }
-            }
-
-            // Validate Last Name
-            if (empty($_POST["cust"]["lname"])) {
-                $lnameError = "Last Name is required!";
-            } else {
-                if (isset($_POST["cust"]["lname"])) {
-                    $customer["lname"] = test_input($_POST["cust"]["lname"]);
-                    // not matching regex, format error message
-                    if (!preg_match("/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/", $customer["lname"])) {
-                        $lnameError = "Please enter an appropriate name!";
-                    } else {  
-                        $isLastNameValid = true;
-                    }
-                }
-            }
-
-            // Validate Email
-            if (isset($_POST["cust"]["email"])) {
-                if (!empty($_POST["cust"]["email"])) {
-                    $customer["email"] = test_input($_POST["cust"]["email"]);
-                    // check if e-mail address is well-formed
-                    if (!filter_var($customer["email"], FILTER_VALIDATE_EMAIL)) {
-                        $emailError = "Invalid email format!";
-                    } else {  
-                        $isEmailValid = true;
-                    }
-                }
-            }
-
-            // Validate Shipping Address
-            if (empty($_POST["cust"]["address"])) {
-                $addressError = "Shipping Address is required!";
-            } else {
-            // field not empty, check if data is not null 
-            if (isset($_POST["cust"]["address"])) {
-                    $customer["address"] = test_input($_POST["cust"]["address"]);
-                    // not matching regex, format error message
-                    if (!preg_match("/^[#.0-9a-zA-Z\s,-]+$/", $customer["address"])) {
-                        $addressError = "Please enter an appropriate shipping address!";
-                    } else {
-                        $isAddressValid = true;
-                    }
-                }
-            }
-
-            // Validate Card Holder Name
-            if (empty($_POST["cust"]["cardname"])) {
-                $cardNameError = "Card Holder Name is required!";
-            } else {
-                // field not empty, check if data is not null 
-                if (isset($_POST["cust"]["cardname"])) {
-                    $customer["lname"] = test_input($_POST["cust"]["cardname"]);
-                    // not matching regex, format error message
-                    if (!preg_match("/^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})$/", $customer["cardname"])) {
-                        $cardNameError = "Please enter an appropriate name!";
-                    } else { 
-                        $isCardHolderNameValid = true;
-                    }
-                }
-            }
-
-            // Validate Customer Credit Card Number
-            if (empty($_POST["cust"]["card"])) {
-                $cardNumError = "Credit card number is required!";
-            } else {
-                // field not empty, check if data is not null 
-                if (isset($_POST["cust"]["card"])) {
-                    $customer["card"] = test_input($_POST["cust"]["card"]);
-                    // not matching regex, format error message
-                    if (!preg_match("/[0-9]{14,19}/", $customer["card"])) {
-                        $cardNumError = "Please enter a valid credit card number!";
-                    } else {
-                        $isCardNumberValid = true;
-                    }
-                }
-            }
-
-            // Validate Customer Credit Card Expiry Date
-            if (empty($_POST["cust"]["expiry"])) {
-                $cardExpiryError = "Credit card expiry date is required!";
-            } else {
-                if (isset($_POST["cust"]["expiry"])) {
-                    $customer["expiry"] = test_input($_POST["cust"]["expiry"]);
-                    if ($customer["expiry"] <= date('Y-m', strtotime('+28 days'))) {
-                        $cardExpiryError = "Please enter a non-expired credit card!";
-                    } else {
-                        $isCardExpiryValid = true;
-                    }
-                }
-            }
-
-            // Validate Customer Credit Card CVV
-            if (empty($_POST["cust"]["cvv"])) {
-                $cvvError = "CVV number is required!";
-            } else {
-                // field not empty, check if data is not null 
-                if (isset($_POST["cust"]["cvv"])) {
-                    $customer["cvv"] = test_input($_POST["cust"]["cvv"]);
-                    // not matching regex, format error message
-                    if (!preg_match("/^[0-9]{3}$/", $customer["cvv"])) {
-                        $cvvError = "Please enter a valid CVV number!";
-                    } else { 
-                        $isCVValid = true;
-                    }
+                } else {  
+                    $isFirstNameValid = true;
                 }
             }
         }
 
-        if ($isFirstNameValid && $isLastNameValid && $isEmailValid && $isAddressValid && $isCardHolderNameValid && $isCardNumberValid && $isCVValid && $isCardExpiryValid) {
-            
+        // Validate Last Name
+        if (empty($_POST["cust"]["lname"])) {
+            $lnameError = "Last Name is required!";
+        } else {
+            if (isset($_POST["cust"]["lname"])) {
+                $customer["lname"] = test_input($_POST["cust"]["lname"]);
+                // not matching regex, format error message
+                if (!preg_match("/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/", $customer["lname"])) {
+                    $lnameError = "Please enter an appropriate name!";
+                } else {  
+                    } else {  
+                } else {  
+                    $isLastNameValid = true;
+                }
+            }
+        }
+
+        // Validate Email
+        if (isset($_POST["cust"]["email"])) {
+            if (!empty($_POST["cust"]["email"])) {
+                $customer["email"] = test_input($_POST["cust"]["email"]);
+                // check if e-mail address is well-formed
+                if (!filter_var($customer["email"], FILTER_VALIDATE_EMAIL)) {
+                    $emailError = "Invalid email format!";
+                }
+            }
+        }
+
+        // Validate Shipping Address
+        if (empty($_POST["cust"]["address"])) {
+            $addressError = "Shipping Address is required!";
+        } else {
+        // field not empty, check if data is not null 
+            // field not empty, check if data is not null 
+        // field not empty, check if data is not null 
+        if (isset($_POST["cust"]["address"])) {
+                $customer["address"] = test_input($_POST["cust"]["address"]);
+                // not matching regex, format error message
+                if (!preg_match("/^[#.0-9a-zA-Z\s,-]+$/", $customer["address"])) {
+                    $addressError = "Please enter an appropriate shipping address!";
+                } else {
+                    $isAddressValid = true;
+                }
+            }
+        }
+
+        // Validate Card Holder Name
+        if (empty($_POST["cust"]["cardname"])) {
+            $cardNameError = "Card Holder Name is required!";
+        } else {
+            // field not empty, check if data is not null 
+                // field not empty, check if data is not null 
+            // field not empty, check if data is not null 
+            if (isset($_POST["cust"]["cardname"])) {
+                $customer["cardname"] = test_input($_POST["cust"]["cardname"]);
+                // not matching regex, format error message
+                if (!preg_match("/^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})$/", $customer["cardname"])) {
+                    $cardNameError = "Please enter an appropriate name!";
+                } else { 
+                    } else { 
+                } else { 
+                    $isCardHolderNameValid = true;
+                }
+            }
+        }
+
+        // Validate Customer Credit Card Number
+        if (empty($_POST["cust"]["card"])) {
+            $cardNumError = "Credit card number is required!";
+        } else {
+            // field not empty, check if data is not null 
+                // field not empty, check if data is not null 
+            // field not empty, check if data is not null 
+            if (isset($_POST["cust"]["card"])) {
+                $customer["card"] = test_input($_POST["cust"]["card"]);
+                // not matching regex, format error message
+                if (!preg_match("/[0-9]{14,19}/", $customer["card"])) {
+                    $cardNumError = "Please enter a valid credit card number!";
+                } else {
+                    $isCardNumberValid = true;
+                }
+            }
+        }
+
+        // Validate Customer Credit Card Expiry Date
+        if (empty($_POST["cust"]["expiry"])) {
+            $cardExpiryError = "Credit card expiry date is required!";
+        } else {
+            if (isset($_POST["cust"]["expiry"])) {
+                $customer["expiry"] = test_input($_POST["cust"]["expiry"]);
+                if ($customer["expiry"] <= date('Y-m', strtotime('+28 days'))) {
+                    $cardExpiryError = "Please enter a non-expired credit card!";
+                } else {
+                    $isCardExpiryValid = true;
+                }
+            }
+        }
+
+        // Validate Customer Credit Card CVV
+        if (empty($_POST["cust"]["cvv"])) {
+            $cvvError = "CVV number is required!";
+        } else {
+            // field not empty, check if data is not null 
+                // field not empty, check if data is not null 
+            // field not empty, check if data is not null 
+            if (isset($_POST["cust"]["cvv"])) {
+                $customer["cvv"] = test_input($_POST["cust"]["cvv"]);
+                // not matching regex, format error message
+                if (!preg_match("/^[0-9]{3}$/", $customer["cvv"])) {
+                    $cvvError = "Please enter a valid CVV number!";
+                } else { 
+                    } else { 
+                } else { 
+                    $isCVValid = true;
+                }
+            }
+        }
+    }
+
+    if ($isFirstNameValid && $isLastNameValid && $isAddressValid && $isCardHolderNameValid && $isCardNumberValid && $isCVValid && $isCardExpiryValid) {
+        $_SESSION['cust']['fname'] = $_POST['cust']['fname'];
+        $_SESSION['cust']['lname'] = $_POST['cust']['lname'];
+        $_SESSION['cust']['address'] = $_POST['cust']['address'];
+        $_SESSION['cust']['email'] = $_POST['cust']['email'];
+
+        // make array that only has names of items
+        $itemNames = array_keys($_SESSION['cart']);
+        $subTotal = $totalPrice = $shipping = 0;
+        $tax = 10;
+
+        if (sizeof($_SESSION['cart']) < 1) {
+            $shipping = 0;
+        } else {
+            $shipping = 10;
+        }
+
+        for ($i = 0; $i < sizeof($_SESSION['cart']); $i++) {
+            // assign these long code chunks to easy-to-read variables
+            $name = $itemNames[$i];
+            $qty = $_SESSION['cart'][$itemNames[$i]];
+            $price = getValueFromName("price", "$name") * $qty;
+            $subTotal += $price;
+        }
+        $totalPrice = $subTotal + $subTotal*$tax/100 + $shipping;
+
+        $items = "";
+
+        foreach ($_SESSION['cart'] as $key => $value) {
+            $items .= getValueFromName("id", $key) . ",";
+        }
+        
+        // Prepare an insert statement
+        $sql = "INSERT INTO orders (firstName, lastName, email, address, orderDate, items, totalPrice) VALUES (?, ?, ?, ?, ?, ?, ?);";
+
+
+        if ($stmt = mysqli_prepare($conn, $sql)) {
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "ssssssd", $param_fname, $param_lname, $param_email, $param_address, $param_orderDate, $param_items, $param_totalPrice);
+
+            // Set parameters
+            $param_fname = $customer["fname"];
+            $param_lname = $customer["lname"];
+            $param_email = $customer["email"];
+            $param_address = $customer["address"];
+            $param_orderDate = date("Y-m-d H:i:s");
+            $param_items = $items;
+            $param_totalPrice = $totalPrice;
+
+            // Attempt to execute the prepared statement
+            if (mysqli_stmt_execute($stmt)) {
+                // redirect to receipt page
+                header("Location: receipt.php");
+                exit();
+            } else {
+                var_dump(mysql_error());
+                echo "Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+
+        // Close connection
+        mysqli_close($conn);
+
+        // remove customer from session array after 5 minutes
+        sleep(300);
+        unset($_SESSION['cust']);
+
+    }
+}
+
+/* --------------------------------------------------------- */
+/* -------- END OF CHECKOUT PAGE VALIDATION SECTION -------- */
+/* --------------------------------------------------------- */
+
         }
     }
     /* ---------------------------------------------------------------------- */
