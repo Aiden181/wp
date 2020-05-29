@@ -21,32 +21,32 @@
     <link rel="icon" href="img/favicon.png">
 </head>
 <body>
-  <?php
-      include('includes/header.php');
-  ?>
+  <?php include('includes/header.php'); ?>
 
-    <div class="container">
-      <form class="contact-form" action="/action_page.php">
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name.." value="<?php if (isset($_POST['cust']['fname'])) {echo $_POST['cust']['fname'];} ?>" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
+  <div class="container">
+    <form class="contact-form" action="contact.php" method="post">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="contact[fname]" placeholder="Your name.." value="<?php echo (isset($_POST['contact']['fname'])) ? $_POST['contact']['fname'] : '' ?>" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
+        <div> <?php echo $fnameError ?> </div>
 
-          <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="lastname" placeholder="Your last name.." value="<?php if (isset($_POST['cust']['lname'])) {echo $_POST['cust']['lname'];} ?>" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="contact[lname]" placeholder="Your last name.." value="<?php echo (isset($_POST['contact']['lname'])) ? $_POST['contact']['lname'] : '' ?>" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
+        <div class="invalid-feedback"> <?php echo $lnameError ?> </div>
 
-          <label for="lname">Email</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email.." value="<?php if (isset($_POST['cust']['email'])) {echo $_POST['cust']['email'];} ?>" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+        <label for="lname">Email</label>
+        <input type="email" id="email" name="contact[email]" placeholder="Enter your email.." value="<?php echo (isset($_POST['contact']['email'])) ? $_POST['contact']['email'] : '' ?>" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+        <div class="invalid-feedback"> <?php echo $emailError ?> </div>
 
-          <label for="subject">Message</label>
-          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <label for="subject">Message (Max 1024 characters)</label>
+        <textarea id="subject" name="contact[message]" value="<?php echo (isset($_POST['contact']['message'])) ? $_POST['contact']['message'] : '' ?>"  placeholder="Write something.." style="height:200px" required></textarea>
+        <div class="invalid-feedback"> <?php echo $msgError ?> </div>
 
-          <input type="submit" value="Submit">
-      </form>
-    </div>
+        <input type="submit" name="contact-submit" value="Submit">
+    </form>
+  </div>
 
-    <div id="blankspace"></div>
+  <div id="blankspace"></div>
 
-  <?php
-      include('includes/footer.php');
-  ?>
+  <?php include('includes/footer.php'); ?>
 </body>
 </html>
