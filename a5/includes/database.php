@@ -41,4 +41,26 @@
         img5 VARCHAR(256) NOT NULL
     )";
     $conn->query($sql);
+
+    // drop table query for testing
+    // $conn->query("DROP TABLE IF EXISTS orders");
+    // ------------------------------- //
+    // ----- create orders table ----- //
+    // ------------------------------- //
+    // firstname : customer name
+    // lastname : product brand
+    // orderDate : order date and time
+    // items : all products bought
+    // totalPrice : total price of order
+    $sql = "CREATE TABLE IF NOT EXISTS orders (
+        orderID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        firstName VARCHAR(128) NOT NULL,
+        lastName VARCHAR(128) NOT NULL,
+        email VARCHAR(128) NOT NULL,
+        address VARCHAR(128) NOT NULL,
+        orderDate VARCHAR(64) NOT NULL,
+        items VARCHAR(256) NOT NULL,
+        totalPrice FLOAT NOT NULL
+    )";
+    $conn->query($sql);
 ?>
