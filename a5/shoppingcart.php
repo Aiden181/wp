@@ -90,13 +90,13 @@
                   $subTotal += $price;
                }
                $tax = 10;
-               $totalPrice = $subTotal + $subTotal*$tax/100;
 
                if (sizeof($_SESSION['cart']) < 1) {
                   $shipping = 0;
                } else {
                   $shipping = 10;
                }
+               $totalPrice = $subTotal + $subTotal*$tax/100 + $shipping;
             ?>
          </ul>
       </div>
