@@ -44,6 +44,7 @@
 
     // drop table query for testing
     // $conn->query("DROP TABLE IF EXISTS orders");
+
     // ------------------------------- //
     // ----- create orders table ----- //
     // ------------------------------- //
@@ -61,6 +62,25 @@
         orderDate VARCHAR(64) NOT NULL,
         items VARCHAR(256) NOT NULL,
         totalPrice FLOAT NOT NULL
+    )";
+    $conn->query($sql);
+
+    // drop table query for testing
+    // $conn->query("DROP TABLE IF EXISTS contacts");
+    // ------------------------------- //
+    // ----- create orders table ----- //
+    // ------------------------------- //
+    // firstname : customer name
+    // lastname : product brand
+    // orderDate : order date and time
+    // items : all products bought
+    // totalPrice : total price of order
+    $sql = "CREATE TABLE IF NOT EXISTS contacts (
+        contactID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        firstName VARCHAR(128) NOT NULL,
+        lastName VARCHAR(128) NOT NULL,
+        email VARCHAR(128) NOT NULL,
+        message VARCHAR(512) NOT NULL
     )";
     $conn->query($sql);
 ?>
