@@ -29,15 +29,18 @@
         <input type="text" id="fname" name="contact[fname]" placeholder="Your name.." value="<?php echo (isset($_POST['contact']['fname'])) ? $_POST['contact']['fname'] : '' ?>" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
         <div> <?php echo $fnameError ?> </div>
 
+        <br>
         <label for="lname">Last Name</label>
         <input type="text" id="lname" name="contact[lname]" placeholder="Your last name.." value="<?php echo (isset($_POST['contact']['lname'])) ? $_POST['contact']['lname'] : '' ?>" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" required>
         <div class="invalid-feedback"> <?php echo $lnameError ?> </div>
 
+        <br>
         <label for="lname">Email</label>
         <input type="email" id="email" name="contact[email]" placeholder="Enter your email.." value="<?php echo (isset($_POST['contact']['email'])) ? $_POST['contact']['email'] : '' ?>" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
         <div class="invalid-feedback"> <?php echo $emailError ?> </div>
 
-        <label for="subject">Message (Max 1024 characters)</label>
+        <br>
+        <label for="subject">Message</label>
         <textarea id="subject" name="contact[message]" value="<?php echo (isset($_POST['contact']['message'])) ? $_POST['contact']['message'] : '' ?>"  placeholder="Write something.." style="height:200px" required></textarea>
         <div class="invalid-feedback"> <?php echo $msgError ?> </div>
 

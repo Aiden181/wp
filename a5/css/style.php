@@ -285,7 +285,7 @@ ul {
   border-radius: 4px;
   box-sizing: border-box;
   margin-top: 6px;
-  margin-bottom: 16px;
+  margin-bottom: 3px;
   resize: vertical;
 }
 
