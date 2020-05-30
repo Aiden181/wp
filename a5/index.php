@@ -95,10 +95,10 @@
                 <?php 
                     if (!isset($_SESSION['User'])) {
                         $loginIconLink = "login.php";
-                        echo "<a href='login.php'><i class='fa fa-user'></i></a>";
+                        echo "<a href='login.php'><i class='fa fa-user icons'></i></a>";
                     } else {
                         $loginIconLink = "admin/index.php";
-                        echo "<a href='admin/index.php'><i class='fa fa-user-circle-o'></i></a>";
+                        echo "<a href='admin/index.php'><i class='fa fa-user-circle-o icons'></i></a>";
                     }
                 ?>
                 
