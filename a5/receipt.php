@@ -15,8 +15,8 @@
     <?php
     include('includes/tools.php');
 
-    // no check out values
-    if (!isset($_SESSION['cust'])) {
+    // no customer cookie (or no checkout has been made)
+    if (!isset($_SESSION['receipt'])) {
         // redirect page to home page
         header("Location: index.php");
         exit();
@@ -53,19 +53,19 @@
             <tr class="item">
                 <td>Name</td>
                 <td>
-                    <?php echo $_SESSION["cust"]['fname'] . " " . $_SESSION["cust"]['lname'] ?>
+                    <?php echo $_SESSION['receipt']['fname'] . " " . $_SESSION['receipt']['lname'] ?>
                 </td>
             </tr>
             <tr class="item">
                 <td>Address</td>
                 <td>
-                    <?php echo $_SESSION["cust"]["address"] ?>
+                    <?php echo $_SESSION['receipt']["address"] ?>
                 </td>
             </tr>
             <tr class="item">
                 <td>Email</td>
                 <td>
-                    <?php echo $_SESSION["cust"]["email"] ?>
+                    <?php echo $_SESSION['receipt']["email"] ?>
                 </td>
             </tr>
         </table>
@@ -78,20 +78,20 @@
 
             <?php
             // make array that only has names of items
-            $itemNames = array_keys($_SESSION['cart']);
+            $itemNames = array_keys($_SESSION['receipt']['items']);
             $subTotal = $totalPrice = $shipping = 0;
             $tax = 10;
 
-            if (sizeof($_SESSION['cart']) < 1) {
+            if (sizeof($_SESSION['receipt']['items']) < 1) {
                 $shipping = 0;
             } else {
                 $shipping = 10;
             }
 
-            for ($i = 0; $i < sizeof($_SESSION['cart']); $i++) {
+            for ($i = 0; $i < sizeof($_SESSION['receipt']['items']); $i++) {
                 // assign these long code chunks to easy-to-read variables
                 $name = strtoupper($itemNames[$i]);
-                $qty = $_SESSION['cart'][$itemNames[$i]];
+                $qty = $_SESSION['receipt']['items'][$itemNames[$i]];
                 $price = getValueFromName("price", "$name") * $qty;
 
                 echo "
