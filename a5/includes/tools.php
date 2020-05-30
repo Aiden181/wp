@@ -191,35 +191,18 @@ function test_input($data) {
     return $data;
 }
 
-
-/* ----------------------------------------------------- */
-/* --------------- SHOPPING CART SECTION --------------- */
-/* ----------------------------------------------------- */
-
-// get page path
+// get current page
 $uri = $_SERVER['REQUEST_URI'];
-
-// // split into array with the following string as delimiter
-// $temp = explode("/Aiden181%20wp/a5/", $uri);
-// $temp1 = explode("products/", $temp[1]);
-// $temp2 = explode("?", $temp1[0]);
-
-// // ensure ? is split as well after $_GET form is submitted
-// if (isset($temp1[0])) {
-//     $temp2 = explode("?", $temp1[0]);
-    
-//     // assign current page URL
-//     $currentPage = $temp2[0];
-// } else {
-//     // assign current page URL
-//     $currentPage = $temp1[1];
-// }
 $temp0 = str_replace('/Aiden181%20wp/a5/', '', $uri);
 $temp1 = str_replace('products/', '', $temp0);
 $temp2 = str_replace('admin/', '', $temp1);
 $temp3 = explode('?', $temp2);
-
 $currentPage = $temp3[0];
+
+
+/* ----------------------------------------------------- */
+/* --------------- SHOPPING CART SECTION --------------- */
+/* ----------------------------------------------------- */
 
 /* ------------------------------- */
 /* add items to cart session array */
