@@ -673,6 +673,6 @@ define('FLAG_DELETE', "d");
 // preShow($_POST);
 // echo '$_FILES array';
 // preShow($_FILES);
-// echo '$_SESSION array';
-// preShow($_SESSION);
+echo '$_SESSION array';
+preShow($_SESSION);
 ?>

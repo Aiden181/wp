@@ -135,7 +135,14 @@
                         </div>
                     </div>
                     <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit" name="checkout-submit" style="background-color: #e04b11; border:none;">Checkout</button>
+                    <?php
+                    if (sizeof($_SESSION['cart']) < 1) {
+                        echo "<h3 style='text-align: center'>There's no item in the cart!</h3>";
+                        echo "<button disabled class='btn btn-primary btn-lg btn-block' type='submit' name='checkout-submit' style='background-color: #e04b11; border:none;'>Checkout</button>";
+                    } else {
+                        echo "<button class='btn btn-primary btn-lg btn-block' type='submit' name='checkout-submit' style='background-color: #e04b11; border:none;'>Checkout</button>";
+                    }
+                    ?>
                 </form>
             </div>
         </div>
