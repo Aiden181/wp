@@ -207,12 +207,9 @@ $currentPage = $temp3[0];
 /* ------------------------------- */
 /* add items to cart session array */
 /* ------------------------------- */
-// initialize session array
-if (empty($_SESSION)) {
+// initialize cart session array
+if (empty($_SESSION) || !isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
-    if (empty($_SESSION['cart'])) {
-        $_SESSION['cart'] = array();
-    }
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -447,11 +444,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($isFirstNameValid && $isLastNameValid && $isAddressValid && $isCardHolderNameValid && $isCardNumberValid && $isCVValid && $isCardExpiryValid) {
-        $_SESSION['cust']['fname'] = $_POST['cust']['fname'];
-        $_SESSION['cust']['lname'] = $_POST['cust']['lname'];
-        $_SESSION['cust']['address'] = $_POST['cust']['address'];
-        $_SESSION['cust']['email'] = $_POST['cust']['email'];
-
         // make array that only has names of items
         $itemNames = array_keys($_SESSION['cart']);
         $subTotal = $totalPrice = $shipping = 0;
@@ -497,7 +489,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
-                // redirect to receipt page
+                $_SESSION['receipt']['fname'] = $_POST['cust']['fname'];
+                $_SESSION['receipt']['lname'] = $_POST['cust']['lname'];
+                $_SESSION['receipt']['address'] = $_POST['cust']['address'];
+                $_SESSION['receipt']['email'] = $_POST['cust']['email'];
+                $_SESSION['receipt']['items'] = $_SESSION['cart'];
+                unset($_SESSION['cart']);
+                // Redirect to receipt page
                 header("Location: receipt.php");
                 exit();
             } else {
@@ -512,7 +510,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Close connection
         mysqli_close($conn);
 
-        unset($_SESSION['cust']);
     }
 }
 
@@ -625,50 +622,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 /* -------- END OF CONTACT PAGE VALIDATION SECTION -------- */
 /* -------------------------------------------------------- */
 
-    // // open watches.csv to get watch brand name and details
-    // $file = fopen("watches.csv", "r") or die("Unable to open file!");;
-    // flock($file, LOCK_SH);
 
-    // // read the heading
-    // $headings = fgetcsv($file);
+/* ----------------------------------- */
+/* -------- CRUD USER SECTION -------- */
+/* ----------------------------------- */
 
-    // // read through the line and store each line array element
-    // while ($aLineOfCells = fgetcsv($file)) {
-    //     $tempList[] = $aLineOfCells;
-    // }
-    
-    // flock($file, LOCK_UN);
-    // fclose($file);
+// define roles
+define('ROOT', "z");
+define('ADMIN_LIST_ADMINS', "1");
+define('ADMIN_ADD_ADMINS', "2");
+define('ADMIN_EDIT_ADMINS', "3");
+define('ADMIN_DELETE_ADMINS', "4");
+define('FLAG_CREATE', "c");
+define('FLAG_READ', "r");
+define('FLAG_UPDATE', "u");
+define('FLAG_DELETE', "d");
 
-    // $sql = "";
-    // // if name in array matches $brandName, add to watchList array
-    // foreach ($tempList as $watch) {
-    //     //  debug
-    //     echo "$watch[0] <br>";   // id
-    //     echo "$watch[1] <br>";   // brand
-    //     echo "$watch[2] <br>";   // name
-    //     echo "$watch[3] <br>";   // status
-    //     echo "$watch[4] <br>";   // price
-    //     echo "$watch[5] <br>";   // img1
-    //     echo "$watch[6] <br>";   // img2
-    //     echo "$watch[7] <br>";   // img3
-    //     echo "$watch[8] <br>";   // img4
-    //     echo "$watch[9] <br>";   // img5
-    //     echo "<br>";
-    //     echo "<br>";
+// $file = fopen("users.csv", "r");
+// flock($file, LOCK_SH);
 
-    //     $sql = "INSERT IGNORE INTO products (`id`, `brand`, `name`, `status`, `price`, `img1`, `img2`, `img3`, `img4`, `img5`) 
-    //     VALUES ('$watch[0]', '$watch[1]', '$watch[2]', '$watch[3]', '$watch[4]', '$watch[5]', '$watch[6]', '$watch[7]', '$watch[8]', '$watch[9]');";
-        
-    //     if (mysqli_multi_query($conn, $sql)) {
-    //         echo "<p>New record created successfully</p>";
-    //     } else {
-    //         echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>";
-    //     }
-    // }
-    /* --------------------------------------- */
-    /* END OF WATCHES.CSV TO DATABSE MIGRATION */
-    /* --------------------------------------- */
+// // read the heading
+// $headings = fgetcsv($file);
+
+// // read through the line add to array
+// while ($aLineOfCells = fgetcsv($file)) {
+//     $records[] = $aLineOfCells;
+// }
+
+// flock($file, LOCK_UN);
+// fclose($file);
+
+// preShow($records);
+
+// foreach ($records as $thingy => $array2) {
+//     // echo "$value <br>";
+//     foreach ($array2 as $key => $value) {
+//         echo $key['1'] . " <br>";
+//         // echo "$value <br>";
+//     }
+// }
+
+/* ------------------------------------------ */
+/* -------- END OF CRUD USER SECTION -------- */
+/* ------------------------------------------ */
+
 // debug print outs
 echo '$_GET array';
 preShow($_GET);
