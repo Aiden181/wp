@@ -181,7 +181,7 @@ function keepSelectFieldAfterSubmit($str) {
     // if value is not null and equal to $str
     // echo selected
     // otherwise, echo nothing
-    echo (isset($_GET['orderby']) && $_GET['orderby'] === $str) ? 'selected' : '';
+    echo (isset($_POST['orderby']) && $_POST['orderby'] === $str) ? 'selected' : '';
 }
 
 function test_input($data) {
