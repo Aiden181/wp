@@ -21,7 +21,7 @@
     <h4 style="position: relative; top: 35px; display: inline">Viewing <?php echo countWatches($brandName) ?> products</h4>
 
     <!-- Display filter -->
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+    <form action="<?php echo $currentPage ?>" method="POST">
         <select name="orderby" class="sort" onchange="this.form.submit()">
             <option <?php keepSelectFieldAfterSubmit('none'); ?> value="none" selected="selected">Default</option>
             <option <?php keepSelectFieldAfterSubmit('price-asc'); ?> value="price-asc">Price: Low to High</option>
