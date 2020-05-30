@@ -63,7 +63,7 @@
           <input type="text" id="username" name="username" class="fadeIn second" placeholder="Login">
           <input type="password" id="password" name="password" class="fadeIn third" placeholder="Password">
           <input type="submit" name="login" class="fadeIn fourth" value="Log In">
-          <input type="submit" name="reset-login" value="reset login">
+          <!-- <input type="submit" name="reset-login" value="reset login"> -->
         </form>
       </div>
     </div>
