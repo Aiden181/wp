@@ -667,12 +667,12 @@ define('FLAG_DELETE', "d");
 /* ------------------------------------------ */
 
 // debug print outs
-echo '$_GET array';
-preShow($_GET);
-echo '$_POST array';
-preShow($_POST);
-echo '$_FILES array';
-preShow($_FILES);
-echo '$_SESSION array';
-preShow($_SESSION);
+// echo '$_GET array';
+// preShow($_GET);
+// echo '$_POST array';
+// preShow($_POST);
+// echo '$_FILES array';
+// preShow($_FILES);
+// echo '$_SESSION array';
+// preShow($_SESSION);
 ?>
