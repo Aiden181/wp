@@ -92,7 +92,15 @@
                 <input class="search-box" type="text" name="search" placeholder="Search">
 
                 <!-- Login icon -->
-                <a  href="<?php echo $loginIconLink ?>"><i class="fa fa-user icons navbar-text"></i></a>
+                <?php 
+                    if (!isset($_SESSION['User'])) {
+                        $loginIconLink = "login.php";
+                        echo "<a href='login.php'><i class='fa fa-user'></i></a>";
+                    } else {
+                        $loginIconLink = "admin/index.php";
+                        echo "<a href='admin/index.php'><i class='fa fa-user-circle-o'></i></a>";
+                    }
+                ?>
                 
                 <!-- Shopping cart icon -->
                 <a href="shoppingcart.php"><i class="fa fa-shopping-cart icons navbar-text"></i></a>
