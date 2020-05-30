@@ -52,25 +52,27 @@
         <div class="w3-display-container" id="icons-container">
             <!-- Search icon and search bar-->
             <div>
-                <i id="search-btn" class="fa fa-search"></i>
-                <input class="search-box" type="text" placeholder="Search">
+                <form method="get" action="../search.php">
+                    <!-- Search box -->
+                    <i id="search-btn" class="fa icons fa-search"></i>
+                    <input class="search-box" type="text" name="search" placeholder="Search">
 
-                <!-- Login icon -->
-                <?php 
-                    if (!isset($_SESSION['User'])) {
-                        $loginIconLink = "login.php";
-                        echo "<a href='../login.php'><i class='fa fa-user'></i></a>";
-                    } else {
-                        $loginIconLink = "admin/index.php";
-                        echo "<a href='../admin/index.php'><i class='fa fa-user-circle-o'></i></a>";
-                    }
-                ?>
-                
-                <!-- Shopping cart icon -->
-                <a href="../shoppingcart.php"><i class="fa fa-shopping-cart"></i></a>
+                    <!-- Login icon -->
+                    <?php 
+                        if (!isset($_SESSION['User'])) {
+                            $loginIconLink = "login.php";
+                            echo "<a href='../login.php'><i class='fa fa-user'></i></a>";
+                        } else {
+                            $loginIconLink = "admin/index.php";
+                            echo "<a href='../admin/index.php'><i class='fa fa-user-circle-o'></i></a>";
+                        }
+                    ?>
+                    
+                    <!-- Shopping cart icon -->
+                    <a href="../shoppingcart.php"><i class="fa fa-shopping-cart"></i></a>
+                </form>
             </div>
         </div>
-        <!-- Search box -->
     </div>
 
     <!-- Overlay effect when opening sidebar on small screens -->

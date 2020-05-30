@@ -86,17 +86,19 @@
       <div class="w3-display-container" id="icons-container" style="position: fixed; top: 20px;">
           <!-- Search icon and search bar-->
           <div>
-              <i id="search-btn" class="fa fa-search icons navbar-text"></i>
-              <input class="search-box" type="text" placeholder="Search">
+              <form method="get" action="search.php">
+                <!-- Search box -->
+                <i id="search-btn" class="fa icons fa-search"></i>
+                <input class="search-box" type="text" name="search" placeholder="Search">
 
-              <!-- Login icon -->
-              <a  href="<?php echo $loginIconLink ?>"><i class="fa fa-user icons navbar-text"></i></a>
-              
-              <!-- Shopping cart icon -->
-              <a href="shoppingcart.php"><i class="fa fa-shopping-cart icons navbar-text"></i></a>
+                <!-- Login icon -->
+                <a  href="<?php echo $loginIconLink ?>"><i class="fa fa-user icons navbar-text"></i></a>
+                
+                <!-- Shopping cart icon -->
+                <a href="shoppingcart.php"><i class="fa fa-shopping-cart icons navbar-text"></i></a>
+              </form>
           </div>
       </div>
-      <!-- Search box -->
   </div>
 
   <!-- Overlay effect when opening sidebar on small screens -->
