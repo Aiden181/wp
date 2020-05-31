@@ -30,12 +30,13 @@
 <body>
     <?php
     include('../includes/tools.php');
-    include('../includes/adminpagemenu.php');
 
     if (!isset($_SESSION['User'])) {
         echo "You should not be here. Only follow links!";
         die();
     }
+    
+    include('../includes/adminpagemenu.php');
 
     // Define variables and initialize with empty values
     $id = $brand = $name = $status = $img1 = $img2 = $img3 = $img4 =$img5 = $caseSize = $caseThickness = $glass = $movement = $pageUpdate = "";

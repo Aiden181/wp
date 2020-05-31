@@ -24,12 +24,13 @@
     <?php
     // Include config file
     include('../includes/tools.php');
-    include('../includes/adminpagemenu.php');
 
     if (!isset($_SESSION['User'])) {
         echo "You should not be here. Only follow links!";
         die();
     }
+    
+    include('../includes/adminpagemenu.php');
 
     // Define variables and initialize with empty values
     $id = $brand = $name = $status = $caseSize = $caseThickness = $glass = $movement = "";
