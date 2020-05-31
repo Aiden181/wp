@@ -45,13 +45,13 @@
         </div>
         <div class="upper-footer-item footer-blurb">
             <h4 class="section-title">CONTACT</h4>
-            <p>zael@gmail.com</p>     
-            <p>+84 00 000 00 00</p></div>
+            <p>zael@gmail.com</p>
+            <p>+84 00 000 00 00</p>
         </div>
       </div>
 
-      <div class="col-lg" style="background-color: #1e1e1e;">
-        <div id="copyright" style="color: white;">
+      <div class="w3-container copyright-container">
+        <div id="copyright">
           <b>Copyright &copy 2020 Zael</b>
         </div>
         <div id="payment-icons">
@@ -65,6 +65,4 @@
 
     <!-- !END OF PAGE CONTENT FROM HEADER.PHP! -->
   </div>
-<?php
-  include('javascript.php');
-?>
+<?php include('javascript.php'); ?>

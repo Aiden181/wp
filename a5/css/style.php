@@ -87,17 +87,23 @@ ul {
   left: 660px;
 }
 
+.copyright-container {
+  background-color: #1e1e1e;
+}
+
 #copyright {
+  float: left;
   position: relative;
-  top: 16px;
-  left: 40px;
+  top: 8px;
+  left: 20px;
+  color: white;
 }
 
 #payment-icons {
-  position: relative;
-  left: 72%;
-  bottom: 8px;
+  float: right;
   max-height: 50px;
+  position: relative;
+  bottom: 10px;
 }
 
 #payment-icons img {
