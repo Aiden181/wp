@@ -123,38 +123,40 @@
             // image(s) uploaded
             else {
                 foreach($_FILES["files"]["tmp_name"] as $key => $tmp_name) {
-                    // assign array values to intuitive variable
-                    $fileName = $_FILES["files"]["name"][$key];
-                    $fileTemp = $_FILES["files"]["tmp_name"][$key];
-                    $fileSize = $_FILES["files"]["size"][$key];
+					if (!empty($tmp_name)) {
+						// assign array values to intuitive variable
+						$fileName = $_FILES["files"]["name"][$key];
+						$fileTemp = $_FILES["files"]["tmp_name"][$key];
+						$fileSize = $_FILES["files"]["size"][$key];
 
-                    // specifies the directory where the file is going to be placed
-                    $target_dir = "../img/watches/";
-                    // specifies the path of the file to be uploaded
-                    $target_file = $target_dir . basename($fileName);
-                    // holds the file extension of the file (in lower case)
-                    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+						// specifies the directory where the file is going to be placed
+						$target_dir = "../img/watches/";
+						// specifies the path of the file to be uploaded
+						$target_file = $target_dir . basename($fileName);
+						// holds the file extension of the file (in lower case)
+						$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-                    // Check if image file is a actual image or fake image
-                    $check = getimagesize($fileTemp);
-                    if ($check !== 0) {
-                        // array_push($img_err, "File is an image - " . $check["mime"] . ".");
-                    } else {
-                        array_push($img_err, "File is not an image.");
-                    }
+						// Check if image file is a actual image or fake image
+						$check = getimagesize($fileTemp);
+						if ($check !== 0) {
+							// array_push($img_err, "File is an image - " . $check["mime"] . ".");
+						} else {
+							array_push($img_err, "File is not an image. <br>");
+						}
 
-                    // Check if file already exists
-                    if (file_exists($target_file)) {
-                        array_push($img_err, "File already exists!");
-                    }
-                    // Check file size (disallow files larger than 3 MegaBytes or 3,000,000 Bytes)
-                    if ($fileSize > 3000000) {
-                        array_push($img_err, "Your file is too large!");
-                    }
-                    // Allow certain file formats
-                    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-                        array_push($img_err, "Only JPG, JPEG, and PNG files are allowed!");
-                    }
+						// Check if file already exists
+						if (file_exists($target_file)) {
+							array_push($img_err, "File already exists! <br>");
+						}
+						// Check file size (disallow files larger than 3 MegaBytes or 3,000,000 Bytes)
+						if ($fileSize > 3000000) {
+							array_push($img_err, "Your file is too large! <br>");
+						}
+						// Allow certain file formats
+						if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+							array_push($img_err, "Only JPG, JPEG, and PNG files are allowed! <br>");
+						}
+					}
                 }
                 foreach($_FILES["files"]["name"] as $key => $imageName) {
                     if (!empty($imageName)) {
